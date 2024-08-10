@@ -1,0 +1,10295 @@
+	TITLE	F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KMissle.cpp
+	.386P
+include listing.inc
+if @Version gt 510
+.model FLAT
+else
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+CONST	SEGMENT DWORD USE32 PUBLIC 'CONST'
+CONST	ENDS
+_BSS	SEGMENT PARA USE32 PUBLIC 'BSS'
+_BSS	ENDS
+$$SYMBOLS	SEGMENT BYTE USE32 'DEBSYM'
+$$SYMBOLS	ENDS
+$$TYPES	SEGMENT BYTE USE32 'DEBTYP'
+$$TYPES	ENDS
+_TLS	SEGMENT DWORD USE32 PUBLIC 'TLS'
+_TLS	ENDS
+;	COMDAT ??_C@_00A@?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_09KCNC@?5?5?$FL?$CFd?1?$CFd?$FN?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0L@MDID@MissleName?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0N@IMPH@MissleHeight?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_08CLHE@LifeTime?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_05PDDA@Speed?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0O@CEMO@ResponseSkill?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0M@IPHD@CollidRange?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_09LLHA@ColVanish?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0N@MOFP@CanColFriend?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_07ICPB@CanSlow?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0L@DOMN@IsRangeDmg?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_08EKOK@DmgRange?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_08MKEC@MoveKind?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0L@ICBE@FollowKind?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_04LIGI@Zacc?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_06EDNA@Zspeed?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_06DMFP@Param1?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_06MDOG@Param2?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_06GJHB@Param3?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0M@CDCB@AutoExplode?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0M@MLLA@DmgInterval?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_06PIMC@RedLum?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_08KOFB@GreenLum?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_07BJEB@BlueLum?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0M@HJOL@LightRadius?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_09PDKK@MultiShow?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0L@EKAK@AnimFile?$CFd?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_09CDAF@SndFile?$CFd?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0P@EKPH@AnimFileInfo?$CFd?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0M@LCCH@AnimFileB?$CFd?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0L@HHEO@SndFileB?$CFd?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0BA@BPCH@AnimFileInfoB?$CFd?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_08OBCD@LoopPlay?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_07MAEH@SubLoop?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_08CAJJ@SubStart?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_07CKM@SubStop?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_0BA@PAFJ@ColFollowTarget?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_03IBIJ@LF?6?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_06KBOC@R?5?$DM?50?6?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_C@_07MBIG@L?5?$DM?$DN?50?6?$AA@
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+CRT$XCA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+CRT$XCA	ENDS
+CRT$XCU	SEGMENT DWORD USE32 PUBLIC 'DATA'
+CRT$XCU	ENDS
+CRT$XCL	SEGMENT DWORD USE32 PUBLIC 'DATA'
+CRT$XCL	ENDS
+CRT$XCC	SEGMENT DWORD USE32 PUBLIC 'DATA'
+CRT$XCC	ENDS
+CRT$XCZ	SEGMENT DWORD USE32 PUBLIC 'DATA'
+CRT$XCZ	ENDS
+xdata$x	SEGMENT DWORD USE32 PUBLIC 'CONST'
+xdata$x	ENDS
+;	COMDAT ??4KMapMusic@@QAEAAV0@ABV0@@Z
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ?GetGameTime@KSubWorldSet@@QAEHXZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ?GetGameVersion@KSubWorldSet@@QAEHXZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ?SetPing@KSubWorldSet@@QAEXK@Z
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ?GetPing@KSubWorldSet@@QAEKXZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ??4KSubWorldSet@@QAEAAV0@ABV0@@Z
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ??1KSubWorldSet@@QAE@XZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ?g_DirSin@@YAHHH@Z
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ?g_DirCos@@YAHHH@Z
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ?g_GetDistance@@YAHHHHH@Z
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ?g_GetDirIndex@@YAHHHHH@Z
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ?g_Dir2DirIndex@@YAHHH@Z
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ?g_DirIndex2Dir@@YAHHH@Z
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ??0KSkillSpecialNode@@QAE@XZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ??1KSkillSpecialNode@@UAE@XZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ??_GKSkillSpecialNode@@UAEPAXI@Z
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT _wmemchr
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT _wmemcmp
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT _wmemcpy
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT _wmemmove
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT _wmemset
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT __imp_?eof@?$char_traits@G@std@@SAGXZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT __imp_?assign@?$char_traits@D@std@@SAXAADABD@Z
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT __imp_?length@?$char_traits@D@std@@SAIPBD@Z
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT __imp_?copy@?$char_traits@D@std@@SAPADPADPBDI@Z
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT __imp_?move@?$char_traits@D@std@@SAPADPADPBDI@Z
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT __imp_?eof@?$char_traits@D@std@@SAHXZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT __imp_??1bad_exception@std@@UAE@XZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT __imp_??0bad_exception@std@@QAE@ABV01@@Z
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT __imp_??1bad_alloc@std@@UAE@XZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT __imp_??0bad_alloc@std@@QAE@ABV01@@Z
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT __imp_??0logic_error@std@@QAE@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@1@@Z
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT __imp_??1logic_error@std@@UAE@XZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT __imp_?what@logic_error@std@@UBEPBDXZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT __imp_??0logic_error@std@@QAE@ABV01@@Z
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT __imp_??1domain_error@std@@UAE@XZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT __imp_??0domain_error@std@@QAE@ABV01@@Z
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ??1invalid_argument@std@@UAE@XZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ?_Doraise@invalid_argument@std@@MBEXXZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ??_Ginvalid_argument@std@@UAEPAXI@Z
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ??0invalid_argument@std@@QAE@ABV01@@Z
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT __imp_??1length_error@std@@UAE@XZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT __imp_??0length_error@std@@QAE@ABV01@@Z
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT __imp_??1out_of_range@std@@UAE@XZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT __imp_??0out_of_range@std@@QAE@ABV01@@Z
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT __imp_??0runtime_error@std@@QAE@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@1@@Z
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT __imp_??1runtime_error@std@@UAE@XZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT __imp_??0runtime_error@std@@QAE@ABV01@@Z
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT __imp_??1overflow_error@std@@UAE@XZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT __imp_??0overflow_error@std@@QAE@ABV01@@Z
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT __imp_??1underflow_error@std@@UAE@XZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT __imp_??0underflow_error@std@@QAE@ABV01@@Z
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT __imp_??1range_error@std@@UAE@XZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT __imp_??0range_error@std@@QAE@ABV01@@Z
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ?GetMoney@KInventory@@QAEHXZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ?SetMoney@KInventory@@QAEHH@Z
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ??4KInventory@@QAEAAV0@ABV0@@Z
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ?Release@CChatFriend@@QAEXXZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ??_GCChatFriend@@UAEPAXI@Z
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ??1CChatFriend@@UAE@XZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ??_GCChatApplyListNode@@UAEPAXI@Z
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ??1CChatApplyListNode@@UAE@XZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ?Release@KTeamApplyList@@QAEXXZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ?NumOfEntries@KBasicPropertyTable@@QBEHXZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ?GetEquipment@KItemList@@QAEHH@Z
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ?GetItemPGBox@KItemList@@QAEHH@Z
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ?GetMoney@KItemList@@QAEHH@Z
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ?Hand@KItemList@@QAEHXZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ?GetMaskLock@KItemList@@QAEHXZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ?IsLockOperation@KItemList@@QAEHXZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ??4KItemList@@QAEAAV0@ABV0@@Z
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ??0KMissleSet@@QAE@XZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ??4KMissleSet@@QAEAAV0@ABV0@@Z
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ??1KMissleSet@@QAE@XZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ?KSG_StringGetInt@@YAHPAPADH@Z
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ?KSG_StringSkipSymbol@@YA_NPAPADH@Z
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT _$E11
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT _$E12
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT _$E13
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT _$E14
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT _$E16
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT _$E17
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT _$E18
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT _$E19
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ??0KMissle@@QAE@XZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ??_GKMissle@@UAEPAXI@Z
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ?Release@KMissle@@AAEXXZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ??1KMissle@@UAE@XZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ?GetInfoFromTabFile@KMissle@@QAEHH@Z
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ?GetInfoFromTabFile@KMissle@@QAEHPAVKITabFile@@H@Z
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ?Init@KMissle@@AAEHHHHHH@Z
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ?Activate@KMissle@@QAEHXZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ?OnWait@KMissle@@AAEXXZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ?OnCollision@KMissle@@AAEXXZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ?CheckCollision@KMissle@@AAEHXZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ?OnFly@KMissle@@AAEXXZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ?OnVanish@KMissle@@AAEXXZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ?Paint@KMissle@@QAEXXZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ?CheckBeyondRegion@KMissle@@AAEHHHHH@Z
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ??4KMissle@@AAEAAV0@AAV0@@Z
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ?ProcessDamage@KMissle@@AAEHH@Z
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ?DoVanish@KMissle@@AAEXXZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ?DoCollision@KMissle@@AAEXXZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ?DoFly@KMissle@@AAEXXZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ?GetOffsetAxis@KMissle@@SAHHHHHHHAAH00@Z
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ?ProcessCollision@KMissle@@AAEHHHHHHH@Z
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ?ProcessCollision@KMissle@@AAEHXZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ?CreateSpecialEffect@KMissle@@QAEHW4eMissleStatus@@HHHH@Z
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ?CreateMissleForShow@KMissle@@SAHPAD00PAUTMissleForShow@@@Z
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ?GetLightInfo@KMissle@@QAEXPAUKLightInfo@@@Z
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ?DoWait@KMissle@@AAEXXZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ?PrePareFly@KMissle@@AAEHXZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ?CheckNearestCollision@KMissle@@AAEHXZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ?GetMpsPos@KMissle@@QAEXPAH0@Z
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT __imp_?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@ABV12@II@Z
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT __imp_?_Nullstr@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@CAPBDXZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT __imp_?_Tidy@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AAEX_N@Z
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT __imp_?erase@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@II@Z
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT __imp_?size@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEIXZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT __imp_?capacity@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEIXZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT __imp_?_Eos@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AAEXI@Z
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT __imp_?_Grow@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AAE_NI_N@Z
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT __imp_?_Refcnt@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AAEAAEPBD@Z
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ?deallocate@?$allocator@D@std@@QAEXPAXI@Z
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT __imp_?max_size@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEIXZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT __imp_?_Copy@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AAEXI@Z
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT __imp_?_Split@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AAEXXZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT __imp_?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@PBD@Z
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ?allocate@?$allocator@D@std@@QAEPADIPBX@Z
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ?max_size@?$allocator@D@std@@QBEIXZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT __imp_?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@PBDI@Z
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ??8std@@YA_NABV?$allocator@D@0@0@Z
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ?_Allocate@std@@YAPADHPAD@Z
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ??_GKNode@@UAEPAXI@Z
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ??_GKWorldMsgNode@@UAEPAXI@Z
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ??1KWorldMsgNode@@UAE@XZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT __imp_?SetName@KStrNode@@UAEXPAD@Z
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT __imp_?GetName@KStrNode@@UAEPADXZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ??_GKCacheNode@@UAEPAXI@Z
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ??1KCacheNode@@UAE@XZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT __imp_??1KStrNode@@UAE@XZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ?GetSkillLevelUpScriptId@ISkill@@UBEKXZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ?IsSkillMagic@ISkill@@UBEHXZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ?IsUseAR@ISkill@@UBEHXZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ?IsMelee@ISkill@@UBEHXZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ?IsSkillPhysical@ISkill@@UBEHXZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ?IsPhysical@ISkill@@UBEHXZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ?IsAura@ISkill@@UBEHXZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ?GetSkillReqLevel@ISkill@@UBEGXZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ??_GISkill@@UAEPAXI@Z
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ??1ISkill@@UAE@XZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ??_7ISkill@@6B@
+CONST	SEGMENT DWORD USE32 PUBLIC 'CONST'
+CONST	ENDS
+;	COMDAT ??_GKIndexNode@@UAEPAXI@Z
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ?AddTail@KList@@QAEXPAVKNode@@@Z
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ?InsertBefore@KNode@@QAEXPAV1@@Z
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ?GetNext@KNode@@QAEPAV1@XZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ?GetHead@KList@@QAEPAVKNode@@XZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ?SpecialMovieIsAllEnd@KMissleRes@@QAEHXZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ?Send@KWorldMsg@@QAEHKHHH@Z
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ??0KWorldMsgNode@@QAE@XZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ??_7KWorldMsgNode@@6B@
+CONST	SEGMENT DWORD USE32 PUBLIC 'CONST'
+CONST	ENDS
+;	COMDAT ?ZAxisMove@KMissle@@AAEXXZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ?TestBarrier@KMissle@@AAEHXZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ?FindNpc@KRegion@@QAEHHHHH@Z
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ?IsMatch@KNpc@@QAEHK@Z
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ??_7KMissle@@6B@
+CONST	SEGMENT DWORD USE32 PUBLIC 'CONST'
+CONST	ENDS
+;	COMDAT ??1KIndexNode@@UAE@XZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ??0KIndexNode@@QAE@XZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ??_7KIndexNode@@6B@
+CONST	SEGMENT DWORD USE32 PUBLIC 'CONST'
+CONST	ENDS
+;	COMDAT __imp_??0KLinkArray@@QAE@XZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ?GetSkill@KSkillManager@@QAEPAVISkill@@HH@Z
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ??_7CChatApplyListNode@@6B@
+CONST	SEGMENT DWORD USE32 PUBLIC 'CONST'
+CONST	ENDS
+;	COMDAT ??_7CChatFriend@@6B@
+CONST	SEGMENT DWORD USE32 PUBLIC 'CONST'
+CONST	ENDS
+;	COMDAT __CTA3?AVrange_error@std@@
+xdata$x	SEGMENT DWORD USE32 PUBLIC 'CONST'
+xdata$x	ENDS
+;	COMDAT __CT??_R0?AVrange_error@std@@@8??0range_error@std@@QAE@ABV01@@Z28
+xdata$x	SEGMENT DWORD USE32 PUBLIC 'CONST'
+xdata$x	ENDS
+;	COMDAT ??_R0?AVrange_error@std@@@8
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT __TI3?AVrange_error@std@@
+xdata$x	SEGMENT DWORD USE32 PUBLIC 'CONST'
+xdata$x	ENDS
+;	COMDAT __CTA3?AVunderflow_error@std@@
+xdata$x	SEGMENT DWORD USE32 PUBLIC 'CONST'
+xdata$x	ENDS
+;	COMDAT __CT??_R0?AVunderflow_error@std@@@8??0underflow_error@std@@QAE@ABV01@@Z28
+xdata$x	SEGMENT DWORD USE32 PUBLIC 'CONST'
+xdata$x	ENDS
+;	COMDAT ??_R0?AVunderflow_error@std@@@8
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT __TI3?AVunderflow_error@std@@
+xdata$x	SEGMENT DWORD USE32 PUBLIC 'CONST'
+xdata$x	ENDS
+;	COMDAT __CTA3?AVoverflow_error@std@@
+xdata$x	SEGMENT DWORD USE32 PUBLIC 'CONST'
+xdata$x	ENDS
+;	COMDAT __CT??_R0?AVoverflow_error@std@@@8??0overflow_error@std@@QAE@ABV01@@Z28
+xdata$x	SEGMENT DWORD USE32 PUBLIC 'CONST'
+xdata$x	ENDS
+;	COMDAT ??_R0?AVoverflow_error@std@@@8
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT __TI3?AVoverflow_error@std@@
+xdata$x	SEGMENT DWORD USE32 PUBLIC 'CONST'
+xdata$x	ENDS
+;	COMDAT __CTA2?AVruntime_error@std@@
+xdata$x	SEGMENT DWORD USE32 PUBLIC 'CONST'
+xdata$x	ENDS
+;	COMDAT __CT??_R0?AVruntime_error@std@@@8??0runtime_error@std@@QAE@ABV01@@Z28
+xdata$x	SEGMENT DWORD USE32 PUBLIC 'CONST'
+xdata$x	ENDS
+;	COMDAT ??_R0?AVruntime_error@std@@@8
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT __TI2?AVruntime_error@std@@
+xdata$x	SEGMENT DWORD USE32 PUBLIC 'CONST'
+xdata$x	ENDS
+;	COMDAT __CTA3?AVout_of_range@std@@
+xdata$x	SEGMENT DWORD USE32 PUBLIC 'CONST'
+xdata$x	ENDS
+;	COMDAT __CT??_R0?AVout_of_range@std@@@8??0out_of_range@std@@QAE@ABV01@@Z28
+xdata$x	SEGMENT DWORD USE32 PUBLIC 'CONST'
+xdata$x	ENDS
+;	COMDAT ??_R0?AVout_of_range@std@@@8
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT __TI3?AVout_of_range@std@@
+xdata$x	SEGMENT DWORD USE32 PUBLIC 'CONST'
+xdata$x	ENDS
+;	COMDAT __CTA3?AVlength_error@std@@
+xdata$x	SEGMENT DWORD USE32 PUBLIC 'CONST'
+xdata$x	ENDS
+;	COMDAT __CT??_R0?AVlength_error@std@@@8??0length_error@std@@QAE@ABV01@@Z28
+xdata$x	SEGMENT DWORD USE32 PUBLIC 'CONST'
+xdata$x	ENDS
+;	COMDAT ??_R0?AVlength_error@std@@@8
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT __TI3?AVlength_error@std@@
+xdata$x	SEGMENT DWORD USE32 PUBLIC 'CONST'
+xdata$x	ENDS
+;	COMDAT __CTA3?AVinvalid_argument@std@@
+xdata$x	SEGMENT DWORD USE32 PUBLIC 'CONST'
+xdata$x	ENDS
+;	COMDAT __CT??_R0?AVinvalid_argument@std@@@8??0invalid_argument@std@@QAE@ABV01@@Z28
+xdata$x	SEGMENT DWORD USE32 PUBLIC 'CONST'
+xdata$x	ENDS
+;	COMDAT ??_R0?AVinvalid_argument@std@@@8
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT __TI3?AVinvalid_argument@std@@
+xdata$x	SEGMENT DWORD USE32 PUBLIC 'CONST'
+xdata$x	ENDS
+;	COMDAT ??_7invalid_argument@std@@6B@
+CONST	SEGMENT DWORD USE32 PUBLIC 'CONST'
+CONST	ENDS
+;	COMDAT __CTA3?AVdomain_error@std@@
+xdata$x	SEGMENT DWORD USE32 PUBLIC 'CONST'
+xdata$x	ENDS
+;	COMDAT __CT??_R0?AVdomain_error@std@@@8??0domain_error@std@@QAE@ABV01@@Z28
+xdata$x	SEGMENT DWORD USE32 PUBLIC 'CONST'
+xdata$x	ENDS
+;	COMDAT ??_R0?AVdomain_error@std@@@8
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT __TI3?AVdomain_error@std@@
+xdata$x	SEGMENT DWORD USE32 PUBLIC 'CONST'
+xdata$x	ENDS
+;	COMDAT __CTA2?AVlogic_error@std@@
+xdata$x	SEGMENT DWORD USE32 PUBLIC 'CONST'
+xdata$x	ENDS
+;	COMDAT __CT??_R0?AVlogic_error@std@@@8??0logic_error@std@@QAE@ABV01@@Z28
+xdata$x	SEGMENT DWORD USE32 PUBLIC 'CONST'
+xdata$x	ENDS
+;	COMDAT ??_R0?AVlogic_error@std@@@8
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT __TI2?AVlogic_error@std@@
+xdata$x	SEGMENT DWORD USE32 PUBLIC 'CONST'
+xdata$x	ENDS
+;	COMDAT __CTA2?AVbad_alloc@std@@
+xdata$x	SEGMENT DWORD USE32 PUBLIC 'CONST'
+xdata$x	ENDS
+;	COMDAT __CT??_R0?AVbad_alloc@std@@@8??0bad_alloc@std@@QAE@ABV01@@Z12
+xdata$x	SEGMENT DWORD USE32 PUBLIC 'CONST'
+xdata$x	ENDS
+;	COMDAT ??_R0?AVbad_alloc@std@@@8
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT __TI2?AVbad_alloc@std@@
+xdata$x	SEGMENT DWORD USE32 PUBLIC 'CONST'
+xdata$x	ENDS
+;	COMDAT __CTA2?AVbad_exception@std@@
+xdata$x	SEGMENT DWORD USE32 PUBLIC 'CONST'
+xdata$x	ENDS
+;	COMDAT __CT??_R0?AVexception@@@8??0exception@@QAE@ABV0@@Z12
+xdata$x	SEGMENT DWORD USE32 PUBLIC 'CONST'
+xdata$x	ENDS
+;	COMDAT __CT??_R0?AVbad_exception@std@@@8??0bad_exception@std@@QAE@ABV01@@Z12
+xdata$x	SEGMENT DWORD USE32 PUBLIC 'CONST'
+xdata$x	ENDS
+;	COMDAT ??_R0?AVexception@@@8
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT ??_R0?AVbad_exception@std@@@8
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+;	COMDAT __TI2?AVbad_exception@std@@
+xdata$x	SEGMENT DWORD USE32 PUBLIC 'CONST'
+xdata$x	ENDS
+;	COMDAT ??_7KSkillSpecialNode@@6B@
+CONST	SEGMENT DWORD USE32 PUBLIC 'CONST'
+CONST	ENDS
+;	COMDAT ??1KNode@@UAE@XZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+;	COMDAT ??_7KNode@@6B@
+CONST	SEGMENT DWORD USE32 PUBLIC 'CONST'
+CONST	ENDS
+;	COMDAT ??0KNode@@QAE@XZ
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+FLAT	GROUP _DATA, CONST, _BSS, CRT$XCA, CRT$XCU, CRT$XCL, CRT$XCC, CRT$XCZ, xdata$x
+	ASSUME	CS: FLAT, DS: FLAT, SS: FLAT
+endif
+PUBLIC	?g_CollisionMatrix@@3PAUTCollisionMatrix@@A	; g_CollisionMatrix
+PUBLIC	?Missle@@3PAVKMissle@@A				; Missle
+PUBLIC	?g_MisslesLib@@3PAVKMissle@@A			; g_MisslesLib
+PUBLIC	?g_nRandMissleTab@@3PAHA			; g_nRandMissleTab
+_BSS	SEGMENT
+?Missle@@3PAVKMissle@@A DB 017d590H DUP (?)		; Missle
+?g_MisslesLib@@3PAVKMissle@@A DB 0beac8H DUP (?)	; g_MisslesLib
+?g_nRandMissleTab@@3PAHA DD 064H DUP (?)		; g_nRandMissleTab
+_BSS	ENDS
+_DATA	SEGMENT
+?g_CollisionMatrix@@3PAUTCollisionMatrix@@A DD 00H	; g_CollisionMatrix
+	DD	00H
+	DD	0ffffffffH
+	DD	01H
+	DD	00H
+	DD	01H
+	DD	01H
+	DD	01H
+	DD	00H
+	DD	00H
+	DD	0ffffffffH
+	DD	01H
+	DD	00H
+	DD	01H
+	DD	01H
+	DD	01H
+	DD	00H
+	DD	00H
+	DD	0ffffffffH
+	DD	01H
+	DD	00H
+	DD	01H
+	DD	01H
+	DD	01H
+	DD	00H
+	DD	00H
+	DD	0ffffffffH
+	DD	01H
+	DD	00H
+	DD	01H
+	DD	01H
+	DD	01H
+	DD	00H
+	DD	00H
+	DD	0ffffffffH
+	DD	00H
+	DD	0ffffffffH
+	DD	01H
+	DD	00H
+	DD	01H
+	DD	00H
+	DD	00H
+	DD	0ffffffffH
+	DD	00H
+	DD	0ffffffffH
+	DD	01H
+	DD	00H
+	DD	01H
+	DD	00H
+	DD	00H
+	DD	0ffffffffH
+	DD	00H
+	DD	0ffffffffH
+	DD	01H
+	DD	00H
+	DD	01H
+	DD	00H
+	DD	00H
+	DD	0ffffffffH
+	DD	00H
+	DD	0ffffffffH
+	DD	01H
+	DD	00H
+	DD	01H
+	DD	00H
+	DD	00H
+	DD	0ffffffffH
+	DD	00H
+	DD	0ffffffffH
+	DD	01H
+	DD	00H
+	DD	01H
+	DD	00H
+	DD	00H
+	DD	0ffffffffH
+	DD	00H
+	DD	0ffffffffH
+	DD	01H
+	DD	00H
+	DD	01H
+	DD	00H
+	DD	00H
+	DD	0ffffffffH
+	DD	00H
+	DD	0ffffffffH
+	DD	01H
+	DD	00H
+	DD	01H
+	DD	00H
+	DD	00H
+	DD	0ffffffffH
+	DD	00H
+	DD	0ffffffffH
+	DD	01H
+	DD	00H
+	DD	01H
+	DD	00H
+	DD	00H
+	DD	0ffffffffH
+	DD	0ffffffffH
+	DD	0ffffffffH
+	DD	00H
+	DD	0ffffffffH
+	DD	01H
+	DD	00H
+	DD	00H
+	DD	0ffffffffH
+	DD	0ffffffffH
+	DD	0ffffffffH
+	DD	00H
+	DD	0ffffffffH
+	DD	01H
+	DD	00H
+	DD	00H
+	DD	0ffffffffH
+	DD	0ffffffffH
+	DD	0ffffffffH
+	DD	00H
+	DD	0ffffffffH
+	DD	01H
+	DD	00H
+	DD	00H
+	DD	0ffffffffH
+	DD	0ffffffffH
+	DD	0ffffffffH
+	DD	00H
+	DD	0ffffffffH
+	DD	01H
+	DD	00H
+	DD	00H
+	DD	0ffffffffH
+	DD	0ffffffffH
+	DD	0ffffffffH
+	DD	00H
+	DD	0ffffffffH
+	DD	01H
+	DD	00H
+	DD	00H
+	DD	0ffffffffH
+	DD	0ffffffffH
+	DD	0ffffffffH
+	DD	00H
+	DD	0ffffffffH
+	DD	01H
+	DD	00H
+	DD	00H
+	DD	0ffffffffH
+	DD	0ffffffffH
+	DD	0ffffffffH
+	DD	00H
+	DD	0ffffffffH
+	DD	01H
+	DD	00H
+	DD	00H
+	DD	0ffffffffH
+	DD	0ffffffffH
+	DD	0ffffffffH
+	DD	00H
+	DD	0ffffffffH
+	DD	01H
+	DD	00H
+	DD	00H
+	DD	00H
+	DD	0ffffffffH
+	DD	0ffffffffH
+	DD	0ffffffffH
+	DD	0ffffffffH
+	DD	00H
+	DD	00H
+	DD	00H
+	DD	00H
+	DD	0ffffffffH
+	DD	0ffffffffH
+	DD	0ffffffffH
+	DD	0ffffffffH
+	DD	00H
+	DD	00H
+	DD	00H
+	DD	00H
+	DD	0ffffffffH
+	DD	0ffffffffH
+	DD	0ffffffffH
+	DD	0ffffffffH
+	DD	00H
+	DD	00H
+	DD	00H
+	DD	00H
+	DD	0ffffffffH
+	DD	0ffffffffH
+	DD	0ffffffffH
+	DD	0ffffffffH
+	DD	00H
+	DD	00H
+	DD	00H
+	DD	00H
+	DD	0ffffffffH
+	DD	0ffffffffH
+	DD	0ffffffffH
+	DD	0ffffffffH
+	DD	00H
+	DD	00H
+	DD	00H
+	DD	00H
+	DD	0ffffffffH
+	DD	0ffffffffH
+	DD	0ffffffffH
+	DD	0ffffffffH
+	DD	00H
+	DD	00H
+	DD	00H
+	DD	00H
+	DD	0ffffffffH
+	DD	0ffffffffH
+	DD	0ffffffffH
+	DD	0ffffffffH
+	DD	00H
+	DD	00H
+	DD	00H
+	DD	00H
+	DD	0ffffffffH
+	DD	0ffffffffH
+	DD	0ffffffffH
+	DD	0ffffffffH
+	DD	00H
+	DD	00H
+	DD	00H
+	DD	0ffffffffH
+	DD	0ffffffffH
+	DD	00H
+	DD	0ffffffffH
+	DD	01H
+	DD	0ffffffffH
+	DD	00H
+	DD	00H
+	DD	0ffffffffH
+	DD	0ffffffffH
+	DD	00H
+	DD	0ffffffffH
+	DD	01H
+	DD	0ffffffffH
+	DD	00H
+	DD	00H
+	DD	0ffffffffH
+	DD	0ffffffffH
+	DD	00H
+	DD	0ffffffffH
+	DD	01H
+	DD	0ffffffffH
+	DD	00H
+	DD	00H
+	DD	0ffffffffH
+	DD	0ffffffffH
+	DD	00H
+	DD	0ffffffffH
+	DD	01H
+	DD	0ffffffffH
+	DD	00H
+	DD	00H
+	DD	0ffffffffH
+	DD	0ffffffffH
+	DD	00H
+	DD	0ffffffffH
+	DD	01H
+	DD	0ffffffffH
+	DD	00H
+	DD	00H
+	DD	0ffffffffH
+	DD	0ffffffffH
+	DD	00H
+	DD	0ffffffffH
+	DD	01H
+	DD	0ffffffffH
+	DD	00H
+	DD	00H
+	DD	0ffffffffH
+	DD	0ffffffffH
+	DD	00H
+	DD	0ffffffffH
+	DD	01H
+	DD	0ffffffffH
+	DD	00H
+	DD	00H
+	DD	0ffffffffH
+	DD	0ffffffffH
+	DD	00H
+	DD	0ffffffffH
+	DD	01H
+	DD	0ffffffffH
+	DD	00H
+	DD	00H
+	DD	00H
+	DD	0ffffffffH
+	DD	01H
+	DD	0ffffffffH
+	DD	01H
+	DD	00H
+	DD	00H
+	DD	00H
+	DD	00H
+	DD	0ffffffffH
+	DD	01H
+	DD	0ffffffffH
+	DD	01H
+	DD	00H
+	DD	00H
+	DD	00H
+	DD	00H
+	DD	0ffffffffH
+	DD	01H
+	DD	0ffffffffH
+	DD	01H
+	DD	00H
+	DD	00H
+	DD	00H
+	DD	00H
+	DD	0ffffffffH
+	DD	01H
+	DD	0ffffffffH
+	DD	01H
+	DD	00H
+	DD	00H
+	DD	00H
+	DD	00H
+	DD	0ffffffffH
+	DD	01H
+	DD	0ffffffffH
+	DD	01H
+	DD	00H
+	DD	00H
+	DD	00H
+	DD	00H
+	DD	0ffffffffH
+	DD	01H
+	DD	0ffffffffH
+	DD	01H
+	DD	00H
+	DD	00H
+	DD	00H
+	DD	00H
+	DD	0ffffffffH
+	DD	01H
+	DD	0ffffffffH
+	DD	01H
+	DD	00H
+	DD	00H
+	DD	00H
+	DD	00H
+	DD	0ffffffffH
+	DD	01H
+	DD	0ffffffffH
+	DD	01H
+	DD	00H
+	DD	00H
+	DD	00H
+	DD	01H
+	DD	0ffffffffH
+	DD	01H
+	DD	00H
+	DD	01H
+	DD	01H
+	DD	00H
+	DD	00H
+	DD	01H
+	DD	0ffffffffH
+	DD	01H
+	DD	00H
+	DD	01H
+	DD	01H
+	DD	00H
+	DD	00H
+	DD	01H
+	DD	0ffffffffH
+	DD	01H
+	DD	00H
+	DD	01H
+	DD	01H
+	DD	00H
+	DD	00H
+	DD	01H
+	DD	0ffffffffH
+	DD	01H
+	DD	00H
+	DD	01H
+	DD	01H
+	DD	00H
+	DD	00H
+	DD	01H
+	DD	0ffffffffH
+	DD	01H
+	DD	00H
+	DD	01H
+	DD	01H
+	DD	00H
+	DD	00H
+	DD	01H
+	DD	0ffffffffH
+	DD	01H
+	DD	00H
+	DD	01H
+	DD	01H
+	DD	00H
+	DD	00H
+	DD	01H
+	DD	0ffffffffH
+	DD	01H
+	DD	00H
+	DD	01H
+	DD	01H
+	DD	00H
+	DD	00H
+	DD	01H
+	DD	0ffffffffH
+	DD	01H
+	DD	00H
+	DD	01H
+	DD	01H
+	DD	00H
+	DD	00H
+	DD	01H
+	DD	00H
+	DD	01H
+	DD	01H
+	DD	00H
+	DD	01H
+	DD	00H
+	DD	00H
+	DD	01H
+	DD	00H
+	DD	01H
+	DD	01H
+	DD	00H
+	DD	01H
+	DD	00H
+	DD	00H
+	DD	01H
+	DD	00H
+	DD	01H
+	DD	01H
+	DD	00H
+	DD	01H
+	DD	00H
+	DD	00H
+	DD	01H
+	DD	00H
+	DD	01H
+	DD	01H
+	DD	00H
+	DD	01H
+	DD	00H
+	DD	00H
+	DD	01H
+	DD	00H
+	DD	01H
+	DD	01H
+	DD	00H
+	DD	01H
+	DD	00H
+	DD	00H
+	DD	01H
+	DD	00H
+	DD	01H
+	DD	01H
+	DD	00H
+	DD	01H
+	DD	00H
+	DD	00H
+	DD	01H
+	DD	00H
+	DD	01H
+	DD	01H
+	DD	00H
+	DD	01H
+	DD	00H
+	DD	00H
+	DD	01H
+	DD	00H
+	DD	01H
+	DD	01H
+	DD	00H
+	DD	01H
+	DD	00H
+	DD	00H
+	DD	0ffffffffH
+	DD	01H
+	DD	00H
+	DD	01H
+	DD	01H
+	DD	01H
+	DD	00H
+	DD	00H
+	DD	0ffffffffH
+	DD	01H
+	DD	00H
+	DD	01H
+	DD	01H
+	DD	01H
+	DD	00H
+	DD	00H
+	DD	0ffffffffH
+	DD	01H
+	DD	00H
+	DD	01H
+	DD	01H
+	DD	01H
+	DD	00H
+	DD	00H
+	DD	0ffffffffH
+	DD	01H
+	DD	00H
+	DD	01H
+	DD	01H
+	DD	01H
+_DATA	ENDS
+CRT$XCU	SEGMENT
+_$S15	DD	FLAT:_$E14
+_$S20	DD	FLAT:_$E19
+CRT$XCU	ENDS
+PUBLIC	??4KMapMusic@@QAEAAV0@ABV0@@Z			; KMapMusic::operator=
+;	COMDAT ??4KMapMusic@@QAEAAV0@ABV0@@Z
+_TEXT	SEGMENT
+___that$ = 8
+??4KMapMusic@@QAEAAV0@ABV0@@Z PROC NEAR			; KMapMusic::operator=, COMDAT
+	push	esi
+	mov	esi, DWORD PTR ___that$[esp]
+	mov	eax, ecx
+	push	edi
+	mov	ecx, 12351				; 0000303fH
+	mov	edi, eax
+	rep movsd
+	pop	edi
+	pop	esi
+	ret	4
+??4KMapMusic@@QAEAAV0@ABV0@@Z ENDP			; KMapMusic::operator=
+_TEXT	ENDS
+PUBLIC	?GetGameTime@KSubWorldSet@@QAEHXZ		; KSubWorldSet::GetGameTime
+;	COMDAT ?GetGameTime@KSubWorldSet@@QAEHXZ
+_TEXT	SEGMENT
+?GetGameTime@KSubWorldSet@@QAEHXZ PROC NEAR		; KSubWorldSet::GetGameTime, COMDAT
+
+; 38   : 	int		GetGameTime(){return m_nLoopRate;};
+
+	mov	eax, DWORD PTR [ecx]
+	ret	0
+?GetGameTime@KSubWorldSet@@QAEHXZ ENDP			; KSubWorldSet::GetGameTime
+_TEXT	ENDS
+PUBLIC	?GetGameVersion@KSubWorldSet@@QAEHXZ		; KSubWorldSet::GetGameVersion
+;	COMDAT ?GetGameVersion@KSubWorldSet@@QAEHXZ
+_TEXT	SEGMENT
+?GetGameVersion@KSubWorldSet@@QAEHXZ PROC NEAR		; KSubWorldSet::GetGameVersion, COMDAT
+
+; 39   : 	int		GetGameVersion() { return m_nGameVersion; }
+
+	mov	eax, DWORD PTR [ecx+49456]
+	ret	0
+?GetGameVersion@KSubWorldSet@@QAEHXZ ENDP		; KSubWorldSet::GetGameVersion
+_TEXT	ENDS
+PUBLIC	?SetPing@KSubWorldSet@@QAEXK@Z			; KSubWorldSet::SetPing
+;	COMDAT ?SetPing@KSubWorldSet@@QAEXK@Z
+_TEXT	SEGMENT
+_dwTimer$ = 8
+?SetPing@KSubWorldSet@@QAEXK@Z PROC NEAR		; KSubWorldSet::SetPing, COMDAT
+
+; 47   : 	void	SetPing(DWORD dwTimer) { m_dwPing = dwTimer; }
+
+	mov	eax, DWORD PTR _dwTimer$[esp-4]
+	mov	DWORD PTR [ecx+49460], eax
+	ret	4
+?SetPing@KSubWorldSet@@QAEXK@Z ENDP			; KSubWorldSet::SetPing
+_TEXT	ENDS
+PUBLIC	?GetPing@KSubWorldSet@@QAEKXZ			; KSubWorldSet::GetPing
+;	COMDAT ?GetPing@KSubWorldSet@@QAEKXZ
+_TEXT	SEGMENT
+?GetPing@KSubWorldSet@@QAEKXZ PROC NEAR			; KSubWorldSet::GetPing, COMDAT
+
+; 48   : 	DWORD	GetPing() { return m_dwPing; }
+
+	mov	eax, DWORD PTR [ecx+49460]
+	ret	0
+?GetPing@KSubWorldSet@@QAEKXZ ENDP			; KSubWorldSet::GetPing
+_TEXT	ENDS
+PUBLIC	??4KSubWorldSet@@QAEAAV0@ABV0@@Z		; KSubWorldSet::operator=
+;	COMDAT ??4KSubWorldSet@@QAEAAV0@ABV0@@Z
+_TEXT	SEGMENT
+___that$ = 8
+??4KSubWorldSet@@QAEAAV0@ABV0@@Z PROC NEAR		; KSubWorldSet::operator=, COMDAT
+	push	esi
+	mov	esi, DWORD PTR ___that$[esp]
+	mov	eax, ecx
+	push	edi
+	mov	ecx, 12366				; 0000304eH
+	mov	edi, eax
+	rep movsd
+	pop	edi
+	pop	esi
+	ret	4
+??4KSubWorldSet@@QAEAAV0@ABV0@@Z ENDP			; KSubWorldSet::operator=
+_TEXT	ENDS
+PUBLIC	??1KSubWorldSet@@QAE@XZ				; KSubWorldSet::~KSubWorldSet
+EXTRN	??1KMapMusic@@QAE@XZ:NEAR			; KMapMusic::~KMapMusic
+;	COMDAT ??1KSubWorldSet@@QAE@XZ
+_TEXT	SEGMENT
+??1KSubWorldSet@@QAE@XZ PROC NEAR			; KSubWorldSet::~KSubWorldSet, COMDAT
+	add	ecx, 16					; 00000010H
+	jmp	??1KMapMusic@@QAE@XZ			; KMapMusic::~KMapMusic
+??1KSubWorldSet@@QAE@XZ ENDP				; KSubWorldSet::~KSubWorldSet
+_TEXT	ENDS
+PUBLIC	?GetMoney@KInventory@@QAEHXZ			; KInventory::GetMoney
+;	COMDAT ?GetMoney@KInventory@@QAEHXZ
+_TEXT	SEGMENT
+?GetMoney@KInventory@@QAEHXZ PROC NEAR			; KInventory::GetMoney, COMDAT
+
+; 28   : 	int		GetMoney() { return m_nMoney; }
+
+	mov	eax, DWORD PTR [ecx+4]
+	ret	0
+?GetMoney@KInventory@@QAEHXZ ENDP			; KInventory::GetMoney
+_TEXT	ENDS
+PUBLIC	?SetMoney@KInventory@@QAEHH@Z			; KInventory::SetMoney
+;	COMDAT ?SetMoney@KInventory@@QAEHH@Z
+_TEXT	SEGMENT
+_nMoney$ = 8
+?SetMoney@KInventory@@QAEHH@Z PROC NEAR			; KInventory::SetMoney, COMDAT
+
+; 29   : 	BOOL	SetMoney(int nMoney) { if (nMoney < 0) return FALSE; m_nMoney = nMoney; return TRUE; }
+
+	mov	eax, DWORD PTR _nMoney$[esp-4]
+	test	eax, eax
+	jge	SHORT $L89028
+	xor	eax, eax
+	ret	4
+$L89028:
+	mov	DWORD PTR [ecx+4], eax
+	mov	eax, 1
+	ret	4
+?SetMoney@KInventory@@QAEHH@Z ENDP			; KInventory::SetMoney
+_TEXT	ENDS
+PUBLIC	??4KInventory@@QAEAAV0@ABV0@@Z			; KInventory::operator=
+;	COMDAT ??4KInventory@@QAEAAV0@ABV0@@Z
+_TEXT	SEGMENT
+___that$ = 8
+??4KInventory@@QAEAAV0@ABV0@@Z PROC NEAR		; KInventory::operator=, COMDAT
+	mov	eax, ecx
+	push	esi
+	mov	ecx, DWORD PTR ___that$[esp]
+	mov	edx, eax
+	mov	esi, DWORD PTR [ecx]
+	mov	DWORD PTR [edx], esi
+	mov	esi, DWORD PTR [ecx+4]
+	mov	DWORD PTR [edx+4], esi
+	mov	esi, DWORD PTR [ecx+8]
+	mov	DWORD PTR [edx+8], esi
+	pop	esi
+	mov	ecx, DWORD PTR [ecx+12]
+	mov	DWORD PTR [edx+12], ecx
+	ret	4
+??4KInventory@@QAEAAV0@ABV0@@Z ENDP			; KInventory::operator=
+_TEXT	ENDS
+PUBLIC	?GetEquipment@KItemList@@QAEHH@Z		; KItemList::GetEquipment
+;	COMDAT ?GetEquipment@KItemList@@QAEHH@Z
+_TEXT	SEGMENT
+_nIdx$ = 8
+?GetEquipment@KItemList@@QAEHH@Z PROC NEAR		; KItemList::GetEquipment, COMDAT
+
+; 76   : 	int			GetEquipment(int nIdx) { return m_EquipItem[nIdx]; }
+
+	mov	eax, DWORD PTR _nIdx$[esp-4]
+	mov	eax, DWORD PTR [ecx+eax*4+12]
+	ret	4
+?GetEquipment@KItemList@@QAEHH@Z ENDP			; KItemList::GetEquipment
+_TEXT	ENDS
+PUBLIC	?GetItemPGBox@KItemList@@QAEHH@Z		; KItemList::GetItemPGBox
+;	COMDAT ?GetItemPGBox@KItemList@@QAEHH@Z
+_TEXT	SEGMENT
+_nIdx$ = 8
+?GetItemPGBox@KItemList@@QAEHH@Z PROC NEAR		; KItemList::GetItemPGBox, COMDAT
+
+; 77   : 	int			GetItemPGBox(int nIdx) { return m_PGBoxItem[nIdx]; }
+
+	mov	eax, DWORD PTR _nIdx$[esp-4]
+	mov	eax, DWORD PTR [ecx+eax*4+64]
+	ret	4
+?GetItemPGBox@KItemList@@QAEHH@Z ENDP			; KItemList::GetItemPGBox
+_TEXT	ENDS
+PUBLIC	?GetMoney@KItemList@@QAEHH@Z			; KItemList::GetMoney
+;	COMDAT ?GetMoney@KItemList@@QAEHH@Z
+_TEXT	SEGMENT
+_nRoom$ = 8
+?GetMoney@KItemList@@QAEHH@Z PROC NEAR			; KItemList::GetMoney, COMDAT
+
+; 106  : 	int			GetMoney(int nRoom) { return m_Room[nRoom].GetMoney(); }	// 取得空间的钱
+
+	mov	eax, DWORD PTR _nRoom$[esp-4]
+	shl	eax, 4
+	mov	eax, DWORD PTR [eax+ecx+17004]
+	ret	4
+?GetMoney@KItemList@@QAEHH@Z ENDP			; KItemList::GetMoney
+_TEXT	ENDS
+PUBLIC	?Hand@KItemList@@QAEHXZ				; KItemList::Hand
+;	COMDAT ?Hand@KItemList@@QAEHXZ
+_TEXT	SEGMENT
+?Hand@KItemList@@QAEHXZ PROC NEAR			; KItemList::Hand, COMDAT
+
+; 108  : 	int			Hand() { return m_Hand; };
+
+	mov	eax, DWORD PTR [ecx+4]
+	ret	0
+?Hand@KItemList@@QAEHXZ ENDP				; KItemList::Hand
+_TEXT	ENDS
+PUBLIC	?GetMaskLock@KItemList@@QAEHXZ			; KItemList::GetMaskLock
+;	COMDAT ?GetMaskLock@KItemList@@QAEHXZ
+_TEXT	SEGMENT
+?GetMaskLock@KItemList@@QAEHXZ PROC NEAR		; KItemList::GetMaskLock, COMDAT
+
+; 128  : 	BOOL		GetMaskLock() {return m_nMaskLock;};
+
+	mov	eax, DWORD PTR [ecx+16992]
+	ret	0
+?GetMaskLock@KItemList@@QAEHXZ ENDP			; KItemList::GetMaskLock
+_TEXT	ENDS
+PUBLIC	?IsLockOperation@KItemList@@QAEHXZ		; KItemList::IsLockOperation
+;	COMDAT ?IsLockOperation@KItemList@@QAEHXZ
+_TEXT	SEGMENT
+?IsLockOperation@KItemList@@QAEHXZ PROC NEAR		; KItemList::IsLockOperation, COMDAT
+
+; 217  : 	BOOL		IsLockOperation() { return m_bLockOperation; };
+
+	mov	eax, DWORD PTR [ecx+16996]
+	ret	0
+?IsLockOperation@KItemList@@QAEHXZ ENDP			; KItemList::IsLockOperation
+_TEXT	ENDS
+PUBLIC	??4KItemList@@QAEAAV0@ABV0@@Z			; KItemList::operator=
+;	COMDAT ??4KItemList@@QAEAAV0@ABV0@@Z
+_TEXT	SEGMENT
+___that$ = 8
+??4KItemList@@QAEAAV0@ABV0@@Z PROC NEAR			; KItemList::operator=, COMDAT
+	push	esi
+	mov	esi, DWORD PTR ___that$[esp]
+	mov	eax, ecx
+	push	edi
+	mov	ecx, 4287				; 000010bfH
+	mov	edi, eax
+	rep movsd
+	pop	edi
+	pop	esi
+	ret	4
+??4KItemList@@QAEAAV0@ABV0@@Z ENDP			; KItemList::operator=
+_TEXT	ENDS
+PUBLIC	??0KMissleSet@@QAE@XZ				; KMissleSet::KMissleSet
+;	COMDAT ??0KMissleSet@@QAE@XZ
+_TEXT	SEGMENT
+??0KMissleSet@@QAE@XZ PROC NEAR				; KMissleSet::KMissleSet, COMDAT
+	mov	eax, ecx
+	xor	ecx, ecx
+	mov	DWORD PTR [eax], ecx
+	mov	DWORD PTR [eax+4], ecx
+	mov	DWORD PTR [eax+8], ecx
+	mov	DWORD PTR [eax+12], ecx
+	ret	0
+??0KMissleSet@@QAE@XZ ENDP				; KMissleSet::KMissleSet
+_TEXT	ENDS
+PUBLIC	??4KMissleSet@@QAEAAV0@ABV0@@Z			; KMissleSet::operator=
+;	COMDAT ??4KMissleSet@@QAEAAV0@ABV0@@Z
+_TEXT	SEGMENT
+___that$ = 8
+??4KMissleSet@@QAEAAV0@ABV0@@Z PROC NEAR		; KMissleSet::operator=, COMDAT
+	mov	eax, ecx
+	push	esi
+	mov	ecx, DWORD PTR ___that$[esp]
+	mov	edx, eax
+	mov	esi, DWORD PTR [ecx]
+	mov	DWORD PTR [edx], esi
+	mov	esi, DWORD PTR [ecx+4]
+	mov	DWORD PTR [edx+4], esi
+	mov	esi, DWORD PTR [ecx+8]
+	mov	DWORD PTR [edx+8], esi
+	pop	esi
+	mov	ecx, DWORD PTR [ecx+12]
+	mov	DWORD PTR [edx+12], ecx
+	ret	4
+??4KMissleSet@@QAEAAV0@ABV0@@Z ENDP			; KMissleSet::operator=
+_TEXT	ENDS
+PUBLIC	??1KMissleSet@@QAE@XZ				; KMissleSet::~KMissleSet
+EXTRN	__except_list:DWORD
+EXTRN	___CxxFrameHandler:NEAR
+EXTRN	__imp_??1KLinkArray@@QAE@XZ:NEAR
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+$T93202	DD	019930520H
+	DD	01H
+	DD	FLAT:$T93205
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	ORG $+4
+$T93205	DD	0ffffffffH
+	DD	FLAT:$L93197
+xdata$x	ENDS
+;	COMDAT ??1KMissleSet@@QAE@XZ
+_TEXT	SEGMENT
+__$EHRec$ = -12
+_this$ = -16
+??1KMissleSet@@QAE@XZ PROC NEAR				; KMissleSet::~KMissleSet, COMDAT
+	push	-1
+	push	$L93203
+	mov	eax, DWORD PTR fs:__except_list
+	push	eax
+	mov	DWORD PTR fs:__except_list, esp
+	push	ecx
+	push	esi
+	mov	esi, ecx
+	push	edi
+	mov	DWORD PTR _this$[esp+24], esi
+	mov	edi, DWORD PTR __imp_??1KLinkArray@@QAE@XZ
+	lea	ecx, DWORD PTR [esi+8]
+	mov	DWORD PTR __$EHRec$[esp+32], 0
+	call	edi
+	mov	ecx, esi
+	mov	DWORD PTR __$EHRec$[esp+32], -1
+	call	edi
+	mov	ecx, DWORD PTR __$EHRec$[esp+24]
+	pop	edi
+	pop	esi
+	mov	DWORD PTR fs:__except_list, ecx
+	add	esp, 16					; 00000010H
+	ret	0
+_TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+$L93197:
+	mov	ecx, DWORD PTR _this$[ebp]
+	jmp	DWORD PTR __imp_??1KLinkArray@@QAE@XZ
+$L93203:
+	mov	eax, OFFSET FLAT:$T93202
+	jmp	___CxxFrameHandler
+text$x	ENDS
+??1KMissleSet@@QAE@XZ ENDP				; KMissleSet::~KMissleSet
+;	COMDAT _$E14
+_TEXT	SEGMENT
+_$E14	PROC NEAR					; COMDAT
+	call	_$E11
+	jmp	_$E13
+_$E14	ENDP
+_TEXT	ENDS
+PUBLIC	??0KMissle@@QAE@XZ				; KMissle::KMissle
+PUBLIC	??1KMissle@@UAE@XZ				; KMissle::~KMissle
+EXTRN	??_L@YGXPAXIHP6EX0@Z1@Z:NEAR			; `eh vector constructor iterator'
+;	COMDAT _$E11
+_TEXT	SEGMENT
+_$E11	PROC NEAR					; COMDAT
+
+; 111  : KMissle g_MisslesLib[MAX_MISSLESTYLE];
+
+	push	OFFSET FLAT:??1KMissle@@UAE@XZ		; KMissle::~KMissle
+	push	OFFSET FLAT:??0KMissle@@QAE@XZ		; KMissle::KMissle
+	push	250					; 000000faH
+	push	3124					; 00000c34H
+	push	OFFSET FLAT:?g_MisslesLib@@3PAVKMissle@@A ; g_MisslesLib
+	call	??_L@YGXPAXIHP6EX0@Z1@Z			; `eh vector constructor iterator'
+	ret	0
+_$E11	ENDP
+_TEXT	ENDS
+EXTRN	_atexit:NEAR
+;	COMDAT _$E13
+_TEXT	SEGMENT
+_$E13	PROC NEAR					; COMDAT
+	push	OFFSET FLAT:_$E12
+	call	_atexit
+	pop	ecx
+	ret	0
+_$E13	ENDP
+_TEXT	ENDS
+EXTRN	??_M@YGXPAXIHP6EX0@Z@Z:NEAR			; `eh vector destructor iterator'
+;	COMDAT _$E12
+_TEXT	SEGMENT
+_$E12	PROC NEAR					; COMDAT
+	push	OFFSET FLAT:??1KMissle@@UAE@XZ		; KMissle::~KMissle
+	push	250					; 000000faH
+	push	3124					; 00000c34H
+	push	OFFSET FLAT:?g_MisslesLib@@3PAVKMissle@@A ; g_MisslesLib
+	call	??_M@YGXPAXIHP6EX0@Z@Z			; `eh vector destructor iterator'
+	ret	0
+_$E12	ENDP
+_TEXT	ENDS
+;	COMDAT _$E19
+_TEXT	SEGMENT
+_$E19	PROC NEAR					; COMDAT
+	call	_$E16
+	jmp	_$E18
+_$E19	ENDP
+_TEXT	ENDS
+;	COMDAT _$E16
+_TEXT	SEGMENT
+_$E16	PROC NEAR					; COMDAT
+
+; 132  : CORE_API KMissle Missle[MAX_MISSLE];
+
+	push	OFFSET FLAT:??1KMissle@@UAE@XZ		; KMissle::~KMissle
+	push	OFFSET FLAT:??0KMissle@@QAE@XZ		; KMissle::KMissle
+	push	500					; 000001f4H
+	push	3124					; 00000c34H
+	push	OFFSET FLAT:?Missle@@3PAVKMissle@@A	; Missle
+	call	??_L@YGXPAXIHP6EX0@Z1@Z			; `eh vector constructor iterator'
+	ret	0
+_$E16	ENDP
+_TEXT	ENDS
+;	COMDAT _$E18
+_TEXT	SEGMENT
+_$E18	PROC NEAR					; COMDAT
+	push	OFFSET FLAT:_$E17
+	call	_atexit
+	pop	ecx
+	ret	0
+_$E18	ENDP
+_TEXT	ENDS
+;	COMDAT _$E17
+_TEXT	SEGMENT
+_$E17	PROC NEAR					; COMDAT
+	push	OFFSET FLAT:??1KMissle@@UAE@XZ		; KMissle::~KMissle
+	push	500					; 000001f4H
+	push	3124					; 00000c34H
+	push	OFFSET FLAT:?Missle@@3PAVKMissle@@A	; Missle
+	call	??_M@YGXPAXIHP6EX0@Z@Z			; `eh vector destructor iterator'
+	ret	0
+_$E17	ENDP
+_TEXT	ENDS
+PUBLIC	??1KIndexNode@@UAE@XZ				; KIndexNode::~KIndexNode
+PUBLIC	??_7KIndexNode@@6B@				; KIndexNode::`vftable'
+PUBLIC	??_GKIndexNode@@UAEPAXI@Z			; KIndexNode::`scalar deleting destructor'
+PUBLIC	??_EKIndexNode@@UAEPAXI@Z			; KIndexNode::`vector deleting destructor'
+PUBLIC	??_7KMissle@@6B@				; KMissle::`vftable'
+PUBLIC	??_GKMissle@@UAEPAXI@Z				; KMissle::`scalar deleting destructor'
+PUBLIC	??_EKMissle@@UAEPAXI@Z				; KMissle::`vector deleting destructor'
+EXTRN	??0KMissleRes@@QAE@XZ:NEAR			; KMissleRes::KMissleRes
+;	COMDAT ??_7KIndexNode@@6B@
+; File ..\engine\src\KNode.h
+CONST	SEGMENT
+??_7KIndexNode@@6B@ DD FLAT:??_EKIndexNode@@UAEPAXI@Z	; KIndexNode::`vftable'
+CONST	ENDS
+;	COMDAT ??_7KMissle@@6B@
+CONST	SEGMENT
+??_7KMissle@@6B@ DD FLAT:??_EKMissle@@UAEPAXI@Z		; KMissle::`vftable'
+CONST	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+$T93249	DD	019930520H
+	DD	01H
+	DD	FLAT:$T93255
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	ORG $+4
+$T93255	DD	0ffffffffH
+	DD	FLAT:$L93236
+xdata$x	ENDS
+;	COMDAT ??0KMissle@@QAE@XZ
+_TEXT	SEGMENT
+__$EHRec$ = -12
+_this$ = -16
+??0KMissle@@QAE@XZ PROC NEAR				; KMissle::KMissle, COMDAT
+
+; 138  : {
+
+	push	-1
+	push	$L93254
+	mov	eax, DWORD PTR fs:__except_list
+	push	eax
+	mov	DWORD PTR fs:__except_list, esp
+	push	ecx
+	push	ebx
+	push	esi
+	mov	esi, ecx
+	xor	ebx, ebx
+	push	edi
+	mov	DWORD PTR _this$[esp+28], esi
+	mov	DWORD PTR [esi+8], ebx
+	mov	DWORD PTR [esi+12], ebx
+	mov	DWORD PTR [esi+4], OFFSET FLAT:??_7KIndexNode@@6B@ ; KIndexNode::`vftable'
+	mov	DWORD PTR [esi+16], ebx
+	mov	DWORD PTR [esi+20], ebx
+	lea	ecx, DWORD PTR [esi+652]
+	mov	DWORD PTR __$EHRec$[esp+36], ebx
+	call	??0KMissleRes@@QAE@XZ			; KMissleRes::KMissleRes
+
+; 139  : 	m_nMissleId = -1;
+
+	or	eax, -1
+	lea	edi, DWORD PTR [esi+320]
+
+; 140  : 	m_nCollideOrVanishTime = 0;
+; 141  : 	m_ulDamageInterval = 0;
+; 142  : 	m_nTempParam1 = 0;
+; 143  : 	m_nTempParam2 = 0;
+; 144  : 	m_nFirstReclaimTime = 0;
+; 145  : 	m_nEndReclaimTime = 0;
+; 146  : 	m_nTagetX = -1;
+; 147  : 	m_nTagetY = -1;
+; 148  : 	m_bCheckTagetXY = FALSE;
+; 149  : 
+; 150  : 
+; 151  : 	for (int i=0;i <MAX_MISSLE_NPC;i++)
+; 152  : 	{
+; 153  : 	m_nDameNpcId[i] = -1;
+
+	mov	ecx, 20					; 00000014H
+	mov	DWORD PTR [esi], OFFSET FLAT:??_7KMissle@@6B@ ; KMissle::`vftable'
+	mov	DWORD PTR [esi+540], eax
+	mov	DWORD PTR [esi+212], ebx
+	mov	DWORD PTR [esi+196], ebx
+	mov	DWORD PTR [esi+596], ebx
+	mov	DWORD PTR [esi+600], ebx
+	mov	DWORD PTR [esi+588], ebx
+	mov	DWORD PTR [esi+592], ebx
+	mov	DWORD PTR [esi+244], eax
+	mov	DWORD PTR [esi+248], eax
+	mov	DWORD PTR [esi+252], ebx
+	rep stosd
+
+; 154  : 	}
+; 155  : 
+; 156  :     for (int j=0;j <MAX_MISSLE_COLI;j++)
+
+	lea	edi, DWORD PTR [esi+400]
+
+; 157  : 	{
+; 158  : 	m_nColiNpcId[j] = -1;
+
+	mov	ecx, 20					; 00000014H
+	rep stosd
+
+; 159  : 	}
+; 160  : 
+; 161  : 	m_nIdxMissTVC[0] = -1;
+; 162  : 	m_nIdxMissTVC[1] = -1;
+; 163  : 	m_nDirMissTVC = -1;
+; 164  : 
+; 165  : 
+; 166  : 	m_ulNextCalDamageTime = 0;
+; 167  : #ifdef _SERVER
+; 168  : 	m_pMagicAttribsData = NULL;
+; 169  : #else
+; 170  : 	m_bFollowNpcWhenCollid = 1;
+; 171  : 	m_bRemoving	= FALSE;
+; 172  : 	m_btRedLum = m_btGreenLum = m_btBlueLum = 0xff;
+; 173  : 	m_usLightRadius = 50;
+; 174  : #endif
+; 175  : }
+
+	mov	ecx, DWORD PTR __$EHRec$[esp+28]
+	mov	DWORD PTR [esi+480], eax
+	mov	DWORD PTR [esi+484], eax
+	mov	DWORD PTR [esi+488], eax
+	mov	eax, 255				; 000000ffH
+	mov	DWORD PTR [esi+624], ebx
+	mov	DWORD PTR [esi+644], eax
+	mov	DWORD PTR [esi+640], eax
+	mov	DWORD PTR [esi+636], eax
+	mov	DWORD PTR [esi+632], 1
+	mov	DWORD PTR [esi+68], ebx
+	mov	WORD PTR [esi+648], 50			; 00000032H
+	mov	eax, esi
+	pop	edi
+	pop	esi
+	pop	ebx
+	mov	DWORD PTR fs:__except_list, ecx
+	add	esp, 16					; 00000010H
+	ret	0
+_TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+$L93236:
+	mov	ecx, DWORD PTR _this$[ebp]
+	add	ecx, 4
+	jmp	??1KIndexNode@@UAE@XZ			; KIndexNode::~KIndexNode
+$L93254:
+	mov	eax, OFFSET FLAT:$T93249
+	jmp	___CxxFrameHandler
+text$x	ENDS
+??0KMissle@@QAE@XZ ENDP					; KMissle::KMissle
+EXTRN	??3@YAXPAX@Z:NEAR				; operator delete
+;	COMDAT ??_GKIndexNode@@UAEPAXI@Z
+_TEXT	SEGMENT
+___flags$ = 8
+??_GKIndexNode@@UAEPAXI@Z PROC NEAR			; KIndexNode::`scalar deleting destructor', COMDAT
+	push	esi
+	mov	esi, ecx
+	call	??1KIndexNode@@UAE@XZ			; KIndexNode::~KIndexNode
+	test	BYTE PTR ___flags$[esp], 1
+	je	SHORT $L93261
+	push	esi
+	call	??3@YAXPAX@Z				; operator delete
+	add	esp, 4
+$L93261:
+	mov	eax, esi
+	pop	esi
+	ret	4
+??_GKIndexNode@@UAEPAXI@Z ENDP				; KIndexNode::`scalar deleting destructor'
+_TEXT	ENDS
+PUBLIC	??_7KNode@@6B@					; KNode::`vftable'
+PUBLIC	??_GKNode@@UAEPAXI@Z				; KNode::`scalar deleting destructor'
+PUBLIC	??_EKNode@@UAEPAXI@Z				; KNode::`vector deleting destructor'
+;	COMDAT ??_7KNode@@6B@
+CONST	SEGMENT
+??_7KNode@@6B@ DD FLAT:??_EKNode@@UAEPAXI@Z		; KNode::`vftable'
+CONST	ENDS
+;	COMDAT ??1KIndexNode@@UAE@XZ
+_TEXT	SEGMENT
+??1KIndexNode@@UAE@XZ PROC NEAR				; KIndexNode::~KIndexNode, COMDAT
+	mov	DWORD PTR [ecx], OFFSET FLAT:??_7KNode@@6B@ ; KNode::`vftable'
+	ret	0
+??1KIndexNode@@UAE@XZ ENDP				; KIndexNode::~KIndexNode
+_TEXT	ENDS
+;	COMDAT ??_GKNode@@UAEPAXI@Z
+_TEXT	SEGMENT
+___flags$ = 8
+??_GKNode@@UAEPAXI@Z PROC NEAR				; KNode::`scalar deleting destructor', COMDAT
+	mov	al, BYTE PTR ___flags$[esp-4]
+	push	esi
+	mov	esi, ecx
+	test	al, 1
+	mov	DWORD PTR [esi], OFFSET FLAT:??_7KNode@@6B@ ; KNode::`vftable'
+	je	SHORT $L93275
+	push	esi
+	call	??3@YAXPAX@Z				; operator delete
+	add	esp, 4
+$L93275:
+	mov	eax, esi
+	pop	esi
+	ret	4
+??_GKNode@@UAEPAXI@Z ENDP				; KNode::`scalar deleting destructor'
+_TEXT	ENDS
+;	COMDAT ??_GKMissle@@UAEPAXI@Z
+_TEXT	SEGMENT
+___flags$ = 8
+??_GKMissle@@UAEPAXI@Z PROC NEAR			; KMissle::`scalar deleting destructor', COMDAT
+	push	esi
+	mov	esi, ecx
+	call	??1KMissle@@UAE@XZ			; KMissle::~KMissle
+	test	BYTE PTR ___flags$[esp], 1
+	je	SHORT $L93279
+	push	esi
+	call	??3@YAXPAX@Z				; operator delete
+	add	esp, 4
+$L93279:
+	mov	eax, esi
+	pop	esi
+	ret	4
+??_GKMissle@@UAEPAXI@Z ENDP				; KMissle::`scalar deleting destructor'
+_TEXT	ENDS
+PUBLIC	?Release@KMissle@@AAEXXZ			; KMissle::Release
+EXTRN	?RemoveObject@KScenePlaceC@@QAEXIHAAI@Z:NEAR	; KScenePlaceC::RemoveObject
+EXTRN	?g_ScenePlace@@3VKScenePlaceC@@A:BYTE		; g_ScenePlace
+EXTRN	?Clear@KMissleRes@@QAEXXZ:NEAR			; KMissleRes::Clear
+;	COMDAT ?Release@KMissle@@AAEXXZ
+_TEXT	SEGMENT
+?Release@KMissle@@AAEXXZ PROC NEAR			; KMissle::Release, COMDAT
+
+; 178  : {
+
+	push	ebx
+	push	esi
+	mov	esi, ecx
+
+; 179  : 	m_nTagetX = -1;
+
+	or	ebx, -1
+	push	edi
+
+; 180  : 	m_nTagetY = -1;
+; 181  : 	m_bCheckTagetXY = FALSE;
+; 182  : 
+; 183  : 	for (int i=0;i <MAX_MISSLE_NPC;i++)
+; 184  : 	{
+; 185  : 	m_nDameNpcId[i] = -1;
+
+	mov	ecx, 20					; 00000014H
+	lea	edi, DWORD PTR [esi+320]
+	mov	eax, ebx
+	mov	DWORD PTR [esi+244], ebx
+	mov	DWORD PTR [esi+248], ebx
+	mov	DWORD PTR [esi+252], 0
+	rep stosd
+
+; 186  : 	}
+; 187  : 
+; 188  :     for (int j=0;j <MAX_MISSLE_COLI;j++)
+
+	lea	edi, DWORD PTR [esi+400]
+
+; 189  : 	{
+; 190  : 	m_nColiNpcId[j] = -1;
+
+	mov	ecx, 20					; 00000014H
+	rep stosd
+
+; 191  : 	}
+; 192  : 
+; 193  : 	m_nIdxMissTVC[0] = -1;
+; 194  : 	m_nIdxMissTVC[1] = -1;
+; 195  : 	m_nDirMissTVC = -1;
+; 196  : 
+; 197  : ///#pragma	message(ATTENTION("子弹消亡时，需更新发送者使用该技能时的当前使用次数，使之减一"))
+; 198  : #ifndef _SERVER	
+; 199  : 	g_ScenePlace.RemoveObject(CGOG_MISSLE, m_nMissleId, m_SceneID);
+
+	mov	ecx, DWORD PTR [esi+540]
+	lea	eax, DWORD PTR [esi+3120]
+	push	eax
+	push	ecx
+	push	9
+	mov	ecx, OFFSET FLAT:?g_ScenePlace@@3VKScenePlaceC@@A
+	mov	DWORD PTR [esi+480], ebx
+	mov	DWORD PTR [esi+484], ebx
+	mov	DWORD PTR [esi+488], ebx
+	call	?RemoveObject@KScenePlaceC@@QAEXIHAAI@Z	; KScenePlaceC::RemoveObject
+
+; 200  : 	m_MissleRes.Clear();
+
+	lea	ecx, DWORD PTR [esi+652]
+	call	?Clear@KMissleRes@@QAEXXZ		; KMissleRes::Clear
+
+; 201  : 	m_nMissleId = -1;
+
+	mov	DWORD PTR [esi+540], ebx
+
+; 202  : 	m_nFollowNpcIdx = 0;
+
+	mov	DWORD PTR [esi+508], 0
+	pop	edi
+	pop	esi
+	pop	ebx
+
+; 203  : #endif
+; 204  : #ifdef _SERVER
+; 205  : 	m_nPKFlag = 0;
+; 206  : 	if (m_pMagicAttribsData)
+; 207  : 		if (m_pMagicAttribsData->DelRef() == 0)
+; 208  : 			delete m_pMagicAttribsData;
+; 209  : 		m_pMagicAttribsData = NULL;
+; 210  : #endif
+; 211  : }
+
+	ret	0
+?Release@KMissle@@AAEXXZ ENDP				; KMissle::Release
+_TEXT	ENDS
+EXTRN	??1KMissleRes@@QAE@XZ:NEAR			; KMissleRes::~KMissleRes
+;	COMDAT xdata$x
+; File ..\engine\src\KNode.h
+xdata$x	SEGMENT
+$T93301	DD	019930520H
+	DD	01H
+	DD	FLAT:$T93303
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	ORG $+4
+$T93303	DD	0ffffffffH
+	DD	FLAT:$L93290
+xdata$x	ENDS
+;	COMDAT ??1KMissle@@UAE@XZ
+_TEXT	SEGMENT
+__$EHRec$ = -12
+_this$ = -16
+??1KMissle@@UAE@XZ PROC NEAR				; KMissle::~KMissle, COMDAT
+
+; 214  : {
+
+	push	-1
+	push	$L93302
+	mov	eax, DWORD PTR fs:__except_list
+	push	eax
+	mov	DWORD PTR fs:__except_list, esp
+	push	ecx
+	push	esi
+	mov	esi, ecx
+	mov	DWORD PTR _this$[esp+20], esi
+	mov	DWORD PTR [esi], OFFSET FLAT:??_7KMissle@@6B@ ; KMissle::`vftable'
+
+; 215  : 	
+; 216  : }
+
+	lea	ecx, DWORD PTR [esi+652]
+	mov	DWORD PTR __$EHRec$[esp+28], 0
+	call	??1KMissleRes@@QAE@XZ			; KMissleRes::~KMissleRes
+	mov	ecx, DWORD PTR __$EHRec$[esp+20]
+	mov	DWORD PTR [esi+4], OFFSET FLAT:??_7KNode@@6B@ ; KNode::`vftable'
+	pop	esi
+	mov	DWORD PTR fs:__except_list, ecx
+	add	esp, 16					; 00000010H
+	ret	0
+_TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+$L93290:
+	mov	ecx, DWORD PTR _this$[ebp]
+	add	ecx, 4
+	jmp	??1KIndexNode@@UAE@XZ			; KIndexNode::~KIndexNode
+$L93302:
+	mov	eax, OFFSET FLAT:$T93301
+	jmp	___CxxFrameHandler
+text$x	ENDS
+??1KMissle@@UAE@XZ ENDP					; KMissle::~KMissle
+PUBLIC	?GetInfoFromTabFile@KMissle@@QAEHH@Z		; KMissle::GetInfoFromTabFile
+PUBLIC	?GetInfoFromTabFile@KMissle@@QAEHPAVKITabFile@@H@Z ; KMissle::GetInfoFromTabFile
+EXTRN	?g_MisslesSetting@@3VKTabFile@@A:BYTE		; g_MisslesSetting
+;	COMDAT ?GetInfoFromTabFile@KMissle@@QAEHH@Z
+_TEXT	SEGMENT
+_nMissleId$ = 8
+?GetInfoFromTabFile@KMissle@@QAEHH@Z PROC NEAR		; KMissle::GetInfoFromTabFile, COMDAT
+
+; 227  : 	if (nMissleId <= 0 ) return FALSE;
+
+	mov	eax, DWORD PTR _nMissleId$[esp-4]
+	test	eax, eax
+	jg	SHORT $L92022
+	xor	eax, eax
+
+; 230  : }
+
+	ret	4
+$L92022:
+
+; 228  : 	KITabFile * pITabFile = &g_MisslesSetting;
+; 229  : 	return GetInfoFromTabFile(pITabFile, nMissleId);
+
+	push	eax
+	push	OFFSET FLAT:?g_MisslesSetting@@3VKTabFile@@A ; g_MisslesSetting
+	call	?GetInfoFromTabFile@KMissle@@QAEHPAVKITabFile@@H@Z ; KMissle::GetInfoFromTabFile
+
+; 230  : }
+
+	ret	4
+?GetInfoFromTabFile@KMissle@@QAEHH@Z ENDP		; KMissle::GetInfoFromTabFile
+_TEXT	ENDS
+PUBLIC	??_C@_00A@?$AA@					; `string'
+PUBLIC	??_C@_0L@MDID@MissleName?$AA@			; `string'
+PUBLIC	??_C@_0N@IMPH@MissleHeight?$AA@			; `string'
+PUBLIC	??_C@_08CLHE@LifeTime?$AA@			; `string'
+PUBLIC	??_C@_05PDDA@Speed?$AA@				; `string'
+PUBLIC	??_C@_0O@CEMO@ResponseSkill?$AA@		; `string'
+PUBLIC	??_C@_0M@IPHD@CollidRange?$AA@			; `string'
+PUBLIC	??_C@_09LLHA@ColVanish?$AA@			; `string'
+PUBLIC	??_C@_0N@MOFP@CanColFriend?$AA@			; `string'
+PUBLIC	??_C@_07ICPB@CanSlow?$AA@			; `string'
+PUBLIC	??_C@_0L@DOMN@IsRangeDmg?$AA@			; `string'
+PUBLIC	??_C@_08EKOK@DmgRange?$AA@			; `string'
+PUBLIC	??_C@_08MKEC@MoveKind?$AA@			; `string'
+PUBLIC	??_C@_0L@ICBE@FollowKind?$AA@			; `string'
+PUBLIC	??_C@_04LIGI@Zacc?$AA@				; `string'
+PUBLIC	??_C@_06EDNA@Zspeed?$AA@			; `string'
+PUBLIC	??_C@_06DMFP@Param1?$AA@			; `string'
+PUBLIC	??_C@_06MDOG@Param2?$AA@			; `string'
+PUBLIC	??_C@_06GJHB@Param3?$AA@			; `string'
+PUBLIC	??_C@_0M@CDCB@AutoExplode?$AA@			; `string'
+PUBLIC	??_C@_0M@MLLA@DmgInterval?$AA@			; `string'
+PUBLIC	??_C@_06PIMC@RedLum?$AA@			; `string'
+PUBLIC	??_C@_08KOFB@GreenLum?$AA@			; `string'
+PUBLIC	??_C@_07BJEB@BlueLum?$AA@			; `string'
+PUBLIC	??_C@_0M@HJOL@LightRadius?$AA@			; `string'
+PUBLIC	??_C@_09PDKK@MultiShow?$AA@			; `string'
+PUBLIC	??_C@_0L@EKAK@AnimFile?$CFd?$AA@		; `string'
+PUBLIC	??_C@_09CDAF@SndFile?$CFd?$AA@			; `string'
+PUBLIC	??_C@_0P@EKPH@AnimFileInfo?$CFd?$AA@		; `string'
+PUBLIC	??_C@_0M@LCCH@AnimFileB?$CFd?$AA@		; `string'
+PUBLIC	??_C@_0L@HHEO@SndFileB?$CFd?$AA@		; `string'
+PUBLIC	??_C@_0BA@BPCH@AnimFileInfoB?$CFd?$AA@		; `string'
+PUBLIC	??_C@_08OBCD@LoopPlay?$AA@			; `string'
+PUBLIC	??_C@_07MAEH@SubLoop?$AA@			; `string'
+PUBLIC	??_C@_08CAJJ@SubStart?$AA@			; `string'
+PUBLIC	??_C@_07CKM@SubStop?$AA@			; `string'
+PUBLIC	??_C@_0BA@PAFJ@ColFollowTarget?$AA@		; `string'
+EXTRN	__imp__sprintf:NEAR
+EXTRN	__imp_?KSG_StringGetInt@@YAHPAPBDH@Z:NEAR
+EXTRN	__imp_?KSG_StringSkipSymbol@@YA_NPAPBDH@Z:NEAR
+;	COMDAT ??_C@_00A@?$AA@
+; File F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KMissle.cpp
+_BSS	SEGMENT
+??_C@_00A@?$AA@ DB 01H DUP (?)				; `string'
+_BSS	ENDS
+;	COMDAT ??_C@_0L@MDID@MissleName?$AA@
+_DATA	SEGMENT
+??_C@_0L@MDID@MissleName?$AA@ DB 'MissleName', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0N@IMPH@MissleHeight?$AA@
+_DATA	SEGMENT
+??_C@_0N@IMPH@MissleHeight?$AA@ DB 'MissleHeight', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_08CLHE@LifeTime?$AA@
+_DATA	SEGMENT
+??_C@_08CLHE@LifeTime?$AA@ DB 'LifeTime', 00H		; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_05PDDA@Speed?$AA@
+_DATA	SEGMENT
+??_C@_05PDDA@Speed?$AA@ DB 'Speed', 00H			; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0O@CEMO@ResponseSkill?$AA@
+_DATA	SEGMENT
+??_C@_0O@CEMO@ResponseSkill?$AA@ DB 'ResponseSkill', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0M@IPHD@CollidRange?$AA@
+_DATA	SEGMENT
+??_C@_0M@IPHD@CollidRange?$AA@ DB 'CollidRange', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_09LLHA@ColVanish?$AA@
+_DATA	SEGMENT
+??_C@_09LLHA@ColVanish?$AA@ DB 'ColVanish', 00H		; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0N@MOFP@CanColFriend?$AA@
+_DATA	SEGMENT
+??_C@_0N@MOFP@CanColFriend?$AA@ DB 'CanColFriend', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_07ICPB@CanSlow?$AA@
+_DATA	SEGMENT
+??_C@_07ICPB@CanSlow?$AA@ DB 'CanSlow', 00H		; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0L@DOMN@IsRangeDmg?$AA@
+_DATA	SEGMENT
+??_C@_0L@DOMN@IsRangeDmg?$AA@ DB 'IsRangeDmg', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_08EKOK@DmgRange?$AA@
+_DATA	SEGMENT
+??_C@_08EKOK@DmgRange?$AA@ DB 'DmgRange', 00H		; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_08MKEC@MoveKind?$AA@
+_DATA	SEGMENT
+??_C@_08MKEC@MoveKind?$AA@ DB 'MoveKind', 00H		; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0L@ICBE@FollowKind?$AA@
+_DATA	SEGMENT
+??_C@_0L@ICBE@FollowKind?$AA@ DB 'FollowKind', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_04LIGI@Zacc?$AA@
+_DATA	SEGMENT
+??_C@_04LIGI@Zacc?$AA@ DB 'Zacc', 00H			; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_06EDNA@Zspeed?$AA@
+_DATA	SEGMENT
+??_C@_06EDNA@Zspeed?$AA@ DB 'Zspeed', 00H		; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_06DMFP@Param1?$AA@
+_DATA	SEGMENT
+??_C@_06DMFP@Param1?$AA@ DB 'Param1', 00H		; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_06MDOG@Param2?$AA@
+_DATA	SEGMENT
+??_C@_06MDOG@Param2?$AA@ DB 'Param2', 00H		; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_06GJHB@Param3?$AA@
+_DATA	SEGMENT
+??_C@_06GJHB@Param3?$AA@ DB 'Param3', 00H		; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0M@CDCB@AutoExplode?$AA@
+_DATA	SEGMENT
+??_C@_0M@CDCB@AutoExplode?$AA@ DB 'AutoExplode', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0M@MLLA@DmgInterval?$AA@
+_DATA	SEGMENT
+??_C@_0M@MLLA@DmgInterval?$AA@ DB 'DmgInterval', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_06PIMC@RedLum?$AA@
+_DATA	SEGMENT
+??_C@_06PIMC@RedLum?$AA@ DB 'RedLum', 00H		; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_08KOFB@GreenLum?$AA@
+_DATA	SEGMENT
+??_C@_08KOFB@GreenLum?$AA@ DB 'GreenLum', 00H		; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_07BJEB@BlueLum?$AA@
+_DATA	SEGMENT
+??_C@_07BJEB@BlueLum?$AA@ DB 'BlueLum', 00H		; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0M@HJOL@LightRadius?$AA@
+_DATA	SEGMENT
+??_C@_0M@HJOL@LightRadius?$AA@ DB 'LightRadius', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_09PDKK@MultiShow?$AA@
+_DATA	SEGMENT
+??_C@_09PDKK@MultiShow?$AA@ DB 'MultiShow', 00H		; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0L@EKAK@AnimFile?$CFd?$AA@
+_DATA	SEGMENT
+??_C@_0L@EKAK@AnimFile?$CFd?$AA@ DB 'AnimFile%d', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_09CDAF@SndFile?$CFd?$AA@
+_DATA	SEGMENT
+??_C@_09CDAF@SndFile?$CFd?$AA@ DB 'SndFile%d', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0P@EKPH@AnimFileInfo?$CFd?$AA@
+_DATA	SEGMENT
+??_C@_0P@EKPH@AnimFileInfo?$CFd?$AA@ DB 'AnimFileInfo%d', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0M@LCCH@AnimFileB?$CFd?$AA@
+_DATA	SEGMENT
+??_C@_0M@LCCH@AnimFileB?$CFd?$AA@ DB 'AnimFileB%d', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0L@HHEO@SndFileB?$CFd?$AA@
+_DATA	SEGMENT
+??_C@_0L@HHEO@SndFileB?$CFd?$AA@ DB 'SndFileB%d', 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0BA@BPCH@AnimFileInfoB?$CFd?$AA@
+_DATA	SEGMENT
+??_C@_0BA@BPCH@AnimFileInfoB?$CFd?$AA@ DB 'AnimFileInfoB%d', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_08OBCD@LoopPlay?$AA@
+_DATA	SEGMENT
+??_C@_08OBCD@LoopPlay?$AA@ DB 'LoopPlay', 00H		; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_07MAEH@SubLoop?$AA@
+_DATA	SEGMENT
+??_C@_07MAEH@SubLoop?$AA@ DB 'SubLoop', 00H		; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_08CAJJ@SubStart?$AA@
+_DATA	SEGMENT
+??_C@_08CAJJ@SubStart?$AA@ DB 'SubStart', 00H		; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_07CKM@SubStop?$AA@
+_DATA	SEGMENT
+??_C@_07CKM@SubStop?$AA@ DB 'SubStop', 00H		; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_0BA@PAFJ@ColFollowTarget?$AA@
+_DATA	SEGMENT
+??_C@_0BA@PAFJ@ColFollowTarget?$AA@ DB 'ColFollowTarget', 00H ; `string'
+_DATA	ENDS
+;	COMDAT ?GetInfoFromTabFile@KMissle@@QAEHPAVKITabFile@@H@Z
+_TEXT	SEGMENT
+_pMisslesSetting$ = 8
+_nMissleId$ = 12
+_this$ = -336
+_nHeightOld$ = -332
+_bAutoExplode$ = -344
+_AnimFileCol$ = -264
+_SndFileCol$ = -328
+_AnimFileInfoCol$ = -200
+_szAnimFileInfo$ = -100
+_pcszTemp$ = -348
+_nLightRadius$ = -340
+?GetInfoFromTabFile@KMissle@@QAEHPAVKITabFile@@H@Z PROC NEAR ; KMissle::GetInfoFromTabFile, COMDAT
+
+; 233  : {
+
+	sub	esp, 348				; 0000015cH
+	push	ebx
+	push	ebp
+	push	edi
+
+; 234  : 	if (nMissleId <= 0 ) return FALSE;
+
+	mov	edi, DWORD PTR _nMissleId$[esp+356]
+	xor	ebp, ebp
+	mov	ebx, ecx
+	cmp	edi, ebp
+	mov	DWORD PTR _this$[esp+360], ebx
+	jg	SHORT $L92029
+	pop	edi
+	pop	ebp
+	xor	eax, eax
+	pop	ebx
+
+; 344  : }
+
+	add	esp, 348				; 0000015cH
+	ret	8
+$L92029:
+	push	esi
+
+; 235  : 	m_nMissleId		= nMissleId;
+; 236  : 	int nRow = nMissleId;
+; 237  : 	
+; 238  : 	pMisslesSetting->GetString(nRow, "MissleName",		   "", m_szMissleName,30, TRUE);
+
+	mov	esi, DWORD PTR _pMisslesSetting$[esp+360]
+	push	1
+	lea	ecx, DWORD PTR [ebx+24]
+	push	30					; 0000001eH
+	push	ecx
+	mov	DWORD PTR [ebx+540], edi
+	mov	eax, DWORD PTR [esi]
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	OFFSET FLAT:??_C@_0L@MDID@MissleName?$AA@ ; `string'
+	push	edi
+	mov	ecx, esi
+	call	DWORD PTR [eax+36]
+
+; 239  : 	
+; 240  : 	int nHeightOld ;
+; 241  : 	pMisslesSetting->GetInteger(nRow, "MissleHeight",		0, &nHeightOld, TRUE);
+
+	mov	edx, DWORD PTR [esi]
+	lea	eax, DWORD PTR _nHeightOld$[esp+364]
+	push	1
+	push	eax
+	push	ebp
+	push	OFFSET FLAT:??_C@_0N@IMPH@MissleHeight?$AA@ ; `string'
+	push	edi
+	mov	ecx, esi
+	call	DWORD PTR [edx+48]
+
+; 242  : 	m_nHeight = nHeightOld << 10;
+
+	mov	ecx, DWORD PTR _nHeightOld$[esp+364]
+
+; 243  : 	
+; 244  : 	pMisslesSetting->GetInteger(nRow, "LifeTime",			0, &m_nLifeTime, TRUE);
+
+	lea	eax, DWORD PTR [ebx+92]
+	shl	ecx, 10					; 0000000aH
+	push	1
+	push	eax
+	mov	DWORD PTR [ebx+84], ecx
+	mov	edx, DWORD PTR [esi]
+	push	ebp
+	push	OFFSET FLAT:??_C@_08CLHE@LifeTime?$AA@	; `string'
+	push	edi
+	mov	ecx, esi
+	call	DWORD PTR [edx+48]
+
+; 245  : 	pMisslesSetting->GetInteger(nRow, "Speed",				0, &m_nSpeed, TRUE);
+
+	mov	edx, DWORD PTR [esi]
+	lea	eax, DWORD PTR [ebx+96]
+	push	1
+	push	eax
+	push	ebp
+	push	OFFSET FLAT:??_C@_05PDDA@Speed?$AA@	; `string'
+	push	edi
+	mov	ecx, esi
+	call	DWORD PTR [edx+48]
+
+; 246  : 	pMisslesSetting->GetInteger(nRow, "ResponseSkill",		0, &m_nSkillId, TRUE);
+
+	mov	edx, DWORD PTR [esi]
+	lea	eax, DWORD PTR [ebx+100]
+	push	1
+	push	eax
+	push	ebp
+	push	OFFSET FLAT:??_C@_0O@CEMO@ResponseSkill?$AA@ ; `string'
+	push	edi
+	mov	ecx, esi
+	call	DWORD PTR [edx+48]
+
+; 247  : 	pMisslesSetting->GetInteger(nRow, "CollidRange",		0, &m_nCollideRange, TRUE);
+
+	mov	edx, DWORD PTR [esi]
+	lea	eax, DWORD PTR [ebx+144]
+	push	1
+	push	eax
+	push	ebp
+	push	OFFSET FLAT:??_C@_0M@IPHD@CollidRange?$AA@ ; `string'
+	push	edi
+	mov	ecx, esi
+	call	DWORD PTR [edx+48]
+
+; 248  : 	pMisslesSetting->GetInteger(nRow, "ColVanish",			0, &m_bCollideVanish, TRUE);
+
+	mov	edx, DWORD PTR [esi]
+	lea	eax, DWORD PTR [ebx+152]
+	push	1
+	push	eax
+	push	ebp
+	push	OFFSET FLAT:??_C@_09LLHA@ColVanish?$AA@	; `string'
+	push	edi
+	mov	ecx, esi
+	call	DWORD PTR [edx+48]
+
+; 249  : 	pMisslesSetting->GetInteger(nRow, "CanColFriend",		0, &m_bCollideFriend, TRUE);
+
+	mov	edx, DWORD PTR [esi]
+	lea	eax, DWORD PTR [ebx+156]
+	push	1
+	push	eax
+	push	ebp
+	push	OFFSET FLAT:??_C@_0N@MOFP@CanColFriend?$AA@ ; `string'
+	push	edi
+	mov	ecx, esi
+	call	DWORD PTR [edx+48]
+
+; 250  : 	pMisslesSetting->GetInteger(nRow, "CanSlow",			0, &m_bCanSlow, TRUE);
+
+	mov	edx, DWORD PTR [esi]
+	push	1
+	lea	eax, DWORD PTR [ebx+160]
+	mov	ecx, esi
+	push	eax
+	push	ebp
+	push	OFFSET FLAT:??_C@_07ICPB@CanSlow?$AA@	; `string'
+	push	edi
+	call	DWORD PTR [edx+48]
+
+; 251  : 	pMisslesSetting->GetInteger(nRow, "IsRangeDmg",		0, &m_bRangeDamage, TRUE);
+
+	mov	edx, DWORD PTR [esi]
+	lea	eax, DWORD PTR [ebx+104]
+	push	1
+	push	eax
+	push	ebp
+	push	OFFSET FLAT:??_C@_0L@DOMN@IsRangeDmg?$AA@ ; `string'
+	push	edi
+	mov	ecx, esi
+	call	DWORD PTR [edx+48]
+
+; 252  : 	pMisslesSetting->GetInteger(nRow, "DmgRange",			0, &m_nDamageRange, TRUE);
+
+	mov	edx, DWORD PTR [esi]
+	lea	eax, DWORD PTR [ebx+148]
+	push	1
+	push	eax
+	push	ebp
+	push	OFFSET FLAT:??_C@_08EKOK@DmgRange?$AA@	; `string'
+	push	edi
+	mov	ecx, esi
+	call	DWORD PTR [edx+48]
+
+; 253  : 	pMisslesSetting->GetInteger(nRow, "MoveKind",			0, (int*)&m_eMoveKind, TRUE);
+
+	mov	edx, DWORD PTR [esi]
+	lea	eax, DWORD PTR [ebx+76]
+	push	1
+	push	eax
+	push	ebp
+	push	OFFSET FLAT:??_C@_08MKEC@MoveKind?$AA@	; `string'
+	push	edi
+	mov	ecx, esi
+	call	DWORD PTR [edx+48]
+
+; 254  : 	pMisslesSetting->GetInteger(nRow, "FollowKind",		0, (int*)&m_eFollowKind, TRUE);
+
+	mov	edx, DWORD PTR [esi]
+	lea	eax, DWORD PTR [ebx+80]
+	push	1
+	push	eax
+	push	ebp
+	push	OFFSET FLAT:??_C@_0L@ICBE@FollowKind?$AA@ ; `string'
+	push	edi
+	mov	ecx, esi
+	call	DWORD PTR [edx+48]
+
+; 255  : 	pMisslesSetting->GetInteger(nRow, "Zacc",				0,(int*)&m_nZAcceleration, TRUE);
+
+	mov	edx, DWORD PTR [esi]
+	lea	eax, DWORD PTR [ebx+532]
+	push	1
+	push	eax
+	push	ebp
+	push	OFFSET FLAT:??_C@_04LIGI@Zacc?$AA@	; `string'
+	push	edi
+	mov	ecx, esi
+	call	DWORD PTR [edx+48]
+
+; 256  : 	pMisslesSetting->GetInteger(nRow, "Zspeed",				0,(int*)&m_nHeightSpeed, TRUE);
+
+	mov	edx, DWORD PTR [esi]
+	lea	eax, DWORD PTR [ebx+88]
+	push	1
+	push	eax
+	push	ebp
+	push	OFFSET FLAT:??_C@_06EDNA@Zspeed?$AA@	; `string'
+	push	edi
+	mov	ecx, esi
+	call	DWORD PTR [edx+48]
+
+; 257  : 	pMisslesSetting->GetInteger(nRow, "Param1",			0, &m_nParam1, TRUE);
+
+	mov	edx, DWORD PTR [esi]
+	lea	eax, DWORD PTR [ebx+576]
+	push	1
+	push	eax
+	push	ebp
+	push	OFFSET FLAT:??_C@_06DMFP@Param1?$AA@	; `string'
+	push	edi
+	mov	ecx, esi
+	call	DWORD PTR [edx+48]
+
+; 258  : 	pMisslesSetting->GetInteger(nRow, "Param2",			0, &m_nParam2, TRUE);
+
+	mov	edx, DWORD PTR [esi]
+	lea	eax, DWORD PTR [ebx+580]
+	push	1
+	push	eax
+	push	ebp
+	push	OFFSET FLAT:??_C@_06MDOG@Param2?$AA@	; `string'
+	push	edi
+	mov	ecx, esi
+	call	DWORD PTR [edx+48]
+
+; 259  : 	pMisslesSetting->GetInteger(nRow, "Param3",			0, &m_nParam3, TRUE);
+
+	mov	edx, DWORD PTR [esi]
+	push	1
+	lea	eax, DWORD PTR [ebx+584]
+	mov	ecx, esi
+	push	eax
+	push	ebp
+	push	OFFSET FLAT:??_C@_06GJHB@Param3?$AA@	; `string'
+	push	edi
+	call	DWORD PTR [edx+48]
+
+; 260  : 	
+; 261  : 	BOOL bAutoExplode = 0;
+; 262  : 	pMisslesSetting->GetInteger(nRow, "AutoExplode",	0, (int*)&bAutoExplode, TRUE);
+
+	mov	edx, DWORD PTR [esi]
+	lea	eax, DWORD PTR _bAutoExplode$[esp+364]
+	push	1
+	push	eax
+	push	ebp
+	push	OFFSET FLAT:??_C@_0M@CDCB@AutoExplode?$AA@ ; `string'
+	push	edi
+	mov	ecx, esi
+	mov	DWORD PTR _bAutoExplode$[esp+384], ebp
+	call	DWORD PTR [edx+48]
+
+; 263  : 	m_bAutoExplode = bAutoExplode;
+
+	mov	ecx, DWORD PTR _bAutoExplode$[esp+364]
+
+; 264  : 	
+; 265  : 	pMisslesSetting->GetInteger(nRow, "DmgInterval",	0, (int*)&m_ulDamageInterval, TRUE);
+
+	lea	eax, DWORD PTR [ebx+196]
+	push	1
+	push	eax
+	mov	DWORD PTR [ebx+112], ecx
+	mov	edx, DWORD PTR [esi]
+	push	ebp
+	push	OFFSET FLAT:??_C@_0M@MLLA@DmgInterval?$AA@ ; `string'
+	push	edi
+	mov	ecx, esi
+	call	DWORD PTR [edx+48]
+
+; 266  : 	
+; 267  : #ifndef _SERVER	
+; 268  : 	char AnimFileCol[64];
+; 269  : 	char SndFileCol[64];
+; 270  : 	char AnimFileInfoCol[100];
+; 271  : 	char szAnimFileInfo[100];
+; 272  : 
+; 273  :     const char *pcszTemp = NULL;
+; 274  : 	
+; 275  : 	pMisslesSetting->GetInteger(nRow, "RedLum",	    255, (int*)&m_btRedLum, TRUE);
+
+	mov	edx, DWORD PTR [esi]
+	lea	eax, DWORD PTR [ebx+636]
+	push	1
+	push	eax
+	push	255					; 000000ffH
+	push	OFFSET FLAT:??_C@_06PIMC@RedLum?$AA@	; `string'
+	push	edi
+	mov	ecx, esi
+	mov	DWORD PTR _pcszTemp$[esp+384], ebp
+	call	DWORD PTR [edx+48]
+
+; 276  : 	pMisslesSetting->GetInteger(nRow, "GreenLum",	255, (int*)&m_btGreenLum, TRUE);
+
+	mov	edx, DWORD PTR [esi]
+	lea	eax, DWORD PTR [ebx+640]
+	push	1
+	push	eax
+	push	255					; 000000ffH
+	push	OFFSET FLAT:??_C@_08KOFB@GreenLum?$AA@	; `string'
+	push	edi
+	mov	ecx, esi
+	call	DWORD PTR [edx+48]
+
+; 277  : 	pMisslesSetting->GetInteger(nRow, "BlueLum",	255, (int*)&m_btBlueLum, TRUE);
+
+	mov	edx, DWORD PTR [esi]
+	lea	eax, DWORD PTR [ebx+644]
+	push	1
+	push	eax
+	push	255					; 000000ffH
+	push	OFFSET FLAT:??_C@_07BJEB@BlueLum?$AA@	; `string'
+	push	edi
+	mov	ecx, esi
+	call	DWORD PTR [edx+48]
+
+; 278  : 	
+; 279  : 	int nLightRadius = 0;
+; 280  : 	pMisslesSetting->GetInteger(nRow, "LightRadius", 50, (int*)&nLightRadius, TRUE);
+
+	mov	edx, DWORD PTR [esi]
+	lea	eax, DWORD PTR _nLightRadius$[esp+364]
+	push	1
+	push	eax
+	push	50					; 00000032H
+	push	OFFSET FLAT:??_C@_0M@HJOL@LightRadius?$AA@ ; `string'
+	push	edi
+	mov	ecx, esi
+	mov	DWORD PTR _nLightRadius$[esp+384], ebp
+	call	DWORD PTR [edx+48]
+
+; 281  : 	m_usLightRadius = nLightRadius;
+
+	mov	cx, WORD PTR _nLightRadius$[esp+364]
+
+; 282  : 	
+; 283  : 	pMisslesSetting->GetInteger(nRow, "MultiShow",		0, &m_bMultiShow, TRUE);
+
+	lea	eax, DWORD PTR [ebx+628]
+	push	1
+	push	eax
+	mov	WORD PTR [ebx+648], cx
+	mov	edx, DWORD PTR [esi]
+	push	ebp
+	push	OFFSET FLAT:??_C@_09PDKK@MultiShow?$AA@	; `string'
+	push	edi
+	mov	ecx, esi
+	call	DWORD PTR [edx+48]
+	mov	ebp, 1
+	add	ebx, 796				; 0000031cH
+$L92075:
+
+; 284  : 	for (int i  = 0; i < MAX_MISSLE_STATUS; i++)
+; 285  : 	{
+; 286  : 		sprintf(AnimFileCol, "AnimFile%d", i + 1);
+
+	push	ebp
+	lea	ecx, DWORD PTR _AnimFileCol$[esp+368]
+	push	OFFSET FLAT:??_C@_0L@EKAK@AnimFile?$CFd?$AA@ ; `string'
+	push	ecx
+	call	DWORD PTR __imp__sprintf
+
+; 287  : 		sprintf(SndFileCol,  "SndFile%d", i + 1);
+
+	push	ebp
+	lea	edx, DWORD PTR _SndFileCol$[esp+380]
+	push	OFFSET FLAT:??_C@_09CDAF@SndFile?$CFd?$AA@ ; `string'
+	push	edx
+	call	DWORD PTR __imp__sprintf
+
+; 288  : 		sprintf(AnimFileInfoCol, "AnimFileInfo%d", i + 1);
+
+	push	ebp
+	lea	eax, DWORD PTR _AnimFileInfoCol$[esp+392]
+	push	OFFSET FLAT:??_C@_0P@EKPH@AnimFileInfo?$CFd?$AA@ ; `string'
+	push	eax
+	call	DWORD PTR __imp__sprintf
+
+; 289  : 		
+; 290  : 		pMisslesSetting->GetString(nRow, AnimFileCol,			"", m_MissleRes.m_MissleRes[i].AnimFileName, 64, TRUE);
+
+	mov	edx, DWORD PTR [esi]
+	add	esp, 36					; 00000024H
+	lea	eax, DWORD PTR [ebx-112]
+	lea	ecx, DWORD PTR _AnimFileCol$[esp+364]
+	push	1
+	push	64					; 00000040H
+	push	eax
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	ecx
+	push	edi
+	mov	ecx, esi
+	call	DWORD PTR [edx+36]
+
+; 291  : 		pMisslesSetting->GetString(nRow, SndFileCol,			"", m_MissleRes.m_MissleRes[i].SndFileName, 64, TRUE);
+
+	mov	edx, DWORD PTR [esi]
+	push	1
+	push	64					; 00000040H
+	push	ebx
+	lea	eax, DWORD PTR _SndFileCol$[esp+376]
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	eax
+	push	edi
+	mov	ecx, esi
+	call	DWORD PTR [edx+36]
+
+; 292  : 		pMisslesSetting->GetString(nRow, AnimFileInfoCol,		"", szAnimFileInfo, 100, TRUE);
+
+	mov	edx, DWORD PTR [esi]
+	push	1
+	lea	eax, DWORD PTR _szAnimFileInfo$[esp+368]
+	push	100					; 00000064H
+	push	eax
+	lea	ecx, DWORD PTR _AnimFileInfoCol$[esp+376]
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	ecx
+	push	edi
+	mov	ecx, esi
+	call	DWORD PTR [edx+36]
+
+; 293  : 		
+; 294  : 		//m_MissleRes.m_MissleRes[i].nInterval = 1;
+; 295  : 		//m_MissleRes.m_MissleRes[i].nDir = 16;
+; 296  : 		//m_MissleRes.m_MissleRes[i].nTotalFrame = 100;
+; 297  : 
+; 298  :         pcszTemp = szAnimFileInfo;
+; 299  :         m_MissleRes.m_MissleRes[i].nTotalFrame = KSG_StringGetInt(&pcszTemp, 100);
+
+	lea	eax, DWORD PTR _pcszTemp$[esp+364]
+	lea	edx, DWORD PTR _szAnimFileInfo$[esp+364]
+	push	100					; 00000064H
+	push	eax
+	mov	DWORD PTR _pcszTemp$[esp+372], edx
+	call	DWORD PTR __imp_?KSG_StringGetInt@@YAHPAPBDH@Z
+
+; 300  :         KSG_StringSkipSymbol(&pcszTemp, ',');
+
+	lea	ecx, DWORD PTR _pcszTemp$[esp+372]
+	push	44					; 0000002cH
+	push	ecx
+	mov	DWORD PTR [ebx-12], eax
+	call	DWORD PTR __imp_?KSG_StringSkipSymbol@@YA_NPAPBDH@Z
+
+; 301  :         m_MissleRes.m_MissleRes[i].nDir = KSG_StringGetInt(&pcszTemp, 16);
+
+	lea	edx, DWORD PTR _pcszTemp$[esp+380]
+	push	16					; 00000010H
+	push	edx
+	call	DWORD PTR __imp_?KSG_StringGetInt@@YAHPAPBDH@Z
+	mov	DWORD PTR [ebx-4], eax
+
+; 302  :         KSG_StringSkipSymbol(&pcszTemp, ',');
+
+	lea	eax, DWORD PTR _pcszTemp$[esp+388]
+	push	44					; 0000002cH
+	push	eax
+	call	DWORD PTR __imp_?KSG_StringSkipSymbol@@YA_NPAPBDH@Z
+
+; 303  :         m_MissleRes.m_MissleRes[i].nInterval = KSG_StringGetInt(&pcszTemp, 1);
+
+	lea	ecx, DWORD PTR _pcszTemp$[esp+396]
+	push	1
+	push	ecx
+	call	DWORD PTR __imp_?KSG_StringGetInt@@YAHPAPBDH@Z
+
+; 304  : 		//sscanf(szAnimFileInfo, "%d,%d,%d", 
+; 305  : 		//	&m_MissleRes.m_MissleRes[i].nTotalFrame,
+; 306  : 		//	&m_MissleRes.m_MissleRes[i].nDir,
+; 307  : 		//	&m_MissleRes.m_MissleRes[i].nInterval
+; 308  :         //);
+; 309  : 
+; 310  : 		
+; 311  : 		sprintf(AnimFileCol, "AnimFileB%d", i + 1);
+
+	push	ebp
+	lea	edx, DWORD PTR _AnimFileCol$[esp+408]
+	push	OFFSET FLAT:??_C@_0M@LCCH@AnimFileB?$CFd?$AA@ ; `string'
+	push	edx
+	mov	DWORD PTR [ebx-8], eax
+	call	DWORD PTR __imp__sprintf
+
+; 312  : 		sprintf(SndFileCol,  "SndFileB%d", i + 1);
+
+	push	ebp
+	push	OFFSET FLAT:??_C@_0L@HHEO@SndFileB?$CFd?$AA@ ; `string'
+	lea	eax, DWORD PTR _SndFileCol$[esp+424]
+	push	eax
+	call	DWORD PTR __imp__sprintf
+	add	esp, 64					; 00000040H
+
+; 313  : 		sprintf(AnimFileInfoCol, "AnimFileInfoB%d", i + 1);
+
+	lea	ecx, DWORD PTR _AnimFileInfoCol$[esp+364]
+	push	ebp
+	push	OFFSET FLAT:??_C@_0BA@BPCH@AnimFileInfoB?$CFd?$AA@ ; `string'
+	push	ecx
+	call	DWORD PTR __imp__sprintf
+
+; 314  : 		
+; 315  : 		pMisslesSetting->GetString(nRow, AnimFileCol,			"", m_MissleRes.m_MissleRes[i + MAX_MISSLE_STATUS].AnimFileName, 64, TRUE);
+
+	mov	edx, DWORD PTR [esi]
+	add	esp, 12					; 0000000cH
+	lea	eax, DWORD PTR [ebx+736]
+	lea	ecx, DWORD PTR _AnimFileCol$[esp+364]
+	push	1
+	push	64					; 00000040H
+	push	eax
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	ecx
+	push	edi
+	mov	ecx, esi
+	call	DWORD PTR [edx+36]
+
+; 316  : 		pMisslesSetting->GetString(nRow, SndFileCol,			"", m_MissleRes.m_MissleRes[i + MAX_MISSLE_STATUS].SndFileName, 64, TRUE);
+
+	mov	edx, DWORD PTR [esi]
+	push	1
+	lea	eax, DWORD PTR [ebx+848]
+	push	64					; 00000040H
+	push	eax
+	lea	ecx, DWORD PTR _SndFileCol$[esp+376]
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	ecx
+	push	edi
+	mov	ecx, esi
+	call	DWORD PTR [edx+36]
+
+; 317  : 		pMisslesSetting->GetString(nRow, AnimFileInfoCol,		"", szAnimFileInfo, 100, TRUE);
+
+	mov	edx, DWORD PTR [esi]
+	push	1
+	lea	eax, DWORD PTR _szAnimFileInfo$[esp+368]
+	push	100					; 00000064H
+	push	eax
+	lea	ecx, DWORD PTR _AnimFileInfoCol$[esp+376]
+	push	OFFSET FLAT:??_C@_00A@?$AA@		; `string'
+	push	ecx
+	push	edi
+	mov	ecx, esi
+	call	DWORD PTR [edx+36]
+
+; 318  : 		
+; 319  : 		//m_MissleRes.m_MissleRes[i + MAX_MISSLE_STATUS].nInterval = 1;
+; 320  : 		//m_MissleRes.m_MissleRes[i + MAX_MISSLE_STATUS].nDir = 16;
+; 321  : 		//m_MissleRes.m_MissleRes[i + MAX_MISSLE_STATUS].nTotalFrame = 100;
+; 322  : 		
+; 323  :         pcszTemp = szAnimFileInfo;
+; 324  :         m_MissleRes.m_MissleRes[i + MAX_MISSLE_STATUS].nTotalFrame = KSG_StringGetInt(&pcszTemp, 100);
+
+	lea	eax, DWORD PTR _pcszTemp$[esp+364]
+	lea	edx, DWORD PTR _szAnimFileInfo$[esp+364]
+	push	100					; 00000064H
+	push	eax
+	mov	DWORD PTR _pcszTemp$[esp+372], edx
+	call	DWORD PTR __imp_?KSG_StringGetInt@@YAHPAPBDH@Z
+
+; 325  :         KSG_StringSkipSymbol(&pcszTemp, ',');
+
+	lea	ecx, DWORD PTR _pcszTemp$[esp+372]
+	push	44					; 0000002cH
+	push	ecx
+	mov	DWORD PTR [ebx+836], eax
+	call	DWORD PTR __imp_?KSG_StringSkipSymbol@@YA_NPAPBDH@Z
+
+; 326  :         m_MissleRes.m_MissleRes[i + MAX_MISSLE_STATUS].nDir = KSG_StringGetInt(&pcszTemp, 16);
+
+	lea	edx, DWORD PTR _pcszTemp$[esp+380]
+	push	16					; 00000010H
+	push	edx
+	call	DWORD PTR __imp_?KSG_StringGetInt@@YAHPAPBDH@Z
+	mov	DWORD PTR [ebx+844], eax
+
+; 327  :         KSG_StringSkipSymbol(&pcszTemp, ',');
+
+	lea	eax, DWORD PTR _pcszTemp$[esp+388]
+	push	44					; 0000002cH
+	push	eax
+	call	DWORD PTR __imp_?KSG_StringSkipSymbol@@YA_NPAPBDH@Z
+
+; 328  :         m_MissleRes.m_MissleRes[i + MAX_MISSLE_STATUS].nInterval = KSG_StringGetInt(&pcszTemp, 1);
+
+	lea	ecx, DWORD PTR _pcszTemp$[esp+396]
+	push	1
+	push	ecx
+	call	DWORD PTR __imp_?KSG_StringGetInt@@YAHPAPBDH@Z
+	add	esp, 40					; 00000028H
+	inc	ebp
+	mov	DWORD PTR [ebx+840], eax
+	add	ebx, 212				; 000000d4H
+	lea	edx, DWORD PTR [ebp-1]
+	cmp	edx, 4
+	jl	$L92075
+
+; 329  : 
+; 330  : 		//sscanf(szAnimFileInfo, "%d,%d,%d", 
+; 331  : 		//	&m_MissleRes.m_MissleRes[i + MAX_MISSLE_STATUS].nTotalFrame,
+; 332  : 		//	&m_MissleRes.m_MissleRes[i + MAX_MISSLE_STATUS].nDir,
+; 333  : 		//	&m_MissleRes.m_MissleRes[i + MAX_MISSLE_STATUS].nInterval
+; 334  :         //);
+; 335  : 		
+; 336  : 	}
+; 337  : 	pMisslesSetting->GetInteger(nRow, "LoopPlay",			0, &m_MissleRes.m_bLoopAnim, TRUE);
+
+	mov	ebx, DWORD PTR _this$[esp+364]
+	mov	eax, DWORD PTR [esi]
+	push	1
+	lea	ecx, DWORD PTR [ebx+680]
+	push	ecx
+	push	0
+	push	OFFSET FLAT:??_C@_08OBCD@LoopPlay?$AA@	; `string'
+	push	edi
+	mov	ecx, esi
+	call	DWORD PTR [eax+48]
+
+; 338  : 	pMisslesSetting->GetInteger(nRow, "SubLoop",		0, &m_MissleRes.m_bSubLoop, TRUE);
+
+	mov	edx, DWORD PTR [esi]
+	lea	eax, DWORD PTR [ebx+2432]
+	push	1
+	push	eax
+	push	0
+	push	OFFSET FLAT:??_C@_07MAEH@SubLoop?$AA@	; `string'
+	push	edi
+	mov	ecx, esi
+	call	DWORD PTR [edx+48]
+
+; 339  : 	pMisslesSetting->GetInteger(nRow, "SubStart",		0, &m_MissleRes.m_nSubStart, TRUE);
+
+	mov	edx, DWORD PTR [esi]
+	lea	eax, DWORD PTR [ebx+2436]
+	push	1
+	push	eax
+	push	0
+	push	OFFSET FLAT:??_C@_08CAJJ@SubStart?$AA@	; `string'
+	push	edi
+	mov	ecx, esi
+	call	DWORD PTR [edx+48]
+
+; 340  : 	pMisslesSetting->GetInteger(nRow, "SubStop",		0, &m_MissleRes.m_nSubStop, TRUE);
+
+	mov	edx, DWORD PTR [esi]
+	lea	eax, DWORD PTR [ebx+2440]
+	push	1
+	push	eax
+	push	0
+	push	OFFSET FLAT:??_C@_07CKM@SubStop?$AA@	; `string'
+	push	edi
+	mov	ecx, esi
+	call	DWORD PTR [edx+48]
+
+; 341  : 	pMisslesSetting->GetInteger(nRow, "ColFollowTarget",0, (int *)&m_bFollowNpcWhenCollid, TRUE);
+
+	mov	edx, DWORD PTR [esi]
+	add	ebx, 632				; 00000278H
+	push	1
+	push	ebx
+	push	0
+	push	OFFSET FLAT:??_C@_0BA@PAFJ@ColFollowTarget?$AA@ ; `string'
+	push	edi
+	mov	ecx, esi
+	call	DWORD PTR [edx+48]
+	pop	esi
+	pop	edi
+	pop	ebp
+
+; 342  : #endif
+; 343  : 	return TRUE;
+
+	mov	eax, 1
+	pop	ebx
+
+; 344  : }
+
+	add	esp, 348				; 0000015cH
+	ret	8
+?GetInfoFromTabFile@KMissle@@QAEHPAVKITabFile@@H@Z ENDP	; KMissle::GetInfoFromTabFile
+_TEXT	ENDS
+PUBLIC	?Init@KMissle@@AAEHHHHHH@Z			; KMissle::Init
+EXTRN	?Init@KMissleRes@@QAEHXZ:NEAR			; KMissleRes::Init
+;	COMDAT ?Init@KMissle@@AAEHHHHHH@Z
+_TEXT	SEGMENT
+?Init@KMissle@@AAEHHHHHH@Z PROC NEAR			; KMissle::Init, COMDAT
+
+; 348  : #ifndef _SERVER
+; 349  : 	m_MissleRes.Init();
+
+	add	ecx, 652				; 0000028cH
+	call	?Init@KMissleRes@@QAEHXZ		; KMissleRes::Init
+
+; 350  : #endif
+; 351  : 	return	TRUE;
+
+	mov	eax, 1
+
+; 352  : }
+
+	ret	20					; 00000014H
+?Init@KMissle@@AAEHHHHHH@Z ENDP				; KMissle::Init
+_TEXT	ENDS
+PUBLIC	?OnVanish@KMissle@@AAEXXZ			; KMissle::OnVanish
+PUBLIC	?OnCollision@KMissle@@AAEXXZ			; KMissle::OnCollision
+PUBLIC	?OnFly@KMissle@@AAEXXZ				; KMissle::OnFly
+PUBLIC	?OnWait@KMissle@@AAEXXZ				; KMissle::OnWait
+PUBLIC	?DoFly@KMissle@@AAEXXZ				; KMissle::DoFly
+PUBLIC	?PrePareFly@KMissle@@AAEHXZ			; KMissle::PrePareFly
+PUBLIC	?DoVanish@KMissle@@AAEXXZ			; KMissle::DoVanish
+PUBLIC	?ProcessCollision@KMissle@@AAEHXZ		; KMissle::ProcessCollision
+PUBLIC	?Activate@KMissle@@QAEHXZ			; KMissle::Activate
+PUBLIC	??_C@_03IBIJ@LF?6?$AA@				; `string'
+PUBLIC	??_C@_06KBOC@R?5?$DM?50?6?$AA@			; `string'
+PUBLIC	??_C@_07MBIG@L?5?$DM?$DN?50?6?$AA@		; `string'
+EXTRN	?InstanceSkill@KSkillManager@@AAEPAVISkill@@KK@Z:NEAR ; KSkillManager::InstanceSkill
+EXTRN	?g_SkillManager@@3VKSkillManager@@A:BYTE	; g_SkillManager
+EXTRN	?Map2Mps@KSubWorld@@QAEXHHHHHPAH0@Z:NEAR	; KSubWorld::Map2Mps
+EXTRN	?SubWorld@@3PAVKSubWorld@@A:BYTE		; SubWorld
+EXTRN	__imp__printf:NEAR
+EXTRN	?MoveObject@KScenePlaceC@@QAEIIHHHHAAIH@Z:NEAR	; KScenePlaceC::MoveObject
+EXTRN	?Npc@@3PAVKNpc@@A:BYTE				; Npc
+EXTRN	?PlaySoundA@KMissleRes@@QAEXHHHH@Z:NEAR		; KMissleRes::PlaySoundA
+EXTRN	?FlyEvent@KSkill@@ABEXPAVKMissle@@@Z:NEAR	; KSkill::FlyEvent
+;	COMDAT ??_C@_03IBIJ@LF?6?$AA@
+; File F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KSkillManager.h
+_DATA	SEGMENT
+??_C@_03IBIJ@LF?6?$AA@ DB 'LF', 0aH, 00H		; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_06KBOC@R?5?$DM?50?6?$AA@
+_DATA	SEGMENT
+??_C@_06KBOC@R?5?$DM?50?6?$AA@ DB 'R < 0', 0aH, 00H	; `string'
+_DATA	ENDS
+;	COMDAT ??_C@_07MBIG@L?5?$DM?$DN?50?6?$AA@
+_DATA	SEGMENT
+??_C@_07MBIG@L?5?$DM?$DN?50?6?$AA@ DB 'L <= 0', 0aH, 00H ; `string'
+_DATA	ENDS
+;	COMDAT ?Activate@KMissle@@QAEHXZ
+_TEXT	SEGMENT
+_nSrcX2$92118 = -4
+_nSrcY2$92119 = -8
+_nSrcX$92137 = -8
+_nSrcY$92138 = -4
+?Activate@KMissle@@QAEHXZ PROC NEAR			; KMissle::Activate, COMDAT
+
+; 365  : {
+
+	sub	esp, 8
+	push	esi
+	mov	esi, ecx
+	push	edi
+
+; 366  : 	
+; 367  : 
+; 368  : 
+; 369  : 	if (m_nMissleId <= 0 )
+
+	mov	eax, DWORD PTR [esi+540]
+	test	eax, eax
+
+; 370  : 	{
+; 371  : 		return  0 ;
+
+	jle	$L93337
+
+; 372  : 	}
+; 373  : 
+; 374  : 	if (m_nCurrentLife > (m_nLifeTime*2))
+
+	mov	eax, DWORD PTR [esi+92]
+	mov	ecx, DWORD PTR [esi+204]
+	mov	edi, DWORD PTR __imp__printf
+	shl	eax, 1
+	cmp	ecx, eax
+	jle	SHORT $L92102
+
+; 375  : 	{
+; 376  :        printf("LF\n");
+
+	push	OFFSET FLAT:??_C@_03IBIJ@LF?6?$AA@	; `string'
+	call	edi
+	add	esp, 4
+$L92102:
+
+; 377  : 	}
+; 378  : 
+; 379  : 	if (m_nRegionId < 0)
+
+	mov	eax, DWORD PTR [esi+548]
+	test	eax, eax
+	jge	SHORT $L92104
+
+; 380  : 	{
+; 381  : 		printf("R < 0\n");
+
+	push	OFFSET FLAT:??_C@_06KBOC@R?5?$DM?50?6?$AA@ ; `string'
+	call	edi
+	add	esp, 4
+
+; 398  : 		return 0;	
+
+	xor	eax, eax
+	pop	edi
+	pop	esi
+
+; 510  : }
+
+	add	esp, 8
+	ret	0
+$L92104:
+
+; 382  : 		return  0 ;
+; 383  : 	}
+; 384  : 
+; 385  : 	
+; 386  : 	if (m_nLauncher <= 0)
+
+	mov	eax, DWORD PTR [esi+516]
+	test	eax, eax
+	jg	SHORT $L92106
+
+; 387  : 	{
+; 388  : 		printf("L <= 0\n");
+
+	push	OFFSET FLAT:??_C@_07MBIG@L?5?$DM?$DN?50?6?$AA@ ; `string'
+	call	edi
+	add	esp, 4
+
+; 398  : 		return 0;	
+
+	xor	eax, eax
+	pop	edi
+	pop	esi
+
+; 510  : }
+
+	add	esp, 8
+	ret	0
+$L92106:
+
+; 389  : 		return 0;
+; 390  : 	}
+; 391  : 	
+; 392  : 	//子弹的主人已经离开，So 子弹消亡
+; 393  : 	if (!Npc[m_nLauncher].IsMatch(m_dwLauncherId) || 
+; 394  : 	Npc[m_nLauncher].m_SubWorldIndex != m_nSubWorldId || 
+; 395  : 	Npc[m_nLauncher].m_RegionIndex < 0)
+
+	lea	ecx, DWORD PTR [eax+eax*8]
+	mov	edx, DWORD PTR [esi+520]
+	lea	eax, DWORD PTR [eax+ecx*4]
+	lea	eax, DWORD PTR [eax+eax*2]
+	lea	eax, DWORD PTR [eax+eax*4]
+	lea	eax, DWORD PTR [eax+eax*8]
+	shl	eax, 3
+	cmp	edx, DWORD PTR ?Npc@@3PAVKNpc@@A[eax]
+	jne	$L92109
+	mov	ecx, DWORD PTR [esi+544]
+	mov	edx, DWORD PTR ?Npc@@3PAVKNpc@@A[eax+7212]
+	cmp	edx, ecx
+	jne	$L92109
+	mov	edx, DWORD PTR ?Npc@@3PAVKNpc@@A[eax+7216]
+	test	edx, edx
+	jl	$L92109
+
+; 399  : 	}
+; 400  : 	#ifdef _SERVER
+; 401  : 	if (Player[Npc[m_nLauncher].GetPlayerIdx()].m_cPK.GetNormalPKState() != m_nPKFlag)
+; 402  : 	{
+; 403  : 		//DoVanish();
+; 404  : 		return 0;	
+; 405  : 	}
+; 406  : 	#endif
+; 407  : 	if (m_nFollowNpcIdx > 0)
+
+	mov	eax, DWORD PTR [esi+508]
+	test	eax, eax
+	jle	SHORT $L92111
+
+; 408  : 	{
+; 409  : 		if (!Npc[m_nFollowNpcIdx].IsMatch(m_dwFollowNpcID) || 
+; 410  : 		Npc[m_nFollowNpcIdx].m_SubWorldIndex != m_nSubWorldId)
+
+	lea	edx, DWORD PTR [eax+eax*8]
+	lea	eax, DWORD PTR [eax+edx*4]
+	mov	edx, DWORD PTR [esi+512]
+	lea	eax, DWORD PTR [eax+eax*2]
+	lea	eax, DWORD PTR [eax+eax*4]
+	lea	eax, DWORD PTR [eax+eax*8]
+	shl	eax, 3
+	cmp	edx, DWORD PTR ?Npc@@3PAVKNpc@@A[eax]
+	jne	SHORT $L92112
+	cmp	DWORD PTR ?Npc@@3PAVKNpc@@A[eax+7212], ecx
+	je	SHORT $L92111
+$L92112:
+
+; 411  : 		{
+; 412  : 			m_nFollowNpcIdx = 0;
+
+	mov	DWORD PTR [esi+508], 0
+$L92111:
+
+; 413  : 		}
+; 414  : 	}
+; 415  : 	
+; 416  : 	eMissleStatus eLastStatus = m_eMissleStatus;
+; 417  : 	
+; 418  : 	//如果当前状态是子弹生命正常结束正准备消亡状态时，而不是消亡中或者已碰撞中
+; 419  : 	if (
+; 420  : 		m_nCurrentLife >= m_nLifeTime 
+; 421  : 		&& m_eMissleStatus != MS_DoVanish 
+; 422  : 		&& m_eMissleStatus != MS_DoCollision
+; 423  : 		)
+
+	mov	eax, DWORD PTR [esi+204]
+	mov	ecx, DWORD PTR [esi+92]
+	cmp	eax, ecx
+	jl	SHORT $L92114
+	mov	eax, DWORD PTR [esi+536]
+	cmp	eax, 2
+	je	SHORT $L92114
+	cmp	eax, 3
+	je	SHORT $L92114
+
+; 424  : 	{
+; 425  : 		if (m_bAutoExplode)
+
+	mov	eax, DWORD PTR [esi+112]
+	test	eax, eax
+	je	SHORT $L92115
+
+; 426  : 		{
+; 427  : 			ProcessCollision();//处理碰撞
+
+	mov	ecx, esi
+	call	?ProcessCollision@KMissle@@AAEHXZ	; KMissle::ProcessCollision
+$L92115:
+
+; 428  : 		}
+; 429  : 		DoVanish();
+
+	mov	ecx, esi
+	call	?DoVanish@KMissle@@AAEXXZ		; KMissle::DoVanish
+$L92114:
+
+; 430  : #ifdef _SERVER
+; 431  : 		m_nCurrentLife ++;
+; 432  : 		//printf("%d \n",m_nCurrentLife);
+; 433  : 		return 1;
+; 434  : #endif
+; 435  : 	}
+; 436  : 	
+; 437  : 	if (m_nCurrentLife == m_nStartLifeTime && m_eMissleStatus != MS_DoVanish)	
+
+	mov	ecx, DWORD PTR [esi+204]
+	mov	eax, DWORD PTR [esi+208]
+	cmp	ecx, eax
+	jne	$L92120
+	cmp	DWORD PTR [esi+536], 2
+	je	SHORT $L92120
+
+; 438  : 	{
+; 439  : 		if (PrePareFly())
+
+	mov	ecx, esi
+	call	?PrePareFly@KMissle@@AAEHXZ		; KMissle::PrePareFly
+	test	eax, eax
+	je	SHORT $L92117
+
+; 440  : 		{
+; 441  : #ifndef _SERVER
+; 442  : 			int nSrcX2 = 0 ;
+; 443  : 			int nSrcY2 = 0 ;
+; 444  : 			SubWorld[0].Map2Mps(m_nRegionId, m_nCurrentMapX, m_nCurrentMapY,m_nXOffset, m_nYOffset, &nSrcX2, &nSrcY2);
+
+	mov	ecx, DWORD PTR [esi+232]
+	lea	edx, DWORD PTR _nSrcY2$92119[esp+16]
+	lea	eax, DWORD PTR _nSrcX2$92118[esp+16]
+	push	edx
+	mov	edx, DWORD PTR [esi+228]
+	push	eax
+	mov	eax, DWORD PTR [esi+220]
+	push	ecx
+	mov	ecx, DWORD PTR [esi+216]
+	push	edx
+	mov	edx, DWORD PTR [esi+548]
+	push	eax
+	push	ecx
+	push	edx
+	mov	ecx, OFFSET FLAT:?SubWorld@@3PAVKSubWorld@@A
+	mov	DWORD PTR _nSrcX2$92118[esp+44], 0
+	mov	DWORD PTR _nSrcY2$92119[esp+44], 0
+	call	?Map2Mps@KSubWorld@@QAEXHHHHHPAH0@Z	; KSubWorld::Map2Mps
+
+; 445  : 			m_MissleRes.PlaySound(MS_DoFly, nSrcX2, nSrcY2, 0);
+
+	mov	eax, DWORD PTR _nSrcY2$92119[esp+16]
+	mov	ecx, DWORD PTR _nSrcX2$92118[esp+16]
+	push	0
+	push	eax
+	push	ecx
+	push	1
+	lea	ecx, DWORD PTR [esi+652]
+	call	?PlaySoundA@KMissleRes@@QAEXHHHH@Z	; KMissleRes::PlaySoundA
+
+; 446  : 			//CreateSpecialEffect(MS_DoFly, nSrcX2, nSrcY2, m_nCurrentMapZ);
+; 447  : #endif
+; 448  : 			
+; 449  : 			DoFly();
+
+	mov	ecx, esi
+	call	?DoFly@KMissle@@AAEXXZ			; KMissle::DoFly
+
+; 450  : 		}
+; 451  : 		else
+
+	jmp	SHORT $L92120
+$L92117:
+
+; 452  : 			DoVanish();
+
+	mov	ecx, esi
+	call	?DoVanish@KMissle@@AAEXXZ		; KMissle::DoVanish
+$L92120:
+
+; 453  : 	}
+; 454  : 	
+; 455  : 	switch(m_eMissleStatus)
+; 456  : 	{
+
+	mov	eax, DWORD PTR [esi+536]
+	cmp	eax, 3
+	ja	$L92122
+	jmp	DWORD PTR $L93339[eax*4]
+$L92125:
+
+; 457  : 	case MS_DoWait:
+; 458  : 		{
+; 459  : 			OnWait();
+
+	mov	ecx, esi
+	call	?OnWait@KMissle@@AAEXXZ			; KMissle::OnWait
+
+; 460  : 		}
+; 461  : 		break;
+
+	jmp	$L92122
+$L92126:
+
+; 462  : 	case MS_DoFly:
+; 463  : 		{
+; 464  : 			OnFly();
+
+	mov	ecx, esi
+	call	?OnFly@KMissle@@AAEXXZ			; KMissle::OnFly
+
+; 465  : 			if (m_bFlyEvent)
+
+	mov	eax, DWORD PTR [esi+172]
+	test	eax, eax
+	je	SHORT $L92122
+
+; 466  : 			{
+; 467  : 				if ( (m_nCurrentLife - m_nStartLifeTime) % m_nFlyEventTime == 0 )
+
+	mov	eax, DWORD PTR [esi+204]
+	mov	ecx, DWORD PTR [esi+208]
+	sub	eax, ecx
+	cdq
+	idiv	DWORD PTR [esi+176]
+	test	edx, edx
+	jne	SHORT $L92122
+
+; 468  : 				{
+; 469  : 					_ASSERT(m_nSkillId < MAX_SKILL && m_nLevel < MAX_SKILLLEVEL);
+; 470  : 					if (m_nLevel  <= 0 ) return 0;
+
+	mov	eax, DWORD PTR [esi+504]
+	test	eax, eax
+	jle	$L93337
+
+; 471  : 					KSkill * pOrdinSkill = (KSkill *) g_SkillManager.GetSkill(m_nSkillId , m_nLevel);
+
+	mov	ecx, DWORD PTR [esi+100]
+	cmp	ecx, 550				; 00000226H
+	jge	SHORT $L92122
+	test	ecx, ecx
+	jle	SHORT $L92122
+	test	eax, eax
+	jle	SHORT $L92122
+	cmp	eax, 64					; 00000040H
+	jg	SHORT $L92122
+	mov	edx, ecx
+	shl	edx, 6
+	add	edx, eax
+	mov	edx, DWORD PTR ?g_SkillManager@@3VKSkillManager@@A[edx*4+8540]
+	test	edx, edx
+	je	SHORT $L93334
+	mov	eax, edx
+	jmp	SHORT $L93329
+$L93334:
+	push	eax
+	push	ecx
+	mov	ecx, OFFSET FLAT:?g_SkillManager@@3VKSkillManager@@A
+	call	?InstanceSkill@KSkillManager@@AAEPAVISkill@@KK@Z ; KSkillManager::InstanceSkill
+$L93329:
+
+; 472  : 					if (pOrdinSkill)
+
+	test	eax, eax
+	je	SHORT $L92122
+
+; 473  : 					{
+; 474  : 						pOrdinSkill->FlyEvent(this);
+
+	push	esi
+	mov	ecx, eax
+	call	?FlyEvent@KSkill@@ABEXPAVKMissle@@@Z	; KSkill::FlyEvent
+
+; 475  : 					}
+; 476  : 				}
+; 477  : 			}
+; 478  : 		}
+; 479  : 		break;
+
+	jmp	SHORT $L92122
+$L92134:
+
+; 480  : 	case MS_DoCollision:
+; 481  : 		{
+; 482  : 			OnCollision();
+
+	mov	ecx, esi
+	call	?OnCollision@KMissle@@AAEXXZ		; KMissle::OnCollision
+
+; 483  : 		}
+; 484  : 		break;
+
+	jmp	SHORT $L92122
+$L92135:
+
+; 485  : 	case MS_DoVanish:
+; 486  : 		{
+; 487  : 			OnVanish();
+
+	mov	ecx, esi
+	call	?OnVanish@KMissle@@AAEXXZ		; KMissle::OnVanish
+$L92122:
+
+; 488  : 		}
+; 489  : 		break;
+; 490  : 	}
+; 491  : 	
+; 492  : #ifndef _SERVER
+; 493  : 	//子弹未消亡掉
+; 494  : 	if (m_nMissleId > 0)
+
+	mov	eax, DWORD PTR [esi+540]
+	test	eax, eax
+	jle	$L92140
+
+; 495  : 	{
+; 496  : 		int nSrcX;
+; 497  : 		int nSrcY;
+; 498  : 		
+; 499  : 		SubWorld[0].Map2Mps(m_nRegionId, m_nCurrentMapX, m_nCurrentMapY,m_nXOffset, m_nYOffset, &nSrcX, &nSrcY);
+
+	mov	edx, DWORD PTR [esi+232]
+	lea	eax, DWORD PTR _nSrcY$92138[esp+16]
+	lea	ecx, DWORD PTR _nSrcX$92137[esp+16]
+	push	eax
+	mov	eax, DWORD PTR [esi+228]
+	push	ecx
+	mov	ecx, DWORD PTR [esi+220]
+	push	edx
+	mov	edx, DWORD PTR [esi+216]
+	push	eax
+	mov	eax, DWORD PTR [esi+548]
+	push	ecx
+	push	edx
+	push	eax
+	mov	ecx, OFFSET FLAT:?SubWorld@@3PAVKSubWorld@@A
+	call	?Map2Mps@KSubWorld@@QAEXHHHHHPAH0@Z	; KSubWorld::Map2Mps
+
+; 500  : 		if (m_usLightRadius && m_eMissleStatus != MS_DoWait)
+
+	cmp	WORD PTR [esi+648], 0
+	je	SHORT $L92139
+	mov	eax, DWORD PTR [esi+536]
+	test	eax, eax
+	je	SHORT $L92139
+
+; 501  : 			g_ScenePlace.MoveObject(CGOG_MISSLE, m_nMissleId, nSrcX, nSrcY, m_nCurrentMapZ, m_SceneID, IPOT_RL_OBJECT | IPOT_RL_LIGHT_PROP );
+
+	mov	edx, DWORD PTR [esi+224]
+	mov	eax, DWORD PTR _nSrcY$92138[esp+16]
+	lea	ecx, DWORD PTR [esi+3120]
+	push	10					; 0000000aH
+	push	ecx
+	mov	ecx, DWORD PTR _nSrcX$92137[esp+24]
+	push	edx
+	mov	edx, DWORD PTR [esi+540]
+	push	eax
+	push	ecx
+	push	edx
+
+; 502  : 		else
+
+	jmp	SHORT $L93338
+$L92139:
+
+; 503  : 			g_ScenePlace.MoveObject(CGOG_MISSLE, m_nMissleId, nSrcX, nSrcY, m_nCurrentMapZ, m_SceneID, IPOT_RL_OBJECT);
+
+	mov	ecx, DWORD PTR [esi+224]
+	mov	edx, DWORD PTR _nSrcY$92138[esp+16]
+	lea	eax, DWORD PTR [esi+3120]
+	push	2
+	push	eax
+	mov	eax, DWORD PTR _nSrcX$92137[esp+24]
+	push	ecx
+	mov	ecx, DWORD PTR [esi+540]
+	push	edx
+	push	eax
+	push	ecx
+$L93338:
+	push	9
+	mov	ecx, OFFSET FLAT:?g_ScenePlace@@3VKScenePlaceC@@A
+	call	?MoveObject@KScenePlaceC@@QAEIIHHHHAAIH@Z ; KScenePlaceC::MoveObject
+$L92140:
+
+; 504  : 	}
+; 505  : 	
+; 506  : #endif
+; 507  : 	m_nCurrentLife ++;
+
+	mov	eax, DWORD PTR [esi+204]
+	pop	edi
+	inc	eax
+	mov	DWORD PTR [esi+204], eax
+
+; 508  : 	//printf(Curent Life: "%d \n",m_nCurrentLife);
+; 509  : 	return 1;
+
+	mov	eax, 1
+	pop	esi
+
+; 510  : }
+
+	add	esp, 8
+	ret	0
+$L92109:
+
+; 396  : 	{
+; 397  : 		DoVanish();
+
+	mov	ecx, esi
+	call	?DoVanish@KMissle@@AAEXXZ		; KMissle::DoVanish
+$L93337:
+	pop	edi
+
+; 398  : 		return 0;	
+
+	xor	eax, eax
+	pop	esi
+
+; 510  : }
+
+	add	esp, 8
+	ret	0
+	npad	2
+$L93339:
+	DD	$L92125
+	DD	$L92126
+	DD	$L92135
+	DD	$L92134
+?Activate@KMissle@@QAEHXZ ENDP				; KMissle::Activate
+_TEXT	ENDS
+;	COMDAT ?OnWait@KMissle@@AAEXXZ
+_TEXT	SEGMENT
+?OnWait@KMissle@@AAEXXZ PROC NEAR			; KMissle::OnWait, COMDAT
+
+; 521  : 	return;
+; 522  : }
+
+	ret	0
+?OnWait@KMissle@@AAEXXZ ENDP				; KMissle::OnWait
+_TEXT	ENDS
+;	COMDAT ?OnCollision@KMissle@@AAEXXZ
+_TEXT	SEGMENT
+?OnCollision@KMissle@@AAEXXZ PROC NEAR			; KMissle::OnCollision, COMDAT
+
+; 532  : 	return;	
+; 533  : }
+
+	ret	0
+?OnCollision@KMissle@@AAEXXZ ENDP			; KMissle::OnCollision
+_TEXT	ENDS
+PUBLIC	?DoCollision@KMissle@@AAEXXZ			; KMissle::DoCollision
+PUBLIC	?CheckCollision@KMissle@@AAEHXZ			; KMissle::CheckCollision
+PUBLIC	?GetOffsetAxis@KMissle@@SAHHHHHHHAAH00@Z	; KMissle::GetOffsetAxis
+EXTRN	?NpcSet@@3VKNpcSet@@A:BYTE			; NpcSet
+EXTRN	?GetRelation@KNpcSet@@QAE?AW4NPC_RELATION@@HH@Z:NEAR ; KNpcSet::GetRelation
+;	COMDAT ?CheckCollision@KMissle@@AAEHXZ
+_TEXT	SEGMENT
+_nSearchRegion$ = -16
+_nColMapY$ = -32
+_i$92194 = -28
+_j$92198 = -32
+$T93383 = -28
+$T93420 = -8
+$T93421 = -4
+$T93422 = -12
+_nRMx$ = -20
+_nRMy$ = -24
+?CheckCollision@KMissle@@AAEHXZ PROC NEAR		; KMissle::CheckCollision, COMDAT
+
+; 537  : {
+
+	sub	esp, 32					; 00000020H
+
+; 538  : #ifdef TOOLVERSION
+; 539  : 	return FALSE;
+; 540  : #endif
+; 541  : 	
+; 542  : 	if (m_nCurrentMapZ <= MISSLE_MIN_COLLISION_ZHEIGHT) 
+
+	xor	edx, edx
+	push	ebx
+	push	ebp
+	push	esi
+	push	edi
+	mov	edi, ecx
+	mov	eax, DWORD PTR [edi+224]
+	cmp	eax, edx
+	jg	SHORT $L92150
+	pop	edi
+	pop	esi
+	pop	ebp
+
+; 543  : 	{
+; 544  : 		return -1;
+
+	or	eax, -1
+	pop	ebx
+
+; 703  : }
+
+	add	esp, 32					; 00000020H
+	ret	0
+$L92150:
+
+; 545  : 	}
+; 546  : 	
+; 547  : 	//子弹在高于一定高度时，不处理越界碰撞问题
+; 548  : 	if (m_nCurrentMapZ > MISSLE_MAX_COLLISION_ZHEIGHT) return 0;
+
+	cmp	eax, 20					; 00000014H
+	jg	$L92197
+
+; 549  : 	
+; 550  : 	if (m_nRegionId < 0) 
+
+	mov	ecx, DWORD PTR [edi+548]
+	cmp	ecx, edx
+	jge	SHORT $L92152
+	pop	edi
+	pop	esi
+	pop	ebp
+
+; 551  : 	{
+; 552  : 		return -1;
+
+	or	eax, -1
+	pop	ebx
+
+; 703  : }
+
+	add	esp, 32					; 00000020H
+	ret	0
+$L92152:
+
+; 553  : 	}
+; 554  : 
+; 555  : 	int nAbsX = 0;
+; 556  : 	int nAbsY = 0;
+; 557  : 	int nCellWidth = CellWidth;
+; 558  : 	int nCellHeight = CellHeight;
+; 559  : 	_ASSERT(nCellWidth > 0 && nCellHeight > 0);
+; 560  : 	int nRMx = 0;
+; 561  : 	int nRMy = 0;
+; 562  : 	int nSearchRegion = 0;
+; 563  : 	int nNpcIdx = 0;
+; 564  : 	int nDX = 0;
+; 565  : 	int nDY = 0;
+; 566  : 	int nNpcOffsetX = 0;
+; 567  : 	int nNpcOffsetY = 0;
+; 568  : 	BOOL bCollision = FALSE;
+; 569  : 	
+; 570  : 	int nColRegion = m_nRegionId;
+; 571  : 	int nColMapX = m_nCurrentMapX;
+; 572  : 	int nColMapY = m_nCurrentMapY;
+; 573  : 
+; 574  : 
+; 575  : 
+; 576  : 	if (m_nCollideRange == 1)
+
+	mov	eax, DWORD PTR [edi+144]
+	mov	ebp, DWORD PTR [edi+216]
+	mov	DWORD PTR _nRMx$[esp+48], edx
+	mov	DWORD PTR _nRMy$[esp+48], edx
+	mov	DWORD PTR _nSearchRegion$[esp+48], edx
+	mov	edx, DWORD PTR [edi+220]
+	cmp	eax, 1
+	mov	DWORD PTR _nColMapY$[esp+48], edx
+	jne	$L92170
+
+; 577  : 	{
+; 578  : 	
+; 579  : 			nNpcIdx = SubWorld[m_nSubWorldId].m_Region[nColRegion].FindNpc(nColMapX, nColMapY, m_nLauncher, m_eRelation);
+
+	mov	eax, DWORD PTR [edi+516]
+	mov	ebx, DWORD PTR [edi+108]
+	mov	DWORD PTR $T93383[esp+48], eax
+	mov	eax, DWORD PTR [edi+544]
+	lea	esi, DWORD PTR [eax+eax*8]
+	lea	eax, DWORD PTR [eax+esi*2]
+	lea	esi, DWORD PTR [ecx+ecx*2]
+	shl	eax, 4
+	lea	ecx, DWORD PTR [ecx+esi*4]
+	mov	eax, DWORD PTR ?SubWorld@@3PAVKSubWorld@@A[eax+8]
+	shl	ecx, 4
+	add	eax, ecx
+	mov	ecx, DWORD PTR [eax+176]
+	mov	esi, DWORD PTR [eax+196]
+	imul	ecx, edx
+	add	ecx, esi
+	cmp	BYTE PTR [ecx+ebp], 0
+	je	SHORT $L92197
+	mov	eax, DWORD PTR [eax+12]
+	mov	esi, DWORD PTR [eax+4]
+	neg	esi
+	sbb	esi, esi
+	and	esi, eax
+	test	esi, esi
+	je	SHORT $L92197
+$L93378:
+	mov	eax, DWORD PTR [esi+12]
+	lea	ecx, DWORD PTR [eax+eax*8]
+	lea	ecx, DWORD PTR [eax+ecx*4]
+	lea	ecx, DWORD PTR [ecx+ecx*2]
+	lea	ecx, DWORD PTR [ecx+ecx*4]
+	lea	ecx, DWORD PTR [ecx+ecx*8]
+	shl	ecx, 3
+	cmp	DWORD PTR ?Npc@@3PAVKNpc@@A[ecx+7820], ebp
+	jne	SHORT $L93381
+	cmp	DWORD PTR ?Npc@@3PAVKNpc@@A[ecx+7824], edx
+	jne	SHORT $L93381
+	mov	edx, DWORD PTR $T93383[esp+48]
+	push	eax
+	push	edx
+	mov	ecx, OFFSET FLAT:?NpcSet@@3VKNpcSet@@A
+	call	?GetRelation@KNpcSet@@QAE?AW4NPC_RELATION@@HH@Z ; KNpcSet::GetRelation
+	test	eax, ebx
+	jne	SHORT $L93431
+	mov	edx, DWORD PTR _nColMapY$[esp+48]
+$L93381:
+	mov	esi, DWORD PTR [esi+4]
+	mov	eax, DWORD PTR [esi+4]
+	test	eax, eax
+	je	SHORT $L92197
+	test	esi, esi
+	jne	SHORT $L93378
+$L92197:
+	pop	edi
+	pop	esi
+	pop	ebp
+
+; 698  : 				}
+; 699  : 			}
+; 700  : 	}
+; 701  : 	
+; 702  : 	return 0;
+
+	xor	eax, eax
+	pop	ebx
+
+; 703  : }
+
+	add	esp, 32					; 00000020H
+	ret	0
+$L93431:
+
+; 577  : 	{
+; 578  : 	
+; 579  : 			nNpcIdx = SubWorld[m_nSubWorldId].m_Region[nColRegion].FindNpc(nColMapX, nColMapY, m_nLauncher, m_eRelation);
+
+	mov	esi, DWORD PTR [esi+12]
+
+; 580  : 		
+; 581  : 
+; 582  : 		if (nNpcIdx > 0)
+
+	test	esi, esi
+	jle	SHORT $L92197
+
+; 583  : 		{ 
+; 584  : 		
+; 585  : 	BOOL bColi = FALSE;
+
+	xor	ebx, ebx
+
+; 586  : 
+; 587  : 
+; 588  :     for (int k=0;k <MAX_MISSLE_COLI;k++)
+
+	xor	eax, eax
+	lea	ecx, DWORD PTR [edi+400]
+$L92174:
+
+; 589  : 	{
+; 590  : 
+; 591  : 	if (m_nColiNpcId[k] == -1)
+
+	mov	edx, DWORD PTR [ecx]
+	cmp	edx, -1
+	je	SHORT $L93432
+
+; 596  : 	}
+; 597  : 
+; 598  : 	if (m_nColiNpcId[k] == nNpcIdx)
+
+	cmp	edx, esi
+	je	SHORT $L93433
+	inc	eax
+	add	ecx, 4
+	cmp	eax, 20					; 00000014H
+	jl	SHORT $L92174
+
+; 681  : 	}
+; 682  : 
+; 683  : 	if (m_nColiNpcId[k] == nNpcIdx)
+
+	jmp	SHORT $L92176
+$L93432:
+
+; 592  : 	{
+; 593  : 	m_nColiNpcId[k] = nNpcIdx;
+
+	mov	DWORD PTR [edi+eax*4+400], esi
+
+; 594  : 	bColi = TRUE;
+
+	mov	ebx, 1
+
+; 595  : 	break;
+
+	jmp	SHORT $L92176
+$L93433:
+
+; 599  : 	{
+; 600  : 	bColi = FALSE;
+
+	xor	ebx, ebx
+$L92176:
+
+; 601  : 	break;
+; 602  : 	}
+; 603  : 	}
+; 604  : 
+; 605  : 
+; 606  : 
+; 607  : 
+; 608  : 
+; 609  : 	if (m_nIdxMissTVC[0] > 0 && m_nIdxMissTVC[0] < MAX_MISSLE && m_nIdxMissTVC[1] > 0 && m_nIdxMissTVC[1] < MAX_MISSLE)
+
+	mov	edx, DWORD PTR [edi+480]
+	test	edx, edx
+	jle	$L92190
+	cmp	edx, 500				; 000001f4H
+	jge	$L92190
+	mov	eax, DWORD PTR [edi+484]
+	test	eax, eax
+	jle	$L92190
+	cmp	eax, 500				; 000001f4H
+	jge	$L92190
+
+; 610  : 	{
+; 611  : 
+; 612  : 
+; 613  : 	
+; 614  : 
+; 615  : 	if (Missle[m_nIdxMissTVC[0]].m_nMissleId > 0)
+
+	mov	eax, edx
+	shl	eax, 6
+	add	eax, edx
+	lea	eax, DWORD PTR [eax+eax*2]
+	lea	eax, DWORD PTR [edx+eax*4]
+	shl	eax, 2
+	mov	ecx, DWORD PTR ?Missle@@3PAVKMissle@@A[eax+540]
+	test	ecx, ecx
+	jle	SHORT $L92184
+
+; 616  : 	{
+; 617  :     for (int m=0;m <MAX_MISSLE_COLI;m++)
+
+	xor	ecx, ecx
+	lea	eax, DWORD PTR ?Missle@@3PAVKMissle@@A[eax+400]
+$L92182:
+
+; 618  : 	{
+; 619  : 	if (Missle[m_nIdxMissTVC[0]].m_nColiNpcId[m] == -1)
+
+	cmp	DWORD PTR [eax], -1
+	je	SHORT $L93434
+	inc	ecx
+	add	eax, 4
+	cmp	ecx, 20					; 00000014H
+	jl	SHORT $L92182
+
+; 681  : 	}
+; 682  : 
+; 683  : 	if (m_nColiNpcId[k] == nNpcIdx)
+
+	jmp	SHORT $L92184
+$L93434:
+
+; 620  : 	{
+; 621  : 	Missle[m_nIdxMissTVC[0]].m_nColiNpcId[m] = nNpcIdx;
+
+	mov	eax, edx
+	shl	eax, 6
+	add	eax, edx
+	add	ecx, edx
+	lea	eax, DWORD PTR [eax+eax*2]
+	lea	ecx, DWORD PTR [ecx+eax*4]
+	mov	DWORD PTR ?Missle@@3PAVKMissle@@A[ecx*4+400], esi
+$L92184:
+
+; 622  : 	break;
+; 623  : 	}
+; 624  : 	}
+; 625  : 	}
+; 626  : 
+; 627  : 	if (Missle[m_nIdxMissTVC[1]].m_nMissleId > 0)
+
+	mov	ecx, DWORD PTR [edi+484]
+	mov	eax, ecx
+	shl	eax, 6
+	add	eax, ecx
+	lea	edx, DWORD PTR [eax+eax*2]
+	lea	eax, DWORD PTR [ecx+edx*4]
+	shl	eax, 2
+	mov	edx, DWORD PTR ?Missle@@3PAVKMissle@@A[eax+540]
+	test	edx, edx
+	jle	$L92190
+
+; 628  : 	{
+; 629  :     for (int n=0;n <MAX_MISSLE_COLI;n++)
+
+	xor	edx, edx
+	lea	eax, DWORD PTR ?Missle@@3PAVKMissle@@A[eax+400]
+$L92188:
+
+; 630  : 	{
+; 631  : 	if (Missle[m_nIdxMissTVC[1]].m_nColiNpcId[n] == -1)
+
+	cmp	DWORD PTR [eax], -1
+	je	SHORT $L93435
+	inc	edx
+	add	eax, 4
+	cmp	edx, 20					; 00000014H
+	jl	SHORT $L92188
+
+; 681  : 	}
+; 682  : 
+; 683  : 	if (m_nColiNpcId[k] == nNpcIdx)
+
+	jmp	$L92190
+$L93435:
+
+; 632  : 	{
+; 633  : 	Missle[m_nIdxMissTVC[1]].m_nColiNpcId[n] = nNpcIdx;
+
+	mov	eax, ecx
+	shl	eax, 6
+	add	eax, ecx
+	add	edx, ecx
+	lea	eax, DWORD PTR [eax+eax*2]
+	lea	ecx, DWORD PTR [edx+eax*4]
+	mov	DWORD PTR ?Missle@@3PAVKMissle@@A[ecx*4+400], esi
+
+; 634  : 	break;
+; 635  : 	}
+; 636  : 	}
+; 637  : 	}
+; 638  : 	
+; 639  : 
+; 640  : 
+; 641  : 	}
+; 642  : 
+; 643  : 
+; 644  : 
+; 645  : 
+; 646  : 
+; 647  : 
+; 648  : 	ProcessCollision();
+; 649  : 	
+; 650  : 	if (bColi)
+; 651  : 		{
+; 652  : 			DoCollision();
+; 653  : 		}
+; 654  : 			
+; 655  : 			return 1;
+
+	jmp	$L92190
+$L92170:
+
+; 656  : 		}
+; 657  : 	}
+; 658  : 	else
+; 659  : 	{
+; 660  : 		for (int i = -m_nCollideRange; i <= m_nCollideRange; i ++)
+
+	mov	ebx, eax
+	neg	ebx
+	cmp	ebx, eax
+	mov	DWORD PTR _i$92194[esp+48], ebx
+	jg	$L92197
+$L92195:
+
+; 661  : 			for (int j = -m_nCollideRange; j <= m_nCollideRange; j ++)
+
+	mov	esi, eax
+	neg	esi
+	cmp	esi, eax
+	mov	DWORD PTR _j$92198[esp+48], esi
+	jg	$L92196
+$L92199:
+
+; 662  : 			{
+; 663  : 				if (!GetOffsetAxis(m_nSubWorldId, m_nRegionId, m_nCurrentMapX, m_nCurrentMapY, i , j , nSearchRegion, nRMx, nRMy))
+
+	lea	edx, DWORD PTR _nRMy$[esp+48]
+	lea	eax, DWORD PTR _nRMx$[esp+48]
+	push	edx
+	mov	edx, DWORD PTR [edi+220]
+	lea	ecx, DWORD PTR _nSearchRegion$[esp+52]
+	push	eax
+	mov	eax, DWORD PTR [edi+216]
+	push	ecx
+	mov	ecx, DWORD PTR [edi+548]
+	push	esi
+	push	ebx
+	push	edx
+	mov	edx, DWORD PTR [edi+544]
+	push	eax
+	push	ecx
+	push	edx
+	call	?GetOffsetAxis@KMissle@@SAHHHHHHHAAH00@Z ; KMissle::GetOffsetAxis
+	add	esp, 36					; 00000024H
+	test	eax, eax
+	je	$L92200
+
+; 664  : 					continue;
+; 665  : 				
+; 666  : 				_ASSERT(nSearchRegion >= 0);
+; 667  : 				nNpcIdx = SubWorld[m_nSubWorldId].m_Region[nSearchRegion].FindNpc(nRMx, nRMy, m_nLauncher, m_eRelation);
+
+	mov	eax, DWORD PTR [edi+108]
+	mov	ecx, DWORD PTR [edi+516]
+	mov	DWORD PTR $T93422[esp+48], eax
+	mov	eax, DWORD PTR [edi+544]
+	mov	DWORD PTR $T93421[esp+48], ecx
+	mov	ecx, DWORD PTR _nRMy$[esp+48]
+	lea	esi, DWORD PTR [eax+eax*8]
+	mov	edx, DWORD PTR _nRMx$[esp+48]
+	mov	DWORD PTR $T93420[esp+48], ecx
+	mov	ebp, edx
+	lea	esi, DWORD PTR [eax+esi*2]
+	mov	eax, DWORD PTR _nSearchRegion$[esp+48]
+	shl	esi, 4
+	lea	ebx, DWORD PTR [eax+eax*2]
+	lea	ebx, DWORD PTR [eax+ebx*4]
+	mov	eax, DWORD PTR ?SubWorld@@3PAVKSubWorld@@A[esi+8]
+	shl	ebx, 4
+	add	eax, ebx
+	mov	esi, DWORD PTR [eax+176]
+	mov	ebx, DWORD PTR [eax+196]
+	imul	esi, ecx
+	add	esi, ebx
+	cmp	BYTE PTR [esi+edx], 0
+	je	SHORT $L93448
+	mov	eax, DWORD PTR [eax+12]
+	mov	esi, DWORD PTR [eax+4]
+	neg	esi
+	sbb	esi, esi
+	and	esi, eax
+	test	esi, esi
+	je	SHORT $L93448
+	mov	ebx, DWORD PTR $T93422[esp+48]
+$L93414:
+	mov	eax, DWORD PTR [esi+12]
+	lea	edx, DWORD PTR [eax+eax*8]
+	lea	ecx, DWORD PTR [eax+edx*4]
+	lea	ecx, DWORD PTR [ecx+ecx*2]
+	lea	ecx, DWORD PTR [ecx+ecx*4]
+	lea	ecx, DWORD PTR [ecx+ecx*8]
+	shl	ecx, 3
+	cmp	DWORD PTR ?Npc@@3PAVKNpc@@A[ecx+7820], ebp
+	jne	SHORT $L93417
+	mov	edx, DWORD PTR $T93420[esp+48]
+	cmp	DWORD PTR ?Npc@@3PAVKNpc@@A[ecx+7824], edx
+	jne	SHORT $L93417
+	push	eax
+	mov	eax, DWORD PTR $T93421[esp+52]
+	push	eax
+	mov	ecx, OFFSET FLAT:?NpcSet@@3VKNpcSet@@A
+	call	?GetRelation@KNpcSet@@QAE?AW4NPC_RELATION@@HH@Z ; KNpcSet::GetRelation
+	test	eax, ebx
+	jne	SHORT $L93436
+$L93417:
+	mov	esi, DWORD PTR [esi+4]
+	mov	eax, DWORD PTR [esi+4]
+	test	eax, eax
+	je	SHORT $L93448
+	test	esi, esi
+	jne	SHORT $L93414
+
+; 681  : 	}
+; 682  : 
+; 683  : 	if (m_nColiNpcId[k] == nNpcIdx)
+
+	jmp	SHORT $L93448
+$L93436:
+
+; 664  : 					continue;
+; 665  : 				
+; 666  : 				_ASSERT(nSearchRegion >= 0);
+; 667  : 				nNpcIdx = SubWorld[m_nSubWorldId].m_Region[nSearchRegion].FindNpc(nRMx, nRMy, m_nLauncher, m_eRelation);
+
+	mov	esi, DWORD PTR [esi+12]
+
+; 668  : 				if (nNpcIdx > 0)
+
+	test	esi, esi
+	jg	SHORT $L93437
+$L93448:
+	mov	ebx, DWORD PTR _i$92194[esp+48]
+	mov	esi, DWORD PTR _j$92198[esp+48]
+$L92200:
+	mov	eax, DWORD PTR [edi+144]
+	inc	esi
+	cmp	esi, eax
+	mov	DWORD PTR _j$92198[esp+48], esi
+	jle	$L92199
+$L92196:
+
+; 656  : 		}
+; 657  : 	}
+; 658  : 	else
+; 659  : 	{
+; 660  : 		for (int i = -m_nCollideRange; i <= m_nCollideRange; i ++)
+
+	mov	eax, DWORD PTR [edi+144]
+	inc	ebx
+	cmp	ebx, eax
+	mov	DWORD PTR _i$92194[esp+48], ebx
+	jle	$L92195
+	pop	edi
+	pop	esi
+	pop	ebp
+
+; 698  : 				}
+; 699  : 			}
+; 700  : 	}
+; 701  : 	
+; 702  : 	return 0;
+
+	xor	eax, eax
+	pop	ebx
+
+; 703  : }
+
+	add	esp, 32					; 00000020H
+	ret	0
+$L93437:
+
+; 669  : 				{
+; 670  : 				BOOL bColi = FALSE;
+
+	xor	ebx, ebx
+
+; 671  : 
+; 672  : 
+; 673  :     for (int k=0;k <MAX_MISSLE_COLI;k++)
+
+	xor	eax, eax
+	lea	ecx, DWORD PTR [edi+400]
+$L92207:
+
+; 674  : 	{
+; 675  : 
+; 676  : 	if (m_nColiNpcId[k] == -1)
+
+	mov	edx, DWORD PTR [ecx]
+	cmp	edx, -1
+	je	SHORT $L93438
+
+; 681  : 	}
+; 682  : 
+; 683  : 	if (m_nColiNpcId[k] == nNpcIdx)
+
+	cmp	edx, esi
+	je	SHORT $L93439
+	inc	eax
+	add	ecx, 4
+	cmp	eax, 20					; 00000014H
+	jl	SHORT $L92207
+	jmp	SHORT $L92190
+$L93438:
+
+; 677  : 	{
+; 678  : 	m_nColiNpcId[k] = nNpcIdx;
+
+	mov	DWORD PTR [edi+eax*4+400], esi
+
+; 679  : 	bColi = TRUE;
+
+	mov	ebx, 1
+
+; 680  : 	break;
+
+	jmp	SHORT $L92190
+$L93439:
+
+; 684  : 	{
+; 685  : 	bColi = FALSE;
+
+	xor	ebx, ebx
+$L92190:
+
+; 686  : 	break;
+; 687  : 	}
+; 688  : 	}
+; 689  : 
+; 690  : 	ProcessCollision();
+
+	mov	ecx, edi
+	call	?ProcessCollision@KMissle@@AAEHXZ	; KMissle::ProcessCollision
+
+; 691  : 	
+; 692  : 	if (bColi)
+
+	test	ebx, ebx
+	je	SHORT $L92192
+
+; 693  : 		{
+; 694  : 			DoCollision();
+
+	mov	ecx, edi
+	call	?DoCollision@KMissle@@AAEXXZ		; KMissle::DoCollision
+$L92192:
+	pop	edi
+	pop	esi
+	pop	ebp
+
+; 695  : 		}
+; 696  : 
+; 697  : 				return 1;
+
+	mov	eax, 1
+	pop	ebx
+
+; 703  : }
+
+	add	esp, 32					; 00000020H
+	ret	0
+?CheckCollision@KMissle@@AAEHXZ ENDP			; KMissle::CheckCollision
+_TEXT	ENDS
+PUBLIC	?Send@KWorldMsg@@QAEHKHHH@Z			; KWorldMsg::Send
+PUBLIC	?CheckBeyondRegion@KMissle@@AAEHHHHH@Z		; KMissle::CheckBeyondRegion
+PUBLIC	?CreateSpecialEffect@KMissle@@QAEHW4eMissleStatus@@HHHH@Z ; KMissle::CreateSpecialEffect
+EXTRN	?AddRef@KRegion@@QAEHHHW4MOVE_OBJ_KIND@@@Z:NEAR	; KRegion::AddRef
+EXTRN	?DecRef@KRegion@@QAEHHHW4MOVE_OBJ_KIND@@@Z:NEAR	; KRegion::DecRef
+EXTRN	__ftol:NEAR
+EXTRN	?GetDistance@KSubWorld@@QAEHHHHH@Z:NEAR		; KSubWorld::GetDistance
+EXTRN	__fltused:NEAR
+EXTRN	?Mps2Map@KSubWorld@@QAEXHHPAH0000@Z:NEAR	; KSubWorld::Mps2Map
+EXTRN	?TestBarrier@KSubWorld@@QAEEHHHHHHH@Z:NEAR	; KSubWorld::TestBarrier
+EXTRN	?GetMpsPos@KNpc@@QAEXPAH0@Z:NEAR		; KNpc::GetMpsPos
+EXTRN	?g_nSin@@3PAHA:DWORD				; g_nSin
+EXTRN	?g_nCos@@3PAHA:DWORD				; g_nCos
+EXTRN	?g_InternalDirSinCosCode@@3PAEA:DWORD		; g_InternalDirSinCosCode
+;	COMDAT ?OnFly@KMissle@@AAEXXZ
+_TEXT	SEGMENT
+_nPX$92221 = -12
+_nPY$92222 = -24
+_nSrcX2$92225 = -20
+_nSrcY2$92226 = -16
+_nSrcX3$92228 = -20
+_nSrcY3$92229 = -16
+_nSrcMpsX$92241 = -16
+_nSrcMpsY$92242 = -20
+_x0$92252 = -12
+_y0$92253 = -20
+_nRegion$92262 = -16
+_nMapX$92263 = -24
+_nMapY$92264 = -28
+_nXOffset$92265 = -8
+_nYOffset$92266 = -4
+_dx$92285 = -16
+_nSrcMpsX$92298 = -28
+_nSrcMpsY$92299 = -24
+_nDesMpsX$92300 = -20
+_nDesMpsY$92301 = -16
+_nSrcX4$92320 = -16
+_nSrcY4$92321 = -12
+_nSin$93521 = -4
+_nRet$93532 = -12
+_nSin$93546 = -4
+_nRet$93557 = -12
+?OnFly@KMissle@@AAEXXZ PROC NEAR			; KMissle::OnFly, COMDAT
+
+; 711  : {
+
+	sub	esp, 28					; 0000001cH
+	push	ebp
+	push	esi
+	mov	esi, ecx
+
+; 712  : 
+; 713  : 
+; 714  : 	if (m_nInteruptTypeWhenMove)
+
+	xor	ebp, ebp
+	push	edi
+	mov	eax, DWORD PTR [esi+128]
+	cmp	eax, ebp
+	je	$L92223
+
+; 715  : 	{
+; 716  : 		//当发送者位置移动了，不仅正从do_wait状态到do_fly状态的新子弹被消失掉
+; 717  : 		//而且已进入dofly状态的旧的所属子弹也要强制消失掉
+; 718  : 		if (m_nInteruptTypeWhenMove == Interupt_EndOldMissleLifeWhenMove)
+
+	cmp	eax, 2
+	jne	$L92223
+
+; 719  : 		{
+; 720  : 			int nPX, nPY;
+; 721  : 			Npc[m_nLauncher].GetMpsPos(&nPX, &nPY);
+
+	lea	eax, DWORD PTR _nPY$92222[esp+40]
+	lea	ecx, DWORD PTR _nPX$92221[esp+40]
+	push	eax
+	mov	eax, DWORD PTR [esi+516]
+	push	ecx
+	lea	edx, DWORD PTR [eax+eax*8]
+	lea	eax, DWORD PTR [eax+edx*4]
+	lea	eax, DWORD PTR [eax+eax*2]
+	lea	eax, DWORD PTR [eax+eax*4]
+	lea	eax, DWORD PTR [eax+eax*8]
+	lea	ecx, DWORD PTR ?Npc@@3PAVKNpc@@A[eax*8]
+	call	?GetMpsPos@KNpc@@QAEXPAH0@Z		; KNpc::GetMpsPos
+
+; 722  : 			if (nPX != m_nLauncherSrcPX || nPY != m_nLauncherSrcPY)
+
+	mov	ecx, DWORD PTR _nPX$92221[esp+40]
+	mov	eax, DWORD PTR [esi+136]
+	cmp	ecx, eax
+	jne	SHORT $L92224
+	mov	edx, DWORD PTR _nPY$92222[esp+40]
+	mov	eax, DWORD PTR [esi+140]
+	cmp	edx, eax
+	je	SHORT $L92223
+$L92224:
+
+; 723  : 			{
+; 724  : 				
+; 725  : #ifndef _SERVER 
+; 726  : 				int nSrcX2 = 0 ;
+; 727  : 				int nSrcY2 = 0 ;
+; 728  : 				SubWorld[0].Map2Mps(m_nRegionId, m_nCurrentMapX, m_nCurrentMapY,m_nXOffset, m_nYOffset, &nSrcX2, &nSrcY2);
+
+	mov	edx, DWORD PTR [esi+232]
+	lea	eax, DWORD PTR _nSrcY2$92226[esp+40]
+	lea	ecx, DWORD PTR _nSrcX2$92225[esp+40]
+	push	eax
+	mov	eax, DWORD PTR [esi+228]
+	push	ecx
+	mov	ecx, DWORD PTR [esi+220]
+	push	edx
+	mov	edx, DWORD PTR [esi+216]
+	push	eax
+	mov	eax, DWORD PTR [esi+548]
+	push	ecx
+	push	edx
+	push	eax
+	mov	ecx, OFFSET FLAT:?SubWorld@@3PAVKSubWorld@@A
+	mov	DWORD PTR _nSrcX2$92225[esp+68], ebp
+	mov	DWORD PTR _nSrcY2$92226[esp+68], ebp
+	call	?Map2Mps@KSubWorld@@QAEXHHHHHPAH0@Z	; KSubWorld::Map2Mps
+
+; 729  : 				CreateSpecialEffect(MS_DoVanish, nSrcX2, nSrcY2, m_nCurrentMapZ);
+
+	mov	ecx, DWORD PTR [esi+224]
+	mov	edx, DWORD PTR _nSrcY2$92226[esp+40]
+	mov	eax, DWORD PTR _nSrcX2$92225[esp+40]
+	push	ebp
+	push	ecx
+	push	edx
+
+; 730  : #endif
+; 731  : 				
+; 732  : 				DoVanish();
+; 733  : 				return ;
+
+	jmp	$L93578
+$L92223:
+
+; 734  : 			}
+; 735  : 		}
+; 736  : 	}
+; 737  : 	
+; 738  : 	//检测当前位置是否有障碍
+; 739  : 	if (TestBarrier()) 
+
+	mov	ecx, DWORD PTR [esi+232]
+	mov	edx, DWORD PTR [esi+228]
+	mov	eax, DWORD PTR [esi+220]
+	push	ebp
+	push	ebp
+	push	ecx
+	mov	ecx, DWORD PTR [esi+216]
+	push	edx
+	push	eax
+	mov	eax, DWORD PTR [esi+544]
+	mov	edx, DWORD PTR [esi+548]
+	push	ecx
+	lea	ecx, DWORD PTR [eax+eax*8]
+	push	edx
+	lea	ecx, DWORD PTR [eax+ecx*2]
+	shl	ecx, 4
+	add	ecx, OFFSET FLAT:?SubWorld@@3PAVKSubWorld@@A ; SubWorld
+	call	?TestBarrier@KSubWorld@@QAEEHHHHHHH@Z	; KSubWorld::TestBarrier
+	and	eax, 255				; 000000ffH
+	cmp	eax, 1
+	je	SHORT $L93460
+	cmp	eax, 3
+	jne	SHORT $L92227
+$L93460:
+
+; 740  : 	{
+; 741  : #ifndef _SERVER 
+; 742  : 		int nSrcX3 = 0 ;
+; 743  : 		int nSrcY3 = 0 ;
+; 744  : 		SubWorld[0].Map2Mps(m_nRegionId, m_nCurrentMapX, m_nCurrentMapY,m_nXOffset, m_nYOffset, &nSrcX3, &nSrcY3);
+
+	mov	ecx, DWORD PTR [esi+232]
+	lea	edx, DWORD PTR _nSrcY3$92229[esp+40]
+	lea	eax, DWORD PTR _nSrcX3$92228[esp+40]
+	push	edx
+	mov	edx, DWORD PTR [esi+228]
+	push	eax
+	mov	eax, DWORD PTR [esi+220]
+	push	ecx
+	mov	ecx, DWORD PTR [esi+216]
+	push	edx
+	mov	edx, DWORD PTR [esi+548]
+	push	eax
+	push	ecx
+	push	edx
+	mov	ecx, OFFSET FLAT:?SubWorld@@3PAVKSubWorld@@A
+	mov	DWORD PTR _nSrcX3$92228[esp+68], ebp
+	mov	DWORD PTR _nSrcY3$92229[esp+68], ebp
+	call	?Map2Mps@KSubWorld@@QAEXHHHHHPAH0@Z	; KSubWorld::Map2Mps
+
+; 745  : 		CreateSpecialEffect(MS_DoVanish, nSrcX3, nSrcY3, m_nCurrentMapZ);
+
+	mov	eax, DWORD PTR [esi+224]
+	mov	ecx, DWORD PTR _nSrcY3$92229[esp+40]
+	mov	edx, DWORD PTR _nSrcX3$92228[esp+40]
+	push	ebp
+	push	eax
+	push	ecx
+	push	edx
+
+; 746  : #endif
+; 747  : 		DoVanish();
+; 748  : 		return;
+
+	jmp	$L93579
+$L92227:
+
+; 749  : 	}
+; 750  : 	
+; 751  : 	int nDOffsetX = 0;
+; 752  : 	int nDOffsetY = 0;
+; 753  : 	
+; 754  : 	ZAxisMove();			
+
+	mov	edi, DWORD PTR [esi+532]
+	xor	eax, eax
+	xor	ecx, ecx
+	cmp	edi, ebp
+	push	ebx
+	je	SHORT $L93465
+	mov	edx, DWORD PTR [esi+88]
+	mov	ebx, DWORD PTR [esi+84]
+	add	ebx, edx
+	mov	DWORD PTR [esi+84], ebx
+	jns	SHORT $L93466
+	mov	DWORD PTR [esi+84], ebp
+$L93466:
+	sub	edx, edi
+	mov	DWORD PTR [esi+88], edx
+	mov	edx, DWORD PTR [esi+84]
+	sar	edx, 10					; 0000000aH
+	mov	DWORD PTR [esi+224], edx
+$L93465:
+
+; 755  : 	switch(this->m_eMoveKind)
+; 756  : 	{
+
+	mov	edx, DWORD PTR [esi+76]
+	lea	edi, DWORD PTR [edx-1]
+	cmp	edi, 99					; 00000063H
+	ja	$L92315
+	xor	edx, edx
+	mov	dl, BYTE PTR $L93580[edi]
+	jmp	DWORD PTR $L93581[edx*4]
+$L92237:
+
+; 757  : 	case	MISSLE_MMK_Stand:							//	原地
+; 758  : 		{
+; 759  : 			
+; 760  : 		}
+; 761  : 		break;
+; 762  : 	case	MISSLE_MMK_Parabola:						//	抛物线
+; 763  : 	case	MISSLE_MMK_Line:							//	直线飞行
+; 764  : 		{
+; 765  : 	
+; 766  : 			
+; 767  : int nXFactor,nYFactor;
+; 768  : 
+; 769  : nXFactor = m_nXFactor;
+; 770  : nYFactor = m_nYFactor;
+; 771  : if (m_nTagetX > 0 && m_nTagetY > 0 && !m_bCheckTagetXY)
+
+	mov	eax, DWORD PTR [esi+244]
+	mov	edi, DWORD PTR [esi+496]
+	mov	ebx, DWORD PTR [esi+500]
+	cmp	eax, ebp
+	jle	$L92244
+	cmp	DWORD PTR [esi+248], ebp
+	jle	$L92244
+	cmp	DWORD PTR [esi+252], ebp
+	jne	$L92244
+
+; 772  : {
+; 773  : 
+; 774  : int nSrcMpsX, nSrcMpsY;
+; 775  : SubWorld[m_nSubWorldId].Map2Mps(m_nRegionId, m_nCurrentMapX, m_nCurrentMapY, m_nXOffset, m_nYOffset, &nSrcMpsX, &nSrcMpsY);
+
+	mov	edx, DWORD PTR [esi+232]
+	lea	eax, DWORD PTR _nSrcMpsY$92242[esp+44]
+	lea	ecx, DWORD PTR _nSrcMpsX$92241[esp+44]
+	push	eax
+	mov	eax, DWORD PTR [esi+228]
+	push	ecx
+	mov	ecx, DWORD PTR [esi+220]
+	push	edx
+	mov	edx, DWORD PTR [esi+216]
+	push	eax
+	mov	eax, DWORD PTR [esi+548]
+	push	ecx
+	push	edx
+	push	eax
+	mov	eax, DWORD PTR [esi+544]
+	lea	ecx, DWORD PTR [eax+eax*8]
+	lea	ecx, DWORD PTR [eax+ecx*2]
+	shl	ecx, 4
+	add	ecx, OFFSET FLAT:?SubWorld@@3PAVKSubWorld@@A ; SubWorld
+	call	?Map2Mps@KSubWorld@@QAEXHHHHHPAH0@Z	; KSubWorld::Map2Mps
+
+; 776  : int nDistance = SubWorld[m_nSubWorldId].GetDistance(nSrcMpsX, nSrcMpsY, m_nTagetX, m_nTagetY);
+
+	mov	edx, DWORD PTR [esi+248]
+	mov	eax, DWORD PTR [esi+244]
+	mov	ecx, DWORD PTR _nSrcMpsY$92242[esp+44]
+	push	edx
+	push	eax
+	mov	eax, DWORD PTR [esi+544]
+	mov	edx, DWORD PTR _nSrcMpsX$92241[esp+52]
+	push	ecx
+	lea	ecx, DWORD PTR [eax+eax*8]
+	push	edx
+	lea	ecx, DWORD PTR [eax+ecx*2]
+	shl	ecx, 4
+	add	ecx, OFFSET FLAT:?SubWorld@@3PAVKSubWorld@@A ; SubWorld
+	call	?GetDistance@KSubWorld@@QAEHHHHH@Z	; KSubWorld::GetDistance
+	mov	ecx, eax
+
+; 777  : 
+; 778  : if (nDistance != 0)
+
+	cmp	ecx, ebp
+	je	SHORT $L92244
+
+; 779  : {
+; 780  : 	nXFactor = ((m_nTagetX - nSrcMpsX) << 10) /nDistance;
+
+	mov	eax, DWORD PTR [esi+244]
+	mov	edx, DWORD PTR _nSrcMpsX$92241[esp+44]
+	sub	eax, edx
+
+; 781  : 	nYFactor = ((m_nTagetY - nSrcMpsY) << 10) /nDistance;
+
+	mov	ebx, DWORD PTR _nSrcMpsY$92242[esp+44]
+	shl	eax, 10					; 0000000aH
+	cdq
+	idiv	ecx
+	mov	edi, eax
+	mov	eax, DWORD PTR [esi+248]
+	sub	eax, ebx
+	shl	eax, 10					; 0000000aH
+	cdq
+	idiv	ecx
+	mov	ebx, eax
+$L92244:
+
+; 782  : }
+; 783  : 
+; 784  : }
+; 785  : 	
+; 786  : 
+; 787  : 			nDOffsetX    = (m_nSpeed * nXFactor);
+
+	mov	ecx, DWORD PTR [esi+96]
+	mov	eax, ecx
+	imul	eax, edi
+
+; 788  : 			nDOffsetY	 = (m_nSpeed * nYFactor);
+
+	imul	ecx, ebx
+
+; 789  : 		
+; 790  : 		}
+; 791  : 		break;
+
+	jmp	$L92315
+$L92245:
+
+; 792  : 	case MISSLE_MMK_RollBack:
+; 793  : 		{
+; 794  : 			if (!m_nTempParam1)	
+
+	cmp	DWORD PTR [esi+596], ebp
+	jne	$L92248
+
+; 795  : 			{
+; 796  : 				if (m_nTempParam2 <= m_nCurrentLife)
+
+	mov	edx, DWORD PTR [esi+600]
+	mov	eax, DWORD PTR [esi+204]
+	cmp	edx, eax
+	jg	$L92248
+
+; 797  : 				{
+; 798  : 					m_nXFactor = -m_nXFactor;
+
+	mov	eax, DWORD PTR [esi+496]
+
+; 799  : 					m_nYFactor = -m_nYFactor;
+
+	mov	ecx, DWORD PTR [esi+500]
+	neg	eax
+	mov	DWORD PTR [esi+496], eax
+
+; 800  : 					m_nTempParam1 = 1;
+; 801  : 					m_nDir = m_nDir - MaxMissleDir / 2;
+
+	mov	eax, DWORD PTR [esi+608]
+	neg	ecx
+	add	eax, -32				; ffffffe0H
+	mov	DWORD PTR [esi+500], ecx
+	mov	DWORD PTR [esi+596], 1
+	mov	DWORD PTR [esi+608], eax
+
+; 802  : 					if (m_nDir < 0) m_nDir += MaxMissleDir;
+
+	jns	$L92248
+	add	eax, 64					; 00000040H
+	mov	DWORD PTR [esi+608], eax
+
+; 803  : 				}
+; 804  : 			}
+; 805  : 
+; 806  : 			nDOffsetX = (m_nSpeed * m_nXFactor);
+; 807  : 			nDOffsetY = (m_nSpeed * m_nYFactor);
+; 808  : 		}break;
+
+	jmp	$L92248
+$L92250:
+
+; 809  : 		//按照设计方案，随机飞行无法达到客服两端的同步
+; 810  : 	case	MISSLE_MMK_Random:							//	随机飞行（暗黑二女巫的Charged Bolt）
+; 811  : 		{
+; 812  : 			
+; 813  : 		}break;
+; 814  : 		//参数一表示顺时针还是逆时针转动
+; 815  : 		//参数二表示固定原心还是围饶发动者
+; 816  : 		//dx = SinA * R
+; 817  : 		//dy = Ctg(90-A/2).R = SinA*SinA / (1 + CosA) * R
+; 818  : 	case	MISSLE_MMK_Circle:							//	环行飞行（围绕在身边，暗黑二刺客的集气）
+; 819  : 		{
+; 820  : 			
+; 821  : 			if (m_nParam2) //原地转
+
+	cmp	DWORD PTR [esi+580], ebp
+	je	$L92251
+
+; 822  : 			{
+; 823  : 
+; 824  : 			int x0,y0,x1,y1;
+; 825  : 			Npc[m_nLauncher].GetMpsPos(&x0,&y0);
+
+	lea	edx, DWORD PTR _y0$92253[esp+44]
+	lea	eax, DWORD PTR _x0$92252[esp+44]
+	push	edx
+	push	eax
+	mov	eax, DWORD PTR [esi+516]
+	lea	ecx, DWORD PTR [eax+eax*8]
+	lea	eax, DWORD PTR [eax+ecx*4]
+	lea	eax, DWORD PTR [eax+eax*2]
+	lea	eax, DWORD PTR [eax+eax*4]
+	lea	edx, DWORD PTR [eax+eax*8]
+	lea	ecx, DWORD PTR ?Npc@@3PAVKNpc@@A[edx*8]
+	call	?GetMpsPos@KNpc@@QAEXPAH0@Z		; KNpc::GetMpsPos
+
+; 826  : 
+; 827  : 			x1 = x0;
+; 828  : 			y1 = y0 - (m_nSpeed + 50);
+
+	mov	edi, DWORD PTR _y0$92253[esp+44]
+	mov	eax, DWORD PTR [esi+96]
+	mov	ebx, DWORD PTR _x0$92252[esp+44]
+	sub	edi, eax
+
+; 829  : 
+; 830  : 			int nPreAngle = m_nAngle - 1;
+; 831  : 			if (nPreAngle < 0) nPreAngle = MaxMissleDir - 1;
+; 832  : 			m_nDir = m_nAngle + (MaxMissleDir / 4);
+
+	mov	eax, DWORD PTR [esi+612]
+	sub	edi, 50					; 00000032H
+	lea	ecx, DWORD PTR [eax+16]
+
+; 833  : 			if (m_nDir >= MaxMissleDir) m_nDir = m_nDir - MaxMissleDir;
+
+	cmp	ecx, 64					; 00000040H
+	mov	DWORD PTR [esi+608], ecx
+	jl	SHORT $L92258
+	add	ecx, -64				; ffffffc0H
+	mov	DWORD PTR [esi+608], ecx
+$L92258:
+
+; 834  : 
+; 835  : 			int nX = x1 - ((m_nSpeed + 50)  * g_DirCos(m_nAngle,MaxMissleDir) >> 10);
+
+	push	64					; 00000040H
+	push	eax
+	mov	eax, DWORD PTR ?g_nCos@@3PAHA		; g_nCos
+	push	eax
+	call	DWORD PTR ?g_InternalDirSinCosCode@@3PAEA ; g_InternalDirSinCosCode
+	mov	ecx, DWORD PTR [esi+96]
+
+; 836  : 			int nY = y1 + ((m_nSpeed + 50)  * g_DirSin(m_nAngle,MaxMissleDir) >> 10); 
+
+	mov	edx, DWORD PTR ?g_nSin@@3PAHA		; g_nSin
+	add	ecx, 50					; 00000032H
+	push	64					; 00000040H
+	imul	ecx, eax
+	mov	eax, DWORD PTR [esi+612]
+	sar	ecx, 10					; 0000000aH
+	push	eax
+	push	edx
+	sub	ebx, ecx
+	call	DWORD PTR ?g_InternalDirSinCosCode@@3PAEA ; g_InternalDirSinCosCode
+	add	esp, 24					; 00000018H
+
+; 837  : 			
+; 838  : 				nDOffsetX = 0;
+; 839  : 				nDOffsetY = 0;
+; 840  : 
+; 841  : 		
+; 842  : 
+; 843  : 			int nOldRegion = m_nRegionId;
+; 844  : 
+; 845  : 			int nRegion;
+; 846  : 			int nMapX;
+; 847  : 			int nMapY;
+; 848  : 			int nXOffset;
+; 849  : 			int nYOffset;
+; 850  : 
+; 851  : 			SubWorld[m_nSubWorldId].Mps2Map(nX,nY,&nRegion,&nMapX,&nMapY,&nXOffset,&nYOffset);
+
+	lea	ecx, DWORD PTR _nYOffset$92266[esp+44]
+	lea	edx, DWORD PTR _nXOffset$92265[esp+44]
+	mov	ebp, DWORD PTR [esi+548]
+	push	ecx
+	push	edx
+	lea	ecx, DWORD PTR _nMapY$92264[esp+52]
+	lea	edx, DWORD PTR _nMapX$92263[esp+52]
+	push	ecx
+	push	edx
+	mov	edx, DWORD PTR [esi+96]
+	lea	ecx, DWORD PTR _nRegion$92262[esp+60]
+	add	edx, 50					; 00000032H
+	push	ecx
+	imul	edx, eax
+	mov	eax, DWORD PTR [esi+544]
+	sar	edx, 10					; 0000000aH
+	lea	ecx, DWORD PTR [eax+eax*8]
+	add	edx, edi
+	push	edx
+	push	ebx
+	lea	ecx, DWORD PTR [eax+ecx*2]
+	shl	ecx, 4
+	add	ecx, OFFSET FLAT:?SubWorld@@3PAVKSubWorld@@A ; SubWorld
+	call	?Mps2Map@KSubWorld@@QAEXHHPAH0000@Z	; KSubWorld::Mps2Map
+
+; 852  : 
+; 853  : 			if (nRegion >= 0)
+
+	mov	eax, DWORD PTR _nRegion$92262[esp+44]
+	test	eax, eax
+	jl	$L92268
+
+; 854  : 			{
+; 855  : 
+; 856  : 				CurRegion.DecRef(m_nCurrentMapX, m_nCurrentMapY, obj_missle);
+
+	mov	edx, DWORD PTR [esi+220]
+	mov	eax, DWORD PTR [esi+216]
+	push	2
+	push	edx
+	push	eax
+	mov	eax, DWORD PTR [esi+544]
+	lea	ecx, DWORD PTR [eax+eax*8]
+	lea	edx, DWORD PTR [eax+ecx*2]
+	mov	eax, DWORD PTR [esi+548]
+	shl	edx, 4
+	lea	ecx, DWORD PTR [eax+eax*2]
+	lea	eax, DWORD PTR [eax+ecx*4]
+	mov	ecx, DWORD PTR ?SubWorld@@3PAVKSubWorld@@A[edx+8]
+	shl	eax, 4
+	add	ecx, eax
+	call	?DecRef@KRegion@@QAEHHHW4MOVE_OBJ_KIND@@@Z ; KRegion::DecRef
+
+; 857  : 				m_nRegionId		= nRegion;
+; 858  : 				m_nCurrentMapX	= nMapX;
+; 859  : 				m_nCurrentMapY	= nMapY;
+
+	mov	edx, DWORD PTR _nMapY$92264[esp+44]
+	mov	ecx, DWORD PTR _nMapX$92263[esp+44]
+	mov	eax, DWORD PTR _nRegion$92262[esp+44]
+
+; 860  : 				m_nXOffset		= nXOffset;
+; 861  : 				m_nYOffset		= nYOffset;
+; 862  : 				CurRegion.AddRef(m_nCurrentMapX, m_nCurrentMapY, obj_missle);
+
+	push	2
+	mov	edi, DWORD PTR _nXOffset$92265[esp+48]
+	push	edx
+	mov	DWORD PTR [esi+216], ecx
+	push	ecx
+	mov	ecx, DWORD PTR [esi+544]
+	mov	DWORD PTR [esi+220], edx
+	mov	DWORD PTR [esi+228], edi
+	mov	edi, DWORD PTR _nYOffset$92266[esp+56]
+	lea	edx, DWORD PTR [ecx+ecx*8]
+	mov	DWORD PTR [esi+548], eax
+	mov	DWORD PTR [esi+232], edi
+	lea	ecx, DWORD PTR [ecx+edx*2]
+	lea	edx, DWORD PTR [eax+eax*2]
+	shl	ecx, 4
+	lea	eax, DWORD PTR [eax+edx*4]
+	mov	ecx, DWORD PTR ?SubWorld@@3PAVKSubWorld@@A[ecx+8]
+	shl	eax, 4
+	add	ecx, eax
+	call	?AddRef@KRegion@@QAEHHHW4MOVE_OBJ_KIND@@@Z ; KRegion::AddRef
+
+; 863  : 				
+; 864  : 				if (nOldRegion != m_nRegionId)
+
+	mov	eax, DWORD PTR [esi+548]
+	cmp	ebp, eax
+	je	$L92268
+
+; 865  : 				{
+; 866  : 					SubWorld[m_nSubWorldId].m_WorldMessage.Send(GWM_MISSLE_CHANGE_REGION, nOldRegion, m_nRegionId, m_nMissleId);
+
+	mov	ecx, DWORD PTR [esi+540]
+	push	ecx
+	push	eax
+	push	ebp
+
+; 867  : 				}  
+; 868  : 
+; 869  : 			}
+; 870  : 
+; 871  : 
+; 872  : 				nDOffsetX = 0;
+; 873  : 				nDOffsetY = 0;
+; 874  : 
+; 875  : 
+; 876  : 			}
+; 877  : 			else			// 围绕着发送者转
+
+	jmp	$L93575
+$L92251:
+
+; 878  : 			{
+; 879  : 
+; 880  : 
+; 881  : 
+; 882  : 
+; 883  :             int nPreAngle = m_nAngle - 1;
+
+	mov	eax, DWORD PTR [esi+612]
+	lea	edi, DWORD PTR [eax-1]
+
+; 884  : 			if (nPreAngle < 0) nPreAngle = MaxMissleDir - 1;
+
+	cmp	edi, ebp
+	jge	SHORT $L92271
+	mov	edi, 63					; 0000003fH
+$L92271:
+
+; 885  : 			m_nDir = m_nAngle + (MaxMissleDir / 4);
+
+	lea	ecx, DWORD PTR [eax+16]
+
+; 886  : 			if (m_nDir >= MaxMissleDir) m_nDir = m_nDir - MaxMissleDir;
+
+	cmp	ecx, 64					; 00000040H
+	mov	DWORD PTR [esi+608], ecx
+	jl	SHORT $L92272
+	add	ecx, -64				; ffffffc0H
+	mov	DWORD PTR [esi+608], ecx
+$L92272:
+
+; 887  : 			int dx = (m_nSpeed + 50)  * (g_DirCos(m_nAngle,MaxMissleDir) - g_DirCos(nPreAngle,MaxMissleDir)) ;
+
+	push	64					; 00000040H
+	push	eax
+	mov	eax, DWORD PTR ?g_nCos@@3PAHA		; g_nCos
+	push	eax
+	call	DWORD PTR ?g_InternalDirSinCosCode@@3PAEA ; g_InternalDirSinCosCode
+	mov	ecx, DWORD PTR ?g_nCos@@3PAHA		; g_nCos
+	push	64					; 00000040H
+	push	edi
+	push	ecx
+	call	DWORD PTR ?g_InternalDirSinCosCode@@3PAEA ; g_InternalDirSinCosCode
+
+; 888  : 			int dy = (m_nSpeed + 50)  * (g_DirSin(m_nAngle,MaxMissleDir) - g_DirSin(nPreAngle, MaxMissleDir)) ; 
+
+	mov	edx, DWORD PTR [esi+612]
+	mov	eax, DWORD PTR ?g_nSin@@3PAHA		; g_nSin
+	push	64					; 00000040H
+	push	edx
+	push	eax
+	call	DWORD PTR ?g_InternalDirSinCosCode@@3PAEA ; g_InternalDirSinCosCode
+	mov	ecx, DWORD PTR ?g_nSin@@3PAHA		; g_nSin
+	push	64					; 00000040H
+	push	edi
+	push	ecx
+	call	DWORD PTR ?g_InternalDirSinCosCode@@3PAEA ; g_InternalDirSinCosCode
+
+; 889  : 			
+; 890  : 
+; 891  : 				int nOldRegion = m_nRegionId;
+; 892  : 				CurRegion.DecRef(m_nCurrentMapX, m_nCurrentMapY, obj_missle);
+
+	mov	edx, DWORD PTR [esi+220]
+	mov	ecx, DWORD PTR [esi+216]
+	add	esp, 48					; 00000030H
+	mov	eax, DWORD PTR [esi+548]
+	mov	edi, eax
+	push	2
+	push	edx
+	push	ecx
+	mov	ecx, DWORD PTR [esi+544]
+	lea	edx, DWORD PTR [ecx+ecx*8]
+	lea	ecx, DWORD PTR [ecx+edx*2]
+	lea	edx, DWORD PTR [eax+eax*2]
+	shl	ecx, 4
+	lea	eax, DWORD PTR [eax+edx*4]
+	mov	ecx, DWORD PTR ?SubWorld@@3PAVKSubWorld@@A[ecx+8]
+	shl	eax, 4
+	add	ecx, eax
+	call	?DecRef@KRegion@@QAEHHHW4MOVE_OBJ_KIND@@@Z ; KRegion::DecRef
+
+; 893  : 				m_nRegionId		= Npc[m_nLauncher].m_RegionIndex;
+
+	mov	eax, DWORD PTR [esi+516]
+
+; 894  : 				m_nCurrentMapX	= Npc[m_nLauncher].m_MapX;
+; 895  : 				m_nCurrentMapY	= Npc[m_nLauncher].m_MapY;
+; 896  : 				m_nXOffset		= Npc[m_nLauncher].m_OffX;
+; 897  : 				m_nYOffset		= Npc[m_nLauncher].m_OffY;
+; 898  : 				CurRegion.AddRef(m_nCurrentMapX, m_nCurrentMapY, obj_missle);
+
+	push	2
+	lea	ecx, DWORD PTR [eax+eax*8]
+	lea	eax, DWORD PTR [eax+ecx*4]
+	lea	eax, DWORD PTR [eax+eax*2]
+	lea	eax, DWORD PTR [eax+eax*4]
+	lea	eax, DWORD PTR [eax+eax*8]
+	shl	eax, 3
+	mov	edx, DWORD PTR ?Npc@@3PAVKNpc@@A[eax+7216]
+	mov	DWORD PTR [esi+548], edx
+	mov	ecx, DWORD PTR ?Npc@@3PAVKNpc@@A[eax+7820]
+	mov	DWORD PTR [esi+216], ecx
+	mov	edx, DWORD PTR ?Npc@@3PAVKNpc@@A[eax+7824]
+	mov	DWORD PTR [esi+220], edx
+	mov	ecx, DWORD PTR ?Npc@@3PAVKNpc@@A[eax+7832]
+	mov	DWORD PTR [esi+228], ecx
+	mov	edx, DWORD PTR ?Npc@@3PAVKNpc@@A[eax+7836]
+	mov	eax, DWORD PTR [esi+220]
+	mov	ecx, DWORD PTR [esi+216]
+	push	eax
+	mov	eax, DWORD PTR [esi+544]
+	mov	DWORD PTR [esi+232], edx
+	push	ecx
+	lea	edx, DWORD PTR [eax+eax*8]
+	lea	ecx, DWORD PTR [eax+edx*2]
+	mov	eax, DWORD PTR [esi+548]
+	shl	ecx, 4
+	lea	edx, DWORD PTR [eax+eax*2]
+	mov	ecx, DWORD PTR ?SubWorld@@3PAVKSubWorld@@A[ecx+8]
+	lea	eax, DWORD PTR [eax+edx*4]
+	shl	eax, 4
+	add	ecx, eax
+	call	?AddRef@KRegion@@QAEHHHW4MOVE_OBJ_KIND@@@Z ; KRegion::AddRef
+
+; 899  : 				
+; 900  : 				if (nOldRegion != m_nRegionId)
+
+	mov	eax, DWORD PTR [esi+548]
+	cmp	edi, eax
+	je	SHORT $L92268
+
+; 901  : 				{
+; 902  : 					SubWorld[m_nSubWorldId].m_WorldMessage.Send(GWM_MISSLE_CHANGE_REGION, nOldRegion, m_nRegionId, m_nMissleId);
+
+	mov	ecx, DWORD PTR [esi+540]
+	push	ecx
+	push	eax
+	push	edi
+$L93575:
+	mov	eax, DWORD PTR [esi+544]
+	push	4002					; 00000fa2H
+	lea	edx, DWORD PTR [eax+eax*8]
+	lea	ecx, DWORD PTR [eax+edx*2]
+	shl	ecx, 4
+	add	ecx, OFFSET FLAT:?SubWorld@@3PAVKSubWorld@@A+172
+	call	?Send@KWorldMsg@@QAEHKHHH@Z		; KWorldMsg::Send
+$L92268:
+
+; 903  : 				}  
+; 904  : 				nDOffsetX = 0;
+; 905  : 				nDOffsetY = 0;
+; 906  : 			}
+; 907  : 			
+; 908  : 			//顺时针还是逆时针
+; 909  : 			if (m_nParam1)
+
+	mov	edx, DWORD PTR [esi+576]
+	xor	eax, eax
+	xor	ecx, ecx
+	test	edx, edx
+	je	$L92277
+
+; 910  : 			{
+; 911  : 				m_nAngle ++;
+; 912  : 				if (m_nAngle >= MaxMissleDir)
+; 913  : 					m_nAngle = 0;
+; 914  : 			}
+; 915  : 			else
+
+	jmp	$L93577
+$L92281:
+
+; 916  : 			{
+; 917  : 				m_nAngle --;
+; 918  : 				if (m_nAngle < 0 )
+; 919  : 					m_nAngle = MaxMissleDir - 1;
+; 920  : 			}
+; 921  : 			
+; 922  : 		}
+; 923  : 		break;
+; 924  : 		
+; 925  : 		//参数一表示顺时针还是逆时针转动
+; 926  : 		//参数二表示固定原心还是围饶发动者
+; 927  : 	case	MISSLE_MMK_Helix:							//	阿基米德螺旋线（暗黑二游侠的Bless Hammer）
+; 928  : 		{
+; 929  : 			int nPreAngle = m_nAngle - 1;
+
+	mov	eax, DWORD PTR [esi+612]
+	lea	ebp, DWORD PTR [eax-1]
+
+; 930  : 			if (nPreAngle < 0) 
+
+	test	ebp, ebp
+	jge	SHORT $L92283
+
+; 931  : 			{
+; 932  : 				nPreAngle = MaxMissleDir -1;
+
+	mov	ebp, 63					; 0000003fH
+$L92283:
+
+; 933  : 			}
+; 934  : 			m_nDir = m_nAngle + (MaxMissleDir / 4);
+
+	lea	ecx, DWORD PTR [eax+16]
+
+; 935  : 			if (m_nDir >= MaxMissleDir) m_nDir = m_nDir - MaxMissleDir;
+
+	cmp	ecx, 64					; 00000040H
+	mov	DWORD PTR [esi+608], ecx
+	jl	SHORT $L92284
+	add	ecx, -64				; ffffffc0H
+	mov	DWORD PTR [esi+608], ecx
+$L92284:
+
+; 936  : 			
+; 937  : 			int dx = (m_nSpeed + m_nCurrentLife + 50)  * (g_DirCos(m_nAngle,MaxMissleDir) - g_DirCos(nPreAngle, MaxMissleDir)) ;
+
+	push	64					; 00000040H
+	push	eax
+	mov	eax, DWORD PTR ?g_nCos@@3PAHA		; g_nCos
+	push	eax
+	call	DWORD PTR ?g_InternalDirSinCosCode@@3PAEA ; g_InternalDirSinCosCode
+	mov	ecx, DWORD PTR ?g_nCos@@3PAHA		; g_nCos
+	push	64					; 00000040H
+	push	ebp
+	push	ecx
+	mov	edi, eax
+	call	DWORD PTR ?g_InternalDirSinCosCode@@3PAEA ; g_InternalDirSinCosCode
+	mov	edx, DWORD PTR [esi+204]
+	sub	edi, eax
+	mov	eax, DWORD PTR [esi+96]
+
+; 938  : 			int dy = (m_nSpeed + m_nCurrentLife + 50)  * (g_DirSin(m_nAngle,MaxMissleDir) - g_DirSin(nPreAngle,MaxMissleDir)) ; 
+
+	push	64					; 00000040H
+	lea	ecx, DWORD PTR [edx+eax+50]
+	mov	eax, DWORD PTR [esi+612]
+	imul	edi, ecx
+	mov	edx, DWORD PTR ?g_nSin@@3PAHA		; g_nSin
+	push	eax
+	push	edx
+	mov	DWORD PTR _dx$92285[esp+80], edi
+	call	DWORD PTR ?g_InternalDirSinCosCode@@3PAEA ; g_InternalDirSinCosCode
+	mov	ebx, eax
+	mov	eax, DWORD PTR ?g_nSin@@3PAHA		; g_nSin
+	push	64					; 00000040H
+	push	ebp
+	push	eax
+	call	DWORD PTR ?g_InternalDirSinCosCode@@3PAEA ; g_InternalDirSinCosCode
+	mov	ecx, DWORD PTR [esi+204]
+	mov	edx, DWORD PTR [esi+96]
+	sub	ebx, eax
+
+; 939  : 			
+; 940  : 			if (m_nParam2) //原地转
+
+	mov	eax, DWORD PTR [esi+580]
+	lea	edi, DWORD PTR [ecx+edx+50]
+	add	esp, 48					; 00000030H
+	imul	edi, ebx
+	test	eax, eax
+
+; 941  : 			{
+; 942  : 				nDOffsetX = dx;
+; 943  : 				nDOffsetY = dy;
+; 944  : 			}
+; 945  : 			else			// 围绕着发送者转
+
+	jne	$L92290
+
+; 946  : 			{
+; 947  : 				int nOldRegion = m_nRegionId;
+; 948  : 				CurRegion.DecRef(m_nCurrentMapX, m_nCurrentMapY, obj_missle);
+
+	mov	ecx, DWORD PTR [esi+220]
+	mov	edx, DWORD PTR [esi+216]
+	mov	eax, DWORD PTR [esi+548]
+	push	2
+	push	ecx
+	mov	ecx, DWORD PTR [esi+544]
+	push	edx
+	mov	ebx, eax
+	lea	edx, DWORD PTR [ecx+ecx*8]
+	lea	ecx, DWORD PTR [ecx+edx*2]
+	lea	edx, DWORD PTR [eax+eax*2]
+	shl	ecx, 4
+	lea	eax, DWORD PTR [eax+edx*4]
+	mov	ecx, DWORD PTR ?SubWorld@@3PAVKSubWorld@@A[ecx+8]
+	shl	eax, 4
+	add	ecx, eax
+	call	?DecRef@KRegion@@QAEHHHW4MOVE_OBJ_KIND@@@Z ; KRegion::DecRef
+
+; 949  : 				m_nRegionId		= Npc[m_nLauncher].m_RegionIndex;
+
+	mov	eax, DWORD PTR [esi+516]
+
+; 950  : 				m_nCurrentMapX	= Npc[m_nLauncher].m_MapX;
+; 951  : 				m_nCurrentMapY	= Npc[m_nLauncher].m_MapY;
+; 952  : 				m_nXOffset		= Npc[m_nLauncher].m_OffX;
+; 953  : 				m_nYOffset		= Npc[m_nLauncher].m_OffY;
+; 954  : 				CurRegion.AddRef(m_nCurrentMapX, m_nCurrentMapY, obj_missle);
+
+	push	2
+	lea	ecx, DWORD PTR [eax+eax*8]
+	lea	eax, DWORD PTR [eax+ecx*4]
+	lea	eax, DWORD PTR [eax+eax*2]
+	lea	eax, DWORD PTR [eax+eax*4]
+	lea	eax, DWORD PTR [eax+eax*8]
+	shl	eax, 3
+	mov	edx, DWORD PTR ?Npc@@3PAVKNpc@@A[eax+7216]
+	mov	DWORD PTR [esi+548], edx
+	mov	ecx, DWORD PTR ?Npc@@3PAVKNpc@@A[eax+7820]
+	mov	DWORD PTR [esi+216], ecx
+	mov	edx, DWORD PTR ?Npc@@3PAVKNpc@@A[eax+7824]
+	mov	DWORD PTR [esi+220], edx
+	mov	ecx, DWORD PTR ?Npc@@3PAVKNpc@@A[eax+7832]
+	mov	DWORD PTR [esi+228], ecx
+	mov	edx, DWORD PTR ?Npc@@3PAVKNpc@@A[eax+7836]
+	mov	eax, DWORD PTR [esi+220]
+	mov	ecx, DWORD PTR [esi+216]
+	push	eax
+	mov	eax, DWORD PTR [esi+544]
+	mov	DWORD PTR [esi+232], edx
+	push	ecx
+	lea	edx, DWORD PTR [eax+eax*8]
+	lea	ecx, DWORD PTR [eax+edx*2]
+	mov	eax, DWORD PTR [esi+548]
+	shl	ecx, 4
+	lea	edx, DWORD PTR [eax+eax*2]
+	mov	ecx, DWORD PTR ?SubWorld@@3PAVKSubWorld@@A[ecx+8]
+	lea	eax, DWORD PTR [eax+edx*4]
+	shl	eax, 4
+	add	ecx, eax
+	call	?AddRef@KRegion@@QAEHHHW4MOVE_OBJ_KIND@@@Z ; KRegion::AddRef
+
+; 955  : 				
+; 956  : 				if (nOldRegion != m_nRegionId)
+
+	mov	eax, DWORD PTR [esi+548]
+	cmp	ebx, eax
+	je	SHORT $L92290
+
+; 957  : 				{
+; 958  : 					SubWorld[m_nSubWorldId].m_WorldMessage.Send(GWM_MISSLE_CHANGE_REGION, nOldRegion, m_nRegionId, m_nMissleId);
+
+	mov	ecx, DWORD PTR [esi+540]
+	push	ecx
+	push	eax
+	mov	eax, DWORD PTR [esi+544]
+	push	ebx
+	push	4002					; 00000fa2H
+	lea	edx, DWORD PTR [eax+eax*8]
+	lea	ecx, DWORD PTR [eax+edx*2]
+	shl	ecx, 4
+	add	ecx, OFFSET FLAT:?SubWorld@@3PAVKSubWorld@@A+172
+	call	?Send@KWorldMsg@@QAEHKHHH@Z		; KWorldMsg::Send
+$L92290:
+
+; 959  : 				}  
+; 960  : 				nDOffsetX = dx;
+; 961  : 				nDOffsetY = dy;
+; 962  : 			}
+; 963  : 			
+; 964  : 			if (m_nParam1)
+
+	mov	edx, DWORD PTR [esi+576]
+	mov	eax, DWORD PTR _dx$92285[esp+44]
+	test	edx, edx
+	mov	ecx, edi
+	je	SHORT $L92277
+$L93577:
+
+; 965  : 			{
+; 966  : 				m_nAngle ++;
+
+	mov	edi, DWORD PTR [esi+612]
+	inc	edi
+
+; 967  : 				if (m_nAngle >= MaxMissleDir)
+
+	mov	edx, edi
+	mov	DWORD PTR [esi+612], edi
+	cmp	edx, 64					; 00000040H
+	jl	$L92315
+
+; 968  : 					m_nAngle = 0;
+
+	mov	DWORD PTR [esi+612], 0
+
+; 969  : 			}
+; 970  : 			else
+
+	jmp	$L92315
+$L92277:
+
+; 971  : 			{
+; 972  : 				m_nAngle --;
+
+	mov	edx, DWORD PTR [esi+612]
+	dec	edx
+	mov	DWORD PTR [esi+612], edx
+
+; 973  : 				if (m_nAngle < 0 )
+
+	jns	$L92315
+
+; 974  : 					m_nAngle = MaxMissleDir - 1;
+
+	mov	DWORD PTR [esi+612], 63			; 0000003fH
+
+; 975  : 			}
+; 976  : 		}
+; 977  : 		break; 
+
+	jmp	$L92315
+$L92295:
+
+; 978  : 	case	MISSLE_MMK_Follow:							//	跟踪目标飞行
+; 979  : 		{
+; 980  : 
+; 981  : 
+; 982  : if (m_nFollowNpcIdx > 0)
+
+	cmp	DWORD PTR [esi+508], ebp
+	jle	$L92248
+
+; 983  : {
+; 984  : 
+; 985  : int nDistance = 0;
+; 986  : int nSrcMpsX = 0;
+; 987  : int nSrcMpsY = 0;
+; 988  : int nDesMpsX = 0;
+; 989  : int nDesMpsY = 0;
+; 990  : 
+; 991  : 
+; 992  : 
+; 993  : 
+; 994  : if (m_nParam2)
+
+	mov	edi, DWORD PTR [esi+580]
+
+; 995  : {
+; 996  : if (m_nCurrentLife >= m_nParam1)
+
+	mov	eax, DWORD PTR [esi+204]
+	mov	ecx, DWORD PTR [esi+576]
+	cmp	edi, ebp
+	mov	DWORD PTR _nSrcMpsX$92298[esp+44], ebp
+	mov	DWORD PTR _nSrcMpsY$92299[esp+44], ebp
+	mov	DWORD PTR _nDesMpsX$92300[esp+44], ebp
+	mov	DWORD PTR _nDesMpsY$92301[esp+44], ebp
+	je	$L92302
+	cmp	eax, ecx
+	jl	$L92248
+
+; 997  : {
+; 998  : if ((m_nCurrentLife-m_nParam1)%m_nParam2 == 0)
+
+	sub	eax, ecx
+	cdq
+	idiv	edi
+	test	edx, edx
+	jne	$L92248
+
+; 999  : {
+; 1000 : SubWorld[m_nSubWorldId].Map2Mps(m_nRegionId, m_nCurrentMapX, m_nCurrentMapY, m_nXOffset, m_nYOffset, &nSrcMpsX, &nSrcMpsY);
+
+	mov	edx, DWORD PTR [esi+232]
+	lea	eax, DWORD PTR _nSrcMpsY$92299[esp+44]
+	lea	ecx, DWORD PTR _nSrcMpsX$92298[esp+44]
+	push	eax
+	mov	eax, DWORD PTR [esi+228]
+	push	ecx
+	mov	ecx, DWORD PTR [esi+220]
+	push	edx
+	mov	edx, DWORD PTR [esi+216]
+	push	eax
+	mov	eax, DWORD PTR [esi+548]
+	push	ecx
+	push	edx
+	push	eax
+	mov	eax, DWORD PTR [esi+544]
+	lea	ecx, DWORD PTR [eax+eax*8]
+	lea	ecx, DWORD PTR [eax+ecx*2]
+	shl	ecx, 4
+	add	ecx, OFFSET FLAT:?SubWorld@@3PAVKSubWorld@@A ; SubWorld
+	call	?Map2Mps@KSubWorld@@QAEXHHHHHPAH0@Z	; KSubWorld::Map2Mps
+
+; 1001 : SubWorld[m_nSubWorldId].Map2Mps(Npc[m_nFollowNpcIdx].m_RegionIndex, Npc[m_nFollowNpcIdx].m_MapX, Npc[m_nFollowNpcIdx].m_MapY, Npc[m_nFollowNpcIdx].m_OffX, Npc[m_nFollowNpcIdx].m_OffY, &nDesMpsX, &nDesMpsY);
+
+	mov	eax, DWORD PTR [esi+508]
+	lea	ecx, DWORD PTR _nDesMpsY$92301[esp+44]
+	push	ecx
+	lea	edx, DWORD PTR [eax+eax*8]
+	lea	eax, DWORD PTR [eax+edx*4]
+	lea	edx, DWORD PTR _nDesMpsX$92300[esp+48]
+	push	edx
+	lea	eax, DWORD PTR [eax+eax*2]
+	lea	eax, DWORD PTR [eax+eax*4]
+	lea	eax, DWORD PTR [eax+eax*8]
+	shl	eax, 3
+	mov	ecx, DWORD PTR ?Npc@@3PAVKNpc@@A[eax+7836]
+	mov	edx, DWORD PTR ?Npc@@3PAVKNpc@@A[eax+7832]
+	push	ecx
+	mov	ecx, DWORD PTR ?Npc@@3PAVKNpc@@A[eax+7824]
+	push	edx
+	mov	edx, DWORD PTR ?Npc@@3PAVKNpc@@A[eax+7820]
+	mov	eax, DWORD PTR ?Npc@@3PAVKNpc@@A[eax+7216]
+	push	ecx
+	push	edx
+	push	eax
+	mov	eax, DWORD PTR [esi+544]
+	lea	ecx, DWORD PTR [eax+eax*8]
+	lea	ecx, DWORD PTR [eax+ecx*2]
+	shl	ecx, 4
+	add	ecx, OFFSET FLAT:?SubWorld@@3PAVKSubWorld@@A ; SubWorld
+	call	?Map2Mps@KSubWorld@@QAEXHHHHHPAH0@Z	; KSubWorld::Map2Mps
+
+; 1002 : nDistance = SubWorld[m_nSubWorldId].GetDistance(nSrcMpsX, nSrcMpsY, nDesMpsX, nDesMpsY);
+
+	mov	edx, DWORD PTR _nDesMpsY$92301[esp+44]
+	mov	eax, DWORD PTR _nDesMpsX$92300[esp+44]
+	mov	ecx, DWORD PTR _nSrcMpsY$92299[esp+44]
+	push	edx
+	push	eax
+	mov	eax, DWORD PTR [esi+544]
+	mov	edx, DWORD PTR _nSrcMpsX$92298[esp+52]
+	push	ecx
+	lea	ecx, DWORD PTR [eax+eax*8]
+	push	edx
+	lea	ecx, DWORD PTR [eax+ecx*2]
+	shl	ecx, 4
+	add	ecx, OFFSET FLAT:?SubWorld@@3PAVKSubWorld@@A ; SubWorld
+	call	?GetDistance@KSubWorld@@QAEHHHHH@Z	; KSubWorld::GetDistance
+	mov	ebx, eax
+
+; 1003 : 
+; 1004 : if (nDistance != 0)
+
+	cmp	ebx, ebp
+	je	$L92248
+
+; 1005 : {
+; 1006 :     m_nDir = g_GetDirIndex(nSrcMpsX,nSrcMpsY,nDesMpsX,nDesMpsY);
+
+	mov	ebp, DWORD PTR _nDesMpsX$92300[esp+44]
+	mov	ecx, DWORD PTR _nSrcMpsX$92298[esp+44]
+	mov	edi, DWORD PTR _nDesMpsY$92301[esp+44]
+	or	eax, -1
+	cmp	ecx, ebp
+	mov	DWORD PTR _nRet$93532[esp+44], eax
+	jne	SHORT $L93517
+	cmp	DWORD PTR _nSrcMpsY$92299[esp+44], edi
+	je	SHORT $L93531
+$L93517:
+	mov	ecx, DWORD PTR _nSrcMpsY$92299[esp+44]
+	mov	eax, DWORD PTR _nSrcMpsX$92298[esp+44]
+	sub	ecx, edi
+	sub	eax, ebp
+	mov	edx, ecx
+	imul	edx, ecx
+	mov	ecx, eax
+	imul	ecx, eax
+	add	edx, ecx
+	mov	DWORD PTR -4+[esp+44], edx
+	fild	DWORD PTR -4+[esp+44]
+	fsqrt
+	call	__ftol
+	mov	ecx, eax
+	test	ecx, ecx
+	jne	SHORT $L93519
+	or	eax, -1
+	jmp	SHORT $L93531
+$L93519:
+	mov	edx, DWORD PTR _nSrcMpsY$92299[esp+44]
+	mov	eax, edi
+	sub	eax, edx
+	shl	eax, 10					; 0000000aH
+	cdq
+	idiv	ecx
+
+; 1091 : #endif
+; 1092 : 			DoVanish();
+; 1093 : 			return;
+; 1094 : 		}
+; 1095 : 	}
+; 1096 : 	else//如果子弹飞行过程中进入了一个无效的Region则子弹自动消亡
+; 1097 : 	{
+; 1098 : 		DoVanish();
+
+	mov	edx, DWORD PTR ?g_nSin@@3PAHA		; g_nSin
+	xor	ecx, ecx
+	mov	DWORD PTR _nSin$93521[esp+44], eax
+$L93523:
+	mov	eax, DWORD PTR _nSin$93521[esp+44]
+	cmp	eax, DWORD PTR [edx]
+	jg	SHORT $L93574
+	mov	eax, ecx
+	inc	ecx
+	add	edx, 4
+	cmp	ecx, 32					; 00000020H
+	mov	DWORD PTR _nRet$93532[esp+44], eax
+	jl	SHORT $L93523
+
+; 1005 : {
+; 1006 :     m_nDir = g_GetDirIndex(nSrcMpsX,nSrcMpsY,nDesMpsX,nDesMpsY);
+
+	jmp	SHORT $L93565
+$L93574:
+	mov	eax, DWORD PTR _nRet$93532[esp+44]
+$L93565:
+	mov	edx, DWORD PTR _nSrcMpsX$92298[esp+44]
+	mov	ecx, ebp
+	sub	ecx, edx
+	test	ecx, ecx
+	jle	SHORT $L93531
+	mov	edx, 63					; 0000003fH
+	sub	edx, eax
+	mov	eax, edx
+$L93531:
+
+; 1007 : 	m_nXFactor = ((nDesMpsX - nSrcMpsX) << 10) /nDistance;
+
+	mov	edx, DWORD PTR _nSrcMpsX$92298[esp+44]
+	mov	DWORD PTR [esi+608], eax
+	mov	eax, ebp
+
+; 1008 : 	m_nYFactor = ((nDesMpsY - nSrcMpsY) << 10) /nDistance;
+; 1009 : 	m_nTagetX = nDesMpsX;
+
+	mov	DWORD PTR [esi+244], ebp
+	sub	eax, edx
+	shl	eax, 10					; 0000000aH
+	cdq
+	idiv	ebx
+	mov	edx, DWORD PTR _nSrcMpsY$92299[esp+44]
+	mov	DWORD PTR [esi+496], eax
+	mov	eax, edi
+	sub	eax, edx
+	shl	eax, 10					; 0000000aH
+	cdq
+	idiv	ebx
+	mov	DWORD PTR [esi+500], eax
+
+; 1010 :     m_nTagetY = nDesMpsY;
+; 1011 : }
+; 1012 : }
+; 1013 : 
+; 1014 : }
+; 1015 : 
+; 1016 : 
+; 1017 : 
+; 1018 : }
+; 1019 : 
+; 1020 : else
+
+	jmp	$L93576
+$L92302:
+
+; 1021 : {
+; 1022 : if (m_nCurrentLife >= m_nParam1)
+
+	cmp	eax, ecx
+	jl	$L92248
+
+; 1023 : {
+; 1024 : SubWorld[m_nSubWorldId].Map2Mps(m_nRegionId, m_nCurrentMapX, m_nCurrentMapY, m_nXOffset, m_nYOffset, &nSrcMpsX, &nSrcMpsY);
+
+	mov	eax, DWORD PTR [esi+232]
+	lea	ecx, DWORD PTR _nSrcMpsY$92299[esp+44]
+	lea	edx, DWORD PTR _nSrcMpsX$92298[esp+44]
+	push	ecx
+	mov	ecx, DWORD PTR [esi+228]
+	push	edx
+	mov	edx, DWORD PTR [esi+220]
+	push	eax
+	mov	eax, DWORD PTR [esi+216]
+	push	ecx
+	mov	ecx, DWORD PTR [esi+548]
+	push	edx
+	push	eax
+	mov	eax, DWORD PTR [esi+544]
+	push	ecx
+	lea	edx, DWORD PTR [eax+eax*8]
+	lea	ecx, DWORD PTR [eax+edx*2]
+	shl	ecx, 4
+	add	ecx, OFFSET FLAT:?SubWorld@@3PAVKSubWorld@@A ; SubWorld
+	call	?Map2Mps@KSubWorld@@QAEXHHHHHPAH0@Z	; KSubWorld::Map2Mps
+
+; 1025 : SubWorld[m_nSubWorldId].Map2Mps(Npc[m_nFollowNpcIdx].m_RegionIndex, Npc[m_nFollowNpcIdx].m_MapX, Npc[m_nFollowNpcIdx].m_MapY, Npc[m_nFollowNpcIdx].m_OffX, Npc[m_nFollowNpcIdx].m_OffY, &nDesMpsX, &nDesMpsY);
+
+	mov	eax, DWORD PTR [esi+508]
+	lea	edx, DWORD PTR _nDesMpsY$92301[esp+44]
+	push	edx
+	lea	ecx, DWORD PTR [eax+eax*8]
+	lea	eax, DWORD PTR [eax+ecx*4]
+	lea	ecx, DWORD PTR _nDesMpsX$92300[esp+48]
+	push	ecx
+	lea	eax, DWORD PTR [eax+eax*2]
+	lea	eax, DWORD PTR [eax+eax*4]
+	lea	eax, DWORD PTR [eax+eax*8]
+	shl	eax, 3
+	mov	edx, DWORD PTR ?Npc@@3PAVKNpc@@A[eax+7836]
+	mov	ecx, DWORD PTR ?Npc@@3PAVKNpc@@A[eax+7832]
+	push	edx
+	mov	edx, DWORD PTR ?Npc@@3PAVKNpc@@A[eax+7824]
+	push	ecx
+	mov	ecx, DWORD PTR ?Npc@@3PAVKNpc@@A[eax+7820]
+	push	edx
+	mov	edx, DWORD PTR ?Npc@@3PAVKNpc@@A[eax+7216]
+	mov	eax, DWORD PTR [esi+544]
+	push	ecx
+	push	edx
+	lea	ecx, DWORD PTR [eax+eax*8]
+	lea	ecx, DWORD PTR [eax+ecx*2]
+	shl	ecx, 4
+	add	ecx, OFFSET FLAT:?SubWorld@@3PAVKSubWorld@@A ; SubWorld
+	call	?Map2Mps@KSubWorld@@QAEXHHHHHPAH0@Z	; KSubWorld::Map2Mps
+
+; 1026 : nDistance = SubWorld[m_nSubWorldId].GetDistance(nSrcMpsX, nSrcMpsY, nDesMpsX, nDesMpsY);
+
+	mov	edx, DWORD PTR _nDesMpsY$92301[esp+44]
+	mov	eax, DWORD PTR _nDesMpsX$92300[esp+44]
+	mov	ecx, DWORD PTR _nSrcMpsY$92299[esp+44]
+	push	edx
+	push	eax
+	mov	eax, DWORD PTR [esi+544]
+	mov	edx, DWORD PTR _nSrcMpsX$92298[esp+52]
+	push	ecx
+	lea	ecx, DWORD PTR [eax+eax*8]
+	push	edx
+	lea	ecx, DWORD PTR [eax+ecx*2]
+	shl	ecx, 4
+	add	ecx, OFFSET FLAT:?SubWorld@@3PAVKSubWorld@@A ; SubWorld
+	call	?GetDistance@KSubWorld@@QAEHHHHH@Z	; KSubWorld::GetDistance
+	mov	ebp, eax
+
+; 1027 : 
+; 1028 : if (nDistance != 0)
+
+	test	ebp, ebp
+	je	$L92248
+
+; 1029 : {
+; 1030 : 	m_nDir = g_GetDirIndex(nSrcMpsX,nSrcMpsY,nDesMpsX,nDesMpsY);
+
+	mov	ebx, DWORD PTR _nDesMpsX$92300[esp+44]
+	mov	ecx, DWORD PTR _nSrcMpsX$92298[esp+44]
+	mov	edi, DWORD PTR _nDesMpsY$92301[esp+44]
+	or	eax, -1
+	cmp	ecx, ebx
+	mov	DWORD PTR _nRet$93557[esp+44], eax
+	jne	SHORT $L93542
+	cmp	DWORD PTR _nSrcMpsY$92299[esp+44], edi
+	je	SHORT $L93556
+$L93542:
+	mov	ecx, DWORD PTR _nSrcMpsY$92299[esp+44]
+	mov	eax, DWORD PTR _nSrcMpsX$92298[esp+44]
+	sub	ecx, edi
+	sub	eax, ebx
+	mov	edx, ecx
+	imul	edx, ecx
+	mov	ecx, eax
+	imul	ecx, eax
+	add	edx, ecx
+	mov	DWORD PTR -4+[esp+44], edx
+	fild	DWORD PTR -4+[esp+44]
+	fsqrt
+	call	__ftol
+	mov	ecx, eax
+	test	ecx, ecx
+	jne	SHORT $L93544
+	or	eax, -1
+	jmp	SHORT $L93556
+$L93544:
+	mov	edx, DWORD PTR _nSrcMpsY$92299[esp+44]
+	mov	eax, edi
+	sub	eax, edx
+	shl	eax, 10					; 0000000aH
+	cdq
+	idiv	ecx
+
+; 1091 : #endif
+; 1092 : 			DoVanish();
+; 1093 : 			return;
+; 1094 : 		}
+; 1095 : 	}
+; 1096 : 	else//如果子弹飞行过程中进入了一个无效的Region则子弹自动消亡
+; 1097 : 	{
+; 1098 : 		DoVanish();
+
+	mov	edx, DWORD PTR ?g_nSin@@3PAHA		; g_nSin
+	xor	ecx, ecx
+	mov	DWORD PTR _nSin$93546[esp+44], eax
+$L93548:
+	mov	eax, DWORD PTR _nSin$93546[esp+44]
+	cmp	eax, DWORD PTR [edx]
+	jg	SHORT $L93572
+	mov	eax, ecx
+	inc	ecx
+	add	edx, 4
+	cmp	ecx, 32					; 00000020H
+	mov	DWORD PTR _nRet$93557[esp+44], eax
+	jl	SHORT $L93548
+
+; 1029 : {
+; 1030 : 	m_nDir = g_GetDirIndex(nSrcMpsX,nSrcMpsY,nDesMpsX,nDesMpsY);
+
+	jmp	SHORT $L93566
+$L93572:
+	mov	eax, DWORD PTR _nRet$93557[esp+44]
+$L93566:
+	mov	edx, DWORD PTR _nSrcMpsX$92298[esp+44]
+	mov	ecx, ebx
+	sub	ecx, edx
+	test	ecx, ecx
+	jle	SHORT $L93556
+	mov	edx, 63					; 0000003fH
+	sub	edx, eax
+	mov	eax, edx
+$L93556:
+
+; 1031 : 	m_nXFactor = ((nDesMpsX - nSrcMpsX) << 10) /nDistance;
+
+	mov	edx, DWORD PTR _nSrcMpsX$92298[esp+44]
+	mov	DWORD PTR [esi+608], eax
+	mov	eax, ebx
+
+; 1032 : 	m_nYFactor = ((nDesMpsY - nSrcMpsY) << 10) /nDistance;
+; 1033 : 	m_nTagetX = nDesMpsX;
+
+	mov	DWORD PTR [esi+244], ebx
+	sub	eax, edx
+	shl	eax, 10					; 0000000aH
+	cdq
+	idiv	ebp
+	mov	edx, DWORD PTR _nSrcMpsY$92299[esp+44]
+	mov	DWORD PTR [esi+496], eax
+	mov	eax, edi
+	sub	eax, edx
+	shl	eax, 10					; 0000000aH
+	cdq
+	idiv	ebp
+	mov	DWORD PTR [esi+500], eax
+$L93576:
+
+; 1034 :     m_nTagetY = nDesMpsY;
+
+	mov	DWORD PTR [esi+248], edi
+$L92248:
+
+; 1035 : }
+; 1036 : }
+; 1037 : 
+; 1038 : }
+; 1039 : 
+; 1040 : }
+; 1041 : 
+; 1042 : nDOffsetX    = (m_nSpeed * m_nXFactor);
+; 1043 : nDOffsetY	 = (m_nSpeed * m_nYFactor);
+; 1044 : 
+; 1045 : 
+; 1046 : 			
+; 1047 : 		}break;
+; 1048 : 		
+; 1049 : 	case	MISSLE_MMK_Motion:							//	玩家动作类
+; 1050 : 		{
+; 1051 : 			
+; 1052 : 		}break;
+; 1053 : 		
+; 1054 : 	case MISSLE_MMK_SingleLine:						//	必中的单一直线飞行魔法
+; 1055 : 		{
+; 1056 : 			//单一必中类子弹，类式于传奇以及其它的同类网络游戏中的基本直线魔法			
+; 1057 : #ifdef _SERVER
+; 1058 : 			
+; 1059 : #else
+; 1060 : 			int x = m_nXOffset;
+; 1061 : 			int y = m_nYOffset;
+; 1062 : 			int dx = (m_nSpeed * m_nXFactor);
+
+	mov	edx, DWORD PTR [esi+96]
+	mov	eax, DWORD PTR [esi+496]
+
+; 1063 : 			int dy = (m_nSpeed * m_nYFactor);
+
+	mov	ecx, DWORD PTR [esi+500]
+	imul	eax, edx
+	imul	ecx, edx
+$L92315:
+
+; 1064 : 			nDOffsetX	=  dx;//* m_nCurrentLife;
+; 1065 : 			nDOffsetY	=  dy;//* m_nCurrentLife;
+; 1066 : 			
+; 1067 : #endif
+; 1068 : 		}
+; 1069 : 		break;
+; 1070 : 	default:
+; 1071 : 		_ASSERT(0);
+; 1072 : 		
+; 1073 : 	}
+; 1074 : 
+; 1075 : 
+; 1076 : 
+; 1077 : 	//
+; 1078 : 	if (CheckBeyondRegion(nDOffsetX, nDOffsetY,m_nTagetX,m_nTagetY))
+
+	mov	edx, DWORD PTR [esi+248]
+	push	edx
+	mov	edx, DWORD PTR [esi+244]
+	push	edx
+	push	ecx
+	push	eax
+	mov	ecx, esi
+	call	?CheckBeyondRegion@KMissle@@AAEHHHHH@Z	; KMissle::CheckBeyondRegion
+	test	eax, eax
+	pop	ebx
+	je	SHORT $L92317
+
+; 1079 : 	{
+; 1080 : 		if (CheckCollision() == -1) 
+
+	mov	ecx, esi
+	call	?CheckCollision@KMissle@@AAEHXZ		; KMissle::CheckCollision
+	cmp	eax, -1
+	jne	SHORT $L92322
+
+; 1081 : 		{
+; 1082 : 			if (m_bAutoExplode)
+
+	mov	eax, DWORD PTR [esi+112]
+	xor	edi, edi
+	cmp	eax, edi
+	je	SHORT $L92319
+
+; 1083 : 			{
+; 1084 : 				ProcessCollision();//处理碰撞
+
+	mov	ecx, esi
+	call	?ProcessCollision@KMissle@@AAEHXZ	; KMissle::ProcessCollision
+$L92319:
+
+; 1085 : 			}
+; 1086 : #ifndef _SERVER 
+; 1087 : 			int nSrcX4 = 0 ;
+; 1088 : 			int nSrcY4 = 0 ;
+; 1089 : 			SubWorld[0].Map2Mps(m_nRegionId, m_nCurrentMapX, m_nCurrentMapY,m_nXOffset, m_nYOffset, &nSrcX4, &nSrcY4);
+
+	mov	edx, DWORD PTR [esi+232]
+	lea	eax, DWORD PTR _nSrcY4$92321[esp+40]
+	lea	ecx, DWORD PTR _nSrcX4$92320[esp+40]
+	push	eax
+	mov	eax, DWORD PTR [esi+228]
+	push	ecx
+	mov	ecx, DWORD PTR [esi+220]
+	push	edx
+	mov	edx, DWORD PTR [esi+216]
+	push	eax
+	mov	eax, DWORD PTR [esi+548]
+	push	ecx
+	push	edx
+	push	eax
+	mov	ecx, OFFSET FLAT:?SubWorld@@3PAVKSubWorld@@A
+	mov	DWORD PTR _nSrcX4$92320[esp+68], edi
+	mov	DWORD PTR _nSrcY4$92321[esp+68], edi
+	call	?Map2Mps@KSubWorld@@QAEXHHHHHPAH0@Z	; KSubWorld::Map2Mps
+
+; 1090 : 			CreateSpecialEffect(MS_DoVanish, nSrcX4, nSrcY4, m_nCurrentMapZ);
+
+	mov	ecx, DWORD PTR [esi+224]
+	mov	edx, DWORD PTR _nSrcY4$92321[esp+40]
+	mov	eax, DWORD PTR _nSrcX4$92320[esp+40]
+	push	edi
+	push	ecx
+	push	edx
+$L93578:
+	push	eax
+$L93579:
+	push	2
+	mov	ecx, esi
+	call	?CreateSpecialEffect@KMissle@@QAEHW4eMissleStatus@@HHHH@Z ; KMissle::CreateSpecialEffect
+$L92317:
+
+; 1091 : #endif
+; 1092 : 			DoVanish();
+; 1093 : 			return;
+; 1094 : 		}
+; 1095 : 	}
+; 1096 : 	else//如果子弹飞行过程中进入了一个无效的Region则子弹自动消亡
+; 1097 : 	{
+; 1098 : 		DoVanish();
+
+	mov	ecx, esi
+	call	?DoVanish@KMissle@@AAEXXZ		; KMissle::DoVanish
+$L92322:
+	pop	edi
+	pop	esi
+	pop	ebp
+
+; 1099 : 	}
+; 1100 : }
+
+	add	esp, 28					; 0000001cH
+	ret	0
+	npad	3
+$L93581:
+	DD	$L92237
+	DD	$L92250
+	DD	$L92281
+	DD	$L92295
+	DD	$L92248
+	DD	$L92245
+	DD	$L92315
+$L93580:
+	DB	0
+	DB	6
+	DB	1
+	DB	2
+	DB	3
+	DB	6
+	DB	0
+	DB	4
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	5
+?OnFly@KMissle@@AAEXXZ ENDP				; KMissle::OnFly
+_TEXT	ENDS
+PUBLIC	??_7KWorldMsgNode@@6B@				; KWorldMsgNode::`vftable'
+PUBLIC	??_GKWorldMsgNode@@UAEPAXI@Z			; KWorldMsgNode::`scalar deleting destructor'
+PUBLIC	??_EKWorldMsgNode@@UAEPAXI@Z			; KWorldMsgNode::`vector deleting destructor'
+EXTRN	??2@YAPAXI@Z:NEAR				; operator new
+;	COMDAT ??_7KWorldMsgNode@@6B@
+; File ..\engine\src\KNode.h
+CONST	SEGMENT
+??_7KWorldMsgNode@@6B@ DD FLAT:??_EKWorldMsgNode@@UAEPAXI@Z ; KWorldMsgNode::`vftable'
+CONST	ENDS
+;	COMDAT ?Send@KWorldMsg@@QAEHKHHH@Z
+_TEXT	SEGMENT
+_dwMsgType$ = 8
+_nParam1$ = 12
+_nParam2$ = 16
+_nParam3$ = 20
+?Send@KWorldMsg@@QAEHKHHH@Z PROC NEAR			; KWorldMsg::Send, COMDAT
+
+; 71   : {
+
+	push	esi
+	mov	esi, ecx
+
+; 72   : 	KWorldMsgNode *pNode = NULL;
+; 73   : 
+; 74   : 	pNode = new KWorldMsgNode;
+
+	push	28					; 0000001cH
+	call	??2@YAPAXI@Z				; operator new
+	add	esp, 4
+	test	eax, eax
+	je	SHORT $L93613
+
+; 77   : 
+; 78   : 	pNode->m_dwMsgType	= dwMsgType;
+
+	mov	ecx, DWORD PTR _dwMsgType$[esp]
+
+; 79   : 	pNode->m_nParam[0]	= nParam1;
+
+	mov	edx, DWORD PTR _nParam1$[esp]
+	mov	DWORD PTR [eax+4], 0
+	mov	DWORD PTR [eax+8], 0
+	mov	DWORD PTR [eax], OFFSET FLAT:??_7KWorldMsgNode@@6B@ ; KWorldMsgNode::`vftable'
+	mov	DWORD PTR [eax+12], ecx
+
+; 80   : 	pNode->m_nParam[1]	= nParam2;
+
+	mov	ecx, DWORD PTR _nParam2$[esp]
+	mov	DWORD PTR [eax+16], edx
+
+; 81   : 	pNode->m_nParam[2]	= nParam3;
+
+	mov	edx, DWORD PTR _nParam3$[esp]
+	mov	DWORD PTR [eax+20], ecx
+
+; 82   : 
+; 83   : 	m_LocalMsgQueue.AddTail(pNode);
+
+	lea	ecx, DWORD PTR [esi+12]
+	mov	DWORD PTR [eax+24], edx
+	mov	edx, DWORD PTR [ecx+8]
+	test	edx, edx
+	je	SHORT $L93612
+	mov	DWORD PTR [eax+8], edx
+	mov	DWORD PTR [eax+4], ecx
+	mov	edx, DWORD PTR [ecx+8]
+	mov	DWORD PTR [edx+4], eax
+	mov	DWORD PTR [ecx+8], eax
+$L93612:
+
+; 84   : 	return TRUE;
+
+	mov	eax, 1
+	pop	esi
+
+; 85   : }
+
+	ret	16					; 00000010H
+$L93613:
+
+; 75   : 	if (!pNode)
+; 76   : 		return FALSE;
+
+	xor	eax, eax
+	pop	esi
+
+; 85   : }
+
+	ret	16					; 00000010H
+?Send@KWorldMsg@@QAEHKHHH@Z ENDP			; KWorldMsg::Send
+_TEXT	ENDS
+PUBLIC	??1KWorldMsgNode@@UAE@XZ			; KWorldMsgNode::~KWorldMsgNode
+;	COMDAT ??_GKWorldMsgNode@@UAEPAXI@Z
+_TEXT	SEGMENT
+___flags$ = 8
+??_GKWorldMsgNode@@UAEPAXI@Z PROC NEAR			; KWorldMsgNode::`scalar deleting destructor', COMDAT
+	push	esi
+	mov	esi, ecx
+	call	??1KWorldMsgNode@@UAE@XZ		; KWorldMsgNode::~KWorldMsgNode
+	test	BYTE PTR ___flags$[esp], 1
+	je	SHORT $L93617
+	push	esi
+	call	??3@YAXPAX@Z				; operator delete
+	add	esp, 4
+$L93617:
+	mov	eax, esi
+	pop	esi
+	ret	4
+??_GKWorldMsgNode@@UAEPAXI@Z ENDP			; KWorldMsgNode::`scalar deleting destructor'
+_TEXT	ENDS
+;	COMDAT ??1KWorldMsgNode@@UAE@XZ
+_TEXT	SEGMENT
+??1KWorldMsgNode@@UAE@XZ PROC NEAR			; KWorldMsgNode::~KWorldMsgNode, COMDAT
+	mov	DWORD PTR [ecx], OFFSET FLAT:??_7KNode@@6B@ ; KNode::`vftable'
+	ret	0
+??1KWorldMsgNode@@UAE@XZ ENDP				; KWorldMsgNode::~KWorldMsgNode
+_TEXT	ENDS
+;	COMDAT ?OnVanish@KMissle@@AAEXXZ
+_TEXT	SEGMENT
+?OnVanish@KMissle@@AAEXXZ PROC NEAR			; KMissle::OnVanish, COMDAT
+
+; 1110 : 	
+; 1111 : }
+
+	ret	0
+?OnVanish@KMissle@@AAEXXZ ENDP				; KMissle::OnVanish
+_TEXT	ENDS
+PUBLIC	?Paint@KMissle@@QAEXXZ				; KMissle::Paint
+EXTRN	?Draw@KMissleRes@@QAEHHHHHHHH@Z:NEAR		; KMissleRes::Draw
+;	COMDAT ?Paint@KMissle@@QAEXXZ
+_TEXT	SEGMENT
+_nSrcX$ = -8
+_nSrcY$ = -12
+?Paint@KMissle@@QAEXXZ PROC NEAR			; KMissle::Paint, COMDAT
+
+; 1115 : {
+
+	sub	esp, 12					; 0000000cH
+	push	esi
+	mov	esi, ecx
+	push	edi
+
+; 1116 : 	if (m_nMissleId <= 0 ) return;
+
+	mov	eax, DWORD PTR [esi+540]
+	test	eax, eax
+	jle	$L92336
+
+; 1117 : 	int nSrcX;
+; 1118 : 	int nSrcY;
+; 1119 : 	SubWorld[0].Map2Mps(m_nRegionId, m_nCurrentMapX, m_nCurrentMapY,m_nXOffset, m_nYOffset, &nSrcX, &nSrcY);
+
+	mov	edx, DWORD PTR [esi+232]
+	lea	eax, DWORD PTR _nSrcY$[esp+20]
+	lea	ecx, DWORD PTR _nSrcX$[esp+20]
+	push	eax
+	mov	eax, DWORD PTR [esi+228]
+	push	ecx
+	mov	ecx, DWORD PTR [esi+220]
+	push	edx
+	mov	edx, DWORD PTR [esi+216]
+	push	eax
+	mov	eax, DWORD PTR [esi+548]
+	push	ecx
+	push	edx
+	push	eax
+	mov	ecx, OFFSET FLAT:?SubWorld@@3PAVKSubWorld@@A
+	call	?Map2Mps@KSubWorld@@QAEXHHHHHPAH0@Z	; KSubWorld::Map2Mps
+
+; 1120 : 	
+; 1121 : 	if (!m_nZAcceleration)
+
+	mov	eax, DWORD PTR [esi+532]
+	test	eax, eax
+	jne	SHORT $L92332
+
+; 1122 : 	{
+; 1123 : 		m_MissleRes.Draw(m_eMissleStatus, nSrcX, nSrcY, m_nCurrentMapZ, m_nDir,m_nLifeTime - m_nStartLifeTime,  m_nCurrentLife - m_nStartLifeTime );
+
+	mov	eax, DWORD PTR [esi+208]
+	mov	ecx, DWORD PTR [esi+204]
+	mov	edx, DWORD PTR [esi+92]
+	sub	ecx, eax
+	sub	edx, eax
+	mov	eax, DWORD PTR [esi+608]
+	push	ecx
+	mov	ecx, DWORD PTR [esi+224]
+	push	edx
+	mov	edx, DWORD PTR _nSrcY$[esp+28]
+	push	eax
+	mov	eax, DWORD PTR _nSrcX$[esp+32]
+	push	ecx
+	mov	ecx, DWORD PTR [esi+536]
+	push	edx
+	lea	edi, DWORD PTR [esi+652]
+	push	eax
+	push	ecx
+	mov	ecx, edi
+	call	?Draw@KMissleRes@@QAEHHHHHHHH@Z		; KMissleRes::Draw
+
+; 1124 : 	}
+; 1125 : 	else
+
+	jmp	$L92333
+$L92332:
+
+; 1126 : 	{
+; 1127 : 		int nDirIndex = g_GetDirIndex(0,0,m_nXFactor, m_nYFactor);
+
+	mov	edi, DWORD PTR [esi+500]
+	push	ebx
+	push	ebp
+	mov	ebp, DWORD PTR [esi+496]
+	or	ebx, -1
+	test	ebp, ebp
+	jne	SHORT $L93635
+	test	edi, edi
+	jne	SHORT $L93635
+	or	eax, -1
+	jmp	SHORT $L93649
+$L93635:
+	mov	edx, ebp
+	mov	eax, edi
+	imul	edx, ebp
+	imul	eax, edi
+	add	edx, eax
+	mov	DWORD PTR -4+[esp+28], edx
+	fild	DWORD PTR -4+[esp+28]
+	fsqrt
+	call	__ftol
+	mov	ecx, eax
+	test	ecx, ecx
+	jne	SHORT $L93637
+	or	eax, -1
+	jmp	SHORT $L93649
+$L93637:
+	mov	eax, edi
+	shl	eax, 10					; 0000000aH
+	cdq
+	idiv	ecx
+	mov	edx, DWORD PTR ?g_nSin@@3PAHA		; g_nSin
+	xor	ecx, ecx
+$L93641:
+	cmp	eax, DWORD PTR [edx]
+	jg	SHORT $L93681
+	mov	ebx, ecx
+	inc	ecx
+	add	edx, 4
+	cmp	ecx, 32					; 00000020H
+	jl	SHORT $L93641
+$L93681:
+	test	ebp, ebp
+	jle	SHORT $L93645
+	mov	ecx, 63					; 0000003fH
+	sub	ecx, ebx
+	mov	ebx, ecx
+$L93645:
+	mov	eax, ebx
+$L93649:
+
+; 1128 : 		int nDir = g_DirIndex2Dir(nDirIndex, 64);
+; 1129 : 		m_MissleRes.Draw(m_eMissleStatus, nSrcX, nSrcY, m_nCurrentMapZ, nDir,m_nLifeTime - m_nStartLifeTime,  m_nCurrentLife - m_nStartLifeTime );
+
+	mov	ecx, DWORD PTR [esi+208]
+	mov	edx, DWORD PTR [esi+204]
+	sub	edx, ecx
+	lea	edi, DWORD PTR [esi+652]
+	push	edx
+	mov	edx, DWORD PTR [esi+92]
+	shl	eax, 6
+	sub	edx, ecx
+	mov	ecx, DWORD PTR _nSrcY$[esp+32]
+	sar	eax, 6
+	push	edx
+	mov	edx, DWORD PTR _nSrcX$[esp+36]
+	push	eax
+	mov	eax, DWORD PTR [esi+224]
+	push	eax
+	mov	eax, DWORD PTR [esi+536]
+	push	ecx
+	push	edx
+	push	eax
+	mov	ecx, edi
+	call	?Draw@KMissleRes@@QAEHHHHHHHH@Z		; KMissleRes::Draw
+	pop	ebp
+	pop	ebx
+$L92333:
+
+; 1130 : 	}
+; 1131 : 	
+; 1132 : 	//对于客户端，直到子弹及其产生的效果全部播放完才终止并删除掉!
+; 1133 : 	if (m_MissleRes.m_bHaveEnd && (m_MissleRes.SpecialMovieIsAllEnd()))
+
+	mov	eax, DWORD PTR [esi+676]
+	test	eax, eax
+	je	SHORT $L92336
+	mov	edi, DWORD PTR [edi+4]
+	mov	eax, DWORD PTR [edi+4]
+	test	eax, eax
+	je	SHORT $L93677
+	test	edi, edi
+	jne	SHORT $L92336
+$L93677:
+
+; 1134 : 		SubWorld[m_nSubWorldId].m_WorldMessage.Send(GWM_MISSLE_DEL, m_nMissleId);
+
+	mov	ecx, DWORD PTR [esi+540]
+	mov	esi, DWORD PTR [esi+544]
+	push	0
+	push	0
+	lea	edx, DWORD PTR [esi+esi*8]
+	push	ecx
+	push	4001					; 00000fa1H
+	lea	ecx, DWORD PTR [esi+edx*2]
+	shl	ecx, 4
+	add	ecx, OFFSET FLAT:?SubWorld@@3PAVKSubWorld@@A+172
+	call	?Send@KWorldMsg@@QAEHKHHH@Z		; KWorldMsg::Send
+$L92336:
+	pop	edi
+	pop	esi
+
+; 1135 : }
+
+	add	esp, 12					; 0000000cH
+	ret	0
+?Paint@KMissle@@QAEXXZ ENDP				; KMissle::Paint
+_TEXT	ENDS
+;	COMDAT ?CheckBeyondRegion@KMissle@@AAEHHHHH@Z
+_TEXT	SEGMENT
+_nDOffsetX$ = 8
+_nDOffsetY$ = 12
+_nTagetX$ = 16
+_nTagetY$ = 20
+_nSrcMpsX$92349 = 20
+_nSrcMpsY$92350 = 12
+_nTNewXOffset$92353 = -8
+_nTNewYOffset$92354 = -4
+_nTNewMapX$92355 = 8
+_nTNewMapY$92356 = -12
+_nTNewRegion$92357 = 16
+_nOldRegion$ = 20
+_nNewYOffset$ = 8
+_nNewMapY$ = 16
+?CheckBeyondRegion@KMissle@@AAEHHHHH@Z PROC NEAR	; KMissle::CheckBeyondRegion, COMDAT
+
+; 1140 : {
+
+	sub	esp, 12					; 0000000cH
+	push	ebx
+	push	ebp
+	push	esi
+	mov	esi, ecx
+	push	edi
+
+; 1141 : 	if (m_nRegionId < 0) 
+
+	mov	eax, DWORD PTR [esi+548]
+	test	eax, eax
+	jge	SHORT $L92344
+	pop	edi
+	pop	esi
+	pop	ebp
+
+; 1142 : 		return FALSE;
+
+	xor	eax, eax
+	pop	ebx
+
+; 1310 : }
+
+	add	esp, 12					; 0000000cH
+	ret	16					; 00000010H
+$L92344:
+
+; 1143 : 	//未动
+; 1144 : 
+; 1145 : 	if (nDOffsetX == 0 && nDOffsetY == 0) return TRUE;
+
+	mov	ecx, DWORD PTR _nDOffsetX$[esp+24]
+	mov	ebp, DWORD PTR _nDOffsetY$[esp+24]
+	test	ecx, ecx
+	jne	SHORT $L92345
+	test	ebp, ebp
+	je	$L92389
+$L92345:
+
+; 1146 : 
+; 1147 : 	if (abs(nDOffsetX) > CellWidth) 
+
+	mov	edi, DWORD PTR [esi+544]
+	lea	eax, DWORD PTR [edi+edi*8]
+	lea	edi, DWORD PTR [edi+eax*2]
+	mov	eax, ecx
+	cdq
+	shl	edi, 4
+	xor	eax, edx
+	sub	eax, edx
+	mov	edx, DWORD PTR ?SubWorld@@3PAVKSubWorld@@A[edi+148]
+	shl	edx, 10					; 0000000aH
+	cmp	eax, edx
+	jle	SHORT $L92346
+	pop	edi
+	pop	esi
+	pop	ebp
+
+; 1148 : 	{
+; 1149 : 		return FALSE;
+
+	xor	eax, eax
+	pop	ebx
+
+; 1310 : }
+
+	add	esp, 12					; 0000000cH
+	ret	16					; 00000010H
+$L92346:
+
+; 1150 : 	}
+; 1151 : 
+; 1152 : 	if (abs(nDOffsetY) > CellHeight) 
+
+	mov	eax, ebp
+	cdq
+	xor	eax, edx
+	sub	eax, edx
+	mov	edx, DWORD PTR ?SubWorld@@3PAVKSubWorld@@A[edi+152]
+	shl	edx, 10					; 0000000aH
+	cmp	eax, edx
+	jle	SHORT $L92347
+	pop	edi
+	pop	esi
+	pop	ebp
+
+; 1153 : 	{
+; 1154 : 		return FALSE;
+
+	xor	eax, eax
+	pop	ebx
+
+; 1310 : }
+
+	add	esp, 12					; 0000000cH
+	ret	16					; 00000010H
+$L92347:
+
+; 1155 : 	}
+; 1156 : 
+; 1157 : 
+; 1158 : if (nTagetX > 0 && nTagetY > 0 && !m_bCheckTagetXY)
+
+	mov	eax, DWORD PTR _nTagetX$[esp+24]
+	test	eax, eax
+	jle	$L92352
+	mov	ebx, DWORD PTR _nTagetY$[esp+24]
+	test	ebx, ebx
+	jle	$L92352
+	mov	eax, DWORD PTR [esi+252]
+	test	eax, eax
+	jne	$L92352
+
+; 1159 : {	
+; 1160 : int nSrcMpsX, nSrcMpsY;
+; 1161 : SubWorld[m_nSubWorldId].Map2Mps(m_nRegionId, m_nCurrentMapX, m_nCurrentMapY, m_nXOffset, m_nYOffset, &nSrcMpsX, &nSrcMpsY);
+
+	mov	edx, DWORD PTR [esi+232]
+	lea	eax, DWORD PTR _nSrcMpsY$92350[esp+24]
+	lea	ecx, DWORD PTR _nSrcMpsX$92349[esp+24]
+	push	eax
+	mov	eax, DWORD PTR [esi+228]
+	push	ecx
+	mov	ecx, DWORD PTR [esi+220]
+	push	edx
+	mov	edx, DWORD PTR [esi+216]
+	push	eax
+	mov	eax, DWORD PTR [esi+548]
+	push	ecx
+	push	edx
+	push	eax
+	lea	ecx, DWORD PTR ?SubWorld@@3PAVKSubWorld@@A[edi]
+	call	?Map2Mps@KSubWorld@@QAEXHHHHHPAH0@Z	; KSubWorld::Map2Mps
+
+; 1162 : int nDistance = SubWorld[m_nSubWorldId].GetDistance(nSrcMpsX, nSrcMpsY, nTagetX, nTagetY);
+
+	mov	eax, DWORD PTR _nTagetX$[esp+24]
+	mov	ecx, DWORD PTR _nSrcMpsY$92350[esp+24]
+	push	ebx
+	push	eax
+	mov	eax, DWORD PTR [esi+544]
+	mov	edx, DWORD PTR _nSrcMpsX$92349[esp+32]
+	push	ecx
+	push	edx
+	lea	ecx, DWORD PTR [eax+eax*8]
+	lea	ecx, DWORD PTR [eax+ecx*2]
+	shl	ecx, 4
+	add	ecx, OFFSET FLAT:?SubWorld@@3PAVKSubWorld@@A ; SubWorld
+	call	?GetDistance@KSubWorld@@QAEHHHHH@Z	; KSubWorld::GetDistance
+
+; 1163 : 
+; 1164 : 
+; 1165 : if ((nDistance * nDistance) <= (m_nSpeed * m_nSpeed * 2))
+
+	mov	ecx, DWORD PTR [esi+96]
+	mov	edx, ecx
+	imul	edx, ecx
+	mov	ecx, eax
+	imul	ecx, eax
+	shl	edx, 1
+	cmp	ecx, edx
+	jg	$L93687
+
+; 1166 : {
+; 1167 : 	int nTNewXOffset;
+; 1168 : 	int nTNewYOffset;
+; 1169 : 	int nTNewMapX;
+; 1170 : 	int nTNewMapY;
+; 1171 : 	int nTNewRegion;
+; 1172 : 	int nTOldRegion;
+; 1173 : 	nTOldRegion = m_nRegionId;
+; 1174 : SubWorld[m_nSubWorldId].Mps2Map(nTagetX,nTagetY,&nTNewRegion,&nTNewMapX,&nTNewMapY,&nTNewXOffset,&nTNewYOffset);
+
+	lea	edx, DWORD PTR _nTNewYOffset$92354[esp+28]
+	lea	eax, DWORD PTR _nTNewXOffset$92353[esp+28]
+	push	edx
+	lea	ecx, DWORD PTR _nTNewMapY$92356[esp+32]
+	push	eax
+	lea	edx, DWORD PTR _nTNewMapX$92355[esp+32]
+	push	ecx
+	mov	ecx, DWORD PTR _nTagetX$[esp+36]
+	lea	eax, DWORD PTR _nTNewRegion$92357[esp+36]
+	push	edx
+	push	eax
+	mov	eax, DWORD PTR [esi+544]
+	mov	edi, DWORD PTR [esi+548]
+	push	ebx
+	lea	edx, DWORD PTR [eax+eax*8]
+	push	ecx
+	lea	ecx, DWORD PTR [eax+edx*2]
+	shl	ecx, 4
+	add	ecx, OFFSET FLAT:?SubWorld@@3PAVKSubWorld@@A ; SubWorld
+	call	?Mps2Map@KSubWorld@@QAEXHHPAH0000@Z	; KSubWorld::Mps2Map
+
+; 1175 : 
+; 1176 : 	if (nTNewRegion >= 0) 
+
+	mov	eax, DWORD PTR _nTNewRegion$92357[esp+24]
+	test	eax, eax
+	jl	$L92359
+
+; 1177 : 	{
+; 1178 : 
+; 1179 : 	CurRegion.DecRef(m_nCurrentMapX, m_nCurrentMapY, obj_missle);
+
+	mov	eax, DWORD PTR [esi+220]
+	mov	ecx, DWORD PTR [esi+216]
+	push	2
+	push	eax
+	mov	eax, DWORD PTR [esi+544]
+	push	ecx
+	lea	edx, DWORD PTR [eax+eax*8]
+	lea	ecx, DWORD PTR [eax+edx*2]
+	mov	eax, DWORD PTR [esi+548]
+	shl	ecx, 4
+	lea	edx, DWORD PTR [eax+eax*2]
+	mov	ecx, DWORD PTR ?SubWorld@@3PAVKSubWorld@@A[ecx+8]
+	lea	eax, DWORD PTR [eax+edx*4]
+	shl	eax, 4
+	add	ecx, eax
+	call	?DecRef@KRegion@@QAEHHHW4MOVE_OBJ_KIND@@@Z ; KRegion::DecRef
+
+; 1180 : 		
+; 1181 : 		m_nRegionId	   = nTNewRegion;
+; 1182 : 		m_nCurrentMapX = nTNewMapX;
+; 1183 : 		m_nCurrentMapY = nTNewMapY;
+
+	mov	edx, DWORD PTR _nTNewMapY$92356[esp+28]
+	mov	ecx, DWORD PTR _nTNewMapX$92355[esp+24]
+	mov	eax, DWORD PTR _nTNewRegion$92357[esp+24]
+
+; 1184 : 		m_nXOffset	   = nTNewXOffset;
+; 1185 : 		m_nYOffset	   = nTNewYOffset;
+; 1186 : 	CurRegion.AddRef(m_nCurrentMapX, m_nCurrentMapY, obj_missle);
+
+	push	2
+	mov	ebx, DWORD PTR _nTNewXOffset$92353[esp+32]
+	push	edx
+	mov	DWORD PTR [esi+216], ecx
+	push	ecx
+	mov	ecx, DWORD PTR [esi+544]
+	mov	DWORD PTR [esi+220], edx
+	mov	DWORD PTR [esi+228], ebx
+	mov	ebx, DWORD PTR _nTNewYOffset$92354[esp+40]
+	lea	edx, DWORD PTR [ecx+ecx*8]
+	mov	DWORD PTR [esi+548], eax
+	mov	DWORD PTR [esi+232], ebx
+	lea	ecx, DWORD PTR [ecx+edx*2]
+	lea	edx, DWORD PTR [eax+eax*2]
+	shl	ecx, 4
+	lea	eax, DWORD PTR [eax+edx*4]
+	mov	ecx, DWORD PTR ?SubWorld@@3PAVKSubWorld@@A[ecx+8]
+	shl	eax, 4
+	add	ecx, eax
+	call	?AddRef@KRegion@@QAEHHHW4MOVE_OBJ_KIND@@@Z ; KRegion::AddRef
+
+; 1187 : 		
+; 1188 : 		if (nTOldRegion != m_nRegionId)
+
+	mov	eax, DWORD PTR [esi+548]
+	cmp	edi, eax
+	je	SHORT $L92360
+
+; 1189 : 		{
+; 1190 : 			SubWorld[m_nSubWorldId].m_WorldMessage.Send(GWM_MISSLE_CHANGE_REGION, nTOldRegion, m_nRegionId, m_nMissleId);
+
+	mov	ecx, DWORD PTR [esi+540]
+	push	ecx
+	push	eax
+	mov	eax, DWORD PTR [esi+544]
+	push	edi
+	push	4002					; 00000fa2H
+	lea	edx, DWORD PTR [eax+eax*8]
+	lea	ecx, DWORD PTR [eax+edx*2]
+	shl	ecx, 4
+	add	ecx, OFFSET FLAT:?SubWorld@@3PAVKSubWorld@@A+172
+	call	?Send@KWorldMsg@@QAEHKHHH@Z		; KWorldMsg::Send
+$L92360:
+
+; 1191 : 		}
+; 1192 : 	}
+; 1193 : 	else
+; 1194 : 	{
+; 1195 :         return FALSE;
+; 1196 : 	}
+; 1197 : 
+; 1198 : m_bCheckTagetXY = TRUE;
+
+	mov	eax, 1
+	pop	edi
+	mov	DWORD PTR [esi+252], eax
+	pop	esi
+	pop	ebp
+	pop	ebx
+
+; 1310 : }
+
+	add	esp, 12					; 0000000cH
+	ret	16					; 00000010H
+$L93687:
+
+; 1187 : 		
+; 1188 : 		if (nTOldRegion != m_nRegionId)
+
+	mov	ecx, DWORD PTR _nDOffsetX$[esp+24]
+$L92352:
+
+; 1199 : return TRUE;
+; 1200 : }
+; 1201 : }
+; 1202 : 
+; 1203 : 	
+; 1204 : 	
+; 1205 : 
+; 1206 : 	int nOldRegion		= m_nRegionId;
+; 1207 : 	int nNewXOffset		= m_nXOffset + nDOffsetX;
+; 1208 : 	int nNewYOffset		= m_nYOffset + nDOffsetY;
+
+	mov	eax, DWORD PTR [esi+232]
+	mov	ebx, DWORD PTR [esi+228]
+	add	ebp, eax
+
+; 1209 : 	int nNewMapX		= m_nCurrentMapX;
+; 1210 : 	int nNewMapY		= m_nCurrentMapY;
+
+	mov	eax, DWORD PTR [esi+220]
+	mov	DWORD PTR _nNewMapY$[esp+24], eax
+
+; 1211 : 	int nNewRegion		= m_nRegionId;
+; 1212 : 	
+; 1213 : 	DWORD nRegionWidth = RegionWidth;
+
+	mov	eax, DWORD PTR [esi+544]
+	mov	edi, DWORD PTR [esi+548]
+	add	ebx, ecx
+	lea	edx, DWORD PTR [eax+eax*8]
+	mov	ecx, ebp
+	mov	ebp, DWORD PTR [esi+216]
+	mov	DWORD PTR _nOldRegion$[esp+24], edi
+	lea	eax, DWORD PTR [eax+edx*2]
+	mov	DWORD PTR _nNewYOffset$[esp+24], ecx
+	shl	eax, 4
+
+; 1214 : 	DWORD nRegionHeight = RegionHeight;
+; 1215 : 	
+; 1216 : 	_ASSERT(abs(nNewXOffset) <= CellWidth * 2);
+; 1217 : 	_ASSERT(abs(nNewYOffset) <= CellHeight * 2);
+; 1218 : 	
+; 1219 : 	//	处理NPC的坐标变幻
+; 1220 : 	//	CELLWIDTH、CELLHEIGHT、OffX、OffY均是放大了1024倍
+; 1221 : 	
+; 1222 : 	if (nNewXOffset < 0)
+
+	test	ebx, ebx
+	jge	SHORT $L92372
+
+; 1223 : 	{
+; 1224 : 		nNewMapX--;
+; 1225 : 		nNewXOffset += CellWidth;
+
+	mov	edx, DWORD PTR ?SubWorld@@3PAVKSubWorld@@A[eax+148]
+	dec	ebp
+	shl	edx, 10					; 0000000aH
+	add	ebx, edx
+
+; 1226 : 	}
+; 1227 : 	else if (nNewXOffset > CellWidth)
+
+	jmp	SHORT $L92374
+$L92372:
+	mov	edx, DWORD PTR ?SubWorld@@3PAVKSubWorld@@A[eax+148]
+	shl	edx, 10					; 0000000aH
+	cmp	ebx, edx
+	jle	SHORT $L92374
+
+; 1228 : 	{
+; 1229 : 		nNewMapX++;
+
+	inc	ebp
+
+; 1230 : 		nNewXOffset -= CellWidth;
+
+	sub	ebx, edx
+$L92374:
+
+; 1231 : 	}
+; 1232 : 	
+; 1233 : 	if (nNewYOffset < 0)
+
+	test	ecx, ecx
+	jge	SHORT $L92375
+
+; 1234 : 	{
+; 1235 : 		nNewMapY--;
+
+	mov	edx, DWORD PTR _nNewMapY$[esp+24]
+	dec	edx
+	mov	DWORD PTR _nNewMapY$[esp+24], edx
+
+; 1236 : 		nNewYOffset += CellHeight;
+
+	mov	edx, DWORD PTR ?SubWorld@@3PAVKSubWorld@@A[eax+152]
+	shl	edx, 10					; 0000000aH
+	add	ecx, edx
+
+; 1237 : 	}
+; 1238 : 	else if (nNewYOffset > CellHeight)
+
+	jmp	SHORT $L93689
+$L92375:
+	mov	edx, DWORD PTR ?SubWorld@@3PAVKSubWorld@@A[eax+152]
+	shl	edx, 10					; 0000000aH
+	cmp	ecx, edx
+	mov	DWORD PTR 12+[esp+24], edx
+	jle	SHORT $L92377
+
+; 1239 : 	{
+; 1240 : 		nNewMapY++;
+
+	mov	edx, DWORD PTR _nNewMapY$[esp+24]
+	inc	edx
+	mov	DWORD PTR _nNewMapY$[esp+24], edx
+
+; 1241 : 		nNewYOffset -= CellHeight;
+
+	mov	edx, DWORD PTR 12+[esp+24]
+	sub	ecx, edx
+$L93689:
+	mov	DWORD PTR _nNewYOffset$[esp+24], ecx
+$L92377:
+
+; 1242 : 	}
+; 1243 : 	
+; 1244 : 	if (nNewMapX < 0)
+
+	test	ebp, ebp
+	jge	SHORT $L92378
+
+; 1245 : 	{
+; 1246 : 		nNewRegion = LeftRegion(m_nRegionId);
+
+	mov	ecx, DWORD PTR [esi+548]
+	lea	edx, DWORD PTR [ecx+ecx*2]
+	lea	ecx, DWORD PTR [ecx+edx*4]
+	mov	edx, DWORD PTR ?SubWorld@@3PAVKSubWorld@@A[eax+8]
+	shl	ecx, 4
+	mov	edi, DWORD PTR [edx+ecx+112]
+
+; 1247 : 		nNewMapX += nRegionWidth;
+
+	mov	ecx, DWORD PTR ?SubWorld@@3PAVKSubWorld@@A[eax+140]
+	add	ebp, ecx
+
+; 1248 : 	}
+; 1249 : 	else if ((DWORD)nNewMapX >= nRegionWidth)
+
+	jmp	SHORT $L92381
+$L92378:
+	mov	edx, DWORD PTR ?SubWorld@@3PAVKSubWorld@@A[eax+140]
+	cmp	ebp, edx
+	jb	SHORT $L92381
+
+; 1250 : 	{
+; 1251 : 		nNewRegion = RightRegion(m_nRegionId);
+
+	mov	ecx, DWORD PTR [esi+548]
+	lea	edi, DWORD PTR [ecx+ecx*2]
+	lea	ecx, DWORD PTR [ecx+edi*4]
+	mov	edi, DWORD PTR ?SubWorld@@3PAVKSubWorld@@A[eax+8]
+	shl	ecx, 4
+
+; 1252 : 		nNewMapX -= nRegionWidth;
+
+	sub	ebp, edx
+	mov	edi, DWORD PTR [edi+ecx+128]
+$L92381:
+
+; 1253 : 	}
+; 1254 : 
+; 1255 : 	if (nNewRegion < 0) 
+
+	test	edi, edi
+	jge	SHORT $L92382
+	pop	edi
+	pop	esi
+	pop	ebp
+
+; 1256 : 	{
+; 1257 : 		return FALSE; 
+
+	xor	eax, eax
+	pop	ebx
+
+; 1310 : }
+
+	add	esp, 12					; 0000000cH
+	ret	16					; 00000010H
+$L92382:
+
+; 1258 : 	}
+; 1259 : 	
+; 1260 : 	if (nNewMapY < 0)
+
+	mov	ecx, DWORD PTR _nNewMapY$[esp+24]
+	test	ecx, ecx
+	jge	SHORT $L92383
+
+; 1261 : 	{
+; 1262 : 		nNewRegion = UpRegion(nNewRegion);
+
+	lea	edx, DWORD PTR [edi+edi*2]
+	lea	edx, DWORD PTR [edi+edx*4]
+	mov	edi, DWORD PTR ?SubWorld@@3PAVKSubWorld@@A[eax+8]
+	shl	edx, 4
+	mov	edi, DWORD PTR [edi+edx+120]
+
+; 1263 : 		nNewMapY += nRegionHeight;
+
+	mov	edx, DWORD PTR ?SubWorld@@3PAVKSubWorld@@A[eax+144]
+	add	ecx, edx
+
+; 1264 : 	}
+; 1265 : 	else if (nNewMapY >= RegionHeight)
+
+	jmp	SHORT $L93690
+$L92383:
+	cmp	ecx, DWORD PTR ?SubWorld@@3PAVKSubWorld@@A[eax+144]
+	jl	SHORT $L92385
+
+; 1266 : 	{
+; 1267 : 		nNewRegion = DownRegion(nNewRegion);
+
+	lea	edx, DWORD PTR [edi+edi*2]
+	lea	edx, DWORD PTR [edi+edx*4]
+	mov	edi, DWORD PTR ?SubWorld@@3PAVKSubWorld@@A[eax+8]
+	shl	edx, 4
+	mov	edi, DWORD PTR [edi+edx+104]
+
+; 1268 : 		nNewMapY -= nRegionHeight;
+
+	mov	edx, DWORD PTR ?SubWorld@@3PAVKSubWorld@@A[eax+144]
+	sub	ecx, edx
+$L93690:
+	mov	DWORD PTR _nNewMapY$[esp+24], ecx
+$L92385:
+
+; 1269 : 	}
+; 1270 : 	
+; 1271 : 	//下一个位置为不合法位置，则消亡
+; 1272 : 	if (nNewRegion < 0) 
+
+	test	edi, edi
+	jge	SHORT $L92386
+$L92359:
+	pop	edi
+	pop	esi
+	pop	ebp
+
+; 1273 : 	{
+; 1274 : 		return FALSE; 
+
+	xor	eax, eax
+	pop	ebx
+
+; 1310 : }
+
+	add	esp, 12					; 0000000cH
+	ret	16					; 00000010H
+$L92386:
+
+; 1275 : 	}
+; 1276 : 	else
+; 1277 : 	{
+; 1278 : 
+; 1279 : 
+; 1280 : 
+; 1281 : 
+; 1282 : 
+; 1283 : 		CurRegion.DecRef(m_nCurrentMapX, m_nCurrentMapY, obj_missle);
+
+	mov	ecx, DWORD PTR [esi+220]
+	mov	edx, DWORD PTR [esi+216]
+	push	2
+	push	ecx
+	mov	ecx, DWORD PTR [esi+548]
+	push	edx
+	lea	edx, DWORD PTR [ecx+ecx*2]
+	lea	edx, DWORD PTR [ecx+edx*4]
+	mov	ecx, DWORD PTR ?SubWorld@@3PAVKSubWorld@@A[eax+8]
+	shl	edx, 4
+	add	ecx, edx
+	call	?DecRef@KRegion@@QAEHHHW4MOVE_OBJ_KIND@@@Z ; KRegion::DecRef
+
+; 1284 : 		_ASSERT(m_nCurrentMapX >= 0  &&  m_nCurrentMapY >= 0);
+; 1285 : 		
+; 1286 : 		m_nRegionId	   = nNewRegion;
+; 1287 : 		m_nCurrentMapX = nNewMapX;
+; 1288 : 		m_nCurrentMapY = nNewMapY;
+
+	mov	eax, DWORD PTR _nNewMapY$[esp+24]
+
+; 1289 : 		m_nXOffset	   = nNewXOffset;
+; 1290 : 		m_nYOffset	   = nNewYOffset;
+
+	mov	ecx, DWORD PTR _nNewYOffset$[esp+24]
+
+; 1291 : 		CurRegion.AddRef(m_nCurrentMapX, m_nCurrentMapY, obj_missle);
+
+	push	2
+	mov	DWORD PTR [esi+220], eax
+	push	eax
+	mov	eax, DWORD PTR [esi+544]
+	mov	DWORD PTR [esi+232], ecx
+	lea	ecx, DWORD PTR [edi+edi*2]
+	lea	edx, DWORD PTR [eax+eax*8]
+	mov	DWORD PTR [esi+548], edi
+	mov	DWORD PTR [esi+216], ebp
+	mov	DWORD PTR [esi+228], ebx
+	lea	eax, DWORD PTR [eax+edx*2]
+	lea	edx, DWORD PTR [edi+ecx*4]
+	shl	eax, 4
+	shl	edx, 4
+	mov	ecx, DWORD PTR ?SubWorld@@3PAVKSubWorld@@A[eax+8]
+	push	ebp
+	add	ecx, edx
+	call	?AddRef@KRegion@@QAEHHHW4MOVE_OBJ_KIND@@@Z ; KRegion::AddRef
+
+; 1292 : 		
+; 1293 : 		if (nOldRegion != m_nRegionId)
+
+	mov	eax, DWORD PTR [esi+548]
+	mov	ecx, DWORD PTR _nOldRegion$[esp+24]
+	cmp	ecx, eax
+	je	SHORT $L92389
+
+; 1294 : 		{
+; 1295 : 			SubWorld[m_nSubWorldId].m_WorldMessage.Send(GWM_MISSLE_CHANGE_REGION, nOldRegion, m_nRegionId, m_nMissleId);
+
+	mov	edx, DWORD PTR [esi+540]
+	mov	esi, DWORD PTR [esi+544]
+	push	edx
+	push	eax
+	lea	eax, DWORD PTR [esi+esi*8]
+	push	ecx
+	push	4002					; 00000fa2H
+	lea	ecx, DWORD PTR [esi+eax*2]
+	shl	ecx, 4
+	add	ecx, OFFSET FLAT:?SubWorld@@3PAVKSubWorld@@A+172
+	call	?Send@KWorldMsg@@QAEHKHHH@Z		; KWorldMsg::Send
+$L92389:
+	pop	edi
+	pop	esi
+	pop	ebp
+
+; 1296 : 		}
+; 1297 : 
+; 1298 : 
+; 1299 : 
+; 1300 : 
+; 1301 : 
+; 1302 : 
+; 1303 : 
+; 1304 : 
+; 1305 : 
+; 1306 : 
+; 1307 : 
+; 1308 : 	}
+; 1309 : 	return TRUE;
+
+	mov	eax, 1
+	pop	ebx
+
+; 1310 : }
+
+	add	esp, 12					; 0000000cH
+	ret	16					; 00000010H
+?CheckBeyondRegion@KMissle@@AAEHHHHH@Z ENDP		; KMissle::CheckBeyondRegion
+_TEXT	ENDS
+PUBLIC	??4KMissle@@AAEAAV0@AAV0@@Z			; KMissle::operator=
+EXTRN	__imp_?g_Random@@YAII@Z:NEAR
+;	COMDAT ??4KMissle@@AAEAAV0@AAV0@@Z
+_TEXT	SEGMENT
+_Missle$ = 8
+??4KMissle@@AAEAAV0@AAV0@@Z PROC NEAR			; KMissle::operator=, COMDAT
+
+; 1313 : {
+
+	sub	esp, 8
+	push	ebx
+
+; 1314 : 	Missle.m_nTempParam1	=	0;
+
+	mov	ebx, DWORD PTR _Missle$[esp+8]
+	xor	edx, edx
+	push	ebp
+	mov	DWORD PTR [ebx+596], edx
+
+; 1315 : 	Missle.m_nTempParam2	=	0;
+
+	mov	DWORD PTR [ebx+600], edx
+
+; 1316 : 	Missle.m_nDesMapX			=	0;
+
+	mov	DWORD PTR [ebx+256], edx
+
+; 1317 : 	Missle.m_nDesMapY			=	0;
+
+	mov	DWORD PTR [ebx+260], edx
+	mov	ebp, ecx
+
+; 1318 : 	Missle.m_nDesRegion		=	0;
+
+	mov	DWORD PTR [ebx+264], edx
+	push	esi
+
+; 1319 : 	Missle.m_bNeedReclaim	=	FALSE;
+
+	mov	DWORD PTR [ebx+268], edx
+	push	edi
+
+; 1320 : 	Missle.m_nFirstReclaimTime = 0;
+
+	mov	DWORD PTR [ebx+588], edx
+
+; 1321 : 	Missle.m_nEndReclaimTime = 0;
+; 1322 : 	memset(Missle.m_NeedReclaimPos, 0, sizeof(m_NeedReclaimPos));
+
+	mov	ecx, 12					; 0000000cH
+	xor	eax, eax
+	lea	edi, DWORD PTR [ebx+272]
+	mov	DWORD PTR [ebx+592], edx
+	rep stosd
+
+; 1323 : 
+; 1324 : 	Missle.m_bCanSlow		=	m_bCanSlow;
+
+	mov	eax, DWORD PTR [ebp+160]
+
+; 1325 : 	Missle.m_bCollideEvent	=	m_bCollideEvent;
+; 1326 : 	Missle.m_bCollideFriend =	m_bCollideFriend;
+; 1327 : 	Missle.m_bCollideVanish	=	m_bCollideVanish;
+; 1328 : 	Missle.m_bRangeDamage	=	m_bRangeDamage;
+; 1329 : 	Missle.m_eFollowKind	=	m_eFollowKind;
+; 1330 : 	Missle.m_eMoveKind		=	m_eMoveKind;
+; 1331 : 	Missle.m_nAction		=	m_nAction;
+; 1332 : 	Missle.m_nAngle			=	m_nAngle;
+; 1333 : 	Missle.m_nCollideRange	=	m_nCollideRange;
+; 1334 : 	Missle.m_nCurrentLife	=	0;
+; 1335 : 	Missle.m_nDamageRange	=	m_nDamageRange;
+; 1336 : 	Missle.m_nHeight		=	m_nHeight;
+; 1337 : 	Missle.m_nLifeTime		=	m_nLifeTime;
+; 1338 : 	Missle.m_nSpeed			=   m_nSpeed;
+; 1339 : 	Missle.m_nParam1		=	m_nParam1;
+; 1340 : 	Missle.m_nParam2		=	m_nParam2;
+; 1341 : 	Missle.m_nParam3		=	m_nParam3;
+; 1342 : 	Missle.m_nCurrentMapZ	=   m_nHeight >> 10;
+; 1343 : 	Missle.m_bFlyEvent		=	m_bFlyEvent;
+; 1344 : 	Missle.m_nFlyEventTime  =	m_nFlyEventTime;
+; 1345 : 	Missle.m_nZAcceleration =	m_nZAcceleration;
+; 1346 : 	Missle.m_nHeightSpeed	=	m_nHeightSpeed;
+; 1347 : 	Missle.m_bAutoExplode	=	m_bAutoExplode;
+; 1348 : 	Missle.m_ulDamageInterval = m_ulDamageInterval;
+; 1349 : 	strcpy(Missle.m_szMissleName	,	m_szMissleName);
+
+	lea	edi, DWORD PTR [ebp+24]
+	mov	DWORD PTR [ebx+160], eax
+	mov	ecx, DWORD PTR [ebp+188]
+	mov	DWORD PTR [ebx+188], ecx
+	mov	eax, DWORD PTR [ebp+156]
+	mov	DWORD PTR [ebx+156], eax
+	mov	ecx, DWORD PTR [ebp+152]
+	mov	DWORD PTR [ebx+152], ecx
+	mov	eax, DWORD PTR [ebp+104]
+	mov	DWORD PTR [ebx+104], eax
+	mov	ecx, DWORD PTR [ebp+80]
+	mov	DWORD PTR [ebx+80], ecx
+	mov	eax, DWORD PTR [ebp+76]
+	mov	DWORD PTR [ebx+76], eax
+	mov	ecx, DWORD PTR [ebp+56]
+	mov	DWORD PTR [ebx+56], ecx
+	mov	eax, DWORD PTR [ebp+612]
+	mov	DWORD PTR [ebx+612], eax
+	mov	ecx, DWORD PTR [ebp+144]
+	mov	DWORD PTR [ebx+144], ecx
+	mov	DWORD PTR [ebx+204], edx
+	mov	eax, DWORD PTR [ebp+148]
+	lea	esi, DWORD PTR [ebx+24]
+	mov	DWORD PTR [ebx+148], eax
+	mov	ecx, DWORD PTR [ebp+84]
+	mov	DWORD PTR [ebx+84], ecx
+	mov	eax, DWORD PTR [ebp+92]
+	mov	DWORD PTR [ebx+92], eax
+	mov	ecx, DWORD PTR [ebp+96]
+	mov	DWORD PTR [ebx+96], ecx
+	mov	eax, DWORD PTR [ebp+576]
+	mov	DWORD PTR [ebx+576], eax
+	mov	ecx, DWORD PTR [ebp+580]
+	mov	DWORD PTR [ebx+580], ecx
+	mov	eax, DWORD PTR [ebp+584]
+	mov	DWORD PTR [ebx+584], eax
+	mov	ecx, DWORD PTR [ebp+84]
+	sar	ecx, 10					; 0000000aH
+	mov	DWORD PTR [ebx+224], ecx
+	mov	eax, DWORD PTR [ebp+172]
+	mov	DWORD PTR [ebx+172], eax
+	mov	ecx, DWORD PTR [ebp+176]
+	mov	DWORD PTR [ebx+176], ecx
+	mov	eax, DWORD PTR [ebp+532]
+	mov	DWORD PTR [ebx+532], eax
+	mov	ecx, DWORD PTR [ebp+88]
+	mov	DWORD PTR [ebx+88], ecx
+	mov	eax, DWORD PTR [ebp+112]
+	mov	DWORD PTR [ebx+112], eax
+	mov	ecx, DWORD PTR [ebp+196]
+	mov	DWORD PTR [ebx+196], ecx
+	or	ecx, -1
+	xor	eax, eax
+	mov	DWORD PTR 8+[esp+20], esi
+	repne scasb
+	not	ecx
+	sub	edi, ecx
+	mov	eax, ecx
+	mov	esi, edi
+	mov	edi, DWORD PTR 8+[esp+20]
+	shr	ecx, 2
+	rep movsd
+	mov	ecx, eax
+	and	ecx, 3
+	rep movsb
+
+; 1350 : 	
+; 1351 : #ifndef  _SERVER
+; 1352 : 	Missle.m_bMultiShow		=  m_bMultiShow;
+
+	mov	ecx, DWORD PTR [ebp+628]
+	mov	DWORD PTR [ebx+628], ecx
+
+; 1353 : 	Missle.m_MissleRes.m_bLoopAnim = m_MissleRes.m_bLoopAnim;
+
+	mov	eax, DWORD PTR [ebp+680]
+	mov	DWORD PTR [ebx+680], eax
+
+; 1354 : 	Missle.m_MissleRes.m_bHaveEnd = FALSE;
+
+	mov	DWORD PTR [ebx+676], edx
+
+; 1355 : 	Missle.m_btRedLum		= m_btRedLum;
+
+	mov	ecx, DWORD PTR [ebp+636]
+	mov	DWORD PTR [ebx+636], ecx
+
+; 1356 : 	Missle.m_btGreenLum		= m_btGreenLum;
+
+	mov	eax, DWORD PTR [ebp+640]
+	mov	DWORD PTR [ebx+640], eax
+
+; 1357 : 	Missle.m_btBlueLum		= m_btBlueLum;
+
+	mov	ecx, DWORD PTR [ebp+644]
+	mov	DWORD PTR [ebx+644], ecx
+
+; 1358 : 	Missle.m_usLightRadius	= m_usLightRadius;
+
+	mov	ax, WORD PTR [ebp+648]
+	mov	WORD PTR [ebx+648], ax
+
+; 1359 : 	int nOffset = 0;
+; 1360 : 	
+; 1361 : 	//如果是相同的子弹可以以不同方式显示时，则随机产生
+; 1362 : 	if (m_bMultiShow)		
+
+	mov	ecx, DWORD PTR [ebp+628]
+	xor	eax, eax
+	cmp	ecx, edx
+	je	SHORT $L92396
+
+; 1363 : 	{
+; 1364 : 		if (g_Random(2) == 0)
+
+	push	2
+	call	DWORD PTR __imp_?g_Random@@YAII@Z
+	add	esp, 4
+	neg	eax
+	sbb	eax, eax
+	and	eax, 4
+$L92396:
+
+; 1365 : 		{
+; 1366 : 			nOffset = 0;
+; 1367 : 		}
+; 1368 : 		else
+; 1369 : 			nOffset = MAX_MISSLE_STATUS;
+; 1370 : 	}
+; 1371 : 	
+; 1372 : 	for (int t = 0; t < MAX_MISSLE_STATUS ; t++)
+
+	lea	ecx, DWORD PTR [ebx+784]
+	mov	DWORD PTR -8+[esp+24], 4
+	mov	DWORD PTR 8+[esp+20], ecx
+	lea	ecx, DWORD PTR [eax+eax*2]
+	lea	edx, DWORD PTR [ecx+ecx*8]
+	shl	edx, 1
+	sub	edx, eax
+	lea	edx, DWORD PTR [ebp+edx*4+784]
+$L92399:
+
+; 1373 : 	{
+; 1374 : 		strcpy(Missle.m_MissleRes.m_MissleRes[t].AnimFileName,m_MissleRes.m_MissleRes[t + nOffset].AnimFileName);
+
+	mov	eax, DWORD PTR 8+[esp+20]
+	lea	edi, DWORD PTR [edx-100]
+	or	ecx, -1
+	lea	esi, DWORD PTR [eax-100]
+	xor	eax, eax
+	repne scasb
+	not	ecx
+	sub	edi, ecx
+	mov	DWORD PTR -4+[esp+24], esi
+	mov	eax, ecx
+	mov	esi, edi
+	mov	edi, DWORD PTR -4+[esp+24]
+	shr	ecx, 2
+	rep movsd
+	mov	ecx, eax
+
+; 1375 : 		
+; 1376 : 		Missle.m_MissleRes.m_MissleRes[t].nTotalFrame = m_MissleRes.m_MissleRes[t + nOffset].nTotalFrame;
+
+	mov	eax, DWORD PTR 8+[esp+20]
+	and	ecx, 3
+	rep movsb
+	mov	ecx, DWORD PTR [edx]
+
+; 1377 : 		Missle.m_MissleRes.m_MissleRes[t].nDir = m_MissleRes.m_MissleRes[t + nOffset].nDir;
+; 1378 : 		Missle.m_MissleRes.m_MissleRes[t].nInterval = m_MissleRes.m_MissleRes[t + nOffset].nInterval;
+; 1379 : 		
+; 1380 : 		strcpy(Missle.m_MissleRes.m_MissleRes[t].SndFileName,m_MissleRes.m_MissleRes[t + nOffset].SndFileName);
+
+	lea	esi, DWORD PTR [eax+12]
+	mov	DWORD PTR [eax], ecx
+	mov	ecx, DWORD PTR [edx+8]
+	mov	DWORD PTR [eax+8], ecx
+	mov	ecx, DWORD PTR [edx+4]
+	mov	DWORD PTR [eax+4], ecx
+	lea	edi, DWORD PTR [edx+12]
+	or	ecx, -1
+	xor	eax, eax
+	repne scasb
+	not	ecx
+	sub	edi, ecx
+	mov	DWORD PTR -4+[esp+24], esi
+	mov	eax, ecx
+	mov	esi, edi
+	mov	edi, DWORD PTR -4+[esp+24]
+	add	edx, 212				; 000000d4H
+	shr	ecx, 2
+	rep movsd
+	mov	ecx, eax
+	mov	eax, DWORD PTR -8+[esp+24]
+	and	ecx, 3
+	rep movsb
+	mov	ecx, DWORD PTR 8+[esp+20]
+	add	ecx, 212				; 000000d4H
+	dec	eax
+	mov	DWORD PTR 8+[esp+20], ecx
+	mov	DWORD PTR -8+[esp+24], eax
+	jne	$L92399
+
+; 1381 : 	}
+; 1382 : 	Missle.m_MissleRes.m_bSubLoop = m_MissleRes.m_bSubLoop;
+
+	mov	ecx, DWORD PTR [ebp+2432]
+	pop	edi
+	mov	DWORD PTR [ebx+2432], ecx
+
+; 1383 : 	Missle.m_MissleRes.m_nSubStart = m_MissleRes.m_nSubStart;
+
+	mov	edx, DWORD PTR [ebp+2436]
+	mov	DWORD PTR [ebx+2436], edx
+
+; 1384 : 	Missle.m_MissleRes.m_nSubStop = m_MissleRes.m_nSubStop;
+
+	mov	eax, DWORD PTR [ebp+2440]
+	mov	DWORD PTR [ebx+2440], eax
+	pop	esi
+
+; 1385 : #endif	
+; 1386 : 	
+; 1387 : 	return (Missle);
+
+	mov	eax, ebx
+	pop	ebp
+	pop	ebx
+
+; 1388 : }
+
+	add	esp, 8
+	ret	4
+??4KMissle@@AAEAAV0@AAV0@@Z ENDP			; KMissle::operator=
+_TEXT	ENDS
+PUBLIC	?ProcessDamage@KMissle@@AAEHH@Z			; KMissle::ProcessDamage
+;	COMDAT ?ProcessDamage@KMissle@@AAEHH@Z
+_TEXT	SEGMENT
+?ProcessDamage@KMissle@@AAEHH@Z PROC NEAR		; KMissle::ProcessDamage, COMDAT
+
+; 1400 : #ifdef _SERVER
+; 1401 : 	bool bCalDamage = false;
+; 1402 : 
+; 1403 : 	_ASSERT (Npc[m_nLauncher].IsMatch(m_dwLauncherId));
+; 1404 : 	
+; 1405 : 	if (m_pMagicAttribsData) 
+; 1406 : 	{
+; 1407 : 
+; 1408 : 
+; 1409 : int nDameXG = 0;
+; 1410 : 
+; 1411 : if (m_nSkillId == 343)
+; 1412 : {
+; 1413 : if ((m_nDir >= 10 && m_nDir < 25) || (m_nDir >= 45 && m_nDir < 60))
+; 1414 : {
+; 1415 : nDameXG = 2;
+; 1416 : }
+; 1417 : }
+; 1418 : else if (m_nSkillId == 348)
+; 1419 : {
+; 1420 : //if (m_nDir == 10 && m_nDir == 42)
+; 1421 : //if ((m_nDir >= 12 && m_nDir <= 16) || (m_nDir >= 28 && m_nDir <= 32) || (m_nDir >= 44 && m_nDir <= 48))
+; 1422 : if ((m_nDir >= 10 && m_nDir < 25) || (m_nDir >= 45 && m_nDir < 60))
+; 1423 : {
+; 1424 : nDameXG = 2;
+; 1425 : }
+; 1426 : }
+; 1427 : else if (m_nSkillId == 346)
+; 1428 : {
+; 1429 : 
+; 1430 : //if (m_nDir == 12 && m_nDir == 28 && m_nDir == 44)
+; 1431 : if ((m_nDir >= 10 && m_nDir < 20) || (m_nDir >= 45 && m_nDir < 55))
+; 1432 : //if ((m_nDir >= 12 && m_nDir <= 16) || (m_nDir >= 28 && m_nDir <= 32) || (m_nDir >= 44 && m_nDir <= 48))
+; 1433 : {
+; 1434 : nDameXG = 3;
+; 1435 : }
+; 1436 : else if (m_nDir == 60)
+; 1437 : {
+; 1438 : nDameXG = 4;
+; 1439 : }
+; 1440 : 
+; 1441 : }
+; 1442 : 	
+; 1443 : 		if (Npc[nNpcId].ReceiveDamage(m_nLauncher, m_bIsMelee, m_pMagicAttribsData->m_pDamageMagicAttribs, m_bUseAttackRating, m_bDoHurt ,nDameXG))
+; 1444 : 		{
+; 1445 : 			if (m_eRelation & relation_enemy && g_RandPercent(Npc[nNpcId].m_CurrentBuffEmtyRetPercent.nValue[0]))
+; 1446 : 			{
+; 1447 : 		   // if (m_pMagicAttribsData->m_nStateMagicAttribsNum > 0)
+; 1448 : 			//{
+; 1449 : 			//	KSkill * pSkillActive = (KSkill *) g_SkillManager.GetSkill(Npc[nNpcId].m_CurrentBuffEmtyRetPercent.nValue[1],Npc[nNpcId].m_CurrentBuffEmtyRetPercent.nValue[2]);
+; 1450 :             //    if (pSkillActive)
+; 1451 : 			//	{
+; 1452 : 			//	KMagicAttrib* pMagicAttrib = pSkillActive->GetStateAttribs();
+; 1453 : 			//	int pMagicAttribNum = pSkillActive->GetStateAttribsNum();
+; 1454 : 			//	Npc[nNpcId].SetStateSkillEffect(nNpcId, Npc[nNpcId].m_CurrentBuffEmtyRetPercent.nValue[1], Npc[nNpcId].m_CurrentBuffEmtyRetPercent.nValue[2], pMagicAttrib, pMagicAttribNum, pMagicAttrib[0].nValue[1]);
+; 1455 : 			//	}
+; 1456 : 			//	Npc[m_nLauncher].SetStateSkillEffect(nNpcId, m_nSkillId, m_nLevel, m_pMagicAttribsData->m_pStateMagicAttribs, m_pMagicAttribsData->m_nStateMagicAttribsNum, m_pMagicAttribsData->m_pStateMagicAttribs[0].nValue[1]);
+; 1457 : 			//}
+; 1458 : 
+; 1459 : 			}
+; 1460 : 
+; 1461 : 			else if (m_eRelation & relation_enemy && g_RandPercent(Npc[nNpcId].m_CurrentBuffEmtyResistPercent.nValue[0]))
+; 1462 : 			{
+; 1463 : 			
+; 1464 : 	        if (m_pMagicAttribsData->m_nStateMagicAttribsNum > 0)
+; 1465 : 			{
+; 1466 : 				KSkill * pSkillActive = (KSkill *) g_SkillManager.GetSkill(Npc[nNpcId].m_CurrentBuffEmtyResistPercent.nValue[1],Npc[nNpcId].m_CurrentBuffEmtyResistPercent.nValue[2]);
+; 1467 :                 if (pSkillActive)
+; 1468 : 				{
+; 1469 : 				KMagicAttrib* pMagicAttrib = pSkillActive->GetStateAttribs();
+; 1470 : 				int pMagicAttribNum = pSkillActive->GetStateAttribsNum();
+; 1471 : 				Npc[nNpcId].SetStateSkillEffect(nNpcId, Npc[nNpcId].m_CurrentBuffEmtyResistPercent.nValue[1], Npc[nNpcId].m_CurrentBuffEmtyResistPercent.nValue[2], pMagicAttrib, pMagicAttribNum, pMagicAttrib[0].nValue[1]);
+; 1472 : 				}
+; 1473 : 			}
+; 1474 : 
+; 1475 : 			}
+; 1476 : 
+; 1477 : 
+; 1478 : 			else
+; 1479 : 			{
+; 1480 : ;
+; 1481 : 			if (m_pMagicAttribsData->m_nStateMagicAttribsNum > 0)
+; 1482 : 			{
+; 1483 : 			Npc[nNpcId].SetStateSkillEffect(m_nLauncher, m_nSkillId, m_nLevel, m_pMagicAttribsData->m_pStateMagicAttribs, m_pMagicAttribsData->m_nStateMagicAttribsNum, m_pMagicAttribsData->m_pStateMagicAttribs[0].nValue[1]);
+; 1484 : 
+; 1485 : 			for (int i=0;i<m_pMagicAttribsData->m_nStateMagicAttribsNum;i++)
+; 1486 : 				{
+; 1487 : 				if (m_pMagicAttribsData->m_pStateMagicAttribs[i].nAttribType == magic_doskillbuff1 || m_pMagicAttribsData->m_pStateMagicAttribs[i].nAttribType == magic_doskillbuff2 || m_pMagicAttribsData->m_pStateMagicAttribs[i].nAttribType == magic_doskillbuff3 || m_pMagicAttribsData->m_pStateMagicAttribs[i].nAttribType == magic_doskillbuff4 || m_pMagicAttribsData->m_pStateMagicAttribs[i].nAttribType == magic_doskillbuff5)
+; 1488 : 				{
+; 1489 : 
+; 1490 : 				int nLevel = Npc[m_nLauncher].m_SkillList.GetCurrentLevel(m_pMagicAttribsData->m_pStateMagicAttribs[i].nValue[0]);
+; 1491 : 			    if (nLevel > m_pMagicAttribsData->m_pStateMagicAttribs[i].nValue[1])
+; 1492 :                 nLevel = m_pMagicAttribsData->m_pStateMagicAttribs[i].nValue[1];
+; 1493 : 				if (nLevel >0)
+; 1494 : 				{
+; 1495 :                 KSkill * pSkillActive = (KSkill *) g_SkillManager.GetSkill(m_pMagicAttribsData->m_pStateMagicAttribs[i].nValue[0],nLevel);
+; 1496 :                 if (pSkillActive)
+; 1497 : 				{
+; 1498 : 				KSkill * pSkillActive1 = (KSkill *) g_SkillManager.GetSkill(pSkillActive->GetChildSkillId(),nLevel);
+; 1499 : 				if (pSkillActive1)
+; 1500 : 				{
+; 1501 : 				KMagicAttrib* pMagicAttrib1 = pSkillActive1->GetStateAttribs();
+; 1502 : 				int pMagicAttribNum1 = pSkillActive1->GetStateAttribsNum();
+; 1503 : 				Npc[nNpcId].SetStateSkillEffect(m_nLauncher, pSkillActive->GetChildSkillId(), nLevel, pMagicAttrib1, pMagicAttribNum1, pMagicAttrib1[0].nValue[1]);
+; 1504 : 				}
+; 1505 : 				}
+; 1506 : 				}
+; 1507 : 
+; 1508 : 				}
+; 1509 : 				}
+; 1510 : 
+; 1511 : 
+; 1512 : 			}
+; 1513 : 			
+; 1514 : 			}
+; 1515 : 
+; 1516 : 			if (m_pMagicAttribsData->m_nImmediateMagicAttribsNum > 0)
+; 1517 : 				Npc[nNpcId].SetImmediatelySkillEffect(m_nLauncher, m_pMagicAttribsData->m_pImmediateAttribs, m_pMagicAttribsData->m_nImmediateMagicAttribsNum);
+; 1518 : 		
+; 1519 : 			
+; 1520 : 			}
+; 1521 : 		return TRUE;
+; 1522 : 	}
+; 1523 : #endif //_SERVER
+; 1524 : 	return FALSE;
+
+	xor	eax, eax
+
+; 1525 : }
+
+	ret	4
+?ProcessDamage@KMissle@@AAEHH@Z ENDP			; KMissle::ProcessDamage
+_TEXT	ENDS
+EXTRN	?Vanish@KSkill@@ABEXPAVKMissle@@@Z:NEAR		; KSkill::Vanish
+;	COMDAT ?DoVanish@KMissle@@AAEXXZ
+_TEXT	SEGMENT
+?DoVanish@KMissle@@AAEXXZ PROC NEAR			; KMissle::DoVanish, COMDAT
+
+; 1528 : {
+
+	push	esi
+	mov	esi, ecx
+
+; 1529 : 	if (m_eMissleStatus == MS_DoVanish) return ;
+
+	cmp	DWORD PTR [esi+536], 2
+	je	$L92415
+
+; 1530 : 	
+; 1531 : #ifndef _SERVER
+; 1532 : 	m_MissleRes.m_bHaveEnd = TRUE;
+; 1533 : 	m_nCollideOrVanishTime = m_nCurrentLife;
+
+	mov	eax, DWORD PTR [esi+204]
+	mov	DWORD PTR [esi+676], 1
+	mov	DWORD PTR [esi+212], eax
+
+; 1534 : #endif
+; 1535 : 	if (m_bVanishedEvent)	
+
+	mov	eax, DWORD PTR [esi+192]
+	test	eax, eax
+	je	SHORT $L92414
+
+; 1536 : 	{
+; 1537 : 		_ASSERT(m_nSkillId < MAX_SKILL && m_nLevel < MAX_SKILLLEVEL);
+; 1538 : 		KSkill * pOrdinSkill = (KSkill *) g_SkillManager.GetSkill(m_nSkillId,m_nLevel);
+
+	mov	eax, DWORD PTR [esi+100]
+	mov	ecx, DWORD PTR [esi+504]
+	cmp	eax, 550				; 00000226H
+	jge	SHORT $L92414
+	test	eax, eax
+	jle	SHORT $L92414
+	test	ecx, ecx
+	jle	SHORT $L92414
+	cmp	ecx, 64					; 00000040H
+	jg	SHORT $L92414
+	mov	edx, eax
+	shl	edx, 6
+	add	edx, ecx
+	mov	edx, DWORD PTR ?g_SkillManager@@3VKSkillManager@@A[edx*4+8540]
+	test	edx, edx
+	je	SHORT $L93709
+	mov	eax, edx
+	jmp	SHORT $L93704
+$L93709:
+	push	ecx
+	push	eax
+	mov	ecx, OFFSET FLAT:?g_SkillManager@@3VKSkillManager@@A
+	call	?InstanceSkill@KSkillManager@@AAEPAVISkill@@KK@Z ; KSkillManager::InstanceSkill
+$L93704:
+
+; 1539 : 		if (pOrdinSkill)
+
+	test	eax, eax
+	je	SHORT $L92414
+
+; 1540 :         {
+; 1541 : 			pOrdinSkill->Vanish(this);
+
+	push	esi
+	mov	ecx, eax
+	call	?Vanish@KSkill@@ABEXPAVKMissle@@@Z	; KSkill::Vanish
+$L92414:
+
+; 1542 :         }
+; 1543 : 	}
+; 1544 : #ifdef _SERVER	//服务器端时子弹一旦进入消亡期则直接删除掉
+; 1545 : 	SubWorld[m_nSubWorldId].m_WorldMessage.Send(GWM_MISSLE_DEL, m_nMissleId);
+; 1546 : 	m_eMissleStatus = MS_DoVanish;
+; 1547 : 	return ;
+; 1548 : #endif
+; 1549 : 	m_eMissleStatus = MS_DoVanish;
+; 1550 : #ifndef _SERVER 
+; 1551 : 	if (m_nRegionId < 0)
+
+	mov	eax, DWORD PTR [esi+548]
+	mov	DWORD PTR [esi+536], 2
+	test	eax, eax
+	jge	SHORT $L92415
+
+; 1552 : 	{
+; 1553 : 		_ASSERT(0);
+; 1554 : 		m_bRemoving = TRUE;
+
+	mov	DWORD PTR [esi+68], 1
+$L92415:
+	pop	esi
+
+; 1555 : 		return ;
+; 1556 : 	}
+; 1557 : #endif
+; 1558 : }
+
+	ret	0
+?DoVanish@KMissle@@AAEXXZ ENDP				; KMissle::DoVanish
+_TEXT	ENDS
+EXTRN	?Collidsion@KSkill@@ABEXPAVKMissle@@@Z:NEAR	; KSkill::Collidsion
+;	COMDAT ?DoCollision@KMissle@@AAEXXZ
+_TEXT	SEGMENT
+_nSrcX$ = -4
+_nSrcY$ = -8
+_nSrcX5$92429 = -12
+_nSrcY5$92430 = -16
+?DoCollision@KMissle@@AAEXXZ PROC NEAR			; KMissle::DoCollision, COMDAT
+
+; 1561 : {
+
+	sub	esp, 16					; 00000010H
+	push	esi
+	mov	esi, ecx
+	push	edi
+
+; 1562 : 	if (m_eMissleStatus == MS_DoCollision) return;
+
+	cmp	DWORD PTR [esi+536], 3
+	je	$L92431
+
+; 1563 : 	
+; 1564 : #ifndef _SERVER
+; 1565 : 	int nSrcX = 0 ;
+; 1566 : 	int nSrcY = 0 ;
+; 1567 : 	SubWorld[0].Map2Mps(m_nRegionId, m_nCurrentMapX, m_nCurrentMapY,m_nXOffset, m_nYOffset, &nSrcX, &nSrcY);
+
+	mov	edx, DWORD PTR [esi+232]
+	lea	eax, DWORD PTR _nSrcY$[esp+24]
+	lea	ecx, DWORD PTR _nSrcX$[esp+24]
+	push	eax
+	mov	eax, DWORD PTR [esi+228]
+	push	ecx
+	mov	ecx, DWORD PTR [esi+220]
+	push	edx
+	mov	edx, DWORD PTR [esi+216]
+	push	eax
+	mov	eax, DWORD PTR [esi+548]
+	push	ecx
+	xor	edi, edi
+	push	edx
+	push	eax
+	mov	ecx, OFFSET FLAT:?SubWorld@@3PAVKSubWorld@@A
+	mov	DWORD PTR _nSrcX$[esp+52], edi
+	mov	DWORD PTR _nSrcY$[esp+52], edi
+	call	?Map2Mps@KSubWorld@@QAEXHHHHHPAH0@Z	; KSubWorld::Map2Mps
+
+; 1568 : #endif
+; 1569 : 	
+; 1570 : 	if (m_bCollideEvent)	
+
+	cmp	DWORD PTR [esi+188], edi
+	je	SHORT $L92427
+
+; 1571 : 	{
+; 1572 : 		_ASSERT(m_nSkillId < MAX_SKILL && m_nLevel < MAX_SKILLLEVEL);
+; 1573 : 		KSkill * pOrdinSkill = (KSkill *)g_SkillManager.GetSkill(m_nSkillId, m_nLevel);
+
+	mov	eax, DWORD PTR [esi+100]
+	mov	ecx, DWORD PTR [esi+504]
+	cmp	eax, 550				; 00000226H
+	jge	SHORT $L92427
+	cmp	eax, edi
+	jle	SHORT $L92427
+	cmp	ecx, edi
+	jle	SHORT $L92427
+	cmp	ecx, 64					; 00000040H
+	jg	SHORT $L92427
+	mov	edx, eax
+	shl	edx, 6
+	add	edx, ecx
+	mov	edx, DWORD PTR ?g_SkillManager@@3VKSkillManager@@A[edx*4+8540]
+	cmp	edx, edi
+	je	SHORT $L93722
+	mov	eax, edx
+	jmp	SHORT $L93717
+$L93722:
+	push	ecx
+	push	eax
+	mov	ecx, OFFSET FLAT:?g_SkillManager@@3VKSkillManager@@A
+	call	?InstanceSkill@KSkillManager@@AAEPAVISkill@@KK@Z ; KSkillManager::InstanceSkill
+$L93717:
+
+; 1574 : 		if (pOrdinSkill)
+
+	cmp	eax, edi
+	je	SHORT $L92427
+
+; 1575 :         {
+; 1576 : 			pOrdinSkill->Collidsion(this);
+
+	push	esi
+	mov	ecx, eax
+	call	?Collidsion@KSkill@@ABEXPAVKMissle@@@Z	; KSkill::Collidsion
+$L92427:
+
+; 1577 :         }
+; 1578 : 	}
+; 1579 : 	
+; 1580 : 	if (m_bCollideVanish)
+
+	cmp	DWORD PTR [esi+152], edi
+	je	SHORT $L92428
+
+; 1581 : 	{
+; 1582 : #ifndef _SERVER
+; 1583 : 		m_MissleRes.m_bHaveEnd = TRUE;
+; 1584 : #endif
+; 1585 : 		
+; 1586 : #ifndef _SERVER 
+; 1587 : 		int nSrcX5 = 0 ;
+; 1588 : 		int nSrcY5 = 0 ;
+; 1589 : 		SubWorld[0].Map2Mps(m_nRegionId, m_nCurrentMapX, m_nCurrentMapY,m_nXOffset, m_nYOffset, &nSrcX5, &nSrcY5);
+
+	mov	edx, DWORD PTR [esi+232]
+	lea	eax, DWORD PTR _nSrcY5$92430[esp+24]
+	lea	ecx, DWORD PTR _nSrcX5$92429[esp+24]
+	push	eax
+	mov	eax, DWORD PTR [esi+228]
+	push	ecx
+	mov	ecx, DWORD PTR [esi+220]
+	push	edx
+	mov	edx, DWORD PTR [esi+216]
+	push	eax
+	mov	eax, DWORD PTR [esi+548]
+	push	ecx
+	push	edx
+	push	eax
+	mov	ecx, OFFSET FLAT:?SubWorld@@3PAVKSubWorld@@A
+	mov	DWORD PTR [esi+676], 1
+	mov	DWORD PTR _nSrcX5$92429[esp+52], edi
+	mov	DWORD PTR _nSrcY5$92430[esp+52], edi
+	call	?Map2Mps@KSubWorld@@QAEXHHHHHPAH0@Z	; KSubWorld::Map2Mps
+
+; 1590 : 		CreateSpecialEffect(MS_DoVanish, nSrcX5, nSrcY5, m_nCurrentMapZ);
+
+	mov	ecx, DWORD PTR [esi+224]
+	mov	edx, DWORD PTR _nSrcY5$92430[esp+24]
+	mov	eax, DWORD PTR _nSrcX5$92429[esp+24]
+	push	edi
+	push	ecx
+	push	edx
+	push	eax
+	push	2
+	mov	ecx, esi
+	call	?CreateSpecialEffect@KMissle@@QAEHW4eMissleStatus@@HHHH@Z ; KMissle::CreateSpecialEffect
+
+; 1591 : #endif
+; 1592 : 		
+; 1593 : 		DoVanish();
+
+	mov	ecx, esi
+	call	?DoVanish@KMissle@@AAEXXZ		; KMissle::DoVanish
+	pop	edi
+	pop	esi
+
+; 1603 : 	}
+; 1604 : }
+
+	add	esp, 16					; 00000010H
+	ret	0
+$L92428:
+
+; 1594 : 	}
+; 1595 : 	else 
+; 1596 : 	{
+; 1597 : #ifndef _SERVER		
+; 1598 : 		//增加撞后的效果	
+; 1599 : 		if (m_MissleRes.SpecialMovieIsAllEnd())
+
+	mov	eax, DWORD PTR [esi+656]
+	cmp	DWORD PTR [eax+4], edi
+	je	SHORT $L93745
+	cmp	eax, edi
+	jne	SHORT $L92432
+$L93745:
+
+; 1600 : 			CreateSpecialEffect(MS_DoCollision, nSrcX, nSrcY, m_nCurrentMapZ);
+
+	mov	ecx, DWORD PTR [esi+224]
+	mov	edx, DWORD PTR _nSrcY$[esp+24]
+	mov	eax, DWORD PTR _nSrcX$[esp+24]
+	push	edi
+	push	ecx
+	push	edx
+	push	eax
+	push	3
+	mov	ecx, esi
+	call	?CreateSpecialEffect@KMissle@@QAEHW4eMissleStatus@@HHHH@Z ; KMissle::CreateSpecialEffect
+$L92432:
+
+; 1601 : #endif
+; 1602 : 		m_eMissleStatus = MS_DoFly;
+
+	mov	DWORD PTR [esi+536], 1
+$L92431:
+	pop	edi
+	pop	esi
+
+; 1603 : 	}
+; 1604 : }
+
+	add	esp, 16					; 00000010H
+	ret	0
+?DoCollision@KMissle@@AAEXXZ ENDP			; KMissle::DoCollision
+_TEXT	ENDS
+;	COMDAT ?DoFly@KMissle@@AAEXXZ
+_TEXT	SEGMENT
+?DoFly@KMissle@@AAEXXZ PROC NEAR			; KMissle::DoFly, COMDAT
+
+; 1608 : 	if (m_eMissleStatus == MS_DoFly) return ;
+
+	mov	edx, DWORD PTR [ecx+536]
+	mov	eax, 1
+	cmp	edx, eax
+	je	SHORT $L92435
+
+; 1609 : 	//初始化贴图
+; 1610 : 	m_eMissleStatus = MS_DoFly;
+
+	mov	DWORD PTR [ecx+536], eax
+$L92435:
+
+; 1611 : }
+
+	ret	0
+?DoFly@KMissle@@AAEXXZ ENDP				; KMissle::DoFly
+_TEXT	ENDS
+;	COMDAT ?GetOffsetAxis@KMissle@@SAHHHHHHHAAH00@Z
+_TEXT	SEGMENT
+_nSubWorld$ = 8
+_nSrcRegionId$ = 12
+_nSrcMapX$ = 16
+_nSrcMapY$ = 20
+_nOffsetMapX$ = 24
+_nOffsetMapY$ = 28
+_nDesRegionId$ = 32
+_nDesMapX$ = 36
+_nDesMapY$ = 40
+?GetOffsetAxis@KMissle@@SAHHHHHHHAAH00@Z PROC NEAR	; KMissle::GetOffsetAxis, COMDAT
+
+; 1617 : 	nDesRegionId = -1;
+
+	mov	eax, DWORD PTR _nDesRegionId$[esp-4]
+
+; 1618 : 	// 确定目标格子实际的REGION和坐标确定
+; 1619 : 	nDesMapX = nSrcMapX + nOffsetMapX;
+
+	mov	ecx, DWORD PTR _nOffsetMapX$[esp-4]
+	mov	edx, DWORD PTR _nSrcMapX$[esp-4]
+	push	ebx
+
+; 1620 : 	nDesMapY = nSrcMapY + nOffsetMapY;
+
+	mov	ebx, DWORD PTR _nDesMapY$[esp]
+	push	esi
+	mov	esi, DWORD PTR _nDesMapX$[esp+4]
+	mov	DWORD PTR [eax], -1
+	mov	eax, DWORD PTR _nOffsetMapY$[esp+4]
+	add	edx, ecx
+	mov	ecx, DWORD PTR _nSrcMapY$[esp+4]
+	mov	DWORD PTR [esi], edx
+	add	ecx, eax
+	push	edi
+	mov	DWORD PTR [ebx], ecx
+
+; 1621 : 	
+; 1622 : 	if (nSrcRegionId < 0) 
+
+	mov	ecx, DWORD PTR _nSrcRegionId$[esp+8]
+	test	ecx, ecx
+	jge	SHORT $L92448
+	pop	edi
+	pop	esi
+
+; 1623 : 		return FALSE;
+
+	xor	eax, eax
+	pop	ebx
+
+; 1654 : 	// 从REGION的NPC列表中查找满足条件的NPC		
+; 1655 : 	//int nNpcIdx = SubWorld[nSubWorld].m_Region[nSearchRegion].FindNpc(nDesMapX, nDesMapY, nLauncherIdx, relation_all);
+; 1656 : }
+
+	ret	0
+$L92448:
+
+; 1624 : 
+; 1625 : 	int nSearchRegion = nSrcRegionId;
+; 1626 : 	if (nDesMapX < 0)
+; 1627 : 	{
+; 1628 : 		nSearchRegion = SubWorld[nSubWorld].m_Region[nSearchRegion].m_nConnectRegion[2];
+
+	mov	eax, DWORD PTR _nSubWorld$[esp+8]
+	mov	edx, DWORD PTR [esi]
+	test	edx, edx
+	lea	edi, DWORD PTR [eax+eax*8]
+	lea	eax, DWORD PTR [eax+edi*2]
+	jge	SHORT $L92450
+	lea	edi, DWORD PTR [ecx+ecx*2]
+	shl	eax, 4
+	lea	ecx, DWORD PTR [ecx+edi*4]
+	mov	edi, DWORD PTR ?SubWorld@@3PAVKSubWorld@@A[eax+8]
+	shl	ecx, 4
+	mov	ecx, DWORD PTR [edi+ecx+112]
+
+; 1629 : 		nDesMapX += SubWorld[nSubWorld].m_nRegionWidth;
+
+	mov	edi, DWORD PTR ?SubWorld@@3PAVKSubWorld@@A[eax+140]
+	add	edi, edx
+	mov	DWORD PTR [esi], edi
+
+; 1630 : 	}
+; 1631 : 	else if (nDesMapX >= SubWorld[nSubWorld].m_nRegionWidth)
+
+	jmp	SHORT $L92452
+$L92450:
+	shl	eax, 4
+	mov	edi, DWORD PTR ?SubWorld@@3PAVKSubWorld@@A[eax+140]
+	cmp	edx, edi
+	jl	SHORT $L92452
+	push	ebp
+
+; 1632 : 	{
+; 1633 : 		nSearchRegion = SubWorld[nSubWorld].m_Region[nSearchRegion].m_nConnectRegion[6];
+
+	lea	ebp, DWORD PTR [ecx+ecx*2]
+	lea	ecx, DWORD PTR [ecx+ebp*4]
+	mov	ebp, DWORD PTR ?SubWorld@@3PAVKSubWorld@@A[eax+8]
+	shl	ecx, 4
+
+; 1634 : 		nDesMapX -= SubWorld[nSubWorld].m_nRegionWidth;
+
+	sub	edx, edi
+	mov	ecx, DWORD PTR [ecx+ebp+128]
+	mov	DWORD PTR [esi], edx
+	pop	ebp
+$L92452:
+
+; 1635 : 	}
+; 1636 : 	if (nSearchRegion < 0) 
+
+	test	ecx, ecx
+	jge	SHORT $L92453
+	pop	edi
+	pop	esi
+
+; 1637 : 		return FALSE;
+
+	xor	eax, eax
+	pop	ebx
+
+; 1654 : 	// 从REGION的NPC列表中查找满足条件的NPC		
+; 1655 : 	//int nNpcIdx = SubWorld[nSubWorld].m_Region[nSearchRegion].FindNpc(nDesMapX, nDesMapY, nLauncherIdx, relation_all);
+; 1656 : }
+
+	ret	0
+$L92453:
+
+; 1638 : 	
+; 1639 : 	if (nDesMapY < 0)
+
+	mov	edx, DWORD PTR [ebx]
+	test	edx, edx
+	jge	SHORT $L92454
+
+; 1640 : 	{
+; 1641 : 		nSearchRegion = SubWorld[nSubWorld].m_Region[nSearchRegion].m_nConnectRegion[4];
+
+	lea	esi, DWORD PTR [ecx+ecx*2]
+	lea	ecx, DWORD PTR [ecx+esi*4]
+	mov	esi, DWORD PTR ?SubWorld@@3PAVKSubWorld@@A[eax+8]
+
+; 1642 : 		nDesMapY += SubWorld[nSubWorld].m_nRegionHeight;
+
+	mov	eax, DWORD PTR ?SubWorld@@3PAVKSubWorld@@A[eax+144]
+	shl	ecx, 4
+	add	eax, edx
+	mov	ecx, DWORD PTR [esi+ecx+120]
+	mov	DWORD PTR [ebx], eax
+
+; 1643 : 	}
+; 1644 : 	else if (nDesMapY >= SubWorld[nSubWorld].m_nRegionHeight)
+
+	jmp	SHORT $L92456
+$L92454:
+	mov	esi, DWORD PTR ?SubWorld@@3PAVKSubWorld@@A[eax+144]
+	cmp	edx, esi
+	jl	SHORT $L92456
+
+; 1645 : 	{
+; 1646 : 		nSearchRegion = SubWorld[nSubWorld].m_Region[nSearchRegion].m_nConnectRegion[0];
+
+	mov	eax, DWORD PTR ?SubWorld@@3PAVKSubWorld@@A[eax+8]
+	lea	edi, DWORD PTR [ecx+ecx*2]
+	lea	ecx, DWORD PTR [ecx+edi*4]
+	shl	ecx, 4
+
+; 1647 : 		nDesMapY -= SubWorld[nSubWorld].m_nRegionHeight;
+
+	sub	edx, esi
+	mov	ecx, DWORD PTR [eax+ecx+104]
+	mov	DWORD PTR [ebx], edx
+$L92456:
+
+; 1648 : 	}	
+; 1649 : 
+; 1650 : 	if (nSearchRegion < 0) 
+
+	test	ecx, ecx
+	jge	SHORT $L92457
+	pop	edi
+	pop	esi
+
+; 1651 : 		return FALSE;
+
+	xor	eax, eax
+	pop	ebx
+
+; 1654 : 	// 从REGION的NPC列表中查找满足条件的NPC		
+; 1655 : 	//int nNpcIdx = SubWorld[nSubWorld].m_Region[nSearchRegion].FindNpc(nDesMapX, nDesMapY, nLauncherIdx, relation_all);
+; 1656 : }
+
+	ret	0
+$L92457:
+
+; 1652 : 	nDesRegionId = nSearchRegion;
+
+	mov	edx, DWORD PTR _nDesRegionId$[esp+8]
+	pop	edi
+	pop	esi
+
+; 1653 : 	return TRUE;
+
+	mov	eax, 1
+	mov	DWORD PTR [edx], ecx
+	pop	ebx
+
+; 1654 : 	// 从REGION的NPC列表中查找满足条件的NPC		
+; 1655 : 	//int nNpcIdx = SubWorld[nSubWorld].m_Region[nSearchRegion].FindNpc(nDesMapX, nDesMapY, nLauncherIdx, relation_all);
+; 1656 : }
+
+	ret	0
+?GetOffsetAxis@KMissle@@SAHHHHHHHAAH00@Z ENDP		; KMissle::GetOffsetAxis
+_TEXT	ENDS
+PUBLIC	?ProcessCollision@KMissle@@AAEHHHHHHH@Z		; KMissle::ProcessCollision
+;	COMDAT ?ProcessCollision@KMissle@@AAEHHHHHHH@Z
+_TEXT	SEGMENT
+_nLauncherIdx$ = 8
+_nRegionId$ = 12
+_nMapX$ = 16
+_nMapY$ = 20
+_nRange$ = 24
+_eRelation$ = 28
+_nRangeX$ = -8
+_nSubWorld$ = -20
+_nRet$ = -32
+_nRMx$ = -12
+_nRMy$ = -16
+_nSearchRegion$ = -28
+_i$ = -36
+_j$92483 = -24
+_bDame$92492 = 24
+_nSrcX$92513 = -40
+_nSrcY$92514 = 24
+$T93793 = 24
+?ProcessCollision@KMissle@@AAEHHHHHHH@Z PROC NEAR	; KMissle::ProcessCollision, COMDAT
+
+; 1672 : {
+
+	sub	esp, 40					; 00000028H
+	push	edi
+	mov	edi, ecx
+
+; 1673 : #ifdef TOOLVERSION 
+; 1674 : 	return 0;
+; 1675 : #endif
+; 1676 : 
+; 1677 : #ifdef _SERVER
+; 1678 : 
+; 1679 : 	if (m_ulDamageInterval)
+; 1680 : 	{
+; 1681 : 		if (m_ulNextCalDamageTime > g_SubWorldSet.GetGameTime())
+; 1682 : 		{
+; 1683 : 			return FALSE;
+; 1684 : 		}
+; 1685 : 		else
+; 1686 : 		{
+; 1687 : 			// 6.29 romandou missledamage interval 
+; 1688 : 
+; 1689 : 			m_ulNextCalDamageTime = g_SubWorldSet.GetGameTime() + m_ulDamageInterval;
+; 1690 : 
+; 1691 : 		}
+; 1692 : 	}
+; 1693 : 
+; 1694 : #endif
+; 1695 : 
+; 1696 : 
+; 1697 : 	if (nLauncherIdx <= 0 ) return 0;
+
+	mov	ecx, DWORD PTR _nLauncherIdx$[esp+40]
+	test	ecx, ecx
+	jg	SHORT $L92467
+	xor	eax, eax
+	pop	edi
+
+; 1828 : }
+
+	add	esp, 40					; 00000028H
+	ret	24					; 00000018H
+$L92467:
+
+; 1698 : 	if (nRange <= 0) return 0;
+
+	mov	eax, DWORD PTR _nRange$[esp+40]
+	test	eax, eax
+	jg	SHORT $L92468
+	xor	eax, eax
+	pop	edi
+
+; 1828 : }
+
+	add	esp, 40					; 00000028H
+	ret	24					; 00000018H
+$L92468:
+
+; 1699 : 	
+; 1700 : 	int nRangeX = nRange / 2;
+
+	cdq
+	sub	eax, edx
+	push	esi
+	mov	edx, eax
+
+; 1701 : 	int	nRangeY = nRangeX;
+; 1702 : 	int	nSubWorld = Npc[nLauncherIdx].m_SubWorldIndex;
+
+	lea	eax, DWORD PTR [ecx+ecx*8]
+	sar	edx, 1
+	lea	eax, DWORD PTR [ecx+eax*4]
+	mov	DWORD PTR _nRangeX$[esp+48], edx
+
+; 1703 : 	
+; 1704 : 	_ASSERT(Npc[nLauncherIdx].m_SubWorldIndex >= 0);
+; 1705 : 	_ASSERT(nRegionId >= 0);
+; 1706 : 	
+; 1707 : 	int	nRegion = nRegionId;
+; 1708 : 	int	nRet = 0;
+
+	mov	DWORD PTR _nRet$[esp+48], 0
+	lea	eax, DWORD PTR [eax+eax*2]
+	lea	eax, DWORD PTR [eax+eax*4]
+	lea	ecx, DWORD PTR [eax+eax*8]
+	mov	esi, DWORD PTR ?Npc@@3PAVKNpc@@A[ecx*8+7212]
+
+; 1709 : 	int	nRMx, nRMy, nSearchRegion;
+; 1710 : 
+; 1711 : 	// 检查范围内的格子里的NPC
+; 1712 : 	for (int i = -nRangeX; i <= nRangeX; i++)
+
+	mov	ecx, edx
+	neg	ecx
+	mov	eax, ecx
+	mov	DWORD PTR _nSubWorld$[esp+48], esi
+	cmp	eax, edx
+	mov	DWORD PTR -4+[esp+48], ecx
+	mov	DWORD PTR _i$[esp+48], eax
+	jg	$L92482
+	push	ebx
+	push	ebp
+$L92480:
+
+; 1713 : 	{
+; 1714 : 		for (int j = -nRangeY; j <= nRangeY; j++)
+
+	cmp	ecx, edx
+	mov	DWORD PTR _j$92483[esp+56], ecx
+	jg	$L92481
+$L92484:
+
+; 1715 : 		{
+; 1716 : 			// 去掉边角几个格子，保证视野是椭圆形
+; 1717 : 			//if ((i * i + j * j ) > nRangeX * nRangeX)
+; 1718 : 			//continue;
+; 1719 : 
+; 1720 : 			if (!GetOffsetAxis(nSubWorld, nRegionId, nMapX, nMapY, i , j , nSearchRegion, nRMx, nRMy))
+
+	lea	edx, DWORD PTR _nRMy$[esp+56]
+	push	edx
+	lea	edx, DWORD PTR _nRMx$[esp+60]
+	push	edx
+	lea	edx, DWORD PTR _nSearchRegion$[esp+64]
+	push	edx
+	mov	edx, DWORD PTR _nRegionId$[esp+64]
+	push	ecx
+	mov	ecx, DWORD PTR _nMapX$[esp+68]
+	push	eax
+	mov	eax, DWORD PTR _nMapY$[esp+72]
+	push	eax
+	push	ecx
+	push	edx
+	push	esi
+	call	?GetOffsetAxis@KMissle@@SAHHHHHHHAAH00@Z ; KMissle::GetOffsetAxis
+	add	esp, 36					; 00000024H
+	test	eax, eax
+	je	$L92485
+
+; 1721 : 				continue;
+; 1722 : 
+; 1723 : 			_ASSERT(nSearchRegion >= 0);
+; 1724 : 
+; 1725 : 			// 从REGION的NPC列表中查找满足条件的NPC		
+; 1726 : 			int nNpcIdx = SubWorld[nSubWorld].m_Region[nSearchRegion].FindNpc(nRMx, nRMy, nLauncherIdx, eRelation);
+
+	lea	eax, DWORD PTR [esi+esi*8]
+	mov	ecx, DWORD PTR _nRMy$[esp+56]
+	mov	edx, DWORD PTR _nRMx$[esp+56]
+	mov	DWORD PTR $T93793[esp+52], ecx
+	lea	esi, DWORD PTR [esi+eax*2]
+	mov	eax, DWORD PTR _nSearchRegion$[esp+56]
+	shl	esi, 4
+	lea	ebx, DWORD PTR [eax+eax*2]
+	mov	ebp, edx
+	lea	ebx, DWORD PTR [eax+ebx*4]
+	mov	eax, DWORD PTR ?SubWorld@@3PAVKSubWorld@@A[esi+8]
+	shl	ebx, 4
+	add	eax, ebx
+	mov	esi, DWORD PTR [eax+176]
+	mov	ebx, DWORD PTR [eax+196]
+	imul	esi, ecx
+	add	esi, ebx
+	cmp	BYTE PTR [esi+edx], 0
+	je	$L92485
+	mov	eax, DWORD PTR [eax+12]
+	mov	esi, DWORD PTR [eax+4]
+	neg	esi
+	sbb	esi, esi
+	and	esi, eax
+	test	esi, esi
+	je	$L92485
+	mov	ebx, DWORD PTR _eRelation$[esp+52]
+$L93778:
+	mov	eax, DWORD PTR [esi+12]
+	lea	ecx, DWORD PTR [eax+eax*8]
+	lea	ecx, DWORD PTR [eax+ecx*4]
+	lea	ecx, DWORD PTR [ecx+ecx*2]
+	lea	ecx, DWORD PTR [ecx+ecx*4]
+	lea	ecx, DWORD PTR [ecx+ecx*8]
+	shl	ecx, 3
+	cmp	DWORD PTR ?Npc@@3PAVKNpc@@A[ecx+7820], ebp
+	jne	SHORT $L93781
+	mov	edx, DWORD PTR $T93793[esp+52]
+	cmp	DWORD PTR ?Npc@@3PAVKNpc@@A[ecx+7824], edx
+	jne	SHORT $L93781
+	push	eax
+	mov	eax, DWORD PTR _nLauncherIdx$[esp+56]
+	push	eax
+	mov	ecx, OFFSET FLAT:?NpcSet@@3VKNpcSet@@A
+	call	?GetRelation@KNpcSet@@QAE?AW4NPC_RELATION@@HH@Z ; KNpcSet::GetRelation
+	test	eax, ebx
+	jne	SHORT $L93800
+$L93781:
+	mov	esi, DWORD PTR [esi+4]
+	mov	eax, DWORD PTR [esi+4]
+	test	eax, eax
+	je	$L92485
+	test	esi, esi
+	jne	SHORT $L93778
+
+; 1746 : 	}
+; 1747 : 
+; 1748 : 	if (m_nDameNpcId[k] == nNpcIdx)
+
+	jmp	$L92485
+$L93800:
+
+; 1721 : 				continue;
+; 1722 : 
+; 1723 : 			_ASSERT(nSearchRegion >= 0);
+; 1724 : 
+; 1725 : 			// 从REGION的NPC列表中查找满足条件的NPC		
+; 1726 : 			int nNpcIdx = SubWorld[nSubWorld].m_Region[nSearchRegion].FindNpc(nRMx, nRMy, nLauncherIdx, eRelation);
+
+	mov	esi, DWORD PTR [esi+12]
+
+; 1727 : 			if (nNpcIdx > 0)	
+
+	xor	ebp, ebp
+	cmp	esi, ebp
+	jle	$L92485
+
+; 1728 : 			{
+; 1729 : 
+; 1730 : 
+; 1731 : 
+; 1732 : if (!m_ulDamageInterval)
+
+	cmp	DWORD PTR [edi+196], ebp
+	jne	$L92512
+
+; 1733 : {
+; 1734 : 
+; 1735 : BOOL bDame = FALSE;
+; 1736 : 
+; 1737 : 
+; 1738 :     for (int k=0;k <MAX_MISSLE_NPC;k++)
+
+	xor	eax, eax
+	mov	DWORD PTR _bDame$92492[esp+52], ebp
+	lea	ecx, DWORD PTR [edi+320]
+	or	ebx, -1
+$L92494:
+
+; 1739 : 	{
+; 1740 : 
+; 1741 : 	if (m_nDameNpcId[k] == -1)
+
+	mov	edx, DWORD PTR [ecx]
+	cmp	edx, ebx
+	je	SHORT $L93801
+
+; 1746 : 	}
+; 1747 : 
+; 1748 : 	if (m_nDameNpcId[k] == nNpcIdx)
+
+	cmp	edx, esi
+	je	SHORT $L93802
+	inc	eax
+	add	ecx, 4
+	cmp	eax, 20					; 00000014H
+	jl	SHORT $L92494
+	jmp	SHORT $L92496
+$L93801:
+
+; 1742 : 	{
+; 1743 : 	m_nDameNpcId[k] = nNpcIdx;
+
+	mov	DWORD PTR [edi+eax*4+320], esi
+
+; 1744 : 	bDame = TRUE;
+
+	mov	DWORD PTR _bDame$92492[esp+52], 1
+
+; 1745 : 	break;
+
+	jmp	SHORT $L92496
+$L93802:
+
+; 1749 : 	{
+; 1750 : 	bDame = FALSE;
+
+	mov	DWORD PTR _bDame$92492[esp+52], ebp
+$L92496:
+
+; 1751 : 	break;
+; 1752 : 	}
+; 1753 : 	}
+; 1754 : 
+; 1755 : 
+; 1756 : 
+; 1757 : 
+; 1758 : 
+; 1759 : 
+; 1760 : 
+; 1761 : 	if (m_nIdxMissTVC[0] > 0 && m_nIdxMissTVC[0] < MAX_MISSLE && m_nIdxMissTVC[1] > 0 && m_nIdxMissTVC[1] < MAX_MISSLE)
+
+	mov	ecx, DWORD PTR [edi+480]
+	cmp	ecx, ebp
+	jle	$L92510
+	cmp	ecx, 500				; 000001f4H
+	jge	$L92510
+	mov	eax, DWORD PTR [edi+484]
+	cmp	eax, ebp
+	jle	$L92510
+	cmp	eax, 500				; 000001f4H
+	jge	$L92510
+
+; 1762 : 	{
+; 1763 : 
+; 1764 : 
+; 1765 : 
+; 1766 : 
+; 1767 : 
+; 1768 : 	if (Missle[m_nIdxMissTVC[0]].m_nMissleId > 0)
+
+	mov	eax, ecx
+	shl	eax, 6
+	add	eax, ecx
+	lea	edx, DWORD PTR [eax+eax*2]
+	lea	eax, DWORD PTR [ecx+edx*4]
+	cmp	DWORD PTR ?Missle@@3PAVKMissle@@A[eax*4+540], ebp
+	jle	SHORT $L92504
+
+; 1769 : 	{
+; 1770 : 	for (int n=0;n <MAX_MISSLE_NPC;n++)
+
+	xor	edx, edx
+$L92502:
+
+; 1771 : 	{
+; 1772 : 	if (Missle[m_nIdxMissTVC[0]].m_nDameNpcId[n] == -1)
+
+	mov	ecx, DWORD PTR [edi+480]
+	mov	eax, ecx
+	shl	eax, 6
+	add	eax, ecx
+	add	ecx, edx
+	lea	eax, DWORD PTR [eax+eax*2]
+	lea	eax, DWORD PTR [ecx+eax*4]
+	cmp	DWORD PTR ?Missle@@3PAVKMissle@@A[eax*4+320], ebx
+	jne	SHORT $L92503
+
+; 1773 : 	{
+; 1774 : 	Missle[m_nIdxMissTVC[0]].m_nDameNpcId[n] = nNpcIdx;
+
+	mov	DWORD PTR ?Missle@@3PAVKMissle@@A[eax*4+320], esi
+$L92503:
+
+; 1769 : 	{
+; 1770 : 	for (int n=0;n <MAX_MISSLE_NPC;n++)
+
+	inc	edx
+	cmp	edx, 20					; 00000014H
+	jl	SHORT $L92502
+$L92504:
+
+; 1775 : 	}
+; 1776 : 	}
+; 1777 : 	}
+; 1778 : 
+; 1779 : 	if (Missle[m_nIdxMissTVC[1]].m_nMissleId > 0)
+
+	mov	ecx, DWORD PTR [edi+484]
+	mov	eax, ecx
+	shl	eax, 6
+	add	eax, ecx
+	lea	edx, DWORD PTR [eax+eax*2]
+	lea	eax, DWORD PTR [ecx+edx*4]
+	cmp	DWORD PTR ?Missle@@3PAVKMissle@@A[eax*4+540], ebp
+	jle	SHORT $L92510
+
+; 1780 : 	{
+; 1781 : 	for (int m=0;m <MAX_MISSLE_NPC;m++)
+
+	xor	edx, edx
+$L92508:
+
+; 1782 : 	{
+; 1783 : 	if (Missle[m_nIdxMissTVC[1]].m_nDameNpcId[m] == -1)
+
+	mov	ecx, DWORD PTR [edi+484]
+	mov	eax, ecx
+	shl	eax, 6
+	add	eax, ecx
+	add	ecx, edx
+	lea	eax, DWORD PTR [eax+eax*2]
+	lea	eax, DWORD PTR [ecx+eax*4]
+	cmp	DWORD PTR ?Missle@@3PAVKMissle@@A[eax*4+320], ebx
+	jne	SHORT $L92509
+
+; 1784 : 	{
+; 1785 : 	Missle[m_nIdxMissTVC[1]].m_nDameNpcId[m] = nNpcIdx;
+
+	mov	DWORD PTR ?Missle@@3PAVKMissle@@A[eax*4+320], esi
+$L92509:
+
+; 1780 : 	{
+; 1781 : 	for (int m=0;m <MAX_MISSLE_NPC;m++)
+
+	inc	edx
+	cmp	edx, 20					; 00000014H
+	jl	SHORT $L92508
+$L92510:
+
+; 1786 : 	}
+; 1787 : 	}
+; 1788 : 	}
+; 1789 : 
+; 1790 : 	
+; 1791 : 
+; 1792 : 
+; 1793 : 	}
+; 1794 : 
+; 1795 : 
+; 1796 : 
+; 1797 : 
+; 1798 : 
+; 1799 : 
+; 1800 : 
+; 1801 : 
+; 1802 : 
+; 1803 : 
+; 1804 : 
+; 1805 : if (!bDame)
+
+	cmp	DWORD PTR _bDame$92492[esp+52], ebp
+	je	SHORT $L92485
+$L92512:
+
+; 1806 : continue;
+; 1807 : 
+; 1808 : }
+; 1809 : 
+; 1810 : 
+; 1811 : 				nRet++;
+
+	mov	eax, DWORD PTR _nRet$[esp+56]
+
+; 1812 : #ifndef _SERVER
+; 1813 : 				int nSrcX = 0;
+; 1814 : 				int nSrcY = 0;
+; 1815 : 				SubWorld[0].Map2Mps(nSearchRegion, Npc[nNpcIdx].m_MapX,Npc[nNpcIdx].m_MapY, Npc[nNpcIdx].m_OffX, Npc[nNpcIdx].m_OffY,  &nSrcX, &nSrcY);
+
+	lea	edx, DWORD PTR [esi+esi*8]
+	inc	eax
+	lea	ecx, DWORD PTR _nSrcY$92514[esp+52]
+	mov	DWORD PTR _nRet$[esp+56], eax
+	lea	eax, DWORD PTR [esi+edx*4]
+	lea	edx, DWORD PTR _nSrcX$92513[esp+56]
+	push	ecx
+	lea	eax, DWORD PTR [eax+eax*2]
+	push	edx
+	mov	DWORD PTR _nSrcX$92513[esp+64], ebp
+	mov	DWORD PTR _nSrcY$92514[esp+60], ebp
+	lea	eax, DWORD PTR [eax+eax*4]
+	lea	eax, DWORD PTR [eax+eax*8]
+	shl	eax, 3
+	mov	ecx, DWORD PTR ?Npc@@3PAVKNpc@@A[eax+7836]
+	mov	edx, DWORD PTR ?Npc@@3PAVKNpc@@A[eax+7832]
+	push	ecx
+	mov	ecx, DWORD PTR ?Npc@@3PAVKNpc@@A[eax+7824]
+	push	edx
+	mov	edx, DWORD PTR ?Npc@@3PAVKNpc@@A[eax+7820]
+	mov	eax, DWORD PTR _nSearchRegion$[esp+72]
+	push	ecx
+	push	edx
+	push	eax
+	mov	ecx, OFFSET FLAT:?SubWorld@@3PAVKSubWorld@@A
+	call	?Map2Mps@KSubWorld@@QAEXHHHHHPAH0@Z	; KSubWorld::Map2Mps
+
+; 1816 : 				
+; 1817 : 				if (m_bFollowNpcWhenCollid)
+
+	cmp	DWORD PTR [edi+632], ebp
+	je	SHORT $L92515
+
+; 1818 : 					CreateSpecialEffect(MS_DoCollision, nSrcX, nSrcY, m_nCurrentMapZ, nNpcIdx);
+
+	push	esi
+
+; 1819 : 				else 
+
+	jmp	SHORT $L93812
+$L92515:
+
+; 1820 : 					CreateSpecialEffect(MS_DoCollision, nSrcX, nSrcY, m_nCurrentMapZ);
+
+	push	ebp
+$L93812:
+	mov	ecx, DWORD PTR [edi+224]
+	mov	edx, DWORD PTR _nSrcY$92514[esp+56]
+	mov	eax, DWORD PTR _nSrcX$92513[esp+60]
+	push	ecx
+	push	edx
+	push	eax
+	push	3
+	mov	ecx, edi
+	call	?CreateSpecialEffect@KMissle@@QAEHW4eMissleStatus@@HHHH@Z ; KMissle::CreateSpecialEffect
+$L92485:
+	mov	ecx, DWORD PTR _j$92483[esp+56]
+	mov	edx, DWORD PTR _nRangeX$[esp+56]
+	mov	esi, DWORD PTR _nSubWorld$[esp+56]
+	mov	eax, DWORD PTR _i$[esp+56]
+	inc	ecx
+	cmp	ecx, edx
+	mov	DWORD PTR _j$92483[esp+56], ecx
+	jle	$L92484
+
+; 1713 : 	{
+; 1714 : 		for (int j = -nRangeY; j <= nRangeY; j++)
+
+	mov	ecx, DWORD PTR -4+[esp+56]
+$L92481:
+
+; 1709 : 	int	nRMx, nRMy, nSearchRegion;
+; 1710 : 
+; 1711 : 	// 检查范围内的格子里的NPC
+; 1712 : 	for (int i = -nRangeX; i <= nRangeX; i++)
+
+	inc	eax
+	cmp	eax, edx
+	mov	DWORD PTR _i$[esp+56], eax
+	jle	$L92480
+	pop	ebp
+	pop	ebx
+$L92482:
+
+; 1821 : #else
+; 1822 : 				ProcessDamage(nNpcIdx);						
+; 1823 : #endif
+; 1824 : 			}
+; 1825 : 		}
+; 1826 : 	}
+; 1827 : 	return nRet;
+
+	mov	eax, DWORD PTR _nRet$[esp+48]
+	pop	esi
+	pop	edi
+
+; 1828 : }
+
+	add	esp, 40					; 00000028H
+	ret	24					; 00000018H
+?ProcessCollision@KMissle@@AAEHHHHHHH@Z ENDP		; KMissle::ProcessCollision
+_TEXT	ENDS
+;	COMDAT ?ProcessCollision@KMissle@@AAEHXZ
+_TEXT	SEGMENT
+?ProcessCollision@KMissle@@AAEHXZ PROC NEAR		; KMissle::ProcessCollision, COMDAT
+
+; 1833 : #ifdef TOOLVERSION
+; 1834 : 	return 0;
+; 1835 : #endif
+; 1836 : 	if (m_bClientSend) return 0;
+
+	mov	eax, DWORD PTR [ecx+64]
+	test	eax, eax
+	je	SHORT $L92520
+	xor	eax, eax
+
+; 1838 : }
+
+	ret	0
+$L92520:
+
+; 1837 : 	return ProcessCollision(m_nLauncher, m_nRegionId, m_nCurrentMapX, m_nCurrentMapY, m_nDamageRange , m_eRelation);
+
+	mov	eax, DWORD PTR [ecx+108]
+	mov	edx, DWORD PTR [ecx+148]
+	push	eax
+	mov	eax, DWORD PTR [ecx+220]
+	push	edx
+	mov	edx, DWORD PTR [ecx+216]
+	push	eax
+	mov	eax, DWORD PTR [ecx+548]
+	push	edx
+	mov	edx, DWORD PTR [ecx+516]
+	push	eax
+	push	edx
+	call	?ProcessCollision@KMissle@@AAEHHHHHHH@Z	; KMissle::ProcessCollision
+
+; 1838 : }
+
+	ret	0
+?ProcessCollision@KMissle@@AAEHXZ ENDP			; KMissle::ProcessCollision
+_TEXT	ENDS
+PUBLIC	??_7KSkillSpecialNode@@6B@			; KSkillSpecialNode::`vftable'
+PUBLIC	??_GKSkillSpecialNode@@UAEPAXI@Z		; KSkillSpecialNode::`scalar deleting destructor'
+PUBLIC	??_EKSkillSpecialNode@@UAEPAXI@Z		; KSkillSpecialNode::`vector deleting destructor'
+EXTRN	??0KSkillSpecial@@QAE@XZ:NEAR			; KSkillSpecial::KSkillSpecial
+EXTRN	?Init@KSkillSpecial@@QAEHXZ:NEAR		; KSkillSpecial::Init
+EXTRN	?g_SubWorldSet@@3VKSubWorldSet@@A:BYTE		; g_SubWorldSet
+;	COMDAT ??_7KSkillSpecialNode@@6B@
+; File ..\engine\src\KNode.h
+CONST	SEGMENT
+??_7KSkillSpecialNode@@6B@ DD FLAT:??_EKSkillSpecialNode@@UAEPAXI@Z ; KSkillSpecialNode::`vftable'
+CONST	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+$T93881	DD	019930520H
+	DD	01H
+	DD	FLAT:$T93886
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	ORG $+4
+$T93886	DD	0ffffffffH
+	DD	FLAT:$L93828
+xdata$x	ENDS
+;	COMDAT ?CreateSpecialEffect@KMissle@@QAEHW4eMissleStatus@@HHHH@Z
+_TEXT	SEGMENT
+_eStatus$ = 8
+_nPX$ = 12
+_nPY$ = 16
+_nPZ$ = 20
+_nNpcIndex$ = 24
+_this$ = -16
+$T93824 = 24
+__$EHRec$ = -12
+?CreateSpecialEffect@KMissle@@QAEHW4eMissleStatus@@HHHH@Z PROC NEAR ; KMissle::CreateSpecialEffect, COMDAT
+
+; 1844 : {
+
+	push	-1
+	push	$L93885
+	mov	eax, DWORD PTR fs:__except_list
+	push	eax
+	mov	DWORD PTR fs:__except_list, esp
+	push	ecx
+	push	ebx
+	push	ebp
+	push	esi
+	push	edi
+
+; 1845 : 	
+; 1846 : 	KSkillSpecialNode * pNode = NULL;
+; 1847 : 	//同一颗子碟不能有几个爆炸效果在一个Npc身上
+; 1848 : 	if (nNpcIndex > 0)
+
+	mov	edi, DWORD PTR _nNpcIndex$[esp+28]
+	xor	ebp, ebp
+	mov	ebx, ecx
+	cmp	edi, ebp
+	mov	DWORD PTR _this$[esp+32], ebx
+	jle	SHORT $L92535
+
+; 1849 : 	{
+; 1850 : 		pNode = (KSkillSpecialNode*)m_MissleRes.m_SkillSpecialList.GetHead();
+
+	mov	ecx, DWORD PTR [ebx+656]
+	mov	eax, DWORD PTR [ecx+4]
+	neg	eax
+	sbb	eax, eax
+	and	eax, ecx
+
+; 1851 : 		while(pNode)
+
+	cmp	eax, ebp
+	je	SHORT $L92535
+
+; 1852 : 		{
+; 1853 : 			if (pNode->m_pSkillSpecial->m_dwMatchID == Npc[nNpcIndex].m_dwID) return FALSE;
+
+	lea	ecx, DWORD PTR [edi+edi*8]
+	lea	ecx, DWORD PTR [edi+ecx*4]
+	lea	ecx, DWORD PTR [ecx+ecx*2]
+	lea	ecx, DWORD PTR [ecx+ecx*4]
+	lea	edx, DWORD PTR [ecx+ecx*8]
+	mov	ecx, DWORD PTR ?Npc@@3PAVKNpc@@A[edx*8]
+$L92534:
+	mov	edx, DWORD PTR [eax+12]
+	cmp	DWORD PTR [edx+44], ecx
+	je	SHORT $L93883
+
+; 1854 : 			pNode = (KSkillSpecialNode*)pNode->GetNext();
+
+	mov	eax, DWORD PTR [eax+4]
+	cmp	DWORD PTR [eax+4], ebp
+	je	SHORT $L92535
+
+; 1851 : 		while(pNode)
+
+	cmp	eax, ebp
+	jne	SHORT $L92534
+$L92535:
+
+; 1855 : 		}
+; 1856 : 	}
+; 1857 : 	m_MissleRes.PlaySound(eStatus, nPX, nPY, 0);
+
+	mov	eax, DWORD PTR _nPY$[esp+28]
+	mov	ecx, DWORD PTR _nPX$[esp+28]
+	mov	esi, DWORD PTR _eStatus$[esp+28]
+	push	ebp
+	push	eax
+	push	ecx
+	push	esi
+	lea	ecx, DWORD PTR [ebx+652]
+	call	?PlaySoundA@KMissleRes@@QAEXHHHH@Z	; KMissleRes::PlaySoundA
+
+; 1858 : 	if (!m_MissleRes.m_MissleRes[eStatus].AnimFileName[0]) return FALSE; 
+
+	imul	esi, 212				; 000000d4H
+	add	ebx, esi
+	mov	al, BYTE PTR [ebx+684]
+	lea	esi, DWORD PTR [ebx+684]
+	test	al, al
+	jne	SHORT $L92538
+$L93883:
+	xor	eax, eax
+	jmp	$L92529
+$L92538:
+
+; 1859 : 	pNode = new KSkillSpecialNode;
+
+	push	16					; 00000010H
+	call	??2@YAPAXI@Z				; operator new
+	add	esp, 4
+	cmp	eax, ebp
+	je	SHORT $L93822
+	mov	DWORD PTR [eax+4], ebp
+	mov	DWORD PTR [eax+8], ebp
+	mov	DWORD PTR [eax+12], ebp
+	mov	DWORD PTR [eax], OFFSET FLAT:??_7KSkillSpecialNode@@6B@ ; KSkillSpecialNode::`vftable'
+	mov	ebp, eax
+$L93822:
+
+; 1860 : 	KSkillSpecial * pSkillSpecial = new KSkillSpecial;
+
+	push	240					; 000000f0H
+	call	??2@YAPAXI@Z				; operator new
+	add	esp, 4
+	mov	DWORD PTR $T93824[esp+28], eax
+	xor	ecx, ecx
+	cmp	eax, ecx
+	mov	DWORD PTR __$EHRec$[esp+40], ecx
+	je	SHORT $L93826
+	mov	ecx, eax
+	call	??0KSkillSpecial@@QAE@XZ		; KSkillSpecial::KSkillSpecial
+	mov	ecx, eax
+$L93826:
+
+; 1861 : 	pNode->m_pSkillSpecial = pSkillSpecial;
+; 1862 : 	
+; 1863 : 	int nSrcX = nPX;
+; 1864 : 	int nSrcY = nPY;
+; 1865 : 	
+; 1866 : 	pSkillSpecial->m_nPX = nSrcX;
+; 1867 : 	pSkillSpecial->m_nPY = nSrcY - 5;// MISSLE_Y_OFFSET;
+
+	mov	eax, DWORD PTR _nPY$[esp+28]
+	mov	DWORD PTR [ebp+12], ecx
+	add	eax, -5					; fffffffbH
+	mov	edx, DWORD PTR _nPX$[esp+28]
+	mov	DWORD PTR [ecx+28], eax
+
+; 1868 : 	pSkillSpecial->m_nPZ = nPZ;
+; 1869 : 	pSkillSpecial->m_nNpcIndex = nNpcIndex;
+; 1870 : 	pSkillSpecial->m_dwMatchID = Npc[nNpcIndex].m_dwID;
+
+	lea	eax, DWORD PTR [edi+edi*8]
+	mov	DWORD PTR [ecx+24], edx
+	mov	edx, DWORD PTR _nPZ$[esp+28]
+	lea	eax, DWORD PTR [edi+eax*4]
+	mov	DWORD PTR [ecx+32], edx
+	mov	DWORD PTR [ecx+40], edi
+	mov	DWORD PTR __$EHRec$[esp+40], -1
+	lea	eax, DWORD PTR [eax+eax*2]
+	lea	eax, DWORD PTR [eax+eax*4]
+	lea	edx, DWORD PTR [eax+eax*8]
+	mov	eax, DWORD PTR ?Npc@@3PAVKNpc@@A[edx*8]
+
+; 1871 : 	pSkillSpecial->m_pMissleRes = &m_MissleRes.m_MissleRes[eStatus];
+
+	mov	DWORD PTR [ecx+48], esi
+	mov	DWORD PTR [ecx+44], eax
+
+; 1872 : 	pSkillSpecial->m_nBeginTime = g_SubWorldSet.GetGameTime();
+
+	mov	edx, DWORD PTR ?g_SubWorldSet@@3VKSubWorldSet@@A
+	mov	DWORD PTR [ecx+52], edx
+
+; 1873 : 	pSkillSpecial->m_nEndTime = g_SubWorldSet.GetGameTime() + (pSkillSpecial->m_pMissleRes->nInterval * pSkillSpecial->m_pMissleRes->nTotalFrame / pSkillSpecial->m_pMissleRes->nDir);
+
+	mov	eax, DWORD PTR [esi+104]
+	imul	eax, DWORD PTR [esi+100]
+	cdq
+	idiv	DWORD PTR [esi+108]
+	add	eax, DWORD PTR ?g_SubWorldSet@@3VKSubWorldSet@@A
+	mov	DWORD PTR [ecx+56], eax
+
+; 1874 : 	pSkillSpecial->m_nCurDir = g_DirIndex2Dir(m_nDirIndex, m_MissleRes.m_MissleRes[eStatus].nDir);
+
+	mov	eax, DWORD PTR [ebx+792]
+	test	eax, eax
+	jg	SHORT $L93863
+	or	edx, -1
+	jmp	SHORT $L93861
+$L93863:
+	mov	edx, DWORD PTR _this$[esp+32]
+	mov	edx, DWORD PTR [edx+604]
+	imul	edx, eax
+	sar	edx, 6
+$L93861:
+	mov	DWORD PTR [ecx+36], edx
+
+; 1875 : 	pSkillSpecial->Init();
+
+	call	?Init@KSkillSpecial@@QAEHXZ		; KSkillSpecial::Init
+
+; 1876 : 	m_MissleRes.m_SkillSpecialList.AddTail(pNode);
+
+	mov	eax, DWORD PTR _this$[esp+32]
+	add	eax, 664				; 00000298H
+	test	ebp, ebp
+	je	SHORT $L93879
+	mov	ecx, DWORD PTR [eax+8]
+	test	ecx, ecx
+	je	SHORT $L93879
+	mov	DWORD PTR [ebp+8], ecx
+	mov	DWORD PTR [ebp+4], eax
+	mov	ecx, DWORD PTR [eax+8]
+	mov	DWORD PTR [ecx+4], ebp
+	mov	DWORD PTR [eax+8], ebp
+$L93879:
+
+; 1877 : 	
+; 1878 : 	return TRUE;
+
+	mov	eax, 1
+$L92529:
+
+; 1879 : }
+
+	mov	ecx, DWORD PTR __$EHRec$[esp+32]
+	pop	edi
+	pop	esi
+	pop	ebp
+	pop	ebx
+	mov	DWORD PTR fs:__except_list, ecx
+	add	esp, 16					; 00000010H
+	ret	20					; 00000014H
+_TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+$L93828:
+	mov	eax, DWORD PTR $T93824[ebp-4]
+	push	eax
+	call	??3@YAXPAX@Z				; operator delete
+	pop	ecx
+	ret	0
+$L93885:
+	mov	eax, OFFSET FLAT:$T93881
+	jmp	___CxxFrameHandler
+text$x	ENDS
+?CreateSpecialEffect@KMissle@@QAEHW4eMissleStatus@@HHHH@Z ENDP ; KMissle::CreateSpecialEffect
+PUBLIC	??1KSkillSpecialNode@@UAE@XZ			; KSkillSpecialNode::~KSkillSpecialNode
+;	COMDAT ??_GKSkillSpecialNode@@UAEPAXI@Z
+_TEXT	SEGMENT
+___flags$ = 8
+??_GKSkillSpecialNode@@UAEPAXI@Z PROC NEAR		; KSkillSpecialNode::`scalar deleting destructor', COMDAT
+	push	esi
+	mov	esi, ecx
+	call	??1KSkillSpecialNode@@UAE@XZ		; KSkillSpecialNode::~KSkillSpecialNode
+	test	BYTE PTR ___flags$[esp], 1
+	je	SHORT $L93892
+	push	esi
+	call	??3@YAXPAX@Z				; operator delete
+	add	esp, 4
+$L93892:
+	mov	eax, esi
+	pop	esi
+	ret	4
+??_GKSkillSpecialNode@@UAEPAXI@Z ENDP			; KSkillSpecialNode::`scalar deleting destructor'
+_TEXT	ENDS
+;	COMDAT ??1KSkillSpecialNode@@UAE@XZ
+_TEXT	SEGMENT
+??1KSkillSpecialNode@@UAE@XZ PROC NEAR			; KSkillSpecialNode::~KSkillSpecialNode, COMDAT
+
+; 57   : 	~KSkillSpecialNode(){delete m_pSkillSpecial;};
+
+	push	esi
+	mov	esi, ecx
+	mov	eax, DWORD PTR [esi+12]
+	mov	DWORD PTR [esi], OFFSET FLAT:??_7KSkillSpecialNode@@6B@ ; KSkillSpecialNode::`vftable'
+	push	eax
+	call	??3@YAXPAX@Z				; operator delete
+	add	esp, 4
+	mov	DWORD PTR [esi], OFFSET FLAT:??_7KNode@@6B@ ; KNode::`vftable'
+	pop	esi
+	ret	0
+??1KSkillSpecialNode@@UAE@XZ ENDP			; KSkillSpecialNode::~KSkillSpecialNode
+_TEXT	ENDS
+PUBLIC	?CreateMissleForShow@KMissle@@SAHPAD00PAUTMissleForShow@@@Z ; KMissle::CreateMissleForShow
+EXTRN	?Player@@3PAVKPlayer@@A:BYTE			; Player
+EXTRN	?Add@KMissleSet@@QAEHHHH@Z:NEAR			; KMissleSet::Add
+EXTRN	?MissleSet@@3VKMissleSet@@A:BYTE		; MissleSet
+EXTRN	?LoadResource@KMissleRes@@QAEXHPAD0@Z:NEAR	; KMissleRes::LoadResource
+;	COMDAT ?CreateMissleForShow@KMissle@@SAHPAD00PAUTMissleForShow@@@Z
+_TEXT	SEGMENT
+_szMovie$ = 8
+_szFormat$ = 12
+_szSound$ = 16
+_pShowParam$ = 20
+_nPX$ = -4
+_nPY$ = -8
+_pcszTemp$ = 20
+?CreateMissleForShow@KMissle@@SAHPAD00PAUTMissleForShow@@@Z PROC NEAR ; KMissle::CreateMissleForShow, COMDAT
+
+; 1882 : {
+
+	sub	esp, 8
+	push	ebx
+	push	ebp
+
+; 1883 : 	if (!pShowParam || !szMovie || !szMovie[0])
+
+	mov	ebp, DWORD PTR _pShowParam$[esp+12]
+	xor	ebx, ebx
+	cmp	ebp, ebx
+	push	edi
+	je	$L92557
+	mov	eax, DWORD PTR _szMovie$[esp+16]
+	cmp	eax, ebx
+	je	$L92557
+	cmp	BYTE PTR [eax], bl
+	je	$L92557
+
+; 1885 : 	int nPX = 0;
+; 1886 : 	int nPY = 0;
+; 1887 : 	int nPZ = 0;
+; 1888 : 	
+; 1889 : 	if (pShowParam->nNpcIndex > 0)
+
+	mov	eax, DWORD PTR [ebp+12]
+	mov	DWORD PTR _nPX$[esp+20], ebx
+	cmp	eax, ebx
+	mov	DWORD PTR _nPY$[esp+20], ebx
+	jle	SHORT $L92561
+
+; 1890 : 	{
+; 1891 : 		Npc[pShowParam->nNpcIndex].GetMpsPos(&nPX, &nPY);
+
+	lea	ecx, DWORD PTR _nPY$[esp+20]
+	lea	edx, DWORD PTR _nPX$[esp+20]
+	push	ecx
+	lea	ecx, DWORD PTR [eax+eax*8]
+	push	edx
+	lea	eax, DWORD PTR [eax+ecx*4]
+	lea	eax, DWORD PTR [eax+eax*2]
+	lea	eax, DWORD PTR [eax+eax*4]
+	lea	edx, DWORD PTR [eax+eax*8]
+	lea	ecx, DWORD PTR ?Npc@@3PAVKNpc@@A[edx*8]
+	call	?GetMpsPos@KNpc@@QAEXPAH0@Z		; KNpc::GetMpsPos
+
+; 1892 : 	}
+; 1893 : 	else
+
+	jmp	SHORT $L92562
+$L92561:
+
+; 1894 : 	{
+; 1895 : 		nPX = pShowParam->nPX;
+
+	mov	eax, DWORD PTR [ebp]
+
+; 1896 : 		nPY = pShowParam->nPY;
+
+	mov	ecx, DWORD PTR [ebp+4]
+	mov	DWORD PTR _nPX$[esp+20], eax
+	mov	DWORD PTR _nPY$[esp+20], ecx
+$L92562:
+
+; 1897 : 	}
+; 1898 : 
+; 1899 : 	int nSubWorldId = Npc[Player[CLIENT_PLAYER_INDEX].m_nIndex].m_SubWorldIndex;
+
+	mov	eax, DWORD PTR ?Player@@3PAVKPlayer@@A+48724
+
+; 1900 : 	int nMissleIndex = MissleSet.Add(nSubWorldId , nPX , nPY);
+
+	mov	ecx, DWORD PTR _nPY$[esp+20]
+	push	ecx
+	mov	ecx, OFFSET FLAT:?MissleSet@@3VKMissleSet@@A
+	lea	edx, DWORD PTR [eax+eax*8]
+	lea	eax, DWORD PTR [eax+edx*4]
+	mov	edx, DWORD PTR _nPX$[esp+24]
+	push	edx
+	lea	eax, DWORD PTR [eax+eax*2]
+	lea	eax, DWORD PTR [eax+eax*4]
+	lea	eax, DWORD PTR [eax+eax*8]
+	mov	edi, DWORD PTR ?Npc@@3PAVKNpc@@A[eax*8+7212]
+	push	edi
+	call	?Add@KMissleSet@@QAEHHHH@Z		; KMissleSet::Add
+
+; 1901 : 	if (nMissleIndex < 0)	
+
+	cmp	eax, ebx
+
+; 1902 : 		return FALSE;
+
+	jl	$L92557
+
+; 1903 : 	
+; 1904 : 	Missle[nMissleIndex].m_nDir				= Npc[Player[CLIENT_PLAYER_INDEX].m_nIndex].m_Dir;
+
+	mov	ecx, eax
+	push	esi
+	shl	ecx, 6
+	add	ecx, eax
+	lea	ecx, DWORD PTR [ecx+ecx*2]
+	lea	esi, DWORD PTR [eax+ecx*4]
+	mov	eax, DWORD PTR ?Player@@3PAVKPlayer@@A+48724
+	shl	esi, 2
+	lea	edx, DWORD PTR [eax+eax*8]
+
+; 1905 : 	Missle[nMissleIndex].m_nDirIndex		= g_Dir2DirIndex(Missle[nMissleIndex].m_nDir, MaxMissleDir);
+; 1906 : 	Missle[nMissleIndex].m_nFollowNpcIdx	= 0;
+; 1907 : 	Missle[nMissleIndex].m_dwBornTime		= SubWorld[nSubWorldId].m_dwCurrentTime;
+
+	lea	ecx, DWORD PTR [edi+edi*8]
+	lea	eax, DWORD PTR [eax+edx*4]
+	lea	eax, DWORD PTR [eax+eax*2]
+	lea	eax, DWORD PTR [eax+eax*4]
+	lea	eax, DWORD PTR [eax+eax*8]
+	mov	eax, DWORD PTR ?Npc@@3PAVKNpc@@A[eax*8+7804]
+	mov	DWORD PTR ?Missle@@3PAVKMissle@@A[esi+608], eax
+	shl	eax, 6
+	cdq
+	and	edx, 63					; 0000003fH
+	add	eax, edx
+	lea	edx, DWORD PTR [edi+ecx*2]
+	sar	eax, 6
+	shl	edx, 4
+	mov	DWORD PTR ?Missle@@3PAVKMissle@@A[esi+604], eax
+	mov	DWORD PTR ?Missle@@3PAVKMissle@@A[esi+508], ebx
+	mov	eax, DWORD PTR ?SubWorld@@3PAVKSubWorld@@A[edx+168]
+	mov	DWORD PTR ?Missle@@3PAVKMissle@@A[esi+616], eax
+
+; 1908 : 	Missle[nMissleIndex].m_nSubWorldId		= nSubWorldId;
+
+	mov	DWORD PTR ?Missle@@3PAVKMissle@@A[esi+544], edi
+
+; 1909 : 	Missle[nMissleIndex].m_nLauncher		= pShowParam->nLauncherIndex;
+
+	mov	ecx, DWORD PTR [ebp+16]
+
+; 1910 : 	Missle[nMissleIndex].m_dwLauncherId		= Npc[pShowParam->nLauncherIndex].m_dwID;
+; 1911 : 	//Missle[nMissleIndex].m_nPKFlag			= Npc[pShowParam->nLauncherIndex].m_nPKFlag;
+; 1912 : 	Missle[nMissleIndex].m_nParentMissleIndex = 0;
+; 1913 : 	
+; 1914 : 	Missle[nMissleIndex].m_nSkillId			= 0;
+; 1915 : 	Missle[nMissleIndex].m_nStartLifeTime	= 0;
+; 1916 : 	Missle[nMissleIndex].m_nLifeTime		= 1;
+; 1917 : 	Missle[nMissleIndex].m_nRefPX			= 0;
+; 1918 : 	Missle[nMissleIndex].m_nRefPY			= 0;
+; 1919 : 	Missle[nMissleIndex].m_MissleRes.Clear();
+
+	lea	edi, DWORD PTR ?Missle@@3PAVKMissle@@A[esi+652]
+	mov	DWORD PTR ?Missle@@3PAVKMissle@@A[esi+516], ecx
+	mov	eax, DWORD PTR [ebp+16]
+	lea	edx, DWORD PTR [eax+eax*8]
+	lea	eax, DWORD PTR [eax+edx*4]
+	lea	eax, DWORD PTR [eax+eax*2]
+	lea	eax, DWORD PTR [eax+eax*4]
+	lea	eax, DWORD PTR [eax+eax*8]
+	mov	ecx, DWORD PTR ?Npc@@3PAVKNpc@@A[eax*8]
+	mov	DWORD PTR ?Missle@@3PAVKMissle@@A[esi+520], ecx
+	mov	DWORD PTR ?Missle@@3PAVKMissle@@A[esi+524], ebx
+	mov	DWORD PTR ?Missle@@3PAVKMissle@@A[esi+100], ebx
+	mov	DWORD PTR ?Missle@@3PAVKMissle@@A[esi+208], ebx
+	mov	DWORD PTR ?Missle@@3PAVKMissle@@A[esi+92], 1
+	mov	DWORD PTR ?Missle@@3PAVKMissle@@A[esi+236], ebx
+	mov	ecx, edi
+	mov	DWORD PTR ?Missle@@3PAVKMissle@@A[esi+240], ebx
+	call	?Clear@KMissleRes@@QAEXXZ		; KMissleRes::Clear
+
+; 1920 : 
+; 1921 : 	Missle[nMissleIndex].m_MissleRes.LoadResource(MS_DoWait, szMovie, szSound);
+
+	mov	edx, DWORD PTR _szSound$[esp+20]
+	mov	eax, DWORD PTR _szMovie$[esp+20]
+	push	edx
+	push	eax
+	push	ebx
+	mov	ecx, edi
+	call	?LoadResource@KMissleRes@@QAEXHPAD0@Z	; KMissleRes::LoadResource
+
+; 1922 : 	char * pcszTemp = szFormat;
+
+	mov	ecx, DWORD PTR _szFormat$[esp+20]
+
+; 1923 : 	Missle[nMissleIndex].m_MissleRes.m_MissleRes[MS_DoWait].nTotalFrame = KSG_StringGetInt(&pcszTemp, 100);
+
+	mov	edi, DWORD PTR __imp_?KSG_StringGetInt@@YAHPAPBDH@Z
+	lea	edx, DWORD PTR _pcszTemp$[esp+20]
+	push	100					; 00000064H
+	push	edx
+	mov	DWORD PTR _pcszTemp$[esp+28], ecx
+	call	edi
+	mov	DWORD PTR ?Missle@@3PAVKMissle@@A[esi+784], eax
+
+; 1924 : 	KSG_StringSkipSymbol(&pcszTemp, ',');
+
+	lea	eax, DWORD PTR _pcszTemp$[esp+28]
+	push	44					; 0000002cH
+	push	eax
+	call	DWORD PTR __imp_?KSG_StringSkipSymbol@@YA_NPAPBDH@Z
+
+; 1925 : 	Missle[nMissleIndex].m_MissleRes.m_MissleRes[MS_DoWait].nDir = KSG_StringGetInt(&pcszTemp, 16);
+
+	lea	ecx, DWORD PTR _pcszTemp$[esp+36]
+	push	16					; 00000010H
+	push	ecx
+	call	edi
+
+; 1926 : 	KSG_StringSkipSymbol(&pcszTemp, ',');
+
+	lea	edx, DWORD PTR _pcszTemp$[esp+44]
+	push	44					; 0000002cH
+	push	edx
+	mov	DWORD PTR ?Missle@@3PAVKMissle@@A[esi+792], eax
+	call	DWORD PTR __imp_?KSG_StringSkipSymbol@@YA_NPAPBDH@Z
+
+; 1927 :     Missle[nMissleIndex].m_MissleRes.m_MissleRes[MS_DoWait].nInterval = KSG_StringGetInt(&pcszTemp, 1);
+
+	lea	eax, DWORD PTR _pcszTemp$[esp+52]
+	push	1
+	push	eax
+	call	edi
+	add	esp, 40					; 00000028H
+	mov	DWORD PTR ?Missle@@3PAVKMissle@@A[esi+788], eax
+
+; 1928 : 
+; 1929 : 	Missle[nMissleIndex].CreateSpecialEffect(MS_DoWait, nPX, nPY, nPZ, pShowParam->nNpcIndex);
+
+	mov	ecx, DWORD PTR [ebp+12]
+	mov	edx, DWORD PTR _nPY$[esp+24]
+	mov	eax, DWORD PTR _nPX$[esp+24]
+	push	ecx
+	push	ebx
+	push	edx
+	push	eax
+	push	ebx
+	lea	ecx, DWORD PTR ?Missle@@3PAVKMissle@@A[esi]
+	call	?CreateSpecialEffect@KMissle@@QAEHW4eMissleStatus@@HHHH@Z ; KMissle::CreateSpecialEffect
+	pop	esi
+	pop	edi
+	pop	ebp
+
+; 1930 : 	return TRUE;
+
+	mov	eax, 1
+	pop	ebx
+
+; 1931 : }
+
+	add	esp, 8
+	ret	0
+$L92557:
+	pop	edi
+	pop	ebp
+
+; 1884 : 		return FALSE;
+
+	xor	eax, eax
+	pop	ebx
+
+; 1931 : }
+
+	add	esp, 8
+	ret	0
+?CreateMissleForShow@KMissle@@SAHPAD00PAUTMissleForShow@@@Z ENDP ; KMissle::CreateMissleForShow
+_TEXT	ENDS
+PUBLIC	?GetMpsPos@KMissle@@QAEXPAH0@Z			; KMissle::GetMpsPos
+PUBLIC	?GetLightInfo@KMissle@@QAEXPAUKLightInfo@@@Z	; KMissle::GetLightInfo
+;	COMDAT ?GetLightInfo@KMissle@@QAEXPAUKLightInfo@@@Z
+_TEXT	SEGMENT
+_pLightInfo$ = 8
+_nPX$ = 8
+_nPY$ = -4
+?GetLightInfo@KMissle@@QAEXPAUKLightInfo@@@Z PROC NEAR	; KMissle::GetLightInfo, COMDAT
+
+; 1934 : {
+
+	push	ecx
+	push	esi
+	push	edi
+
+; 1935 : 	if (!pLightInfo) 
+
+	mov	edi, DWORD PTR _pLightInfo$[esp+8]
+	mov	esi, ecx
+	test	edi, edi
+	je	SHORT $L92570
+
+; 1936 : 	{
+; 1937 : 		return ;
+; 1938 : 	}
+; 1939 : 	
+; 1940 : 	int nPX, nPY, nPZ;
+; 1941 : 	GetMpsPos(&nPX, &nPY);
+
+	lea	eax, DWORD PTR _nPY$[esp+12]
+	lea	ecx, DWORD PTR _nPX$[esp+8]
+	push	eax
+	push	ecx
+	mov	ecx, esi
+	call	?GetMpsPos@KMissle@@QAEXPAH0@Z		; KMissle::GetMpsPos
+
+; 1942 : 	nPZ = m_nCurrentMapZ;
+
+	mov	eax, DWORD PTR [esi+224]
+
+; 1943 : 	
+; 1944 : 	pLightInfo->oPosition.nX = nPX;
+
+	mov	edx, DWORD PTR _nPX$[esp+8]
+
+; 1945 : 	pLightInfo->oPosition.nY = nPY;
+
+	mov	ecx, DWORD PTR _nPY$[esp+12]
+	mov	DWORD PTR [edi], edx
+	mov	DWORD PTR [edi+4], ecx
+
+; 1946 : 	pLightInfo->oPosition.nZ = nPZ;
+
+	mov	DWORD PTR [edi+8], eax
+
+; 1947 : 	pLightInfo->dwColor = 0xff000000 | m_btRedLum << 16 | m_btGreenLum << 8 | m_btBlueLum;
+
+	mov	edx, DWORD PTR [esi+636]
+	mov	eax, DWORD PTR [esi+640]
+	or	edx, -256				; ffffff00H
+	shl	edx, 8
+	or	edx, eax
+	mov	eax, DWORD PTR [esi+644]
+	shl	edx, 8
+	or	edx, eax
+
+; 1948 : 	pLightInfo->nRadius = m_usLightRadius;
+
+	xor	eax, eax
+	mov	DWORD PTR [edi+12], edx
+	mov	ax, WORD PTR [esi+648]
+	mov	DWORD PTR [edi+16], eax
+$L92570:
+	pop	edi
+	pop	esi
+
+; 1949 : }
+
+	pop	ecx
+	ret	4
+?GetLightInfo@KMissle@@QAEXPAUKLightInfo@@@Z ENDP	; KMissle::GetLightInfo
+_TEXT	ENDS
+PUBLIC	?DoWait@KMissle@@AAEXXZ				; KMissle::DoWait
+;	COMDAT ?DoWait@KMissle@@AAEXXZ
+_TEXT	SEGMENT
+_nSrcX$ = -4
+_nSrcY$ = -8
+?DoWait@KMissle@@AAEXXZ PROC NEAR			; KMissle::DoWait, COMDAT
+
+; 1953 : {
+
+	sub	esp, 8
+	push	esi
+	mov	esi, ecx
+
+; 1954 : 	//	if (m_eMissleStatus == MS_DoWait) return;
+; 1955 : 	m_eMissleStatus = MS_DoWait;
+; 1956 : 	
+; 1957 : #ifndef _SERVER 
+; 1958 : 	int nSrcX = 0 ;
+; 1959 : 	int nSrcY = 0 ;
+; 1960 : 	SubWorld[0].Map2Mps(m_nRegionId, m_nCurrentMapX, m_nCurrentMapY,m_nXOffset, m_nYOffset, &nSrcX, &nSrcY);
+
+	lea	eax, DWORD PTR _nSrcY$[esp+12]
+	lea	ecx, DWORD PTR _nSrcX$[esp+12]
+	mov	edx, DWORD PTR [esi+232]
+	push	eax
+	mov	eax, DWORD PTR [esi+228]
+	push	ecx
+	mov	ecx, DWORD PTR [esi+220]
+	push	edx
+	mov	edx, DWORD PTR [esi+216]
+	push	eax
+	mov	eax, DWORD PTR [esi+548]
+	push	ecx
+	push	edx
+	push	eax
+	mov	ecx, OFFSET FLAT:?SubWorld@@3PAVKSubWorld@@A
+	mov	DWORD PTR [esi+536], 0
+	mov	DWORD PTR _nSrcX$[esp+40], 0
+	mov	DWORD PTR _nSrcY$[esp+40], 0
+	call	?Map2Mps@KSubWorld@@QAEXHHHHHPAH0@Z	; KSubWorld::Map2Mps
+
+; 1961 : 	CreateSpecialEffect(MS_DoWait, nSrcX, nSrcY, m_nCurrentMapZ);
+
+	mov	ecx, DWORD PTR [esi+224]
+	mov	edx, DWORD PTR _nSrcY$[esp+12]
+	mov	eax, DWORD PTR _nSrcX$[esp+12]
+	push	0
+	push	ecx
+	push	edx
+	push	eax
+	push	0
+	mov	ecx, esi
+	call	?CreateSpecialEffect@KMissle@@QAEHW4eMissleStatus@@HHHH@Z ; KMissle::CreateSpecialEffect
+	pop	esi
+
+; 1962 : #endif
+; 1963 : 	
+; 1964 : }
+
+	add	esp, 8
+	ret	0
+?DoWait@KMissle@@AAEXXZ ENDP				; KMissle::DoWait
+_TEXT	ENDS
+;	COMDAT ?PrePareFly@KMissle@@AAEHXZ
+_TEXT	SEGMENT
+_nPX$92585 = -16
+_nPY$92586 = -12
+_nParentPX$92595 = -16
+_nParentPY$92596 = -4
+_nSrcPX$92597 = -12
+_nSrcPY$92598 = -8
+_nParentPX$92601 = -8
+_nParentPY$92602 = -16
+_nSrcPX$92603 = -4
+_nSrcPY$92604 = -12
+_nOldRegion$92605 = -4
+?PrePareFly@KMissle@@AAEHXZ PROC NEAR			; KMissle::PrePareFly, COMDAT
+
+; 1967 : {
+
+	sub	esp, 16					; 00000010H
+	push	ebx
+	push	ebp
+	push	esi
+	mov	esi, ecx
+	push	edi
+
+; 1968 : 	if (m_eMoveKind == MISSLE_MMK_RollBack)
+
+	cmp	DWORD PTR [esi+76], 100			; 00000064H
+	jne	SHORT $L92583
+
+; 1969 : 		m_nTempParam2 =  m_nStartLifeTime + (m_nLifeTime - m_nStartLifeTime ) / 2;
+
+	mov	ecx, DWORD PTR [esi+208]
+	mov	eax, DWORD PTR [esi+92]
+	sub	eax, ecx
+	cdq
+	sub	eax, edx
+	sar	eax, 1
+	add	eax, ecx
+	mov	DWORD PTR [esi+600], eax
+$L92583:
+
+; 1970 : 
+; 1971 : 	//是否会随发送者的移动而中断，类式魔兽3中大型法术
+; 1972 : 	if (m_nInteruptTypeWhenMove)
+
+	mov	eax, DWORD PTR [esi+128]
+	test	eax, eax
+	je	SHORT $L92587
+
+; 1973 : 	{
+; 1974 : 		int nPX, nPY;
+; 1975 : 		Npc[m_nLauncher].GetMpsPos(&nPX, &nPY);
+
+	lea	eax, DWORD PTR _nPY$92586[esp+32]
+	lea	ecx, DWORD PTR _nPX$92585[esp+32]
+	push	eax
+	mov	eax, DWORD PTR [esi+516]
+	push	ecx
+	lea	edx, DWORD PTR [eax+eax*8]
+	lea	eax, DWORD PTR [eax+edx*4]
+	lea	eax, DWORD PTR [eax+eax*2]
+	lea	eax, DWORD PTR [eax+eax*4]
+	lea	eax, DWORD PTR [eax+eax*8]
+	lea	ecx, DWORD PTR ?Npc@@3PAVKNpc@@A[eax*8]
+	call	?GetMpsPos@KNpc@@QAEXPAH0@Z		; KNpc::GetMpsPos
+
+; 1976 : 		if (nPX != m_nLauncherSrcPX || nPY != m_nLauncherSrcPY)
+
+	mov	ecx, DWORD PTR _nPX$92585[esp+32]
+	mov	eax, DWORD PTR [esi+136]
+	cmp	ecx, eax
+	jne	SHORT $L92588
+	mov	edx, DWORD PTR _nPY$92586[esp+32]
+	mov	eax, DWORD PTR [esi+140]
+	cmp	edx, eax
+	je	SHORT $L92587
+$L92588:
+	pop	edi
+	pop	esi
+	pop	ebp
+
+; 1977 : 		{
+; 1978 : 			return false;
+
+	xor	eax, eax
+	pop	ebx
+
+; 2031 : 	
+; 2032 : }
+
+	add	esp, 16					; 00000010H
+	ret	0
+$L92587:
+
+; 1979 : 		}
+; 1980 : 	}
+; 1981 : 	
+; 1982 : 	//子碟位置需要更正为到适当的位置（子弹的出现总是以某个可能位置在不断变化的物体为参照物）
+; 1983 : 	if (m_bHeelAtParent)
+
+	mov	eax, DWORD PTR [esi+132]
+	test	eax, eax
+	je	$L92606
+
+; 1984 : 	{
+; 1985 : 		int nNewPX = 0;
+; 1986 : 		int nNewPY = 0;
+; 1987 : 		
+; 1988 : 		if (m_nParentMissleIndex) // 参考点为母子弹
+
+	mov	ecx, DWORD PTR [esi+524]
+	test	ecx, ecx
+	je	SHORT $L92592
+
+; 1989 : 		{
+; 1990 : 			if (Missle[m_nParentMissleIndex].m_dwLauncherId != m_dwLauncherId)
+
+	mov	eax, ecx
+	mov	edx, DWORD PTR [esi+520]
+	shl	eax, 6
+	add	eax, ecx
+	lea	eax, DWORD PTR [eax+eax*2]
+	lea	eax, DWORD PTR [ecx+eax*4]
+	shl	eax, 2
+	mov	ecx, DWORD PTR ?Missle@@3PAVKMissle@@A[eax+520]
+	cmp	ecx, edx
+	je	SHORT $L92593
+	pop	edi
+	pop	esi
+	pop	ebp
+
+; 1991 : 			{
+; 1992 : 				return false;
+
+	xor	eax, eax
+	pop	ebx
+
+; 2031 : 	
+; 2032 : }
+
+	add	esp, 16					; 00000010H
+	ret	0
+$L92593:
+
+; 1993 : 			}
+; 1994 : 			else
+; 1995 : 			{
+; 1996 : 				int nParentPX, nParentPY;
+; 1997 : 				int nSrcPX, nSrcPY;
+; 1998 : 				Missle[m_nParentMissleIndex].GetMpsPos(&nParentPX, &nParentPY);
+
+	lea	edx, DWORD PTR _nParentPY$92596[esp+32]
+	lea	ecx, DWORD PTR _nParentPX$92595[esp+32]
+	push	edx
+	push	ecx
+	lea	ecx, DWORD PTR ?Missle@@3PAVKMissle@@A[eax]
+	call	?GetMpsPos@KMissle@@QAEXPAH0@Z		; KMissle::GetMpsPos
+
+; 1999 : 				GetMpsPos(&nSrcPX, &nSrcPY);
+
+	lea	edx, DWORD PTR _nSrcPY$92598[esp+32]
+	lea	eax, DWORD PTR _nSrcPX$92597[esp+32]
+	push	edx
+	push	eax
+	mov	ecx, esi
+	call	?GetMpsPos@KMissle@@QAEXPAH0@Z		; KMissle::GetMpsPos
+
+; 2000 : 				nNewPX = nSrcPX + (nParentPX - m_nRefPX);
+
+	mov	ebx, DWORD PTR _nSrcPX$92597[esp+32]
+	mov	edi, DWORD PTR [esi+236]
+	mov	edx, DWORD PTR _nParentPX$92595[esp+32]
+
+; 2001 : 				nNewPY = nSrcPY + (nParentPY - m_nRefPY);
+
+	mov	ebp, DWORD PTR _nSrcPY$92598[esp+32]
+	mov	ecx, DWORD PTR [esi+240]
+	mov	eax, DWORD PTR _nParentPY$92596[esp+32]
+	sub	ebx, edi
+	add	ebx, edx
+	sub	ebp, ecx
+
+; 2002 : 			}
+; 2003 : 		}
+; 2004 : 		else
+
+	jmp	SHORT $L93934
+$L92592:
+
+; 2005 : 			//参考点为发送者
+; 2006 : 		{
+; 2007 : 			_ASSERT(m_nLauncher > 0);
+; 2008 : 			int nParentPX, nParentPY;
+; 2009 : 			int nSrcPX, nSrcPY;
+; 2010 : 			
+; 2011 : 			Npc[m_nLauncher].GetMpsPos(&nParentPX, &nParentPY);
+
+	mov	eax, DWORD PTR [esi+516]
+	lea	ecx, DWORD PTR _nParentPY$92602[esp+32]
+	push	ecx
+	lea	edx, DWORD PTR _nParentPX$92601[esp+36]
+	lea	ecx, DWORD PTR [eax+eax*8]
+	push	edx
+	lea	eax, DWORD PTR [eax+ecx*4]
+	lea	eax, DWORD PTR [eax+eax*2]
+	lea	eax, DWORD PTR [eax+eax*4]
+	lea	edx, DWORD PTR [eax+eax*8]
+	lea	ecx, DWORD PTR ?Npc@@3PAVKNpc@@A[edx*8]
+	call	?GetMpsPos@KNpc@@QAEXPAH0@Z		; KNpc::GetMpsPos
+
+; 2012 : 			GetMpsPos(&nSrcPX, &nSrcPY);
+
+	lea	eax, DWORD PTR _nSrcPY$92604[esp+32]
+	lea	ecx, DWORD PTR _nSrcPX$92603[esp+32]
+	push	eax
+	push	ecx
+	mov	ecx, esi
+	call	?GetMpsPos@KMissle@@QAEXPAH0@Z		; KMissle::GetMpsPos
+
+; 2013 : 			
+; 2014 : 			nNewPX = nSrcPX + (nParentPX - m_nRefPX);
+
+	mov	ebx, DWORD PTR _nSrcPX$92603[esp+32]
+	mov	edi, DWORD PTR [esi+236]
+	mov	edx, DWORD PTR _nParentPX$92601[esp+32]
+
+; 2015 : 			nNewPY = nSrcPY + (nParentPY - m_nRefPY);
+
+	mov	ebp, DWORD PTR _nSrcPY$92604[esp+32]
+	mov	ecx, DWORD PTR [esi+240]
+	mov	eax, DWORD PTR _nParentPY$92602[esp+32]
+	sub	ebx, edi
+	add	ebx, edx
+	sub	ebp, ecx
+$L93934:
+
+; 2016 : 		}
+; 2017 : 		
+; 2018 : 		int nOldRegion = m_nRegionId;
+; 2019 : 		CurRegion.DecRef(m_nCurrentMapX, m_nCurrentMapY, obj_missle);
+
+	mov	edx, DWORD PTR [esi+220]
+	mov	ecx, DWORD PTR [esi+216]
+	push	2
+	push	edx
+	push	ecx
+	mov	ecx, DWORD PTR [esi+544]
+	lea	edi, DWORD PTR [esi+548]
+	add	ebp, eax
+	lea	edx, DWORD PTR [ecx+ecx*8]
+	mov	eax, DWORD PTR [edi]
+	lea	ecx, DWORD PTR [ecx+edx*2]
+	mov	DWORD PTR _nOldRegion$92605[esp+44], eax
+	lea	edx, DWORD PTR [eax+eax*2]
+	shl	ecx, 4
+	lea	eax, DWORD PTR [eax+edx*4]
+	mov	ecx, DWORD PTR ?SubWorld@@3PAVKSubWorld@@A[ecx+8]
+	shl	eax, 4
+	add	ecx, eax
+	call	?DecRef@KRegion@@QAEHHHW4MOVE_OBJ_KIND@@@Z ; KRegion::DecRef
+
+; 2020 : 		SubWorld[m_nSubWorldId].Mps2Map(nNewPX, nNewPY, &m_nRegionId, &m_nCurrentMapX, &m_nCurrentMapY, &m_nXOffset, &m_nYOffset);
+
+	lea	ecx, DWORD PTR [esi+232]
+	lea	edx, DWORD PTR [esi+228]
+	push	ecx
+	lea	eax, DWORD PTR [esi+220]
+	push	edx
+	push	eax
+	lea	eax, DWORD PTR [esi+216]
+	push	eax
+	mov	eax, DWORD PTR [esi+544]
+	push	edi
+	push	ebp
+	lea	ecx, DWORD PTR [eax+eax*8]
+	push	ebx
+	lea	ecx, DWORD PTR [eax+ecx*2]
+	shl	ecx, 4
+	add	ecx, OFFSET FLAT:?SubWorld@@3PAVKSubWorld@@A ; SubWorld
+	call	?Mps2Map@KSubWorld@@QAEXHHPAH0000@Z	; KSubWorld::Mps2Map
+
+; 2021 : 		CurRegion.AddRef(m_nCurrentMapX, m_nCurrentMapY, obj_missle);
+
+	mov	edx, DWORD PTR [esi+220]
+	mov	eax, DWORD PTR [esi+216]
+	push	2
+	push	edx
+	push	eax
+	mov	eax, DWORD PTR [esi+544]
+	lea	ecx, DWORD PTR [eax+eax*8]
+	lea	edx, DWORD PTR [eax+ecx*2]
+	mov	eax, DWORD PTR [edi]
+	shl	edx, 4
+	lea	ecx, DWORD PTR [eax+eax*2]
+	lea	eax, DWORD PTR [eax+ecx*4]
+	mov	ecx, DWORD PTR ?SubWorld@@3PAVKSubWorld@@A[edx+8]
+	shl	eax, 4
+	add	ecx, eax
+	call	?AddRef@KRegion@@QAEHHHW4MOVE_OBJ_KIND@@@Z ; KRegion::AddRef
+
+; 2022 : 		
+; 2023 : 		if (nOldRegion != m_nRegionId)
+
+	mov	edi, DWORD PTR [edi]
+	mov	eax, DWORD PTR _nOldRegion$92605[esp+32]
+	cmp	eax, edi
+	je	SHORT $L92606
+
+; 2024 : 		{
+; 2025 : 			SubWorld[m_nSubWorldId].m_WorldMessage.Send(GWM_MISSLE_CHANGE_REGION, nOldRegion, m_nRegionId, m_nMissleId);
+
+	mov	ecx, DWORD PTR [esi+540]
+	mov	esi, DWORD PTR [esi+544]
+	push	ecx
+	push	edi
+	lea	edx, DWORD PTR [esi+esi*8]
+	push	eax
+	push	4002					; 00000fa2H
+	lea	ecx, DWORD PTR [esi+edx*2]
+	shl	ecx, 4
+	add	ecx, OFFSET FLAT:?SubWorld@@3PAVKSubWorld@@A+172
+	call	?Send@KWorldMsg@@QAEHKHHH@Z		; KWorldMsg::Send
+$L92606:
+	pop	edi
+	pop	esi
+	pop	ebp
+
+; 2026 : 		} 
+; 2027 : 		
+; 2028 : 	}
+; 2029 : 	
+; 2030 : 	return true;
+
+	mov	eax, 1
+	pop	ebx
+
+; 2031 : 	
+; 2032 : }
+
+	add	esp, 16					; 00000010H
+	ret	0
+?PrePareFly@KMissle@@AAEHXZ ENDP			; KMissle::PrePareFly
+_TEXT	ENDS
+PUBLIC	?CheckNearestCollision@KMissle@@AAEHXZ		; KMissle::CheckNearestCollision
+;	COMDAT ?CheckNearestCollision@KMissle@@AAEHXZ
+_TEXT	SEGMENT
+_nSearchRegion$ = -28
+_nRMx$ = -32
+_nRMy$ = -36
+_nNpcOffsetX$ = -24
+_nNpcOffsetY$ = -16
+_nCellWidth$ = -20
+_nCellHeight$ = -12
+_i$ = -40
+_j$92628 = -8
+$T93973 = -24
+$T93974 = -4
+$T93975 = -16
+?CheckNearestCollision@KMissle@@AAEHXZ PROC NEAR	; KMissle::CheckNearestCollision, COMDAT
+
+; 2035 : {
+
+	sub	esp, 40					; 00000028H
+	push	ebx
+	push	ebp
+	push	esi
+	push	edi
+	mov	edi, ecx
+
+; 2036 : 	int nSearchRegion = 0;
+
+	xor	eax, eax
+	mov	DWORD PTR _nSearchRegion$[esp+56], eax
+
+; 2037 : 	int nRMx = 0;
+
+	mov	DWORD PTR _nRMx$[esp+56], eax
+
+; 2038 : 	int nRMy = 0;
+
+	mov	DWORD PTR _nRMy$[esp+56], eax
+
+; 2039 : 	BOOL bCollision = TRUE;
+; 2040 : 	int nNpcIdx = 0;
+; 2041 : 	int nDX = 0;
+; 2042 : 	int nDY = 0;
+; 2043 : 	int nNpcOffsetX = 0;
+; 2044 : 	int nNpcOffsetY = 0;
+; 2045 : 	int nAbsX = 0;
+; 2046 : 	int nAbsY = 0;
+; 2047 : 	int nCellWidth = CellWidth;
+
+	mov	eax, DWORD PTR [edi+544]
+
+; 2048 : 	int nCellHeight = CellHeight;
+; 2049 : 	_ASSERT(nCellWidth > 0 && nCellHeight > 0);
+; 2050 : 	
+; 2051 : 	for (int i = -1; i <= 1; i ++)
+
+	mov	DWORD PTR _i$[esp+56], -1
+	lea	ecx, DWORD PTR [eax+eax*8]
+	lea	eax, DWORD PTR [eax+ecx*2]
+	shl	eax, 4
+	mov	ecx, DWORD PTR ?SubWorld@@3PAVKSubWorld@@A[eax+148]
+	mov	eax, DWORD PTR ?SubWorld@@3PAVKSubWorld@@A[eax+152]
+	shl	ecx, 10					; 0000000aH
+	shl	eax, 10					; 0000000aH
+	mov	DWORD PTR _nCellWidth$[esp+56], ecx
+	mov	DWORD PTR _nCellHeight$[esp+56], eax
+$L92625:
+
+; 2052 : 		for (int j = -1; j <= 1; j ++)
+
+	or	eax, -1
+	mov	DWORD PTR _j$92628[esp+56], eax
+$L92629:
+
+; 2053 : 		{
+; 2054 : 			if (!KMissle::GetOffsetAxis(
+; 2055 : 				m_nSubWorldId,
+; 2056 : 				m_nRegionId, 
+; 2057 : 				m_nCurrentMapX, 
+; 2058 : 				m_nCurrentMapY, 
+; 2059 : 				i , 
+; 2060 : 				j , 
+; 2061 : 				nSearchRegion, 
+; 2062 : 				nRMx, 
+; 2063 : 				nRMy
+; 2064 : 				))
+
+	lea	edx, DWORD PTR _nRMy$[esp+56]
+	lea	ecx, DWORD PTR _nRMx$[esp+56]
+	push	edx
+	lea	edx, DWORD PTR _nSearchRegion$[esp+60]
+	push	ecx
+	mov	ecx, DWORD PTR [edi+220]
+	push	edx
+	mov	edx, DWORD PTR [edi+216]
+	push	eax
+	mov	eax, DWORD PTR _i$[esp+72]
+	push	eax
+	mov	eax, DWORD PTR [edi+548]
+	push	ecx
+	mov	ecx, DWORD PTR [edi+544]
+	push	edx
+	push	eax
+	push	ecx
+	call	?GetOffsetAxis@KMissle@@SAHHHHHHHAAH00@Z ; KMissle::GetOffsetAxis
+	add	esp, 36					; 00000024H
+	test	eax, eax
+	je	$L92630
+
+; 2065 : 				continue;
+; 2066 : 			
+; 2067 : 			_ASSERT(nSearchRegion >= 0);
+; 2068 : 			
+; 2069 : 			nNpcIdx = SubWorld[m_nSubWorldId].m_Region[nSearchRegion].FindNpc(nRMx, nRMy, m_nLauncher, m_eRelation);
+
+	mov	eax, DWORD PTR [edi+516]
+	mov	ecx, DWORD PTR _nRMy$[esp+56]
+	mov	DWORD PTR $T93974[esp+56], eax
+	mov	eax, DWORD PTR [edi+544]
+	mov	edx, DWORD PTR [edi+108]
+	mov	DWORD PTR $T93973[esp+56], ecx
+	lea	esi, DWORD PTR [eax+eax*8]
+	mov	DWORD PTR $T93975[esp+56], edx
+	mov	edx, DWORD PTR _nRMx$[esp+56]
+	lea	esi, DWORD PTR [eax+esi*2]
+	mov	eax, DWORD PTR _nSearchRegion$[esp+56]
+	shl	esi, 4
+	lea	ebp, DWORD PTR [eax+eax*2]
+	mov	ebx, edx
+	lea	ebp, DWORD PTR [eax+ebp*4]
+	mov	eax, DWORD PTR ?SubWorld@@3PAVKSubWorld@@A[esi+8]
+	shl	ebp, 4
+	add	eax, ebp
+	mov	esi, DWORD PTR [eax+176]
+	mov	ebp, DWORD PTR [eax+196]
+	imul	esi, ecx
+	add	esi, ebp
+	cmp	BYTE PTR [esi+edx], 0
+	je	$L92630
+	mov	eax, DWORD PTR [eax+12]
+	mov	esi, DWORD PTR [eax+4]
+	neg	esi
+	sbb	esi, esi
+	and	esi, eax
+	test	esi, esi
+	je	$L92630
+	mov	ebp, DWORD PTR $T93975[esp+56]
+$L93958:
+	mov	eax, DWORD PTR [esi+12]
+	lea	ecx, DWORD PTR [eax+eax*8]
+	lea	ecx, DWORD PTR [eax+ecx*4]
+	lea	ecx, DWORD PTR [ecx+ecx*2]
+	lea	ecx, DWORD PTR [ecx+ecx*4]
+	lea	ecx, DWORD PTR [ecx+ecx*8]
+	shl	ecx, 3
+	cmp	DWORD PTR ?Npc@@3PAVKNpc@@A[ecx+7820], ebx
+	jne	SHORT $L93961
+	mov	edx, DWORD PTR $T93973[esp+56]
+	cmp	DWORD PTR ?Npc@@3PAVKNpc@@A[ecx+7824], edx
+	jne	SHORT $L93961
+	push	eax
+	mov	eax, DWORD PTR $T93974[esp+60]
+	push	eax
+	mov	ecx, OFFSET FLAT:?NpcSet@@3VKNpcSet@@A
+	call	?GetRelation@KNpcSet@@QAE?AW4NPC_RELATION@@HH@Z ; KNpcSet::GetRelation
+	test	eax, ebp
+	jne	SHORT $L93979
+$L93961:
+	mov	esi, DWORD PTR [esi+4]
+	mov	eax, DWORD PTR [esi+4]
+	test	eax, eax
+	je	$L92630
+	test	esi, esi
+	jne	SHORT $L93958
+
+; 2114 : 						{
+; 2115 : 							bCollision = FALSE;
+; 2116 : 							goto CheckCollision;
+; 2117 : 						}
+; 2118 : 					}
+; 2119 : 				}
+; 2120 : 				
+; 2121 : 				
+; 2122 : CheckCollision:
+; 2123 : 				if (bCollision)
+
+	jmp	$L92630
+$L93979:
+
+; 2065 : 				continue;
+; 2066 : 			
+; 2067 : 			_ASSERT(nSearchRegion >= 0);
+; 2068 : 			
+; 2069 : 			nNpcIdx = SubWorld[m_nSubWorldId].m_Region[nSearchRegion].FindNpc(nRMx, nRMy, m_nLauncher, m_eRelation);
+
+	mov	ebx, DWORD PTR [esi+12]
+
+; 2070 : 			
+; 2071 : 			if (nNpcIdx > 0)
+
+	test	ebx, ebx
+	jle	$L92630
+
+; 2072 : 			{
+; 2073 : 				bCollision = TRUE;
+; 2074 : 				nDX = m_nCurrentMapX - Npc[nNpcIdx].m_MapX;
+
+	lea	ecx, DWORD PTR [ebx+ebx*8]
+
+; 2075 : 				nDY = m_nCurrentMapY - Npc[nNpcIdx].m_MapY;
+
+	mov	ebp, DWORD PTR [edi+220]
+	lea	eax, DWORD PTR [ebx+ecx*4]
+	mov	ecx, DWORD PTR [edi+216]
+	lea	eax, DWORD PTR [eax+eax*2]
+	lea	eax, DWORD PTR [eax+eax*4]
+	lea	eax, DWORD PTR [eax+eax*8]
+	shl	eax, 3
+	mov	edx, DWORD PTR ?Npc@@3PAVKNpc@@A[eax+7824]
+	mov	esi, DWORD PTR ?Npc@@3PAVKNpc@@A[eax+7820]
+	sub	ebp, edx
+
+; 2076 : 				nNpcOffsetX = Npc[nNpcIdx].m_OffX;
+
+	mov	edx, DWORD PTR ?Npc@@3PAVKNpc@@A[eax+7832]
+
+; 2077 : 				nNpcOffsetY = Npc[nNpcIdx].m_OffY;
+
+	mov	eax, DWORD PTR ?Npc@@3PAVKNpc@@A[eax+7836]
+	mov	DWORD PTR _nNpcOffsetX$[esp+56], edx
+	mov	DWORD PTR _nNpcOffsetY$[esp+56], eax
+
+; 2078 : 				nAbsX = abs(nDX);
+; 2079 : 				nAbsY = abs(nDY);
+
+	mov	eax, ebp
+	cdq
+	sub	ecx, esi
+	mov	esi, eax
+	xor	esi, edx
+	mov	eax, ecx
+	sub	esi, edx
+	cdq
+	xor	eax, edx
+	sub	eax, edx
+
+; 2080 : 				
+; 2081 : 				if (nAbsX)
+
+	je	SHORT $L92642
+
+; 2082 : 				{
+; 2083 : 					if (nDX < 0)
+
+	test	ecx, ecx
+	jge	SHORT $L93990
+
+; 2084 : 					{
+; 2085 : 						if (nCellWidth - m_nXOffset + nNpcOffsetX > nCellWidth)
+
+	mov	eax, DWORD PTR _nCellWidth$[esp+56]
+	mov	edx, DWORD PTR [edi+228]
+	mov	ecx, eax
+	sub	ecx, edx
+	mov	edx, DWORD PTR _nNpcOffsetX$[esp+56]
+	add	ecx, edx
+	cmp	ecx, eax
+
+; 2129 : }
+
+	jg	SHORT $L92630
+
+; 2086 : 						{
+; 2087 : 							bCollision = FALSE;
+; 2088 : 							goto CheckCollision;
+; 2089 : 						}
+; 2090 : 					}
+; 2091 : 					else if (nDX > 0)
+
+	jmp	SHORT $L92642
+$L93990:
+	jle	SHORT $L92642
+
+; 2092 : 					{
+; 2093 : 						if (nCellWidth - nNpcOffsetX + m_nXOffset > nCellWidth)
+
+	mov	edx, DWORD PTR [edi+228]
+	mov	eax, DWORD PTR _nNpcOffsetX$[esp+56]
+	sub	edx, eax
+	mov	eax, DWORD PTR _nCellWidth$[esp+56]
+	add	edx, eax
+	cmp	edx, eax
+
+; 2129 : }
+
+	jg	SHORT $L92630
+$L92642:
+
+; 2094 : 						{
+; 2095 : 							bCollision = FALSE;
+; 2096 : 							goto CheckCollision;
+; 2097 : 						}
+; 2098 : 					}
+; 2099 : 				}
+; 2100 : 				
+; 2101 : 				if (nAbsY)
+
+	test	esi, esi
+	je	SHORT $L93980
+
+; 2102 : 				{
+; 2103 : 					if (nDY <0)
+
+	test	ebp, ebp
+	jge	SHORT $L93991
+
+; 2104 : 					{
+; 2105 : 						if (nCellHeight - m_nYOffset + nNpcOffsetY > nCellHeight)
+
+	mov	eax, DWORD PTR _nCellHeight$[esp+56]
+	mov	ebp, DWORD PTR [edi+232]
+	mov	esi, DWORD PTR _nNpcOffsetY$[esp+56]
+	mov	ecx, eax
+	sub	ecx, ebp
+	add	ecx, esi
+	cmp	ecx, eax
+	jle	SHORT $L93980
+
+; 2129 : }
+
+	jmp	SHORT $L92630
+$L93991:
+
+; 2106 : 						{
+; 2107 : 							bCollision = FALSE;
+; 2108 : 							goto CheckCollision;
+; 2109 : 						}
+; 2110 : 					}
+; 2111 : 					else if (nDY >0)
+
+	jle	SHORT $L93980
+
+; 2112 : 					{
+; 2113 : 						if (nCellHeight - nNpcOffsetY + m_nYOffset > nCellHeight)
+
+	mov	edx, DWORD PTR [edi+232]
+	mov	ebp, DWORD PTR _nNpcOffsetY$[esp+56]
+	mov	eax, DWORD PTR _nCellHeight$[esp+56]
+	sub	edx, ebp
+	add	edx, eax
+	cmp	edx, eax
+	jle	SHORT $L93980
+$L92630:
+
+; 2052 : 		for (int j = -1; j <= 1; j ++)
+
+	mov	eax, DWORD PTR _j$92628[esp+56]
+	inc	eax
+	cmp	eax, 1
+	mov	DWORD PTR _j$92628[esp+56], eax
+	jle	$L92629
+	mov	eax, DWORD PTR _i$[esp+56]
+	inc	eax
+	cmp	eax, 1
+	mov	DWORD PTR _i$[esp+56], eax
+	jle	$L92625
+	pop	edi
+	pop	esi
+	pop	ebp
+
+; 2125 : 			}
+; 2126 : 		}
+; 2127 : 		
+; 2128 : 		return 0;
+
+	xor	eax, eax
+	pop	ebx
+
+; 2129 : }
+
+	add	esp, 40					; 00000028H
+	ret	0
+$L93980:
+	pop	edi
+	pop	esi
+
+; 2124 : 					return nNpcIdx;
+
+	mov	eax, ebx
+	pop	ebp
+	pop	ebx
+
+; 2129 : }
+
+	add	esp, 40					; 00000028H
+	ret	0
+?CheckNearestCollision@KMissle@@AAEHXZ ENDP		; KMissle::CheckNearestCollision
+_TEXT	ENDS
+;	COMDAT ?GetMpsPos@KMissle@@QAEXPAH0@Z
+_TEXT	SEGMENT
+_pPosX$ = 8
+_pPosY$ = 12
+?GetMpsPos@KMissle@@QAEXPAH0@Z PROC NEAR		; KMissle::GetMpsPos, COMDAT
+
+; 2133 : 	SubWorld[m_nSubWorldId].Map2Mps(m_nRegionId, m_nCurrentMapX, m_nCurrentMapY, m_nXOffset, m_nYOffset, pPosX, pPosY);
+
+	mov	eax, DWORD PTR _pPosY$[esp-4]
+	mov	edx, DWORD PTR _pPosX$[esp-4]
+	push	eax
+	mov	eax, DWORD PTR [ecx+232]
+	push	edx
+	mov	edx, DWORD PTR [ecx+228]
+	push	eax
+	mov	eax, DWORD PTR [ecx+220]
+	push	edx
+	mov	edx, DWORD PTR [ecx+216]
+	push	eax
+	mov	eax, DWORD PTR [ecx+548]
+	mov	ecx, DWORD PTR [ecx+544]
+	push	edx
+	push	eax
+	lea	edx, DWORD PTR [ecx+ecx*8]
+	lea	ecx, DWORD PTR [ecx+edx*2]
+	shl	ecx, 4
+	add	ecx, OFFSET FLAT:?SubWorld@@3PAVKSubWorld@@A ; SubWorld
+	call	?Map2Mps@KSubWorld@@QAEXHHHHHPAH0@Z	; KSubWorld::Map2Mps
+
+; 2134 : };
+
+	ret	8
+?GetMpsPos@KMissle@@QAEXPAH0@Z ENDP			; KMissle::GetMpsPos
+_TEXT	ENDS
+END

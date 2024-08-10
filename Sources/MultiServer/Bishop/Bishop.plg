@@ -1,0 +1,83 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: Bishop - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x804 /fo"Debug/Bishop.res" /d "_DEBUG" "C:\Users\Trung\Downloads\VLKT\src\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\MultiServer\Bishop\Bishop.rc"" 
+Creating temporary file "C:\Users\Trung\AppData\Local\Temp\RSP896E.tmp" with contents
+[
+/nologo /MTd /W3 /Gm /GX /ZI /Od /I "..\Common" /I "..\Rainbow\Interface" /I "..\Heaven\Interface" /I "..\..\..\lib" /I "..\..\..\Headers" /I "..\..\Sword3PaySys\S3AccServer" /I "..\..\s3client\login" /I "..\..\RoleDBManager" /I "..\..\Core\src" /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /FR"Debug/" /Fp"Debug/Bishop.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\Users\Trung\Downloads\VLKT\src\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\MultiServer\Bishop\Application.cpp"
+"C:\Users\Trung\Downloads\VLKT\src\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\MultiServer\Bishop\Bishop.cpp"
+"C:\Users\Trung\Downloads\VLKT\src\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\MultiServer\Common\Event.cpp"
+"C:\Users\Trung\Downloads\VLKT\src\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\MultiServer\Bishop\GamePlayer.cpp"
+"C:\Users\Trung\Downloads\VLKT\src\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\MultiServer\Bishop\GameServer.cpp"
+"C:\Users\Trung\Downloads\VLKT\src\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\MultiServer\Bishop\Intercessor.cpp"
+"C:\Users\Trung\Downloads\VLKT\src\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\MultiServer\Bishop\Network.cpp"
+"C:\Users\Trung\Downloads\VLKT\src\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\MultiServer\Bishop\PlayerCreator.cpp"
+"C:\Users\Trung\Downloads\VLKT\src\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\MultiServer\Bishop\SmartClient.cpp"
+]
+Creating command line "cl.exe @C:\Users\Trung\AppData\Local\Temp\RSP896E.tmp" 
+Creating temporary file "C:\Users\Trung\AppData\Local\Temp\RSP896F.tmp" with contents
+[
+/nologo /MTd /W3 /Gm /GX /ZI /Od /I "..\Common" /I "..\Rainbow\Interface" /I "..\Heaven\Interface" /I "..\..\..\lib" /I "..\..\..\Headers" /I "..\..\Sword3PaySys\S3AccServer" /I "..\..\s3client\login" /I "..\..\RoleDBManager" /I "..\..\Core\src" /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /FR"Debug/" /Fp"Debug/Bishop.pch" /Yc"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\Users\Trung\Downloads\VLKT\src\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\MultiServer\Bishop\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\Users\Trung\AppData\Local\Temp\RSP896F.tmp" 
+Creating temporary file "C:\Users\Trung\AppData\Local\Temp\RSP8970.tmp" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:windows /incremental:yes /pdb:"Debug/Bishop.pdb" /debug /machine:I386 /out:"Debug/Bishop.exe" /pdbtype:sept 
+.\Debug\Application.obj
+.\Debug\Bishop.obj
+.\Debug\Event.obj
+.\Debug\GamePlayer.obj
+.\Debug\GameServer.obj
+.\Debug\Intercessor.obj
+.\Debug\Network.obj
+.\Debug\PlayerCreator.obj
+.\Debug\SmartClient.obj
+.\Debug\StdAfx.obj
+.\Debug\Bishop.res
+..\..\..\Lib\debug\common.lib
+..\..\..\Lib\debug\engine.lib
+]
+Creating command line "link.exe @C:\Users\Trung\AppData\Local\Temp\RSP8970.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+StdAfx.cpp
+Compiling...
+Application.cpp
+Bishop.cpp
+Event.cpp
+GamePlayer.cpp
+GameServer.cpp
+Intercessor.cpp
+Network.cpp
+PlayerCreator.cpp
+SmartClient.cpp
+Generating Code...
+Linking...
+Creating temporary file "C:\Users\Trung\AppData\Local\Temp\RSP9D18.bat" with contents
+[
+@echo off
+md ..\..\..\..\bin\client\debug\
+copy debug\Bishop.exe ..\..\..\..\bin\Client\Bishop.exe
+copy debug\Bishop.exe ..\..\..\..\bin\Client\debug\Bishop.exe
+]
+Creating command line "C:\Users\Trung\AppData\Local\Temp\RSP9D18.bat"
+
+A subdirectory or file ..\..\..\..\bin\client\debug\ already exists.
+        1 file(s) copied.
+        1 file(s) copied.
+
+
+
+<h3>Results</h3>
+Bishop.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

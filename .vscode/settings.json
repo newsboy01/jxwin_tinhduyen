@@ -1,0 +1,18 @@
+{
+    "[cpp]": {
+        "editor.formatOnSave": true
+    },
+    "[c]": {
+        "editor.formatOnSave": true
+    },
+    "files.associations": {
+        "iostream": "cpp",
+        "*.tli": "cpp",
+        "*.tcc": "cpp",
+        "functional": "cpp",
+        "ostream": "cpp",
+        "*.tlh": "cpp"
+    },
+    "files.encoding": "gb2312",
+    "C_Cpp.dimInactiveRegions": false,
+}
