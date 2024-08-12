@@ -1900,7 +1900,7 @@ BOOL CoreServerShell::PayForSpeech2(int nIndex, int nType, int nChanelId)
 	int nLevel = Npc[nNpcIdx].m_Level;
 	int nMaxMana = Npc[nNpcIdx].m_CurrentManaMax;
 	// channell = 1 la The Gioi, = 6 la Phu Can
-	printf("\nTest %d [%d] - [%s] - [%s] - [Type: %d]\n",nChanelId, nLevel, Player[nIndex].m_AccoutName, Player[nIndex].m_PlayerName,nType);
+	//printf("\nTest %d [%d] - [%s] - [%s] - [Type: %d]\n",nChanelId, nLevel, Player[nIndex].m_AccoutName, Player[nIndex].m_PlayerName,nType);
 
 	switch (nType)
 	{

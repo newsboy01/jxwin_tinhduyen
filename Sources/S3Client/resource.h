@@ -3,6 +3,9 @@
 // Used by Script1.rc
 //
 #define IDI_ICON1                       101
+#define ID_TRAY_SHOW 1001
+#define ID_TRAY_HIDE 1002
+#define ID_TRAY_EXIT 1003
 
 // Next default values for new objects
 // 

@@ -14,6 +14,10 @@
 #include "KWin32Wnd.h"
 #include "KWin32App.h"
 #include "KIme.h"
+extern "C" {
+    #include <shellapi.h>
+}
+#pragma comment(lib, "Shell32.lib")
 //---------------------------------------------------------------------------
 static KWin32App* m_pWin32App = NULL;
 static LRESULT CALLBACK WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
@@ -28,20 +32,26 @@ ENGINE_API FILE *serr = NULL;
 #define	MOUSE_EVENT_HAPPEND			1
 #define	MOUSE_HOVER_MSG_SENT		2
 #define	MOUSE_HOVER_START_TIME_MIN	3
-//m_uMouseHoverStartTime 含义
-//MOUSE_EVENT_NONE		--> 未发生鼠标活动事件
-//MOUSE_EVENT_HAPPEND	--> 有鼠标活动事件
-//MOUSE_HOVER_MSG_SENT	--> 无鼠标活动事件的持续时间超过了设定的时间限制，已发送了WM_NCMOUSEHOVER消息
-//其他值				--> 无鼠标活动事件的持续时间未超过设定的时间限制，此值表示无鼠标活动的开始时间
+
+#define WM_TRAYICON (WM_USER + 1)
+#define IDM_TRAY_EXIT 1001
+HINSTANCE m_hInstance;
+HWND hWnd;
+HMENU hMenu;
+//m_uMouseHoverStartTime 潞卢脪氓
+//MOUSE_EVENT_NONE		--> 脦麓路垄脡煤脢贸卤锚禄卯露炉脢脗录镁
+//MOUSE_EVENT_HAPPEND	--> 脫脨脢贸卤锚禄卯露炉脢脗录镁
+//MOUSE_HOVER_MSG_SENT	--> 脦脼脢贸卤锚禄卯露炉脢脗录镁碌脛鲁脰脨酶脢卤录盲鲁卢鹿媒脕脣脡猫露篓碌脛脢卤录盲脧脼脰脝拢卢脪脩路垄脣脥脕脣WM_NCMOUSEHOVER脧没脧垄
+//脝盲脣没脰碌				--> 脦脼脢贸卤锚禄卯露炉脢脗录镁碌脛鲁脰脨酶脢卤录盲脦麓鲁卢鹿媒脡猫露篓碌脛脢卤录盲脧脼脰脝拢卢麓脣脰碌卤铆脢戮脦脼脢贸卤锚禄卯露炉碌脛驴陋脢录脢卤录盲
 
 //---------------------------------------------------------------------------
-// 函数:	WndProc
-// 功能:	窗口回调函数
-// 参数:	hWnd		窗口句柄
-//			uMsg		消息类型
-//			wParam		参数1(32bit)
-//			lParam		参数2(32bit)
-// 返回:	LRESULT
+// 潞炉脢媒:	WndProc
+// 鹿娄脛脺:	麓掳驴脷禄脴碌梅潞炉脢媒
+// 虏脦脢媒:	hWnd		麓掳驴脷戮盲卤煤
+//			uMsg		脧没脧垄脌脿脨脥
+//			wParam		虏脦脢媒1(32bit)
+//			lParam		虏脦脢媒2(32bit)
+// 路碌禄脴:	LRESULT
 //---------------------------------------------------------------------------
 LRESULT CALLBACK WndProc(
 						 HWND	hWnd,		// handle of window
@@ -52,10 +62,10 @@ LRESULT CALLBACK WndProc(
 	return m_pWin32App->MsgProc(hWnd, uMsg, wParam, lParam);
 }
 //---------------------------------------------------------------------------
-// 函数:	KWin32App
-// 功能:	购造函数
-// 参数:	void
-// 返回:	void
+// 潞炉脢媒:	KWin32App
+// 鹿娄脛脺:	鹿潞脭矛潞炉脢媒
+// 虏脦脢媒:	void
+// 路碌禄脴:	void
 //---------------------------------------------------------------------------
 KWin32App::KWin32App()
 {
@@ -70,13 +80,14 @@ KWin32App::KWin32App()
 	m_pWin32App = this;
 }
 //---------------------------------------------------------------------------
-// 函数:	Init
-// 功能:	初始化
-// 参数:	hInstance	实例句柄
-// 返回:	void
+// 潞炉脢媒:	Init
+// 鹿娄脛脺:	鲁玫脢录禄炉
+// 虏脦脢媒:	hInstance	脢碌脌媒戮盲卤煤
+// 路碌禄脴:	void
 //---------------------------------------------------------------------------
 BOOL KWin32App::Init(HINSTANCE hInstance,char *AppName)
 {
+	m_hInstance = hInstance;
 	g_StrCpy(m_szClass, AppName);
 	strcat(m_szClass," Class");
 	g_StrCpy(m_szTitle, AppName);
@@ -94,15 +105,15 @@ BOOL KWin32App::Init(HINSTANCE hInstance,char *AppName)
 
 	if (!InitWindow(hInstance))
 		return FALSE;
-
+	//MessageBox(NULL, "02", "Thong bao!!", MB_OK | MB_ICONERROR);
 	return GameInit();
 }
 //---------------------------------------------------------------------------
-// 函数:	InitClass
-// 功能:	初始化窗口程序类
-// 参数:	hInstance	实例句柄
-// 返回:	TRUE		成功
-//			FALSE		失败
+// 潞炉脢媒:	InitClass
+// 鹿娄脛脺:	鲁玫脢录禄炉麓掳驴脷鲁脤脨貌脌脿
+// 虏脦脢媒:	hInstance	脢碌脌媒戮盲卤煤
+// 路碌禄脴:	TRUE		鲁脡鹿娄
+//			FALSE		脢搂掳脺
 //---------------------------------------------------------------------------
 BOOL KWin32App::InitClass(HINSTANCE hInstance)
 {
@@ -121,12 +132,40 @@ BOOL KWin32App::InitClass(HINSTANCE hInstance)
 
 	return RegisterClass(&wc);
 }
+
+//trungnh icon system tray
+void KWin32App::CreateTrayIcon(HWND hWnd)
+{
+    memset(&m_TrayIconData, 0, sizeof(m_TrayIconData));
+    m_TrayIconData.cbSize = sizeof(m_TrayIconData);
+    m_TrayIconData.hWnd = hWnd;
+    m_TrayIconData.uID = 1;
+    m_TrayIconData.uFlags = NIF_ICON | NIF_MESSAGE | NIF_TIP;
+    m_TrayIconData.uCallbackMessage = WM_USER + 1;   
+    m_TrayIconData.hIcon = LoadIcon(GetModuleHandle(NULL), MAKEINTRESOURCE(SWORD_ICON));
+    lstrcpy(m_TrayIconData.szTip, TEXT("VLTK"));
+
+    Shell_NotifyIcon(NIM_ADD, &m_TrayIconData);
+
+    hMenu = CreatePopupMenu();
+    AppendMenu(hMenu, MF_STRING, ID_TRAY_SHOW, TEXT("Show"));
+    AppendMenu(hMenu, MF_STRING, ID_TRAY_HIDE, TEXT("Hide"));
+    AppendMenu(hMenu, MF_STRING, ID_TRAY_EXIT, TEXT("Exit"));
+    //MessageBox(NULL, "00.01", "Thong bao!!", MB_OK | MB_ICONERROR);
+}
+
+//trungnh icon system tray
+void KWin32App::RemoveTrayIcon()
+{
+    Shell_NotifyIcon(NIM_DELETE, &m_TrayIconData);
+}
+
 //---------------------------------------------------------------------------
-// 函数:	InitWindow
-// 功能:	初始化窗口
-// 参数:	hInstance	实例句柄
-// 返回:	TRUE		成功
-//			FALSE		失败
+// 潞炉脢媒:	InitWindow
+// 鹿娄脛脺:	鲁玫脢录禄炉麓掳驴脷
+// 虏脦脢媒:	hInstance	脢碌脌媒戮盲卤煤
+// 路碌禄脴:	TRUE		鲁脡鹿娄
+//			FALSE		脢搂掳脺
 //---------------------------------------------------------------------------
 BOOL KWin32App::InitWindow(HINSTANCE hInstance)
 {
@@ -149,20 +188,28 @@ BOOL KWin32App::InitWindow(HINSTANCE hInstance)
 		return FALSE;
 	}
 
+
 	g_SetMainHWnd(hWnd);
 	g_SetDrawHWnd(hWnd);
 	UpdateWindow(hWnd);
 	SetFocus(hWnd);
+
+	//trungnh icon system tray
+	//MessageBox(NULL, "00", "Thong bao!!", MB_OK | MB_ICONERROR);
+	CreateTrayIcon(hWnd);
+	//MessageBox(NULL, "01", "Thong bao!!", MB_OK | MB_ICONERROR);
 	return TRUE;
 }
+
 //---------------------------------------------------------------------------
-// 函数:	Run
-// 功能:	主消息循环
-// 参数:	void
-// 返回:	void
+// 潞炉脢媒:	Run
+// 鹿娄脛脺:	脰梅脧没脧垄脩颅禄路
+// 虏脦脢媒:	void
+// 路碌禄脴:	void
 //---------------------------------------------------------------------------
 void KWin32App::Run()
 {
+	//MessageBox(NULL, "09", "Thong bao!!", MB_OK | MB_ICONERROR);
 	MSG	Msg;
 
 	while (TRUE)
@@ -190,25 +237,26 @@ void KWin32App::Run()
 			WaitMessage();
 		}
 	}
+	//MessageBox(NULL, "10 ", "Thong bao!!", MB_OK | MB_ICONERROR);
 	GameExit();
 }
 //---------------------------------------------------------------------------
-// 函数:	GameInit
-// 功能:	游戏初始化
-// 参数:	void
-// 返回:	TRUE		成功
-//			FALSE		失败
+// 潞炉脢媒:	GameInit
+// 鹿娄脛脺:	脫脦脧路鲁玫脢录禄炉
+// 虏脦脢媒:	void
+// 路碌禄脴:	TRUE		鲁脡鹿娄
+//			FALSE		脢搂掳脺
 //---------------------------------------------------------------------------
 BOOL KWin32App::GameInit()
 {
 	return TRUE;
 }
 //---------------------------------------------------------------------------
-// 函数:	GameLoop
-// 功能:	游戏主循环
-// 参数:	void
-// 返回:	TRUE		成功
-//			FALSE		失败
+// 潞炉脢媒:	GameLoop
+// 鹿娄脛脺:	脫脦脧路脰梅脩颅禄路
+// 虏脦脢媒:	void
+// 路碌禄脴:	TRUE		鲁脡鹿娄
+//			FALSE		脢搂掳脺
 //---------------------------------------------------------------------------
 BOOL KWin32App::GameLoop()
 {
@@ -216,30 +264,68 @@ BOOL KWin32App::GameLoop()
 	return TRUE;
 }
 //---------------------------------------------------------------------------
-// 函数:	GameExit
-// 功能:	游戏退出
-// 参数:	void
-// 返回:	TRUE		成功
-//			FALSE		失败
+// 潞炉脢媒:	GameExit
+// 鹿娄脛脺:	脫脦脧路脥脣鲁枚
+// 虏脦脢媒:	void
+// 路碌禄脴:	TRUE		鲁脡鹿娄
+//			FALSE		脢搂掳脺
 //---------------------------------------------------------------------------
 BOOL KWin32App::GameExit()
 {
 	return TRUE;
 }
 //---------------------------------------------------------------------------
-// 函数:	MsgProc
-// 功能:	窗口回调函数
-// 参数:	hWnd		窗口句柄
-//			uMsg		消息类型
-//			wParam		参数1(32bit)
-//			lParam		参数2(32bit)
-// 返回:	TRUE		成功
-//			FALSE		失败
+// 潞炉脢媒:	MsgProc
+// 鹿娄脛脺:	麓掳驴脷禄脴碌梅潞炉脢媒
+// 虏脦脢媒:	hWnd		麓掳驴脷戮盲卤煤
+//			uMsg		脧没脧垄脌脿脨脥
+//			wParam		虏脦脢媒1(32bit)
+//			lParam		虏脦脢媒2(32bit)
+// 路碌禄脴:	TRUE		鲁脡鹿娄
+//			FALSE		脢搂掳脺
 //---------------------------------------------------------------------------
 LRESULT KWin32App::MsgProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 {
 	switch (uMsg)
 	{
+	//trungnh icon system tray
+	case WM_USER + 1:
+        if (lParam == WM_RBUTTONUP)
+        {
+            POINT pt;
+            GetCursorPos(&pt);
+            SetForegroundWindow(hWnd);
+
+            //HMENU hMenu = CreatePopupMenu();
+            //AppendMenu(hMenu, MF_STRING, IDM_TRAY_EXIT, TEXT("Exit"));
+            TrackPopupMenu(hMenu, TPM_RIGHTBUTTON, pt.x, pt.y, 0, hWnd, NULL);
+            PostMessage(hWnd, WM_NULL, 0, 0); // To remove the highlight on right click
+            //DestroyMenu(hMenu);
+        }
+        else if (lParam == WM_LBUTTONDBLCLK)
+        {
+            ShowWindow(hWnd, SW_RESTORE);
+            SetForegroundWindow(hWnd);
+        }
+        break;
+    //trungnh icon system tray    
+	case WM_COMMAND:
+        switch (LOWORD(wParam))
+        {
+        case ID_TRAY_EXIT:
+            RemoveTrayIcon();
+            PostQuitMessage(0);
+            break;
+        case ID_TRAY_HIDE:
+            ShowWindow(hWnd, SW_HIDE);
+            break;
+        case ID_TRAY_SHOW:
+            ShowWindow(hWnd, SW_RESTORE);
+            SetForegroundWindow(hWnd);
+            break;
+        }
+        break;
+
 	case WM_CLOSE:
 		if (HandleInput(uMsg, wParam, lParam))
 			return 0;
@@ -247,6 +333,8 @@ LRESULT KWin32App::MsgProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 		break;
 	case WM_DESTROY:
 		PostQuitMessage(0);
+		//trungnh icon system tray
+		RemoveTrayIcon();
 		break;
 	case WM_SETCURSOR:
 		if (m_bShowMouse == FALSE && m_bActive &&
@@ -257,8 +345,8 @@ LRESULT KWin32App::MsgProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 		}
         else
         {
-            // 如果外部使用我们自己的鼠标，如果没有返回TRUE，
-            // 那么就会导致鼠标被设置回来
+            // 脠莽鹿没脥芒虏驴脢鹿脫脙脦脪脙脟脳脭录潞碌脛脢贸卤锚拢卢脠莽鹿没脙禄脫脨路碌禄脴TRUE拢卢
+            // 脛脟脙麓戮脥禄谩碌录脰脗脢贸卤锚卤禄脡猫脰脙禄脴脌麓
             return TRUE;
         }
 		break;
@@ -310,20 +398,20 @@ LRESULT KWin32App::MsgProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 }
 
 //---------------------------------------------------------------------------
-// 函数:	ShowMouse
-// 功能:	设置鼠标可见
-// 参数:	bShow		BOOL
-// 返回:	void
+// 潞炉脢媒:	ShowMouse
+// 鹿娄脛脺:	脡猫脰脙脢贸卤锚驴脡录没
+// 虏脦脢媒:	bShow		BOOL
+// 路碌禄脴:	void
 //---------------------------------------------------------------------------
 void KWin32App::ShowMouse(BOOL bShow)
 {
 	m_bShowMouse = bShow;
 }
 //---------------------------------------------------------------------------
-// 函数:	SetMultiGame
-// 功能:	设置是否是后台继续运行的多人游戏
-// 参数:	bMulti		BOOL
-// 返回:	void
+// 潞炉脢媒:	SetMultiGame
+// 鹿娄脛脺:	脡猫脰脙脢脟路帽脢脟潞贸脤篓录脤脨酶脭脣脨脨碌脛露脿脠脣脫脦脧路
+// 虏脦脢媒:	bMulti		BOOL
+// 路碌禄脴:	void
 //---------------------------------------------------------------------------
 void KWin32App::SetMultiGame(BOOL bMulti)
 {
@@ -361,7 +449,7 @@ void KWin32App::GenerateMsgHoverMsg()
 	}
 	else if (m_uMouseHoverTimeSetting)
 	{
-		//此时(m_uMouseHoverStartTime == MOUSE_EVENT_NONE)
+		//麓脣脢卤(m_uMouseHoverStartTime == MOUSE_EVENT_NONE)
 		m_uMouseHoverStartTime = timeGetTime();
 		if (m_uMouseHoverStartTime < MOUSE_HOVER_START_TIME_MIN)
 			m_uMouseHoverStartTime = MOUSE_HOVER_START_TIME_MIN;

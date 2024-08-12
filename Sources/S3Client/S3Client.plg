@@ -3,577 +3,1023 @@
 <pre>
 <h1>Build Log</h1>
 <h3>
---------------------Configuration: Core - Win32 Server Debug--------------------
+--------------------Configuration: Engine - Win32 Release--------------------
 </h3>
 <h3>Command Lines</h3>
-Creating temporary file "C:\Users\Admin\AppData\Local\Temp\RSP5120.tmp" with contents
+Creating temporary file "C:\Users\Admin\AppData\Local\Temp\RSPD143.tmp" with contents
 [
-/nologo /MTd /Gm /GX /Zi /Od /I "..\engine\src" /I "..\engine\include" /I "..\Network" /I "..\..\Headers" /D "_DEBUG" /D "_SERVER" /D "WIN32" /D "_WINDOWS" /D "_MBCS" /D "_USRDLL" /D "CORE_EXPORTS" /FR"ServerDebug/" /Fp"ServerDebug/Core.pch" /Yu"KCore.h" /Fo"ServerDebug/" /Fd"ServerDebug/" /FD /LD /GZ /c 
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KPartnerSkill.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KPlayerPartner.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KThiefSkill.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KMissle.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KMissleRes.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KMissleSet.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KSkillList.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KSkillManager.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KSkills.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KSkillSpecial.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KNpc.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KNpcAI.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KNpcAttribModify.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KNpcDeathCalcExp.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KNpcFindPath.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KNpcGold.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KNpcRes.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KNpcResList.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KNpcResNode.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KNpcSet.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KNpcTemplate.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KFaction.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KPlayer.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KPlayerChat.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KPlayerDBFuns.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KPlayerFaction.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KPlayerMenuState.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KPlayerPK.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KPlayerSet.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KPlayerTask.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KPlayerTeam.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KPlayerTong.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KPlayerTrade.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KSprControl.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KBasPropTbl.CPP"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KBuySell.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KInventory.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KItem.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KItemChangeRes.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KItemGenerator.CPP"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KItemList.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KItemSet.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KObj.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KObjSet.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KViewItem.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KCore.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KSubWorld.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KSubWorldSet.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KWeatherMgr.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KRegion.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KWorldMsg.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KMath.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KGMProcess.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KNewProtocolProcess.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KProtocol.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KProtocolProcess.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\ScriptFuns.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KScriptValueSet.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KSortScript.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\src\CoreServerShell.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\Scene\KWeather.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KMagicDesc.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KGMCommand.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KMission.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KTaskFuns.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KOption.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KMapMusic.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KLadder.cpp"
+/nologo /MD /W3 /GX /Zi /O2 /I "include" /I "..\Pack\ucl-1.01\include" /D "NDEBUG" /D "WIN32" /D "_WINDOWS" /D "_MBCS" /D "_USRDLL" /D "ENGINE_EXPORTS" /D WINVER=0x0500 /Fp"Release/Engine.pch" /YX"KWin32.h" /Fo"Release/" /Fd"Release/" /FD /c 
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KAutoMutex.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KAviFile.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KBitmap.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KBitmap16.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KBitmapConvert.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KBmp2Spr.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KBmpFile.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KBmpFile24.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KCache.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KCanvas.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KCodec.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KCodecLzo.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KColors.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KDDraw.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KDebug.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KDError.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KDInput.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KDrawBase.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KDrawBitmap.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KDrawBitmap16.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KDrawFade.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KDrawFont.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KDrawSprite.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KDrawSpriteAlpha.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KDSound.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KEicScript.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KEicScriptSet.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KEngine.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KEvent.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KFile.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KFileCopy.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KFileDialog.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KFilePath.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KFindBinTree.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KFont.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KGifFile.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KGraphics.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KHashList.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KHashNode.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KHashTable.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\Kime.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KIniFile.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KJpgFile.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KKeyboard.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KLinkArray.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KList.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KLuaScript.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KLuaScriptSet.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KLubCmpl_Blocker.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KMemBase.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KMemClass.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KMemClass1.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KMemManager.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KMemStack.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KMessage.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KMouse.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KMp3Music.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KMp4Audio.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KMp4Movie.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KMp4Video.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KMpgMusic.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KMsgNode.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KMusic.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KMutex.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KNode.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KOctree.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KOctreeNode.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KPakData.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KPakFile.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KPakList.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KPakTool.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KPalette.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KPcxFile.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KPolygon.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KPolyRelation.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KRandom.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KSafeList.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KScanDir.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KScript.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KScriptCache.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KScriptList.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KScriptSet.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KSG_MD5_String.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KSG_StringProcess.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KSortBinTree.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KSortList.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KSoundCache.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KSprite.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KSpriteCache.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KSpriteCodec.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KSpriteMaker.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KStepLuaScript.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KStrBase.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KStrList.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KStrNode.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KTabFile.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KTabFileCtrl.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KTgaFile32.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KThread.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KTimer.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KVideo.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KWavCodec.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KWavFile.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KWavMusic.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KWavSound.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KWin32.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KWin32App.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KWin32Wnd.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KZipCodec.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KZipData.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KZipFile.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KZipList.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\md5.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\XPackFile.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\Cryptography\EDOneTimePad.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\Text.cpp"
 ]
-Creating command line "cl.exe @C:\Users\Admin\AppData\Local\Temp\RSP5120.tmp" 
-Creating temporary file "C:\Users\Admin\AppData\Local\Temp\RSP5121.tmp" with contents
+Creating command line "cl.exe @C:\Users\Admin\AppData\Local\Temp\RSPD143.tmp" 
+Creating temporary file "C:\Users\Admin\AppData\Local\Temp\RSPD144.tmp" with contents
 [
-/nologo /MTd /Gm /GX /Zi /Od /I "..\engine\src" /I "..\engine\include" /I "..\Network" /I "..\..\Headers" /D "_DEBUG" /D "_SERVER" /D "WIN32" /D "_WINDOWS" /D "_MBCS" /D "_USRDLL" /D "CORE_EXPORTS" /FR"ServerDebug/" /Fp"ServerDebug/Core.pch" /Yc"KCore.h" /Fo"ServerDebug/" /Fd"ServerDebug/" /FD /LD /GZ /c 
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\stdafx.cpp"
+/nologo /MD /W3 /GX /Zi /O2 /I "include" /I "..\Pack\ucl-1.01\include" /D "NDEBUG" /D "WIN32" /D "_WINDOWS" /D "_MBCS" /D "_USRDLL" /D "ENGINE_EXPORTS" /D WINVER=0x0500 /Fp"Release/Engine.pch" /Yc"kwin32.h" /Fo"Release/" /Fd"Release/" /FD /c 
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\stdafx.cpp"
 ]
-Creating command line "cl.exe @C:\Users\Admin\AppData\Local\Temp\RSP5121.tmp" 
-Creating temporary file "C:\Users\Admin\AppData\Local\Temp\RSP5122.tmp" with contents
+Creating command line "cl.exe @C:\Users\Admin\AppData\Local\Temp\RSPD144.tmp" 
+Creating temporary file "C:\Users\Admin\AppData\Local\Temp\RSPD145.tmp" with contents
 [
-opengl32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib lualibdll.lib Ws2_32.lib Winmm.lib Shlwapi.lib /nologo /dll /incremental:no /pdb:"ServerDebug/CoreServer.pdb" /map:"ServerDebug/CoreServer.map" /debug /machine:I386 /nodefaultlib:"libc.lib" /nodefaultlib:"libcmt.lib" /nodefaultlib:"msvcrt.lib" /nodefaultlib:"libcd.lib" /nodefaultlib:"msvcrtd.lib" /out:"ServerDebug\CoreServer.dll" /implib:"ServerDebug/CoreServer.lib" /pdbtype:sept /libpath:"../../lib/" 
-".\ServerDebug\KPartnerSkill.obj"
-".\ServerDebug\KPlayerPartner.obj"
-".\ServerDebug\KThiefSkill.obj"
-".\ServerDebug\KMissle.obj"
-".\ServerDebug\KMissleRes.obj"
-".\ServerDebug\KMissleSet.obj"
-".\ServerDebug\KSkillList.obj"
-".\ServerDebug\KSkillManager.obj"
-".\ServerDebug\KSkills.obj"
-".\ServerDebug\KSkillSpecial.obj"
-".\ServerDebug\KNpc.obj"
-".\ServerDebug\KNpcAI.obj"
-".\ServerDebug\KNpcAttribModify.obj"
-".\ServerDebug\KNpcDeathCalcExp.obj"
-".\ServerDebug\KNpcFindPath.obj"
-".\ServerDebug\KNpcGold.obj"
-".\ServerDebug\KNpcRes.obj"
-".\ServerDebug\KNpcResList.obj"
-".\ServerDebug\KNpcResNode.obj"
-".\ServerDebug\KNpcSet.obj"
-".\ServerDebug\KNpcTemplate.obj"
-".\ServerDebug\KFaction.obj"
-".\ServerDebug\KPlayer.obj"
-".\ServerDebug\KPlayerChat.obj"
-".\ServerDebug\KPlayerDBFuns.obj"
-".\ServerDebug\KPlayerFaction.obj"
-".\ServerDebug\KPlayerMenuState.obj"
-".\ServerDebug\KPlayerPK.obj"
-".\ServerDebug\KPlayerSet.obj"
-".\ServerDebug\KPlayerTask.obj"
-".\ServerDebug\KPlayerTeam.obj"
-".\ServerDebug\KPlayerTong.obj"
-".\ServerDebug\KPlayerTrade.obj"
-".\ServerDebug\KSprControl.obj"
-".\ServerDebug\KBasPropTbl.obj"
-".\ServerDebug\KBuySell.obj"
-".\ServerDebug\KInventory.obj"
-".\ServerDebug\KItem.obj"
-".\ServerDebug\KItemChangeRes.obj"
-".\ServerDebug\KItemGenerator.obj"
-".\ServerDebug\KItemList.obj"
-".\ServerDebug\KItemSet.obj"
-".\ServerDebug\KObj.obj"
-".\ServerDebug\KObjSet.obj"
-".\ServerDebug\KViewItem.obj"
-".\ServerDebug\KCore.obj"
-".\ServerDebug\KSubWorld.obj"
-".\ServerDebug\KSubWorldSet.obj"
-".\ServerDebug\KWeatherMgr.obj"
-".\ServerDebug\KRegion.obj"
-".\ServerDebug\KWorldMsg.obj"
-".\ServerDebug\KMath.obj"
-".\ServerDebug\KGMProcess.obj"
-".\ServerDebug\KNewProtocolProcess.obj"
-".\ServerDebug\KProtocol.obj"
-".\ServerDebug\KProtocolProcess.obj"
-".\ServerDebug\ScriptFuns.obj"
-".\ServerDebug\KScriptValueSet.obj"
-".\ServerDebug\KSortScript.obj"
-".\ServerDebug\CoreServerShell.obj"
-".\ServerDebug\KWeather.obj"
-".\ServerDebug\KMagicDesc.obj"
-".\ServerDebug\KGMCommand.obj"
-".\ServerDebug\KMission.obj"
-".\ServerDebug\KTaskFuns.obj"
-".\ServerDebug\KOption.obj"
-".\ServerDebug\KMapMusic.obj"
-".\ServerDebug\KLadder.obj"
-".\ServerDebug\stdafx.obj"
-"..\..\Lib\debug\engine.lib"
-"..\..\Lib\debug\common.lib"
-".\Src\USBKey\EP1KDL20.LIB"
-".\Src\USBKey\EpsForJoLib.lib"
+/nologo /MD /W3 /GX /Zi /O2 /I "include" /I "..\Pack\ucl-1.01\include" /D "NDEBUG" /D "WIN32" /D "_WINDOWS" /D "_MBCS" /D "_USRDLL" /D "ENGINE_EXPORTS" /D WINVER=0x0500 /Fo"Release/" /Fd"Release/" /FD /c 
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\ucl\alloc.c"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\ucl\io.c"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\ucl\n2b_99.c"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\ucl\n2b_d.c"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\ucl\n2b_ds.c"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\ucl\n2b_to.c"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\ucl\n2d_99.c"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\ucl\n2d_d.c"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\ucl\n2d_ds.c"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\ucl\n2d_to.c"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\ucl\n2e_99.c"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\ucl\n2e_d.c"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\ucl\n2e_ds.c"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\ucl\n2e_to.c"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\ucl\ucl_crc.c"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\ucl\ucl_dll.c"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\ucl\ucl_init.c"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\ucl\ucl_ptr.c"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\ucl\ucl_str.c"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\ucl\ucl_util.c"
 ]
-Creating command line "link.exe @C:\Users\Admin\AppData\Local\Temp\RSP5122.tmp"
+Creating command line "cl.exe @C:\Users\Admin\AppData\Local\Temp\RSPD145.tmp" 
+Creating temporary file "C:\Users\Admin\AppData\Local\Temp\RSPD146.tmp" with contents
+[
+Shell32.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib ddraw.lib dsound.lib dxguid.lib winmm.lib wsock32.lib dinput8.lib /nologo /dll /incremental:no /pdb:"Release/Engine.pdb" /map:"Release/Engine.map" /debug /machine:I386 /out:"Release/Engine.dll" /implib:"Release/Engine.lib" 
+".\Release\KAutoMutex.obj"
+".\Release\KAviFile.obj"
+".\Release\KBitmap.obj"
+".\Release\KBitmap16.obj"
+".\Release\KBitmapConvert.obj"
+".\Release\KBmp2Spr.obj"
+".\Release\KBmpFile.obj"
+".\Release\KBmpFile24.obj"
+".\Release\KCache.obj"
+".\Release\KCanvas.obj"
+".\Release\KCodec.obj"
+".\Release\KCodecLzo.obj"
+".\Release\KColors.obj"
+".\Release\KDDraw.obj"
+".\Release\KDebug.obj"
+".\Release\KDError.obj"
+".\Release\KDInput.obj"
+".\Release\KDrawBase.obj"
+".\Release\KDrawBitmap.obj"
+".\Release\KDrawBitmap16.obj"
+".\Release\KDrawFade.obj"
+".\Release\KDrawFont.obj"
+".\Release\KDrawSprite.obj"
+".\Release\KDrawSpriteAlpha.obj"
+".\Release\KDSound.obj"
+".\Release\KEicScript.obj"
+".\Release\KEicScriptSet.obj"
+".\Release\KEngine.obj"
+".\Release\KEvent.obj"
+".\Release\KFile.obj"
+".\Release\KFileCopy.obj"
+".\Release\KFileDialog.obj"
+".\Release\KFilePath.obj"
+".\Release\KFindBinTree.obj"
+".\Release\KFont.obj"
+".\Release\KGifFile.obj"
+".\Release\KGraphics.obj"
+".\Release\KHashList.obj"
+".\Release\KHashNode.obj"
+".\Release\KHashTable.obj"
+".\Release\Kime.obj"
+".\Release\KIniFile.obj"
+".\Release\KJpgFile.obj"
+".\Release\KKeyboard.obj"
+".\Release\KLinkArray.obj"
+".\Release\KList.obj"
+".\Release\KLuaScript.obj"
+".\Release\KLuaScriptSet.obj"
+".\Release\KLubCmpl_Blocker.obj"
+".\Release\KMemBase.obj"
+".\Release\KMemClass.obj"
+".\Release\KMemClass1.obj"
+".\Release\KMemManager.obj"
+".\Release\KMemStack.obj"
+".\Release\KMessage.obj"
+".\Release\KMouse.obj"
+".\Release\KMp3Music.obj"
+".\Release\KMp4Audio.obj"
+".\Release\KMp4Movie.obj"
+".\Release\KMp4Video.obj"
+".\Release\KMpgMusic.obj"
+".\Release\KMsgNode.obj"
+".\Release\KMusic.obj"
+".\Release\KMutex.obj"
+".\Release\KNode.obj"
+".\Release\KOctree.obj"
+".\Release\KOctreeNode.obj"
+".\Release\KPakData.obj"
+".\Release\KPakFile.obj"
+".\Release\KPakList.obj"
+".\Release\KPakTool.obj"
+".\Release\KPalette.obj"
+".\Release\KPcxFile.obj"
+".\Release\KPolygon.obj"
+".\Release\KPolyRelation.obj"
+".\Release\KRandom.obj"
+".\Release\KSafeList.obj"
+".\Release\KScanDir.obj"
+".\Release\KScript.obj"
+".\Release\KScriptCache.obj"
+".\Release\KScriptList.obj"
+".\Release\KScriptSet.obj"
+".\Release\KSG_MD5_String.obj"
+".\Release\KSG_StringProcess.obj"
+".\Release\KSortBinTree.obj"
+".\Release\KSortList.obj"
+".\Release\KSoundCache.obj"
+".\Release\KSprite.obj"
+".\Release\KSpriteCache.obj"
+".\Release\KSpriteCodec.obj"
+".\Release\KSpriteMaker.obj"
+".\Release\KStepLuaScript.obj"
+".\Release\KStrBase.obj"
+".\Release\KStrList.obj"
+".\Release\KStrNode.obj"
+".\Release\KTabFile.obj"
+".\Release\KTabFileCtrl.obj"
+".\Release\KTgaFile32.obj"
+".\Release\KThread.obj"
+".\Release\KTimer.obj"
+".\Release\KVideo.obj"
+".\Release\KWavCodec.obj"
+".\Release\KWavFile.obj"
+".\Release\KWavMusic.obj"
+".\Release\KWavSound.obj"
+".\Release\KWin32.obj"
+".\Release\KWin32App.obj"
+".\Release\KWin32Wnd.obj"
+".\Release\KZipCodec.obj"
+".\Release\KZipData.obj"
+".\Release\KZipFile.obj"
+".\Release\KZipList.obj"
+".\Release\md5.obj"
+".\Release\stdafx.obj"
+".\Release\XPackFile.obj"
+".\Release\EDOneTimePad.obj"
+".\Release\Text.obj"
+".\Release\alloc.obj"
+".\Release\io.obj"
+".\Release\n2b_99.obj"
+".\Release\n2b_d.obj"
+".\Release\n2b_ds.obj"
+".\Release\n2b_to.obj"
+".\Release\n2d_99.obj"
+".\Release\n2d_d.obj"
+".\Release\n2d_ds.obj"
+".\Release\n2d_to.obj"
+".\Release\n2e_99.obj"
+".\Release\n2e_d.obj"
+".\Release\n2e_ds.obj"
+".\Release\n2e_to.obj"
+".\Release\ucl_crc.obj"
+".\Release\ucl_dll.obj"
+".\Release\ucl_init.obj"
+".\Release\ucl_ptr.obj"
+".\Release\ucl_str.obj"
+".\Release\ucl_util.obj"
+"..\..\Lib\release\JpgLib.lib"
+"..\..\Lib\release\LuaLibDll.lib"
+"..\..\Lib\release\mp3lib.lib"
+]
+Creating command line "link.exe @C:\Users\Admin\AppData\Local\Temp\RSPD146.tmp"
 <h3>Output Window</h3>
 Compiling...
 stdafx.cpp
+
+NOTE: WINVER has been defined as 0x0500 or greater which enables
+Windows NT 5.0 and Windows 98 features. When these headers were released,
+Windows NT 5.0 beta 1 and Windows 98 beta 2.1 were the current versions.
+
+For this release when WINVER is defined as 0x0500 or greater, you can only
+build beta or test applications.  To build a retail application,
+set WINVER to 0x0400 or visit http://www.microsoft.com/msdn/sdk
+to see if retail Windows NT 5.0 or Windows 98 headers are available.
+
+See the SDK release notes for more information.
+
 Compiling...
-KPartnerSkill.cpp
-KPlayerPartner.cpp
-KThiefSkill.cpp
-KMissle.cpp
-KMissleRes.cpp
-KMissleSet.cpp
-KSkillList.cpp
-KSkillManager.cpp
-KSkills.cpp
-KSkillSpecial.cpp
-KNpc.cpp
-KNpcAI.cpp
-KNpcAttribModify.cpp
-KNpcDeathCalcExp.cpp
-KNpcFindPath.cpp
-KNpcGold.cpp
-KNpcRes.cpp
-KNpcResList.cpp
-KNpcResNode.cpp
-KNpcSet.cpp
-Generating Code...
+KAutoMutex.cpp
+
+NOTE: WINVER has been defined as 0x0500 or greater which enables
+Windows NT 5.0 and Windows 98 features. When these headers were released,
+Windows NT 5.0 beta 1 and Windows 98 beta 2.1 were the current versions.
+
+For this release when WINVER is defined as 0x0500 or greater, you can only
+build beta or test applications.  To build a retail application,
+set WINVER to 0x0400 or visit http://www.microsoft.com/msdn/sdk
+to see if retail Windows NT 5.0 or Windows 98 headers are available.
+
+See the SDK release notes for more information.
+
+KAviFile.cpp
+KBitmap.cpp
+KBitmap16.cpp
+KBitmapConvert.cpp
+KBmp2Spr.cpp
+KBmpFile.cpp
+KBmpFile24.cpp
+KCache.cpp
+KCanvas.cpp
+KCodec.cpp
+KCodecLzo.cpp
+KColors.cpp
+KDDraw.cpp
+KDebug.cpp
+KDError.cpp
+KDInput.cpp
+KDrawBase.cpp
+KDrawBitmap.cpp
+KDrawBitmap16.cpp
+KDrawFade.cpp
+KDrawFont.cpp
+KDrawSprite.cpp
+KDrawSpriteAlpha.cpp
+KDSound.cpp
+KEicScript.cpp
+KEicScriptSet.cpp
+KEngine.cpp
+KEvent.cpp
+KFile.cpp
+KFileCopy.cpp
+KFileDialog.cpp
+KFilePath.cpp
+KFindBinTree.cpp
+KFont.cpp
+KGifFile.cpp
+KGraphics.cpp
+KHashList.cpp
+KHashNode.cpp
+KHashTable.cpp
+Kime.cpp
+KIniFile.cpp
+KIniFile 当前不支持 KeyName 为中文! by Romandou
+KJpgFile.cpp
+KKeyboard.cpp
+KLinkArray.cpp
+KList.cpp
+KLuaScript.cpp
+KLuaScriptSet.cpp
+KLubCmpl_Blocker.cpp
+KMemBase.cpp
+KMemClass.cpp
+KMemClass1.cpp
+KMemManager.cpp
+KMemStack.cpp
+KMessage.cpp
+KMouse.cpp
+KMp3Music.cpp
+KMp4Audio.cpp
+KMp4Movie.cpp
+KMp4Video.cpp
+KMpgMusic.cpp
+KMsgNode.cpp
+KMusic.cpp
+KMutex.cpp
+KNode.cpp
+KOctree.cpp
+KOctreeNode.cpp
+KPakData.cpp
+KPakFile.cpp
+KPakList.cpp
+
+NOTE: WINVER has been defined as 0x0500 or greater which enables
+Windows NT 5.0 and Windows 98 features. When these headers were released,
+Windows NT 5.0 beta 1 and Windows 98 beta 2.1 were the current versions.
+
+For this release when WINVER is defined as 0x0500 or greater, you can only
+build beta or test applications.  To build a retail application,
+set WINVER to 0x0400 or visit http://www.microsoft.com/msdn/sdk
+to see if retail Windows NT 5.0 or Windows 98 headers are available.
+
+See the SDK release notes for more information.
+
+KPakTool.cpp
+
+NOTE: WINVER has been defined as 0x0500 or greater which enables
+Windows NT 5.0 and Windows 98 features. When these headers were released,
+Windows NT 5.0 beta 1 and Windows 98 beta 2.1 were the current versions.
+
+For this release when WINVER is defined as 0x0500 or greater, you can only
+build beta or test applications.  To build a retail application,
+set WINVER to 0x0400 or visit http://www.microsoft.com/msdn/sdk
+to see if retail Windows NT 5.0 or Windows 98 headers are available.
+
+See the SDK release notes for more information.
+
+KPalette.cpp
+KPcxFile.cpp
+KPolygon.cpp
+KPolyRelation.cpp
+KRandom.cpp
+KSafeList.cpp
+KScanDir.cpp
+KScript.cpp
+KScriptCache.cpp
+KScriptList.cpp
+KScriptSet.cpp
+KSG_MD5_String.cpp
+KSG_StringProcess.cpp
+KSortBinTree.cpp
+KSortList.cpp
+KSoundCache.cpp
+KSprite.cpp
+KSpriteCache.cpp
+KSpriteCodec.cpp
+KSpriteMaker.cpp
+KStepLuaScript.cpp
+KStrBase.cpp
+KStrList.cpp
+KStrNode.cpp
+KTabFile.cpp
+KTabFileCtrl.cpp
+KTgaFile32.cpp
+KThread.cpp
+KTimer.cpp
+KVideo.cpp
+KWavCodec.cpp
+KWavFile.cpp
+KWavMusic.cpp
+KWavSound.cpp
+KWin32.cpp
+KWin32App.cpp
+KWin32Wnd.cpp
+KZipCodec.cpp
+KZipData.cpp
+KZipFile.cpp
+KZipList.cpp
+md5.cpp
+XPackFile.cpp
+EDOneTimePad.cpp
+Text.cpp
 Compiling...
-KNpcTemplate.cpp
-KFaction.cpp
-KPlayer.cpp
-KPlayerChat.cpp
-KPlayerDBFuns.cpp
-KPlayerFaction.cpp
-KPlayerMenuState.cpp
-KPlayerPK.cpp
-KPlayerSet.cpp
-KPlayerTask.cpp
-KPlayerTeam.cpp
-KPlayerTong.cpp
-KPlayerTrade.cpp
-KSprControl.cpp
-KBasPropTbl.CPP
-KBuySell.cpp
-KInventory.cpp
-KItem.cpp
-KItemChangeRes.cpp
-KItemGenerator.CPP
-Generating Code...
-Compiling...
-KItemList.cpp
-KItemSet.cpp
-KObj.cpp
-KObjSet.cpp
-KViewItem.cpp
-KCore.cpp
-KSubWorld.cpp
-KSubWorldSet.cpp
-KWeatherMgr.cpp
-KRegion.cpp
-KWorldMsg.cpp
-KMath.cpp
-KGMProcess.cpp
-KNewProtocolProcess.cpp
-KProtocol.cpp
-KProtocolProcess.cpp
-ScriptFuns.cpp
-KScriptValueSet.cpp
-KSortScript.cpp
-CoreServerShell.cpp
-Generating Code...
-C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\list(131) : warning C4786: 'std::list<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >::list<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >' : identifier was truncated to '255' characters in the debug information
-C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\list(153) : warning C4786: 'std::list<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >::~list<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >' : identifier was truncated to '255' characters in the debug information
-C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\utility(21) : warning C4786: 'std::pair<std::_Tree<unsigned short,std::pair<unsigned short const ,void (__cdecl*)(IClient *,unsigned long,unsigned long,int,unsigned char *,int)>,std::map<unsigned short,void (__cdecl*)(IClient *,unsigned long,unsigned long,int,unsigned char *,int),std::less<unsigned short>,std::allocator<void (__cdecl*)(IClient *,unsigned long,unsigned long,int,unsigned char *,int)> >::_Kfn,std::less<unsigned short>,std::allocator<void (__cdecl*)(IClient *,unsigned long,unsigned long,int,unsigned char *,int)> >::iterator,bool>::pair<std::_Tree<unsigned short,std::pair<unsigned short const ,void (__cdecl*)(IClient *,unsigned long,unsigned long,int,unsigned char *,int)>,std::map<unsigned short,void (__cdecl*)(IClient *,unsigned long,unsigned long,int,unsigned char *,int),std::less<unsigned short>,std::allocator<void (__cdecl*)(IClient *,unsigned long,unsigned long,int,unsigned char *,int)> >::_Kfn,std::less<unsigned short>,std::allocator<void (__cdecl*)(IClient *,unsigned long,unsigned long,int,unsigned char *,int)> >::iterator,bool>' : identifier was truncated to '255' characters in the debug information
-Compiling...
-KWeather.cpp
-KMagicDesc.cpp
-KGMCommand.cpp
-KMission.cpp
-KTaskFuns.cpp
-KOption.cpp
-KMapMusic.cpp
-KLadder.cpp
+alloc.c
+io.c
+n2b_99.c
+n2b_d.c
+n2b_ds.c
+n2b_to.c
+n2d_99.c
+n2d_d.c
+n2d_ds.c
+n2d_to.c
+n2e_99.c
+n2e_d.c
+n2e_ds.c
+n2e_to.c
+ucl_crc.c
+ucl_dll.c
+ucl_init.c
+ucl_ptr.c
+ucl_str.c
+ucl_util.c
 Generating Code...
 Linking...
-   Creating library ServerDebug/CoreServer.lib and object ServerDebug/CoreServer.exp
-ServerDebug\CoreServer.dll : warning LNK4084: total image size 687038464 exceeds max (268435456); image may not run
-Creating temporary file "C:\Users\Admin\AppData\Local\Temp\RSP68D2.bat" with contents
+   Creating library Release/Engine.lib and object Release/Engine.exp
+Creating temporary file "C:\Users\Admin\AppData\Local\Temp\RSPEF10.bat" with contents
 [
 @echo off
-md ..\..\lib\debug\
-copy ServerDebug\CoreServer.lib ..\..\lib\debug\CoreServer.lib
-md ..\..\..\bin\server\
-copy ServerDebug\CoreServer.map ..\..\..\bin\server\CoreServer.map
-copy ServerDebug\CoreServer.pdb ..\..\..\bin\server\CoreServer.pdb
-copy ServerDebug\CoreServer.dll ..\..\..\bin\server\CoreServer.dll
-md ..\..\..\bin\server\debug\
-copy ServerDebug\CoreServer.map ..\..\..\bin\server\debug\CoreServer.map
-copy ServerDebug\CoreServer.pdb ..\..\..\bin\server\debug\CoreServer.pdb
-copy ServerDebug\CoreServer.dll ..\..\..\bin\server\debug\CoreServer.dll
-copy ServerDebug\CoreServer.map ..\..\..\bin\server\CoreServer.map
-copy ServerDebug\CoreServer.pdb ..\..\..\bin\server\CoreServer.pdb
-copy ServerDebug\CoreServer.dll ..\..\..\bin\server\CoreServer.dll
-]
-Creating command line "C:\Users\Admin\AppData\Local\Temp\RSP68D2.bat"
-
-A subdirectory or file ..\..\lib\debug\ already exists.
-        1 file(s) copied.
-A subdirectory or file ..\..\..\bin\server\ already exists.
-        1 file(s) copied.
-        1 file(s) copied.
-        1 file(s) copied.
-A subdirectory or file ..\..\..\bin\server\debug\ already exists.
-        1 file(s) copied.
-        1 file(s) copied.
-        1 file(s) copied.
-        1 file(s) copied.
-        1 file(s) copied.
-        1 file(s) copied.
-
-
-
-<h3>Results</h3>
-CoreServer.dll - 0 error(s), 4 warning(s)
-<h3>
---------------------Configuration: Core - Win32 Client Debug--------------------
-</h3>
-<h3>Command Lines</h3>
-Creating temporary file "C:\Users\Admin\AppData\Local\Temp\RSP6BE0.tmp" with contents
-[
-/nologo /MDd /W2 /Gm /GX /Zi /Od /I "..\engine\src" /I "..\..\Headers" /I "..\engine\include" /I "..\Network" /I "src" /D "_DEBUG" /D "WIN32" /D "_WINDOWS" /D "_MBCS" /D "_USRDLL" /D "CORE_EXPORTS" /D "SWORDONLINE_SHOW_DBUG_INFO" /FR"ClientDebug/" /Fp"ClientDebug/Core.pch" /Yu"KCore.h" /Fo"ClientDebug/" /Fd"ClientDebug/" /FD /GZ /c 
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KPartnerSkill.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KPlayerPartner.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KThiefSkill.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KMissle.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KMissleRes.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KMissleSet.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KSkillList.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KSkillManager.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KSkills.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KSkillSpecial.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KNpc.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KNpcAI.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KNpcAttribModify.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KNpcDeathCalcExp.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KNpcFindPath.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KNpcGold.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KNpcRes.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KNpcResList.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KNpcResNode.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KNpcSet.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KNpcTemplate.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KFaction.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KPlayer.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KPlayerChat.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KPlayerDBFuns.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KPlayerFaction.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KPlayerMenuState.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KPlayerPK.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KPlayerSet.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KPlayerTask.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KPlayerTeam.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KPlayerTong.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KPlayerTrade.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KSprControl.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KBasPropTbl.CPP"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KBuySell.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KInventory.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KItem.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KItemChangeRes.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KItemGenerator.CPP"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KItemList.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KItemSet.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KObj.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KObjSet.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KViewItem.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KCore.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KSubWorld.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KSubWorldSet.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KWeatherMgr.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KRegion.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KWorldMsg.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KMath.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KProtocol.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KProtocolProcess.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\ScriptFuns.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KScriptValueSet.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KSortScript.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\CoreShell.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\Scene\KIpotBranch.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\Scene\KIpotLeaf.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\Scene\KScenePlaceC.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\Scene\KScenePlaceRegionC.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\Scene\KWeather.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\Scene\SceneMath.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\Scene\ScenePlaceMapC.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\CoreDrawGameObj.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\ImgRef.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KMagicDesc.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KGMCommand.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KTaskFuns.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KOption.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KMapMusic.cpp"
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\KLadder.cpp"
-]
-Creating command line "cl.exe @C:\Users\Admin\AppData\Local\Temp\RSP6BE0.tmp" 
-Creating temporary file "C:\Users\Admin\AppData\Local\Temp\RSP6BE1.tmp" with contents
-[
-/nologo /MDd /W2 /Gm /GX /Zi /Od /I "..\engine\src" /I "..\..\Headers" /I "..\engine\include" /I "..\Network" /I "src" /D "_DEBUG" /D "WIN32" /D "_WINDOWS" /D "_MBCS" /D "_USRDLL" /D "CORE_EXPORTS" /D "SWORDONLINE_SHOW_DBUG_INFO" /FR"ClientDebug/" /Fo"ClientDebug/" /Fd"ClientDebug/" /FD /GZ /c 
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\Scene\KIpoTree.cpp"
-]
-Creating command line "cl.exe @C:\Users\Admin\AppData\Local\Temp\RSP6BE1.tmp" 
-Creating temporary file "C:\Users\Admin\AppData\Local\Temp\RSP6BE2.tmp" with contents
-[
-/nologo /MDd /W2 /Gm /GX /Zi /Od /I "..\engine\src" /I "..\..\Headers" /I "..\engine\include" /I "..\Network" /I "src" /D "_DEBUG" /D "WIN32" /D "_WINDOWS" /D "_MBCS" /D "_USRDLL" /D "CORE_EXPORTS" /D "SWORDONLINE_SHOW_DBUG_INFO" /FR"ClientDebug/" /Fp"ClientDebug/Core.pch" /Yc"KCore.h" /Fo"ClientDebug/" /Fd"ClientDebug/" /FD /GZ /c 
-"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Core\Src\stdafx.cpp"
-]
-Creating command line "cl.exe @C:\Users\Admin\AppData\Local\Temp\RSP6BE2.tmp" 
-Creating temporary file "C:\Users\Admin\AppData\Local\Temp\RSP6BE3.tmp" with contents
-[
-kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib lualibdll.lib Shlwapi.lib Winmm.lib /nologo /dll /incremental:no /pdb:"ClientDebug/CoreClient.pdb" /map:"ClientDebug/CoreClient.map" /debug /machine:I386 /out:"ClientDebug\CoreClient.dll" /implib:"ClientDebug/CoreClient.lib" /pdbtype:sept /libpath:"../../lib/" 
-".\ClientDebug\KPartnerSkill.obj"
-".\ClientDebug\KPlayerPartner.obj"
-".\ClientDebug\KThiefSkill.obj"
-".\ClientDebug\KMissle.obj"
-".\ClientDebug\KMissleRes.obj"
-".\ClientDebug\KMissleSet.obj"
-".\ClientDebug\KSkillList.obj"
-".\ClientDebug\KSkillManager.obj"
-".\ClientDebug\KSkills.obj"
-".\ClientDebug\KSkillSpecial.obj"
-".\ClientDebug\KNpc.obj"
-".\ClientDebug\KNpcAI.obj"
-".\ClientDebug\KNpcAttribModify.obj"
-".\ClientDebug\KNpcDeathCalcExp.obj"
-".\ClientDebug\KNpcFindPath.obj"
-".\ClientDebug\KNpcGold.obj"
-".\ClientDebug\KNpcRes.obj"
-".\ClientDebug\KNpcResList.obj"
-".\ClientDebug\KNpcResNode.obj"
-".\ClientDebug\KNpcSet.obj"
-".\ClientDebug\KNpcTemplate.obj"
-".\ClientDebug\KFaction.obj"
-".\ClientDebug\KPlayer.obj"
-".\ClientDebug\KPlayerChat.obj"
-".\ClientDebug\KPlayerDBFuns.obj"
-".\ClientDebug\KPlayerFaction.obj"
-".\ClientDebug\KPlayerMenuState.obj"
-".\ClientDebug\KPlayerPK.obj"
-".\ClientDebug\KPlayerSet.obj"
-".\ClientDebug\KPlayerTask.obj"
-".\ClientDebug\KPlayerTeam.obj"
-".\ClientDebug\KPlayerTong.obj"
-".\ClientDebug\KPlayerTrade.obj"
-".\ClientDebug\KSprControl.obj"
-".\ClientDebug\KBasPropTbl.obj"
-".\ClientDebug\KBuySell.obj"
-".\ClientDebug\KInventory.obj"
-".\ClientDebug\KItem.obj"
-".\ClientDebug\KItemChangeRes.obj"
-".\ClientDebug\KItemGenerator.obj"
-".\ClientDebug\KItemList.obj"
-".\ClientDebug\KItemSet.obj"
-".\ClientDebug\KObj.obj"
-".\ClientDebug\KObjSet.obj"
-".\ClientDebug\KViewItem.obj"
-".\ClientDebug\KCore.obj"
-".\ClientDebug\KSubWorld.obj"
-".\ClientDebug\KSubWorldSet.obj"
-".\ClientDebug\KWeatherMgr.obj"
-".\ClientDebug\KRegion.obj"
-".\ClientDebug\KWorldMsg.obj"
-".\ClientDebug\KMath.obj"
-".\ClientDebug\KProtocol.obj"
-".\ClientDebug\KProtocolProcess.obj"
-".\ClientDebug\ScriptFuns.obj"
-".\ClientDebug\KScriptValueSet.obj"
-".\ClientDebug\KSortScript.obj"
-".\ClientDebug\CoreShell.obj"
-".\ClientDebug\KIpotBranch.obj"
-".\ClientDebug\KIpotLeaf.obj"
-".\ClientDebug\KIpoTree.obj"
-".\ClientDebug\KScenePlaceC.obj"
-".\ClientDebug\KScenePlaceRegionC.obj"
-".\ClientDebug\KWeather.obj"
-".\ClientDebug\SceneMath.obj"
-".\ClientDebug\ScenePlaceMapC.obj"
-".\ClientDebug\CoreDrawGameObj.obj"
-".\ClientDebug\ImgRef.obj"
-".\ClientDebug\KMagicDesc.obj"
-".\ClientDebug\KGMCommand.obj"
-".\ClientDebug\KTaskFuns.obj"
-".\ClientDebug\KOption.obj"
-".\ClientDebug\KMapMusic.obj"
-".\ClientDebug\KLadder.obj"
-".\ClientDebug\stdafx.obj"
-"..\..\Lib\debug\engine.lib"
-"..\..\Lib\debug\common.lib"
-".\Src\USBKey\EP1KDL20.LIB"
-".\Src\USBKey\EpsForJoLib.lib"
-]
-Creating command line "link.exe @C:\Users\Admin\AppData\Local\Temp\RSP6BE3.tmp"
-<h3>Output Window</h3>
-Compiling...
-stdafx.cpp
-Compiling...
-KPartnerSkill.cpp
-KPlayerPartner.cpp
-KThiefSkill.cpp
-KMissle.cpp
-KMissleRes.cpp
-KMissleSet.cpp
-KSkillList.cpp
-KSkillManager.cpp
-KSkills.cpp
-KSkillSpecial.cpp
-KNpc.cpp
-KNpcAI.cpp
-KNpcAttribModify.cpp
-KNpcDeathCalcExp.cpp
-KNpcFindPath.cpp
-KNpcGold.cpp
-KNpcRes.cpp
-KNpcResList.cpp
-KNpcResNode.cpp
-KNpcSet.cpp
-Generating Code...
-Compiling...
-KNpcTemplate.cpp
-KFaction.cpp
-KPlayer.cpp
-KPlayerChat.cpp
-KPlayerDBFuns.cpp
-KPlayerFaction.cpp
-KPlayerMenuState.cpp
-KPlayerPK.cpp
-KPlayerSet.cpp
-KPlayerTask.cpp
-KPlayerTeam.cpp
-KPlayerTong.cpp
-KPlayerTrade.cpp
-KSprControl.cpp
-KBasPropTbl.CPP
-KBuySell.cpp
-KInventory.cpp
-KItem.cpp
-KItemChangeRes.cpp
-KItemGenerator.CPP
-Generating Code...
-Compiling...
-KItemList.cpp
-KItemSet.cpp
-KObj.cpp
-KObjSet.cpp
-KViewItem.cpp
-KCore.cpp
-KSubWorld.cpp
-KSubWorldSet.cpp
-KWeatherMgr.cpp
-KRegion.cpp
-KWorldMsg.cpp
-KMath.cpp
-KProtocol.cpp
-KProtocolProcess.cpp
-ScriptFuns.cpp
-KScriptValueSet.cpp
-KSortScript.cpp
-CoreShell.cpp
-KIpotBranch.cpp
-KIpotLeaf.cpp
-Generating Code...
-Compiling...
-KScenePlaceC.cpp
-KScenePlaceRegionC.cpp
-KWeather.cpp
-SceneMath.cpp
-ScenePlaceMapC.cpp
-CoreDrawGameObj.cpp
-ImgRef.cpp
-KMagicDesc.cpp
-KGMCommand.cpp
-KTaskFuns.cpp
-KOption.cpp
-KMapMusic.cpp
-KLadder.cpp
-Generating Code...
-Compiling...
-KIpoTree.cpp
-Linking...
-   Creating library ClientDebug/CoreClient.lib and object ClientDebug/CoreClient.exp
-Creating temporary file "C:\Users\Admin\AppData\Local\Temp\RSP82C7.bat" with contents
-[
-@echo off
-md ..\..\lib\debug
-copy ClientDebug\CoreClient.lib ..\..\lib\debug\CoreClient.lib
+md ..\..\lib\release\
+copy release\engine.lib ..\..\lib\release\Engine.lib
 md ..\..\..\bin\client\
-copy ClientDebug\CoreClient.pdb ..\..\..\bin\client\CoreClient.pdb
-copy ClientDebug\CoreClient.map ..\..\..\bin\client\CoreClient.map
-copy ClientDebug\CoreClient.dll ..\..\..\bin\client\CoreClient.dll
-md ..\..\..\bin\client\debug\
-copy ClientDebug\CoreClient.pdb ..\..\..\bin\client\debug\CoreClient.pdb
-copy ClientDebug\CoreClient.map ..\..\..\bin\client\debug\CoreClient.map
-copy ClientDebug\CoreClient.dll ..\..\..\bin\client\debug\CoreClient.dll
+copy release\engine.dll ..\..\..\bin\client\Engine.dll
+copy release\engine.pdb ..\..\..\bin\client\Engine.pdb
+md ..\..\..\bin\client\release\
+copy release\engine.dll ..\..\..\bin\client\release\Engine.dll
+copy release\engine.pdb ..\..\..\bin\client\release\Engine.pdb
+md ..\..\..\bin\server\
+copy release\engine.dll ..\..\..\bin\server\Engine.dll
+copy release\engine.pdb ..\..\..\bin\server\Engine.pdb
+md ..\..\..\bin\server\release\
+copy release\engine.dll ..\..\..\bin\server\release\Engine.dll
+copy release\engine.pdb ..\..\..\bin\server\release\Engine.pdb
+md ..\..\..\bin\multiserver\
+copy release\engine.dll ..\..\..\bin\multiserver\Engine.dll
+copy release\engine.pdb ..\..\..\bin\multiserver\Engine.pdb
+md ..\..\..\bin\multiserver\release\
+copy release\engine.dll ..\..\..\bin\multiserver\release\Engine.dll
+copy release\engine.pdb ..\..\..\bin\multiserver\release\Engine.pdb
 ]
-Creating command line "C:\Users\Admin\AppData\Local\Temp\RSP82C7.bat"
+Creating command line "C:\Users\Admin\AppData\Local\Temp\RSPEF10.bat"
 
-A subdirectory or file ..\..\lib\debug already exists.
+A subdirectory or file ..\..\lib\release\ already exists.
         1 file(s) copied.
 A subdirectory or file ..\..\..\bin\client\ already exists.
         1 file(s) copied.
         1 file(s) copied.
+A subdirectory or file ..\..\..\bin\client\release\ already exists.
         1 file(s) copied.
-A subdirectory or file ..\..\..\bin\client\debug\ already exists.
+        1 file(s) copied.
+A subdirectory or file ..\..\..\bin\server\ already exists.
+        1 file(s) copied.
+        1 file(s) copied.
+A subdirectory or file ..\..\..\bin\server\release\ already exists.
+        1 file(s) copied.
+        1 file(s) copied.
+A subdirectory or file ..\..\..\bin\multiserver\ already exists.
+        1 file(s) copied.
+        1 file(s) copied.
+A subdirectory or file ..\..\..\bin\multiserver\release\ already exists.
+        1 file(s) copied.
+        1 file(s) copied.
+
+
+
+<h3>Results</h3>
+Engine.dll - 0 error(s), 0 warning(s)
+<h3>
+--------------------Configuration: Engine - Win32 OutRead Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\Users\Admin\AppData\Local\Temp\RSPF2EA.tmp" with contents
+[
+/nologo /MD /W3 /GX /Zi /O2 /I "include" /I "..\Pack\ucl-1.01\include" /D "NDEBUG" /D "WIN32" /D "_WINDOWS" /D "_MBCS" /D "_USRDLL" /D "ENGINE_EXPORTS" /D "USE_STANDALONE_SPR" /Fp"Engine___Win32_OutRead_Release/Engine.pch" /YX"KWin32.h" /Fo"Engine___Win32_OutRead_Release/" /Fd"Engine___Win32_OutRead_Release/" /FD /c 
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KAutoMutex.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KAviFile.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KBitmap.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KBitmap16.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KBitmapConvert.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KBmp2Spr.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KBmpFile.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KBmpFile24.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KCache.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KCanvas.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KCodec.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KCodecLzo.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KColors.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KDDraw.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KDebug.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KDError.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KDInput.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KDrawBase.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KDrawBitmap.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KDrawBitmap16.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KDrawFade.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KDrawFont.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KDrawSprite.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KDrawSpriteAlpha.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KDSound.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KEicScript.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KEicScriptSet.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KEngine.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KEvent.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KFile.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KFileCopy.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KFileDialog.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KFilePath.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KFindBinTree.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KFont.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KGifFile.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KGraphics.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KHashList.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KHashNode.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KHashTable.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\Kime.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KIniFile.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KJpgFile.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KKeyboard.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KLinkArray.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KList.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KLuaScript.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KLuaScriptSet.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KLubCmpl_Blocker.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KMemBase.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KMemClass.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KMemClass1.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KMemManager.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KMemStack.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KMessage.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KMouse.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KMp3Music.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KMp4Audio.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KMp4Movie.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KMp4Video.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KMpgMusic.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KMsgNode.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KMusic.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KMutex.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KNode.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KOctree.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KOctreeNode.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KPakData.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KPakFile.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KPakList.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KPakTool.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KPalette.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KPcxFile.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KPolygon.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KPolyRelation.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KRandom.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KSafeList.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KScanDir.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KScript.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KScriptCache.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KScriptList.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KScriptSet.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KSG_MD5_String.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KSG_StringProcess.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KSortBinTree.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KSortList.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KSoundCache.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KSprite.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KSpriteCache.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KSpriteCodec.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KSpriteMaker.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KStepLuaScript.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KStrBase.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KStrList.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KStrNode.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KTabFile.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KTabFileCtrl.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KTgaFile32.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KThread.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KTimer.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KVideo.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KWavCodec.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KWavFile.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KWavMusic.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KWavSound.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KWin32.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KWin32App.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KWin32Wnd.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KZipCodec.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KZipData.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KZipFile.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\KZipList.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\md5.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\XPackFile.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\Cryptography\EDOneTimePad.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\Text.cpp"
+]
+Creating command line "cl.exe @C:\Users\Admin\AppData\Local\Temp\RSPF2EA.tmp" 
+Creating temporary file "C:\Users\Admin\AppData\Local\Temp\RSPF2EB.tmp" with contents
+[
+/nologo /MD /W3 /GX /Zi /O2 /I "include" /I "..\Pack\ucl-1.01\include" /D "NDEBUG" /D "WIN32" /D "_WINDOWS" /D "_MBCS" /D "_USRDLL" /D "ENGINE_EXPORTS" /D "USE_STANDALONE_SPR" /Fp"Engine___Win32_OutRead_Release/Engine.pch" /Yc"kwin32.h" /Fo"Engine___Win32_OutRead_Release/" /Fd"Engine___Win32_OutRead_Release/" /FD /c 
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\stdafx.cpp"
+]
+Creating command line "cl.exe @C:\Users\Admin\AppData\Local\Temp\RSPF2EB.tmp" 
+Creating temporary file "C:\Users\Admin\AppData\Local\Temp\RSPF2EC.tmp" with contents
+[
+/nologo /MD /W3 /GX /Zi /O2 /I "include" /I "..\Pack\ucl-1.01\include" /D "NDEBUG" /D "WIN32" /D "_WINDOWS" /D "_MBCS" /D "_USRDLL" /D "ENGINE_EXPORTS" /D "USE_STANDALONE_SPR" /Fo"Engine___Win32_OutRead_Release/" /Fd"Engine___Win32_OutRead_Release/" /FD /c 
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\ucl\alloc.c"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\ucl\io.c"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\ucl\n2b_99.c"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\ucl\n2b_d.c"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\ucl\n2b_ds.c"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\ucl\n2b_to.c"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\ucl\n2d_99.c"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\ucl\n2d_d.c"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\ucl\n2d_ds.c"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\ucl\n2d_to.c"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\ucl\n2e_99.c"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\ucl\n2e_d.c"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\ucl\n2e_ds.c"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\ucl\n2e_to.c"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\ucl\ucl_crc.c"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\ucl\ucl_dll.c"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\ucl\ucl_init.c"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\ucl\ucl_ptr.c"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\ucl\ucl_str.c"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\Engine\Src\ucl\ucl_util.c"
+]
+Creating command line "cl.exe @C:\Users\Admin\AppData\Local\Temp\RSPF2EC.tmp" 
+Creating temporary file "C:\Users\Admin\AppData\Local\Temp\RSPF2ED.tmp" with contents
+[
+kernel32.lib user32.lib gdi32.lib comdlg32.lib ddraw.lib dsound.lib dxguid.lib winmm.lib wsock32.lib dinput8.lib /nologo /dll /incremental:no /pdb:"Engine___Win32_OutRead_Release/Engine.pdb" /map:"Engine___Win32_OutRead_Release/Engine.map" /debug /machine:I386 /out:"Engine___Win32_OutRead_Release/Engine.dll" /implib:"Engine___Win32_OutRead_Release/Engine.lib" 
+".\Engine___Win32_OutRead_Release\KAutoMutex.obj"
+".\Engine___Win32_OutRead_Release\KAviFile.obj"
+".\Engine___Win32_OutRead_Release\KBitmap.obj"
+".\Engine___Win32_OutRead_Release\KBitmap16.obj"
+".\Engine___Win32_OutRead_Release\KBitmapConvert.obj"
+".\Engine___Win32_OutRead_Release\KBmp2Spr.obj"
+".\Engine___Win32_OutRead_Release\KBmpFile.obj"
+".\Engine___Win32_OutRead_Release\KBmpFile24.obj"
+".\Engine___Win32_OutRead_Release\KCache.obj"
+".\Engine___Win32_OutRead_Release\KCanvas.obj"
+".\Engine___Win32_OutRead_Release\KCodec.obj"
+".\Engine___Win32_OutRead_Release\KCodecLzo.obj"
+".\Engine___Win32_OutRead_Release\KColors.obj"
+".\Engine___Win32_OutRead_Release\KDDraw.obj"
+".\Engine___Win32_OutRead_Release\KDebug.obj"
+".\Engine___Win32_OutRead_Release\KDError.obj"
+".\Engine___Win32_OutRead_Release\KDInput.obj"
+".\Engine___Win32_OutRead_Release\KDrawBase.obj"
+".\Engine___Win32_OutRead_Release\KDrawBitmap.obj"
+".\Engine___Win32_OutRead_Release\KDrawBitmap16.obj"
+".\Engine___Win32_OutRead_Release\KDrawFade.obj"
+".\Engine___Win32_OutRead_Release\KDrawFont.obj"
+".\Engine___Win32_OutRead_Release\KDrawSprite.obj"
+".\Engine___Win32_OutRead_Release\KDrawSpriteAlpha.obj"
+".\Engine___Win32_OutRead_Release\KDSound.obj"
+".\Engine___Win32_OutRead_Release\KEicScript.obj"
+".\Engine___Win32_OutRead_Release\KEicScriptSet.obj"
+".\Engine___Win32_OutRead_Release\KEngine.obj"
+".\Engine___Win32_OutRead_Release\KEvent.obj"
+".\Engine___Win32_OutRead_Release\KFile.obj"
+".\Engine___Win32_OutRead_Release\KFileCopy.obj"
+".\Engine___Win32_OutRead_Release\KFileDialog.obj"
+".\Engine___Win32_OutRead_Release\KFilePath.obj"
+".\Engine___Win32_OutRead_Release\KFindBinTree.obj"
+".\Engine___Win32_OutRead_Release\KFont.obj"
+".\Engine___Win32_OutRead_Release\KGifFile.obj"
+".\Engine___Win32_OutRead_Release\KGraphics.obj"
+".\Engine___Win32_OutRead_Release\KHashList.obj"
+".\Engine___Win32_OutRead_Release\KHashNode.obj"
+".\Engine___Win32_OutRead_Release\KHashTable.obj"
+".\Engine___Win32_OutRead_Release\Kime.obj"
+".\Engine___Win32_OutRead_Release\KIniFile.obj"
+".\Engine___Win32_OutRead_Release\KJpgFile.obj"
+".\Engine___Win32_OutRead_Release\KKeyboard.obj"
+".\Engine___Win32_OutRead_Release\KLinkArray.obj"
+".\Engine___Win32_OutRead_Release\KList.obj"
+".\Engine___Win32_OutRead_Release\KLuaScript.obj"
+".\Engine___Win32_OutRead_Release\KLuaScriptSet.obj"
+".\Engine___Win32_OutRead_Release\KLubCmpl_Blocker.obj"
+".\Engine___Win32_OutRead_Release\KMemBase.obj"
+".\Engine___Win32_OutRead_Release\KMemClass.obj"
+".\Engine___Win32_OutRead_Release\KMemClass1.obj"
+".\Engine___Win32_OutRead_Release\KMemManager.obj"
+".\Engine___Win32_OutRead_Release\KMemStack.obj"
+".\Engine___Win32_OutRead_Release\KMessage.obj"
+".\Engine___Win32_OutRead_Release\KMouse.obj"
+".\Engine___Win32_OutRead_Release\KMp3Music.obj"
+".\Engine___Win32_OutRead_Release\KMp4Audio.obj"
+".\Engine___Win32_OutRead_Release\KMp4Movie.obj"
+".\Engine___Win32_OutRead_Release\KMp4Video.obj"
+".\Engine___Win32_OutRead_Release\KMpgMusic.obj"
+".\Engine___Win32_OutRead_Release\KMsgNode.obj"
+".\Engine___Win32_OutRead_Release\KMusic.obj"
+".\Engine___Win32_OutRead_Release\KMutex.obj"
+".\Engine___Win32_OutRead_Release\KNode.obj"
+".\Engine___Win32_OutRead_Release\KOctree.obj"
+".\Engine___Win32_OutRead_Release\KOctreeNode.obj"
+".\Engine___Win32_OutRead_Release\KPakData.obj"
+".\Engine___Win32_OutRead_Release\KPakFile.obj"
+".\Engine___Win32_OutRead_Release\KPakList.obj"
+".\Engine___Win32_OutRead_Release\KPakTool.obj"
+".\Engine___Win32_OutRead_Release\KPalette.obj"
+".\Engine___Win32_OutRead_Release\KPcxFile.obj"
+".\Engine___Win32_OutRead_Release\KPolygon.obj"
+".\Engine___Win32_OutRead_Release\KPolyRelation.obj"
+".\Engine___Win32_OutRead_Release\KRandom.obj"
+".\Engine___Win32_OutRead_Release\KSafeList.obj"
+".\Engine___Win32_OutRead_Release\KScanDir.obj"
+".\Engine___Win32_OutRead_Release\KScript.obj"
+".\Engine___Win32_OutRead_Release\KScriptCache.obj"
+".\Engine___Win32_OutRead_Release\KScriptList.obj"
+".\Engine___Win32_OutRead_Release\KScriptSet.obj"
+".\Engine___Win32_OutRead_Release\KSG_MD5_String.obj"
+".\Engine___Win32_OutRead_Release\KSG_StringProcess.obj"
+".\Engine___Win32_OutRead_Release\KSortBinTree.obj"
+".\Engine___Win32_OutRead_Release\KSortList.obj"
+".\Engine___Win32_OutRead_Release\KSoundCache.obj"
+".\Engine___Win32_OutRead_Release\KSprite.obj"
+".\Engine___Win32_OutRead_Release\KSpriteCache.obj"
+".\Engine___Win32_OutRead_Release\KSpriteCodec.obj"
+".\Engine___Win32_OutRead_Release\KSpriteMaker.obj"
+".\Engine___Win32_OutRead_Release\KStepLuaScript.obj"
+".\Engine___Win32_OutRead_Release\KStrBase.obj"
+".\Engine___Win32_OutRead_Release\KStrList.obj"
+".\Engine___Win32_OutRead_Release\KStrNode.obj"
+".\Engine___Win32_OutRead_Release\KTabFile.obj"
+".\Engine___Win32_OutRead_Release\KTabFileCtrl.obj"
+".\Engine___Win32_OutRead_Release\KTgaFile32.obj"
+".\Engine___Win32_OutRead_Release\KThread.obj"
+".\Engine___Win32_OutRead_Release\KTimer.obj"
+".\Engine___Win32_OutRead_Release\KVideo.obj"
+".\Engine___Win32_OutRead_Release\KWavCodec.obj"
+".\Engine___Win32_OutRead_Release\KWavFile.obj"
+".\Engine___Win32_OutRead_Release\KWavMusic.obj"
+".\Engine___Win32_OutRead_Release\KWavSound.obj"
+".\Engine___Win32_OutRead_Release\KWin32.obj"
+".\Engine___Win32_OutRead_Release\KWin32App.obj"
+".\Engine___Win32_OutRead_Release\KWin32Wnd.obj"
+".\Engine___Win32_OutRead_Release\KZipCodec.obj"
+".\Engine___Win32_OutRead_Release\KZipData.obj"
+".\Engine___Win32_OutRead_Release\KZipFile.obj"
+".\Engine___Win32_OutRead_Release\KZipList.obj"
+".\Engine___Win32_OutRead_Release\md5.obj"
+".\Engine___Win32_OutRead_Release\stdafx.obj"
+".\Engine___Win32_OutRead_Release\XPackFile.obj"
+".\Engine___Win32_OutRead_Release\EDOneTimePad.obj"
+".\Engine___Win32_OutRead_Release\Text.obj"
+".\Engine___Win32_OutRead_Release\alloc.obj"
+".\Engine___Win32_OutRead_Release\io.obj"
+".\Engine___Win32_OutRead_Release\n2b_99.obj"
+".\Engine___Win32_OutRead_Release\n2b_d.obj"
+".\Engine___Win32_OutRead_Release\n2b_ds.obj"
+".\Engine___Win32_OutRead_Release\n2b_to.obj"
+".\Engine___Win32_OutRead_Release\n2d_99.obj"
+".\Engine___Win32_OutRead_Release\n2d_d.obj"
+".\Engine___Win32_OutRead_Release\n2d_ds.obj"
+".\Engine___Win32_OutRead_Release\n2d_to.obj"
+".\Engine___Win32_OutRead_Release\n2e_99.obj"
+".\Engine___Win32_OutRead_Release\n2e_d.obj"
+".\Engine___Win32_OutRead_Release\n2e_ds.obj"
+".\Engine___Win32_OutRead_Release\n2e_to.obj"
+".\Engine___Win32_OutRead_Release\ucl_crc.obj"
+".\Engine___Win32_OutRead_Release\ucl_dll.obj"
+".\Engine___Win32_OutRead_Release\ucl_init.obj"
+".\Engine___Win32_OutRead_Release\ucl_ptr.obj"
+".\Engine___Win32_OutRead_Release\ucl_str.obj"
+".\Engine___Win32_OutRead_Release\ucl_util.obj"
+"..\..\Lib\release\JpgLib.lib"
+"..\..\Lib\release\LuaLibDll.lib"
+"..\..\Lib\release\mp3lib.lib"
+]
+Creating command line "link.exe @C:\Users\Admin\AppData\Local\Temp\RSPF2ED.tmp"
+<h3>Output Window</h3>
+Compiling...
+stdafx.cpp
+Compiling...
+KAutoMutex.cpp
+KAviFile.cpp
+KBitmap.cpp
+KBitmap16.cpp
+KBitmapConvert.cpp
+KBmp2Spr.cpp
+KBmpFile.cpp
+KBmpFile24.cpp
+KCache.cpp
+KCanvas.cpp
+KCodec.cpp
+KCodecLzo.cpp
+KColors.cpp
+KDDraw.cpp
+KDebug.cpp
+KDError.cpp
+KDInput.cpp
+KDrawBase.cpp
+KDrawBitmap.cpp
+KDrawBitmap16.cpp
+KDrawFade.cpp
+KDrawFont.cpp
+KDrawSprite.cpp
+KDrawSpriteAlpha.cpp
+KDSound.cpp
+KEicScript.cpp
+KEicScriptSet.cpp
+KEngine.cpp
+KEvent.cpp
+KFile.cpp
+KFileCopy.cpp
+KFileDialog.cpp
+KFilePath.cpp
+KFindBinTree.cpp
+KFont.cpp
+KGifFile.cpp
+KGraphics.cpp
+KHashList.cpp
+KHashNode.cpp
+KHashTable.cpp
+Kime.cpp
+KIniFile.cpp
+KIniFile 当前不支持 KeyName 为中文! by Romandou
+KJpgFile.cpp
+KKeyboard.cpp
+KLinkArray.cpp
+KList.cpp
+KLuaScript.cpp
+KLuaScriptSet.cpp
+KLubCmpl_Blocker.cpp
+KMemBase.cpp
+KMemClass.cpp
+KMemClass1.cpp
+KMemManager.cpp
+KMemStack.cpp
+KMessage.cpp
+KMouse.cpp
+KMp3Music.cpp
+KMp4Audio.cpp
+KMp4Movie.cpp
+KMp4Video.cpp
+KMpgMusic.cpp
+KMsgNode.cpp
+KMusic.cpp
+KMutex.cpp
+KNode.cpp
+KOctree.cpp
+KOctreeNode.cpp
+KPakData.cpp
+KPakFile.cpp
+KPakList.cpp
+KPakTool.cpp
+KPalette.cpp
+KPcxFile.cpp
+KPolygon.cpp
+KPolyRelation.cpp
+KRandom.cpp
+KSafeList.cpp
+KScanDir.cpp
+KScript.cpp
+KScriptCache.cpp
+KScriptList.cpp
+KScriptSet.cpp
+KSG_MD5_String.cpp
+KSG_StringProcess.cpp
+KSortBinTree.cpp
+KSortList.cpp
+KSoundCache.cpp
+KSprite.cpp
+KSpriteCache.cpp
+KSpriteCodec.cpp
+KSpriteMaker.cpp
+KStepLuaScript.cpp
+KStrBase.cpp
+KStrList.cpp
+KStrNode.cpp
+KTabFile.cpp
+KTabFileCtrl.cpp
+KTgaFile32.cpp
+KThread.cpp
+KTimer.cpp
+KVideo.cpp
+KWavCodec.cpp
+KWavFile.cpp
+KWavMusic.cpp
+KWavSound.cpp
+KWin32.cpp
+KWin32App.cpp
+KWin32Wnd.cpp
+KZipCodec.cpp
+KZipData.cpp
+KZipFile.cpp
+KZipList.cpp
+md5.cpp
+XPackFile.cpp
+EDOneTimePad.cpp
+Text.cpp
+Compiling...
+alloc.c
+io.c
+n2b_99.c
+n2b_d.c
+n2b_ds.c
+n2b_to.c
+n2d_99.c
+n2d_d.c
+n2d_ds.c
+n2d_to.c
+n2e_99.c
+n2e_d.c
+n2e_ds.c
+n2e_to.c
+ucl_crc.c
+ucl_dll.c
+ucl_init.c
+ucl_ptr.c
+ucl_str.c
+ucl_util.c
+Generating Code...
+Linking...
+   Creating library Engine___Win32_OutRead_Release/Engine.lib and object Engine___Win32_OutRead_Release/Engine.exp
+Creating temporary file "C:\Users\Admin\AppData\Local\Temp\RSP125D.bat" with contents
+[
+@echo off
+md ..\..\lib\release
+copy Engine___Win32_OutRead_Release\Engine.lib ..\..\lib\release\Engine.lib
+md ..\..\..\bin\client\release\
+copy Engine___Win32_OutRead_Release\engine.dll ..\..\..\bin\client\Engine.dll
+copy Engine___Win32_OutRead_Release\engine.dll ..\..\..\bin\client\release\Engine.dll
+copy Engine___Win32_OutRead_Release\engine.pdb ..\..\..\bin\client\release\Engine.pdb
+copy Engine___Win32_OutRead_Release\engine.map ..\..\..\bin\client\release\Engine.map
+md ..\..\..\bin\server\release\
+copy Engine___Win32_OutRead_Release\Engine.dll ..\..\..\bin\server\Engine.dll
+copy Engine___Win32_OutRead_Release\Engine.dll ..\..\..\bin\server\release\Engine.dll
+copy Engine___Win32_OutRead_Release\Engine.pdb ..\..\..\bin\server\release\Engine.pdb
+copy Engine___Win32_OutRead_Release\Engine.map ..\..\..\bin\server\release\Engine.map
+]
+Creating command line "C:\Users\Admin\AppData\Local\Temp\RSP125D.bat"
+
+A subdirectory or file ..\..\lib\release already exists.
+        1 file(s) copied.
+A subdirectory or file ..\..\..\bin\client\release\ already exists.
+        1 file(s) copied.
+        1 file(s) copied.
+        1 file(s) copied.
+        1 file(s) copied.
+A subdirectory or file ..\..\..\bin\server\release\ already exists.
+        1 file(s) copied.
         1 file(s) copied.
         1 file(s) copied.
         1 file(s) copied.
@@ -581,7 +1027,467 @@ A subdirectory or file ..\..\..\bin\client\debug\ already exists.
 
 
 <h3>Results</h3>
-CoreClient.dll - 0 error(s), 0 warning(s)
+Engine.dll - 0 error(s), 0 warning(s)
+<h3>
+--------------------Configuration: S3Client - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x804 /fo"Release/Script1.res" /d "NDEBUG" "F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Script1.rc"" 
+Creating temporary file "C:\Users\Admin\AppData\Local\Temp\RSP14EE.tmp" with contents
+[
+/nologo /MD /W3 /GX /Zi /O2 /I "../Engine/src" /I "../Core/src" /I "../Engine/include" /I "../../Headers" /D "WIN32" /D "NDEBUG_WINDOWS" /D "_MBCS" /D "SWORDONLINE_USE_MD5_PASSWORD" /Fp"Release/S3Client.pch" /Yu"KWin32.h" /Fo"Release/" /Fd"Release/" /FD /c 
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\Elem\AutoLocateWnd.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\Elem\ComWindow.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\Elem\MouseHover.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\Elem\PopupMenu.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\Elem\SpecialFuncs.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\Elem\TextPic.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\Elem\UiCursor.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\Elem\UiImage.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\Elem\WndButton.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\Elem\WndChessPanel.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\Elem\WndEdit.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\Elem\WndImage.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\Elem\WndImagePart.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\Elem\WndLabeledButton.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\Elem\WndList.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\Elem\WndList2.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\Elem\WndMessageListBox.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\Elem\WndMovingImage.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\Elem\WndObjContainer.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\Elem\WndPage.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\Elem\WndPureTextBtn.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\Elem\WndRect.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\Elem\Wnds.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\Elem\WndScrollBar.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\elem\WndShadow.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\Elem\WndShowAnimate.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\Elem\WndText.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\Elem\WndToolBar.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\Elem\WndValueImage.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\Elem\WndWindow.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiCase\UiConnectInfo.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiCase\UiLogin.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiCase\UiLoginBg.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiCase\UiSelServer.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiCase\UiChatItem.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiCase\UiChooseFace.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiCase\UiContainer.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiCase\UiFaceSelector.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiCase\UiPlayerBar.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiCase\UiPlayerControlBar.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiCase\UiStatus.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiCase\UiOptions.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiCase\UiInit.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiCase\BuySlectItemShop.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiCase\KUiKtc.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiCase\UiAuto.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiCase\UiBuyShop.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiCase\UiCheckItemBox.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiCase\UiGetMoney.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiCase\UiItem.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiCase\UiLoginPWStoreBox.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiCase\UiNewPWStoreBox.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiCase\UiPGBoxItem.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiCase\UiPWStoreBox.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiCase\UiRPNewBox.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiCase\UiShopName.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiCase\UiShopPrice.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiCase\UiSkills.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiCase\UiSkillTree.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiCase\UiSlectBoxCheck.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiCase\UiStaskItem.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\uicase\UiStoreBox.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiCase\UiStringBox.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiCase\UiTopTKNew.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiCase\UiESCDlg.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiCase\UiGetString.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiCase\UiGetString3.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiCase\UiMsgSel.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiCase\UiParadeItem.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiCase\UiSelPlayerNearby.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiCase\UiNewPlayer.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiCase\UiSelNativePlace.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiCase\UiSelPlayer.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiCase\UiChannelSubscibe.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiCase\UiChatCentre.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiChatPhrase.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiCase\UiChatStatus.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiCase\UiInformation.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiCase\UiInformation2.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiCase\UiTeamManage.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiCase\UiHeaderControlBar.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\uicase\UiMsgCentrePad.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiCase\UiToolsControlBar.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UIcase\UiShop.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiCase\UiShopGold.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiCase\UiTrade.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiCase\UiTradeConfirmWnd.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiCase\UiGame.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiCase\UiSysMsgCentre.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiCase\UiFindPos.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiCase\UiMapCave.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiCase\UiMarket.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\uicase\UiMiniMap.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiCase\UiSelColor.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiCase\UiNewPlayerStartMsg.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiCase\UiPlayVideo.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiCase\UiHelper.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiCase\UiHelper2.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiCase\UiReconnect.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiCase\UiTaskDataFile.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiCase\UiTaskNote.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiCase\UiWorldMap.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiCase\UiNewsMessage.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiCase\UiNewsMessage1.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiCase\UiStrengthRank.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiCase\UiMsgSel2.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiCase\UiMsgSel3.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiCase\UiTimeBox.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\ui\uicase\UiTongAssignBox.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiCase\UiTongChangeCamp.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiCase\UiTongGetString.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiCase\UiTongStringName.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\ui\uicase\UiTrembleItem.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiSoundSetting.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\GameSpaceChangedNotify.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\ShortcutKey.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiBase.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\UiShell.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\ChatFilter.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Ui\FilterTextLib.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\S3Client.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\NetConnect\NetConnectAgent.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\Login\Login.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\TextCtrlCmd\TextCtrlCmd.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\ErrorCode.cpp"
+]
+Creating command line "cl.exe @C:\Users\Admin\AppData\Local\Temp\RSP14EE.tmp" 
+Creating temporary file "C:\Users\Admin\AppData\Local\Temp\RSP14FE.tmp" with contents
+[
+/nologo /MD /W3 /GX /Zi /O2 /I "../Engine/src" /I "../Core/src" /I "../Engine/include" /I "../../Headers" /D "WIN32" /D "NDEBUG_WINDOWS" /D "_MBCS" /D "SWORDONLINE_USE_MD5_PASSWORD" /Fo"Release/" /Fd"Release/" /FD /c 
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\ui\uicase\UiPopupPasswordQuery.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\ui\uicase\UiTongCreateSheet.cpp"
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\ui\uicase\UiTongManager.cpp"
+]
+Creating command line "cl.exe @C:\Users\Admin\AppData\Local\Temp\RSP14FE.tmp" 
+Creating temporary file "C:\Users\Admin\AppData\Local\Temp\RSP14FF.tmp" with contents
+[
+/nologo /MD /W3 /GX /Zi /O2 /I "../Engine/src" /I "../Core/src" /I "../Engine/include" /I "../../Headers" /D "WIN32" /D "NDEBUG_WINDOWS" /D "_MBCS" /D "SWORDONLINE_USE_MD5_PASSWORD" /Fp"Release/S3Client.pch" /Yc"KWin32.h" /Fo"Release/" /Fd"Release/" /FD /c 
+"F:\Games\VLTK1\SRC TinhDuyen\SOURCE_TINHDUYEN\SwordOnline\SwordOnline\Sources\S3Client\stdafx.cpp"
+]
+Creating command line "cl.exe @C:\Users\Admin\AppData\Local\Temp\RSP14FF.tmp" 
+Creating temporary file "C:\Users\Admin\AppData\Local\Temp\RSP1500.tmp" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib Winmm.lib shlwapi.lib lualibdll.lib /nologo /subsystem:windows /incremental:no /pdb:"Release/Game.pdb" /map:"Release/Game.map" /debug /machine:I386 /out:"Release/Game.exe" /libpath:"../../lib/" 
+".\Release\AutoLocateWnd.obj"
+".\Release\ComWindow.obj"
+".\Release\MouseHover.obj"
+".\Release\PopupMenu.obj"
+".\Release\SpecialFuncs.obj"
+".\Release\TextPic.obj"
+".\Release\UiCursor.obj"
+".\Release\UiImage.obj"
+".\Release\WndButton.obj"
+".\Release\WndChessPanel.obj"
+".\Release\WndEdit.obj"
+".\Release\WndImage.obj"
+".\Release\WndImagePart.obj"
+".\Release\WndLabeledButton.obj"
+".\Release\WndList.obj"
+".\Release\WndList2.obj"
+".\Release\WndMessageListBox.obj"
+".\Release\WndMovingImage.obj"
+".\Release\WndObjContainer.obj"
+".\Release\WndPage.obj"
+".\Release\WndPureTextBtn.obj"
+".\Release\WndRect.obj"
+".\Release\Wnds.obj"
+".\Release\WndScrollBar.obj"
+".\Release\WndShadow.obj"
+".\Release\WndShowAnimate.obj"
+".\Release\WndText.obj"
+".\Release\WndToolBar.obj"
+".\Release\WndValueImage.obj"
+".\Release\WndWindow.obj"
+".\Release\UiConnectInfo.obj"
+".\Release\UiLogin.obj"
+".\Release\UiLoginBg.obj"
+".\Release\UiSelServer.obj"
+".\Release\UiChatItem.obj"
+".\Release\UiChooseFace.obj"
+".\Release\UiContainer.obj"
+".\Release\UiFaceSelector.obj"
+".\Release\UiPlayerBar.obj"
+".\Release\UiPlayerControlBar.obj"
+".\Release\UiStatus.obj"
+".\Release\UiOptions.obj"
+".\Release\UiInit.obj"
+".\Release\BuySlectItemShop.obj"
+".\Release\KUiKtc.obj"
+".\Release\UiAuto.obj"
+".\Release\UiBuyShop.obj"
+".\Release\UiCheckItemBox.obj"
+".\Release\UiGetMoney.obj"
+".\Release\UiItem.obj"
+".\Release\UiLoginPWStoreBox.obj"
+".\Release\UiNewPWStoreBox.obj"
+".\Release\UiPGBoxItem.obj"
+".\Release\UiPWStoreBox.obj"
+".\Release\UiRPNewBox.obj"
+".\Release\UiShopName.obj"
+".\Release\UiShopPrice.obj"
+".\Release\UiSkills.obj"
+".\Release\UiSkillTree.obj"
+".\Release\UiSlectBoxCheck.obj"
+".\Release\UiStaskItem.obj"
+".\Release\UiStoreBox.obj"
+".\Release\UiStringBox.obj"
+".\Release\UiTopTKNew.obj"
+".\Release\UiESCDlg.obj"
+".\Release\UiGetString.obj"
+".\Release\UiGetString3.obj"
+".\Release\UiMsgSel.obj"
+".\Release\UiParadeItem.obj"
+".\Release\UiSelPlayerNearby.obj"
+".\Release\UiNewPlayer.obj"
+".\Release\UiSelNativePlace.obj"
+".\Release\UiSelPlayer.obj"
+".\Release\UiChannelSubscibe.obj"
+".\Release\UiChatCentre.obj"
+".\Release\UiChatPhrase.obj"
+".\Release\UiChatStatus.obj"
+".\Release\UiInformation.obj"
+".\Release\UiInformation2.obj"
+".\Release\UiTeamManage.obj"
+".\Release\UiHeaderControlBar.obj"
+".\Release\UiMsgCentrePad.obj"
+".\Release\UiToolsControlBar.obj"
+".\Release\UiShop.obj"
+".\Release\UiShopGold.obj"
+".\Release\UiTrade.obj"
+".\Release\UiTradeConfirmWnd.obj"
+".\Release\UiGame.obj"
+".\Release\UiSysMsgCentre.obj"
+".\Release\UiFindPos.obj"
+".\Release\UiMapCave.obj"
+".\Release\UiMarket.obj"
+".\Release\UiMiniMap.obj"
+".\Release\UiSelColor.obj"
+".\Release\UiNewPlayerStartMsg.obj"
+".\Release\UiPlayVideo.obj"
+".\Release\UiHelper.obj"
+".\Release\UiHelper2.obj"
+".\Release\UiReconnect.obj"
+".\Release\UiTaskDataFile.obj"
+".\Release\UiTaskNote.obj"
+".\Release\UiWorldMap.obj"
+".\Release\UiNewsMessage.obj"
+".\Release\UiNewsMessage1.obj"
+".\Release\UiStrengthRank.obj"
+".\Release\UiMsgSel2.obj"
+".\Release\UiMsgSel3.obj"
+".\Release\UiPopupPasswordQuery.obj"
+".\Release\UiTimeBox.obj"
+".\Release\UiTongAssignBox.obj"
+".\Release\UiTongChangeCamp.obj"
+".\Release\UiTongCreateSheet.obj"
+".\Release\UiTongGetString.obj"
+".\Release\UiTongManager.obj"
+".\Release\UiTongStringName.obj"
+".\Release\UiTrembleItem.obj"
+".\Release\UiSoundSetting.obj"
+".\Release\GameSpaceChangedNotify.obj"
+".\Release\ShortcutKey.obj"
+".\Release\UiBase.obj"
+".\Release\UiShell.obj"
+".\Release\ChatFilter.obj"
+".\Release\FilterTextLib.obj"
+".\Release\S3Client.obj"
+".\Release\NetConnectAgent.obj"
+".\Release\Login.obj"
+".\Release\TextCtrlCmd.obj"
+".\Release\ErrorCode.obj"
+".\Release\stdafx.obj"
+".\Release\Script1.res"
+"..\..\Lib\release\engine.lib"
+"..\..\Lib\release\CoreClient.lib"
+]
+Creating command line "link.exe @C:\Users\Admin\AppData\Local\Temp\RSP1500.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+stdafx.cpp
+Compiling...
+AutoLocateWnd.cpp
+ComWindow.cpp
+MouseHover.cpp
+PopupMenu.cpp
+SpecialFuncs.cpp
+TextPic.cpp
+UiCursor.cpp
+UiImage.cpp
+WndButton.cpp
+WndChessPanel.cpp
+WndEdit.cpp
+WndImage.cpp
+WndImagePart.cpp
+WndLabeledButton.cpp
+WndList.cpp
+WndList2.cpp
+WndMessageListBox.cpp
+WndMovingImage.cpp
+WndObjContainer.cpp
+WndPage.cpp
+Generating Code...
+Compiling...
+WndPureTextBtn.cpp
+WndRect.cpp
+Wnds.cpp
+WndScrollBar.cpp
+WndShadow.cpp
+WndShowAnimate.cpp
+WndText.cpp
+WndToolBar.cpp
+WndValueImage.cpp
+WndWindow.cpp
+UiConnectInfo.cpp
+UiLogin.cpp
+UiLoginBg.cpp
+UiSelServer.cpp
+UiChatItem.cpp
+UiChooseFace.cpp
+UiContainer.cpp
+UiFaceSelector.cpp
+UiPlayerBar.cpp
+UiPlayerControlBar.cpp
+Generating Code...
+Compiling...
+UiStatus.cpp
+UiOptions.cpp
+UiInit.cpp
+BuySlectItemShop.cpp
+KUiKtc.cpp
+UiAuto.cpp
+UiBuyShop.cpp
+UiCheckItemBox.cpp
+UiGetMoney.cpp
+UiItem.cpp
+UiLoginPWStoreBox.cpp
+UiNewPWStoreBox.cpp
+UiPGBoxItem.cpp
+UiPWStoreBox.cpp
+UiRPNewBox.cpp
+UiShopName.cpp
+UiShopPrice.cpp
+UiSkills.cpp
+UiSkillTree.cpp
+UiSlectBoxCheck.cpp
+Generating Code...
+Compiling...
+UiStaskItem.cpp
+UiStoreBox.cpp
+UiStringBox.cpp
+UiTopTKNew.cpp
+UiESCDlg.cpp
+UiGetString.cpp
+UiGetString3.cpp
+UiMsgSel.cpp
+UiParadeItem.cpp
+UiSelPlayerNearby.cpp
+UiNewPlayer.cpp
+UiSelNativePlace.cpp
+UiSelPlayer.cpp
+UiChannelSubscibe.cpp
+UiChatCentre.cpp
+UiChatPhrase.cpp
+UiChatStatus.cpp
+UiInformation.cpp
+UiInformation2.cpp
+UiTeamManage.cpp
+Generating Code...
+Compiling...
+UiHeaderControlBar.cpp
+UiMsgCentrePad.cpp
+UiToolsControlBar.cpp
+UiShop.cpp
+UiShopGold.cpp
+UiTrade.cpp
+UiTradeConfirmWnd.cpp
+UiGame.cpp
+UiSysMsgCentre.cpp
+UiFindPos.cpp
+UiMapCave.cpp
+UiMarket.cpp
+UiMiniMap.cpp
+UiSelColor.cpp
+UiNewPlayerStartMsg.cpp
+UiPlayVideo.cpp
+UiHelper.cpp
+UiHelper2.cpp
+UiReconnect.cpp
+UiTaskDataFile.cpp
+Generating Code...
+Compiling...
+UiTaskNote.cpp
+UiWorldMap.cpp
+UiNewsMessage.cpp
+UiNewsMessage1.cpp
+UiStrengthRank.cpp
+UiMsgSel2.cpp
+UiMsgSel3.cpp
+UiTimeBox.cpp
+UiTongAssignBox.cpp
+UiTongChangeCamp.cpp
+UiTongGetString.cpp
+UiTongStringName.cpp
+UiTrembleItem.cpp
+UiSoundSetting.cpp
+GameSpaceChangedNotify.cpp
+ShortcutKey.cpp
+UiBase.cpp
+UiShell.cpp
+ChatFilter.cpp
+FilterTextLib.cpp
+Generating Code...
+Compiling...
+S3Client.cpp
+NetConnectAgent.cpp
+Login.cpp
+TextCtrlCmd.cpp
+ErrorCode.cpp
+Generating Code...
+Compiling...
+UiPopupPasswordQuery.cpp
+UiTongCreateSheet.cpp
+UiTongManager.cpp
+Generating Code...
+Linking...
+Creating temporary file "C:\Users\Admin\AppData\Local\Temp\RSP58C1.bat" with contents
+[
+@echo off
+md ..\..\..\bin\client\release\
+copy Release\Game.exe ..\..\..\bin\Client\Game.exe
+copy Release\Game.pdb ..\..\..\bin\Client\Game.pdb
+copy Release\Game.map ..\..\..\bin\Client\Game.map
+copy Release\Game.exe ..\..\..\bin\Client\release\Game.exe
+copy Release\Game.pdb ..\..\..\bin\Client\release\Game.pdb
+copy Release\Game.map ..\..\..\bin\Client\release\Game.map
+]
+Creating command line "C:\Users\Admin\AppData\Local\Temp\RSP58C1.bat"
+
+A subdirectory or file ..\..\..\bin\client\release\ already exists.
+        1 file(s) copied.
+        1 file(s) copied.
+        1 file(s) copied.
+        1 file(s) copied.
+        1 file(s) copied.
+        1 file(s) copied.
+
+
+
+<h3>Results</h3>
+Game.exe - 0 error(s), 0 warning(s)
 </pre>
 </body>
 </html>

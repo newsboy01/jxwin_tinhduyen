@@ -1,6 +1,6 @@
  CoreClient
 
- Timestamp is 66b201dc (Tue Aug 06 17:58:36 2024)
+ Timestamp is 66b894fe (Sun Aug 11 17:39:58 2024)
 
  Preferred load address is 10000000
 
@@ -1784,22 +1784,22 @@
  0001:00089632       ?s2cTongCreate@KProtocolProcess@@AAEXPAE@Z 1008a632 f   KProtocolProcess.obj
  0001:0008965e       ?s2cNpcGoldChange@KProtocolProcess@@AAEXPAE@Z 1008a65e f   KProtocolProcess.obj
  0001:00089672       ?ItemChangeDurability@KProtocolProcess@@AAEXPAE@Z 1008a672 f   KProtocolProcess.obj
- 0001:000898a6       ?PlayerBlockItemReturn@KProtocolProcess@@AAEXPAE@Z 1008a8a6 f   KProtocolProcess.obj
- 0001:0008997f       ?PlayerUnBlockItemReturn@KProtocolProcess@@AAEXPAE@Z 1008a97f f   KProtocolProcess.obj
- 0001:00089a58       ?PlayerOpenShopReturn@KProtocolProcess@@AAEXPAE@Z 1008aa58 f   KProtocolProcess.obj
- 0001:00089b68       ?PlayerShopPriceReturn@KProtocolProcess@@AAEXPAE@Z 1008ab68 f   KProtocolProcess.obj
- 0001:00089bea       ?s2cAutoPlaySync@KProtocolProcess@@AAEXPAE@Z 1008abea f   KProtocolProcess.obj
- 0001:00089cf4       ?s2cPlayerPointSync@KProtocolProcess@@AAEXPAE@Z 1008acf4 f   KProtocolProcess.obj
- 0001:00089d59       ?s2cTimeBox@KProtocolProcess@@AAEXPAE@Z 1008ad59 f   KProtocolProcess.obj
- 0001:00089dca       ?PlayerUpdateShopPrice@KProtocolProcess@@AAEXPAE@Z 1008adca f   KProtocolProcess.obj
- 0001:00089e42       ?s2cImageNpcSync@KProtocolProcess@@AAEXPAE@Z 1008ae42 f   KProtocolProcess.obj
- 0001:00089e98       ?PlayerUpdateItemVertion@KProtocolProcess@@AAEXPAE@Z 1008ae98 f   KProtocolProcess.obj
- 0001:00089f01       ?PlayerBlockItemNow@KProtocolProcess@@AAEXPAE@Z 1008af01 f   KProtocolProcess.obj
- 0001:00089fce       ?LadderList@KProtocolProcess@@AAEXPAE@Z 1008afce f   KProtocolProcess.obj
- 0001:0008a0b8       ?LadderResult@KProtocolProcess@@AAEXPAE@Z 1008b0b8 f   KProtocolProcess.obj
- 0001:0008a22a       ?SyncMaskLock@KProtocolProcess@@AAEXPAE@Z 1008b22a f   KProtocolProcess.obj
- 0001:0008a268       ?s2cRefestItem@KProtocolProcess@@AAEXPAE@Z 1008b268 f   KProtocolProcess.obj
- 0001:0008a40e       ?s2cLockMove@KProtocolProcess@@AAEXPAE@Z 1008b40e f   KProtocolProcess.obj
+ 0001:000898a5       ?PlayerBlockItemReturn@KProtocolProcess@@AAEXPAE@Z 1008a8a5 f   KProtocolProcess.obj
+ 0001:0008997e       ?PlayerUnBlockItemReturn@KProtocolProcess@@AAEXPAE@Z 1008a97e f   KProtocolProcess.obj
+ 0001:00089a57       ?PlayerOpenShopReturn@KProtocolProcess@@AAEXPAE@Z 1008aa57 f   KProtocolProcess.obj
+ 0001:00089b67       ?PlayerShopPriceReturn@KProtocolProcess@@AAEXPAE@Z 1008ab67 f   KProtocolProcess.obj
+ 0001:00089be9       ?s2cAutoPlaySync@KProtocolProcess@@AAEXPAE@Z 1008abe9 f   KProtocolProcess.obj
+ 0001:00089cf3       ?s2cPlayerPointSync@KProtocolProcess@@AAEXPAE@Z 1008acf3 f   KProtocolProcess.obj
+ 0001:00089d58       ?s2cTimeBox@KProtocolProcess@@AAEXPAE@Z 1008ad58 f   KProtocolProcess.obj
+ 0001:00089dc9       ?PlayerUpdateShopPrice@KProtocolProcess@@AAEXPAE@Z 1008adc9 f   KProtocolProcess.obj
+ 0001:00089e41       ?s2cImageNpcSync@KProtocolProcess@@AAEXPAE@Z 1008ae41 f   KProtocolProcess.obj
+ 0001:00089e97       ?PlayerUpdateItemVertion@KProtocolProcess@@AAEXPAE@Z 1008ae97 f   KProtocolProcess.obj
+ 0001:00089f00       ?PlayerBlockItemNow@KProtocolProcess@@AAEXPAE@Z 1008af00 f   KProtocolProcess.obj
+ 0001:00089fcd       ?LadderList@KProtocolProcess@@AAEXPAE@Z 1008afcd f   KProtocolProcess.obj
+ 0001:0008a0b7       ?LadderResult@KProtocolProcess@@AAEXPAE@Z 1008b0b7 f   KProtocolProcess.obj
+ 0001:0008a229       ?SyncMaskLock@KProtocolProcess@@AAEXPAE@Z 1008b229 f   KProtocolProcess.obj
+ 0001:0008a267       ?s2cRefestItem@KProtocolProcess@@AAEXPAE@Z 1008b267 f   KProtocolProcess.obj
+ 0001:0008a40d       ?s2cLockMove@KProtocolProcess@@AAEXPAE@Z 1008b40d f   KProtocolProcess.obj
  0001:0008a450       ?SetSleepMode@KNpc@@QAEXH@Z 1008b450 f i KProtocolProcess.obj
  0001:0008a490       ?SetNgoaiTrang@KItem@@QAEXH@Z 1008b490 f i KProtocolProcess.obj
  0001:0008a4b0       ??0CChatApplyListNode@@QAE@XZ 1008b4b0 f i KProtocolProcess.obj

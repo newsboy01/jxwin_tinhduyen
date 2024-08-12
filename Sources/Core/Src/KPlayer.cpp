@@ -87,11 +87,11 @@ enum AUTO_USE_ITEM
 	ntypetuiduocpham,
 };
 static char *szTuiDPhamName = "[VIP] Thõa Tiªn MËt LÔ Bao";
-static char *szTDP = "Thç §Þa Phï";
+static char *szTDP = "Thæ §Þa Phï"; // trungnh sua cho Tho Dia Phu - Thç §Þa Phï
 
 static const char szMagicScriptName[][32] =
 	{
-		"Tiªn Th¶o Lé",
+		"Tiªn Th¶o Lé", 
 		"Tiªn Th¶o Lé ®Æc biÖt",
 };
 
@@ -3667,7 +3667,7 @@ void KPlayer::PlayerEatAItem()
 			m_AntiPoisonCountDown = IR_GetCurrentTime();
 		}
 	}
-	if (m_AutoTTL) // can than bug khi xai bo hong anh max
+	if (m_AutoTTL) // can than bug khi xai bo hong anh max trungnh bug
 	{
 		if (IR_GetCurrentTime() - m_TTLCountDown > defMAX_EAT_SPACETIME)
 		{

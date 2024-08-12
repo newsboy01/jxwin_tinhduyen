@@ -10,6 +10,9 @@
 #define KWin32App_H
 //---------------------------------------------------------------------------
 #define SWORD_ICON 101
+#define ID_TRAY_SHOW 1001
+#define ID_TRAY_HIDE 1002
+#define ID_TRAY_EXIT 1003
 
 //---------------------------------------------------------------------------
 class ENGINE_API KWin32App
@@ -20,6 +23,7 @@ protected:
 	BOOL	m_bShowMouse;
 	BOOL	m_bActive;
 	BOOL	m_bMultiGame;
+	HINSTANCE m_hInstance;
 	virtual	BOOL	InitClass(HINSTANCE hInstance);
 	virtual	BOOL	InitWindow(HINSTANCE hInstance);
 	virtual	BOOL	GameInit();
@@ -27,6 +31,11 @@ protected:
 	virtual BOOL	GameExit();
 	virtual int		HandleInput(UINT uMsg, WPARAM wParam, LPARAM lParam) { return 0; }
 public:
+	//trungnh icon system tray
+	NOTIFYICONDATA m_TrayIconData;
+    void CreateTrayIcon(HWND hWnd);
+    void RemoveTrayIcon();
+
 	KWin32App();
 	virtual BOOL	Init(HINSTANCE hInstance,char* AppName="Sword3");
 	virtual void	Run();

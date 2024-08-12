@@ -17,19 +17,17 @@
 #include "Ui/ChatFilter.h"
 #include "Ui/uibase.h"
 #include "ErrorCode.h"
-
+#include "resource.h"
 
 #include <tlhelp32.h> 
 #include <shlwapi.h> 
 #include <conio.h> 
 #include <stdio.h> 
-
-
+#include <windows.h>
 
 #include <winsock2.h>
 
 #pragma comment (lib,"ws2_32.lib")
-
 
 
 #define ClientVersion
@@ -39,7 +37,6 @@ KPakList	g_PakList;
 CFilterTextLib g_libFilterText;
 CChatFilter g_ChatFilter;
 
-
 #define	QUIT_QUESTION_ID	"22"
 #define	GAME_TITLE			"23"
 
@@ -47,7 +44,7 @@ CChatFilter g_ChatFilter;
 #define REPRESENT_MODULE_3			"Represent3.dll"
 #define CREATE_REPRESENT_SHELL_FUN	"CreateRepresentShell"
 #define	GAME_FPS			18
-//Representģ��ӿڵ�ָ��
+//RepresentÄ£¿é½Ó¿ÚµÄÖ¸Õë
 struct iRepresentShell*	g_pRepresentShell = NULL;
 struct IInlinePicEngineSink* g_pIInlinePicSink = NULL;
 iCoreShell*				g_pCoreShell = NULL;
@@ -121,8 +118,6 @@ return 1;
 }
 
 
-
-#include <TlHelp32.h>
 //#include <Psapi.h>
 //#include <intrin.h>
 
@@ -307,9 +302,37 @@ exit0:
   return false;
 }
 
+// trungnh them cho nay de gioi han client truy cap , gioi han client
+#include <algorithm> 
 
+bool IsApplicationRunningTwice()
+{
+    char currentModuleName[MAX_PATH];
+    GetModuleFileName(NULL, currentModuleName, MAX_PATH);
 
+    std::string moduleNameLower = strrchr(currentModuleName, '\\') + 1;
+    std::transform(moduleNameLower.begin(), moduleNameLower.end(), moduleNameLower.begin(), ::tolower);
 
+    HANDLE hSnapShot = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);
+    PROCESSENTRY32 pEntry;
+    pEntry.dwSize = sizeof(PROCESSENTRY32);
+    int count = 0;
+
+    if (Process32First(hSnapShot, &pEntry)) {
+        do {
+            std::string exeFileLower = pEntry.szExeFile;
+            std::transform(exeFileLower.begin(), exeFileLower.end(), exeFileLower.begin(), ::tolower);
+
+            if (exeFileLower == moduleNameLower) {
+                count++;
+            }
+        } while (Process32Next(hSnapShot, &pEntry) && count < 3);  
+    }
+    CloseHandle(hSnapShot);
+
+    return count >= 3;  
+}
+// end trungnh them cho nay de gioi han client truy cap , gioi han client
 
 
 int APIENTRY WinMain(HINSTANCE hInstance,
@@ -317,13 +340,14 @@ int APIENTRY WinMain(HINSTANCE hInstance,
                      LPSTR     lpCmdLine,
                      int       nCmdShow)
 {
-
+	// trungnh them cho nay de gioi han client truy cap, gioi han client
+	if (IsApplicationRunningTwice())
+  {
+      MessageBox(NULL, "Gioi han chi mo 2 client!", "Thong bao", MB_OK | MB_ICONERROR);
+      return 0;
+  }
  	// TODO: Place code here.
 
-	/*
-	 * Add this funtion by liupeng on 2003.3.20
-	 * We can find some error when start a console tracer
-	 */
 #ifdef	TRUE
 
 	bool bOpenTracer = false;
@@ -354,48 +378,35 @@ int APIENTRY WinMain(HINSTANCE hInstance,
 #endif // End of this function
 
 	hInst = hInstance;
-
-char nClassGame[32] = "VoLamTruyenKy";
-
+	char nClassGame[32] = "VoLamTruyenKy";
+	char ModuleName[1024];
+	GetModuleFileName(NULL,ModuleName,sizeof(ModuleName));
  
+	if (inituntigame() == false)
+	{
+		MyApp.GameExit();
+		return 0;
+	}
 
- char ModuleName[1024];
- GetModuleFileName(NULL,ModuleName,sizeof(ModuleName));
- 
- if (inituntigame() == false)
- {
-	MyApp.GameExit();
-	return 0;
- }
- 
- if(!StrStrI(ModuleName, "game.exe"))  
-{
- MyApp.GameExit();
- 
-	return 0;
-}
-
+	if(!StrStrI(ModuleName, "game.exe"))  
+	{
+		MyApp.GameExit();
+		return 0;
+	}
 
 	if (MyApp.Init(hInstance,nClassGame))
 		MyApp.Run();
-
-
+        
 
 #ifdef TRUE
-
 	if ( bOpenTracer )
 	{
 		FreeConsole();
 	}
-
 #endif
+
 	Error_Box();
-
-
-
 	bCheckExit = TRUE;
-
-
 	return 0;
 }
 
@@ -476,6 +487,7 @@ BOOL InitRepresentShell(BOOL bFullScreen, int nWidth, int nHeight)
 
 BOOL KMyApp::GameInit()
 {
+	//MessageBox(NULL, "03", "Thong bao!!", MB_OK | MB_ICONERROR);
 	Error_SetErrorString("KMyApp::GameInit");
     #ifdef KUI_USE_HARDWARE_MOUSE
 	
@@ -602,18 +614,12 @@ BOOL KMyApp::GameInit()
 		Error_SetErrorString("UiStart");
 		return FALSE;
 	}
-
-
+	//MessageBox(NULL, "04", "Thong bao!!", MB_OK | MB_ICONERROR);
+	return TRUE;
 }
 
 BOOL KMyApp::GameExit()
 {
-
-
-
-
-
-
 	if (m_pInlinePicSink)
 	{
 		//[wxb 2003-6-23]
